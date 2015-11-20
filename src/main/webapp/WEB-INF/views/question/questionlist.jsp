@@ -45,17 +45,29 @@
 <div class="md-card">
 <div class="md-card-content"> 
 		<form class="form-search " action="#">
-			<input type="hidden" name="projectId" id="projectId" value="${projectId}"> 
-			<div data-uk-grid-margin="" class="uk-grid"> 
-       <div class="uk-width-medium-3-10"> 
-        <div class="md-input-wrapper"><label for="product_search_name"></label><input type="text" id="product_search_name" name="search_LIKE_questionCont" class="md-input" value="${param.search_LIKE_questionCont}"><span class="md-input-bar"></span></div> 
-         
-       </div> 
-       <div class="uk-width-medium-2-10 uk-text-center"> 
+			<input type="hidden" name="projectId" id="projectId" value="${projectId}">
+			<div data-uk-grid-margin="" class="uk-grid">
+       <div class="uk-width-medium-3-10">
+        <div class="md-input-wrapper"><label for="product_search_name"></label><input type="text" id="product_search_name" name="search_LIKE_questionCont" class="md-input" value="${param.search_LIKE_questionCont}"><span class="md-input-bar"></span></div>
+
+       </div>
+       <div class="uk-width-medium-2-10 uk-text-center">
 	        <button type="submit" class="md-btn md-btn-primary uk-margin-small-top" id="search_btn">搜索</button>
-       </div> 
+       </div>
       </div>
        </form>
+        <form name="uploadForm" class="form-search " action="${ctx}/question/upload/${projectId}" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="projectId"  value="${projectId}">
+            <div class="uk-grid">
+                <div class="uk-width-1-1">
+                    <div class="md-btn md-btn-primary">
+                        Select
+                        <input type="file"  name="file">
+                        <button type="submit" class="md-btn md-btn-primary uk-margin-small-top">upload</button>
+                    </div>
+                </div>
+            </div>
+        </form>
      </div>
  </div>
 <div class="md-card uk-margin-medium-bottom">

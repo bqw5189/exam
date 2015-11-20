@@ -8,6 +8,8 @@ import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.util.CollectionUtils;
 
 import java.io.IOException;
@@ -20,6 +22,10 @@ import java.util.List;
  */
 public class ExcelUtils {
     private static final int SELECT_ITEM_START_INDEX = 5;
+    public static final int ANSWER_TRUE = 1;
+    public static final int ANSWER_FALSE = 0;
+    private static Logger logger = LoggerFactory.getLogger(ExcelUtils.class);
+
     public static List<TeExamQuestionVO> toQuestion(Long projectId, List<List<String>> questions){
         List<TeExamQuestionVO> result = new ArrayList<TeExamQuestionVO>();
 
@@ -37,6 +43,8 @@ public class ExcelUtils {
 
             List<String> answerIndex = CollectionUtils.arrayToList(question.get(4).split("/"));
 
+            logger.debug("answerIndex:{}", answerIndex);
+
             int itemCount = Integer.parseInt(StringUtils.defaultString(question.get(3), (question.size() - SELECT_ITEM_START_INDEX) + ""));
             List<TeSelectItemsVO> selectItemsVOs = new ArrayList<TeSelectItemsVO>();
             for (int i = SELECT_ITEM_START_INDEX; i < SELECT_ITEM_START_INDEX + itemCount;i++){
@@ -44,7 +52,9 @@ public class ExcelUtils {
 
                 selectItemsVO.setQuestion(teExamQuestionVO);
                 selectItemsVO.setSelectCont(question.get(i));
-                selectItemsVO.setIsAnswer(answerIndex.contains((i+1)+"")?1:0);
+                selectItemsVO.setIsAnswer(answerIndex.contains((i-SELECT_ITEM_START_INDEX+1)+"")?ExcelUtils.ANSWER_TRUE:ExcelUtils.ANSWER_FALSE);
+
+                logger.debug("selectItemsVO:{}", selectItemsVO);
 
                 selectItemsVOs.add(selectItemsVO);
             }

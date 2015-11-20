@@ -1,8 +1,11 @@
 package com.school.exam.service.question;
 
 
+import java.io.InputStream;
 import java.util.List;
 
+import com.school.exam.utils.ExcelUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,6 +24,39 @@ public class CourseService {
 	private CourseDao courseDao;
 	private ExamQuestionDao questionDao;
 	private SelectItemsDao selectItemDao;
+
+    public boolean inputQuestion(Long projectId, InputStream source){
+
+        List<List<String>> questionList = ExcelUtils.toList(source);
+
+        List<TeExamQuestionVO> questionVOList = ExcelUtils.toQuestion(projectId, questionList);
+
+        questionDao.save(questionVOList);
+
+        for (TeExamQuestionVO examQuestionVO: questionVOList){
+            String answerIds = getAswerIds(examQuestionVO.getSelectItems());
+            examQuestionVO.setQuestionAnswerId(answerIds);
+            questionDao.save(examQuestionVO);
+        }
+
+        return true;
+    }
+
+    private String getAswerIds(List<TeSelectItemsVO> selectItems) {
+        String result = "";
+
+        for (TeSelectItemsVO selectItemsVO: selectItems){
+            if (selectItemsVO.getIsAnswer() == ExcelUtils.ANSWER_TRUE) {
+                if (StringUtils.isEmpty(result)) {
+                    result += selectItemsVO.getId();
+                }else{
+                    result += "," + selectItemsVO.getId();
+                }
+            }
+        }
+
+        return result;
+    }
 	
 	/**
 	 * 获得所有课程及项目信息

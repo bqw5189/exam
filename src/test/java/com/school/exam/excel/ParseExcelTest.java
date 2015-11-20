@@ -1,9 +1,13 @@
 package com.school.exam.excel;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.school.exam.entity.TeExamQuestionVO;
+import com.school.exam.entity.TeQuestionExamVO;
 import com.school.exam.utils.ExcelUtils;
 
 import jxl.read.biff.BiffException;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -20,10 +24,9 @@ public class ParseExcelTest {
         InputStream stream = ParseExcelTest.class.getClassLoader().getResourceAsStream("exam.xls");
         List<List<String>> list = ExcelUtils.toList(stream);
 
-        Gson gson;
+        List<TeExamQuestionVO> questionExamVOs = ExcelUtils.toQuestion(200l, list);
 
-        ExcelUtils.toQuestion(1l, list);
-
+        Assert.assertEquals(questionExamVOs.size(), 10);
     }
 //    @Test
     public void testToList() throws IOException, BiffException {

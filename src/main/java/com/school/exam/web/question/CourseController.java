@@ -1,19 +1,22 @@
 package com.school.exam.web.question;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletRequest;
 import javax.validation.Valid;
 
+import com.school.exam.entity.FileUploadForm;
+import com.school.exam.utils.ExcelUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.school.exam.entity.TeExamQuestionVO;
 import com.school.exam.entity.TeProjectVO;
@@ -32,6 +35,8 @@ import com.google.common.collect.Maps;
 @Controller
 @RequestMapping(value="/question")
 public class CourseController {
+    private static final Logger logger = LoggerFactory.getLogger(CourseController.class);
+
 	private static final String PAGE_SIZE = "10";
 
 	private static Map<String, String> sortTypes = Maps.newLinkedHashMap();
@@ -113,6 +118,17 @@ public class CourseController {
 		}
 		return "redirect:/question/"+projectid;
 	}
+
+    @RequestMapping(value = "upload/{projectId}", method = RequestMethod.POST)
+    public String create(FileUploadForm uploadForm, @PathVariable Long projectId) {
+        logger.debug("upload/{}->file:{}", projectId, uploadForm);
+        try {
+            courseService.inputQuestion(projectId, uploadForm.getFile().getInputStream());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "redirect:/question/"+projectId;
+    }
 	@RequestMapping(value = "update/{id}", method = RequestMethod.GET)
 	public String updateForm(@PathVariable(value="id") Long id, Model model) throws JsonProcessingException {
 		TeExamQuestionVO question = (TeExamQuestionVO) courseService.getQuestion(id);
