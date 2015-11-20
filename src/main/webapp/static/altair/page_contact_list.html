@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<!--[if lte IE 9]> <html class="lte-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+ <!--<![endif]-->
+ <head> 
+  <meta charset="UTF-8" /> 
+  <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no" /> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+  <!-- Remove Tap Highlight on Windows Phone IE --> 
+  <meta name="msapplication-tap-highlight" content="no" /> 
+  <link rel="icon" type="image/png" href="assets/img/favicon-16x16.png" sizes="16x16" /> 
+  <link rel="icon" type="image/png" href="assets/img/favicon-32x32.png" sizes="32x32" /> 
+  <title>Altair Admin v2.0.0</title> 
+  <!-- uikit --> 
+  <link rel="stylesheet" href="bower_components/uikit/css/uikit.almost-flat.min.css" media="all" /> 
+  <!-- flag icons --> 
+  <link rel="stylesheet" href="assets/icons/flags/flags.min.css" media="all" /> 
+  <!-- altair admin --> 
+  <link rel="stylesheet" href="assets/css/main.min.css" media="all" /> 
+  <!-- matchMedia polyfill for testing media queries in JS --> 
+  <!--[if lte IE 9]>
+        <script type="text/javascript" src="bower_components/matchMedia/matchMedia.js"></script>
+        <script type="text/javascript" src="bower_components/matchMedia/matchMedia.addListener.js"></script>
+    <![endif]--> 
+ </head> 
+ <body class="sidebar_main_open sidebar_main_swipe"> 
+  <!-- main header --> 
+  <header id="header_main"> 
+   <div class="header_main_content"> 
+    <nav class="uk-navbar"> 
+     <!-- main sidebar switch --> 
+     <a href="#" id="sidebar_main_toggle" class="sSwitch sSwitch_left"> <span class="sSwitchIcon"></span> </a> 
+     <!-- secondary sidebar switch --> 
+     <a href="#" id="sidebar_secondary_toggle" class="sSwitch sSwitch_right sidebar_secondary_check"> <span class="sSwitchIcon"></span> </a> 
+     <div id="menu_top" class="uk-float-left uk-hidden-small"> 
+      <div class="uk-button-dropdown" data-uk-dropdown="{mode:'click'}"> 
+       <a href="#" class="top_menu_toggle"><i class="material-icons md-24"></i></a> 
+       <div class="uk-dropdown uk-dropdown-width-3"> 
+        <div class="uk-grid uk-dropdown-grid" data-uk-grid-margin=""> 
+         <div class="uk-width-2-3"> 
+          <div class="uk-grid uk-grid-width-medium-1-3 uk-margin-top uk-margin-bottom uk-text-center" data-uk-grid-margin=""> 
+           <a href="page_mailbox.html"> <i class="material-icons md-36"></i> <span class="uk-text-muted uk-display-block">Mailbox</span> </a> 
+           <a href="page_invoices.html"> <i class="material-icons md-36"></i> <span class="uk-text-muted uk-display-block">Invoices</span> </a> 
+           <a href="page_chat.html"> <i class="material-icons md-36 md-color-red-600"></i> <span class="uk-text-muted uk-display-block">Chat</span> </a> 
+           <a href="page_scrum_board.html"> <i class="material-icons md-36"></i> <span class="uk-text-muted uk-display-block">Scrum Board</span> </a> 
+           <a href="page_snippets.html"> <i class="material-icons md-36"></i> <span class="uk-text-muted uk-display-block">Snippets</span> </a> 
+           <a href="page_user_profile.html"> <i class="material-icons md-36"></i> <span class="uk-text-muted uk-display-block">User profile</span> </a> 
+          </div> 
+         </div> 
+         <div class="uk-width-1-3"> 
+          <ul class="uk-nav uk-nav-dropdown uk-panel"> 
+           <li class="uk-nav-header">Components</li> 
+           <li><a href="components_accordion.html">Accordions</a></li> 
+           <li><a href="components_buttons.html">Buttons</a></li> 
+           <li><a href="components_notifications.html">Notifications</a></li> 
+           <li><a href="components_sortable.html">Sortable</a></li> 
+           <li><a href="components_tabs.html">Tabs</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="uk-navbar-flip"> 
+      <ul class="uk-navbar-nav user_actions"> 
+       <li><a href="#" id="main_search_btn" class="user_action_icon"><i class="material-icons md-24 md-light"></i></a></li> 
+       <li data-uk-dropdown="{mode:'click'}"> <a href="#" class="user_action_icon"><i class="material-icons md-24 md-light"></i><span class="uk-badge">16</span></a> 
+        <div class="uk-dropdown uk-dropdown-xlarge uk-dropdown-flip"> 
+         <div class="md-card-content"> 
+          <ul class="uk-tab uk-tab-grid" data-uk-tab="{connect:'#header_alerts',animation:'slide-horizontal'}"> 
+           <li class="uk-width-1-2 uk-active"><a href="#" class="js-uk-prevent uk-text-small">Messages (12)</a></li> 
+           <li class="uk-width-1-2"><a href="#" class="js-uk-prevent uk-text-small">Alerts (4)</a></li> 
+          </ul> 
+          <ul id="header_alerts" class="uk-switcher uk-margin"> 
+           <li> 
+            <ul class="md-list md-list-addon"> 
+             <li> 
+              <div class="md-list-addon-element"> 
+               <span class="md-user-letters md-bg-cyan">oq</span> 
+              </div> 
+              <div class="md-list-content"> 
+               <span class="md-list-heading"><a href="pages_mailbox.html">At nostrum.</a></span> 
+               <span class="uk-text-small uk-text-muted">Sed labore occaecati non eos nam nihil.</span> 
+              </div> </li> 
+             <li> 
+              <div class="md-list-addon-element"> 
+               <img class="md-user-image md-list-addon-avatar" src="assets/img/avatars/avatar_07_tn.png" alt="" /> 
+              </div> 
+              <div class="md-list-content"> 
+               <span class="md-list-heading"><a href="pages_mailbox.html">Libero aut cupiditate.</a></span> 
+               <span class="uk-text-small uk-text-muted">Doloribus ullam est fugiat placeat nihil voluptatem repudiandae explicabo molestiae.</span> 
+              </div> </li> 
+             <li> 
+              <div class="md-list-addon-element"> 
+               <span class="md-user-letters md-bg-light-green">we</span> 
+              </div> 
+              <div class="md-list-content"> 
+               <span class="md-list-heading"><a href="pages_mailbox.html">Illum quae.</a></span> 
+               <span class="uk-text-small uk-text-muted">Dicta alias laborum magni ipsum nihil vel maiores ducimus aut porro.</span> 
+              </div> </li> 
+             <li> 
+              <div class="md-list-addon-element"> 
+               <img class="md-user-image md-list-addon-avatar" src="assets/img/avatars/avatar_02_tn.png" alt="" /> 
+              </div> 
+              <div class="md-list-content"> 
+               <span class="md-list-heading"><a href="pages_mailbox.html">Non accusantium illum.</a></span> 
+               <span class="uk-text-small uk-text-muted">Id asperiores est sequi accusamus eveniet eveniet tempora sunt consequatur architecto.</span> 
+              </div> </li> 
+             <li> 
+              <div class="md-list-addon-element"> 
+               <img class="md-user-image md-list-addon-avatar" src="assets/img/avatars/avatar_09_tn.png" alt="" /> 
+              </div> 
+              <div class="md-list-content"> 
+               <span class="md-list-heading"><a href="pages_mailbox.html">Minus magnam.</a></span> 
+               <span class="uk-text-small uk-text-muted">Consequuntur voluptates eum temporibus quia esse beatae eos dolor.</span> 
+              </div> </li> 
+            </ul> 
+            <div class="uk-text-center uk-margin-top uk-margin-small-bottom"> 
+             <a href="page_mailbox.html" class="md-btn md-btn-flat md-btn-flat-primary js-uk-prevent">Show All</a> 
+            </div> </li> 
+           <li> 
+            <ul class="md-list md-list-addon"> 
+             <li> 
+              <div class="md-list-addon-element"> 
+               <i class="md-list-addon-icon material-icons uk-text-warning"></i> 
+              </div> 
+              <div class="md-list-content"> 
+               <span class="md-list-heading">Inventore excepturi illo.</span> 
+               <span class="uk-text-small uk-text-muted uk-text-truncate">Saepe quibusdam qui facilis cupiditate.</span> 
+              </div> </li> 
+             <li> 
+              <div class="md-list-addon-element"> 
+               <i class="md-list-addon-icon material-icons uk-text-success"></i> 
+              </div> 
+              <div class="md-list-content"> 
+               <span class="md-list-heading">Odio fuga.</span> 
+               <span class="uk-text-small uk-text-muted uk-text-truncate">Ipsa quod occaecati cum.</span> 
+              </div> </li> 
+             <li> 
+              <div class="md-list-addon-element"> 
+               <i class="md-list-addon-icon material-icons uk-text-danger"></i> 
+              </div> 
+              <div class="md-list-content"> 
+               <span class="md-list-heading">Maiores iste perferendis.</span> 
+               <span class="uk-text-small uk-text-muted uk-text-truncate">Quo et et ut molestiae libero.</span> 
+              </div> </li> 
+             <li> 
+              <div class="md-list-addon-element"> 
+               <i class="md-list-addon-icon material-icons uk-text-primary"></i> 
+              </div> 
+              <div class="md-list-content"> 
+               <span class="md-list-heading">Veniam ut architecto.</span> 
+               <span class="uk-text-small uk-text-muted uk-text-truncate">Illo expedita commodi quia magnam quo ad enim.</span> 
+              </div> </li> 
+            </ul> </li> 
+          </ul> 
+         </div> 
+        </div> </li> 
+       <li data-uk-dropdown="{mode:'click'}"> <a href="#" class="user_action_image"><img class="md-user-image" src="assets/img/avatars/avatar_11_tn.png" alt="" /></a> 
+        <div class="uk-dropdown uk-dropdown-small uk-dropdown-flip"> 
+         <ul class="uk-nav js-uk-prevent"> 
+          <li><a href="page_user_profile.html">My profile</a></li> 
+          <li><a href="page_settings.html">Settings</a></li> 
+          <li><a href="login.html">Logout</a></li> 
+         </ul> 
+        </div> </li> 
+      </ul> 
+     </div> 
+    </nav> 
+   </div> 
+   <div class="header_main_search_form"> 
+    <i class="md-icon header_main_search_close material-icons"></i> 
+    <form class="uk-form"> 
+     <input type="text" class="header_main_search_input" /> 
+     <button class="header_main_search_btn uk-button-link"><i class="md-icon material-icons"></i></button> 
+    </form> 
+   </div> 
+  </header>
+  <!-- main header end --> 
+  <!-- main sidebar --> 
+  <aside id="sidebar_main"> 
+   <div class="sidebar_main_header"> 
+    <div class="sidebar_logo"> 
+     <a href="index.html" class="sSidebar_hide"><img src="assets/img/logo_main.png" alt="" height="15" width="71" /></a> 
+     <a href="index.html" class="sSidebar_show"><img src="assets/img/logo_main_small.png" alt="" height="32" width="32" /></a> 
+    </div> 
+    <div class="sidebar_actions"> 
+     <select id="lang_switcher" name="lang_switcher"> <option value="gb" selected="">English</option> </select> 
+    </div> 
+   </div> 
+   <div class="menu_section"> 
+    <ul> 
+     <li title="Dashboard"> <a href="index.html"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">Dashboard</span> </a> </li> 
+     <li title="Mailbox"> <a href="page_mailbox.html"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">Mailbox</span> </a> </li> 
+     <li title="Invoices"> <a href="page_invoices.html"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">Invoices</span> </a> </li> 
+     <li title="Chat"> <a href="page_chat.html"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">Chat</span> </a> </li> 
+     <li title="Scrum Board"> <a href="page_scrum_board.html"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">Scrum Board</span> </a> </li> 
+     <li title="Snippets"> <a href="page_snippets.html"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">Snippets</span> </a> </li> 
+     <li title="User Profile"> <a href="page_user_profile.html"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">User Profile</span> </a> </li> 
+     <li> <a href="#"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">Forms</span> </a> 
+      <ul> 
+       <li><a href="forms_regular.html">Regular Elements</a></li> 
+       <li><a href="forms_advanced.html">Advanced Elements</a></li> 
+       <li><a href="forms_file_upload.html">File Upload</a></li> 
+       <li><a href="forms_validation.html">Validation</a></li> 
+       <li><a href="forms_wizard.html">Wizard</a></li> 
+       <li><a href="forms_wysiwyg.html">WYSIWYG Editor</a></li> 
+      </ul> </li> 
+     <li> <a href="#"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">Kendo UI Widgets</span> </a> 
+      <ul> 
+       <li><a href="kendoui_autocomplete.html">Autocomplete</a></li> 
+       <li><a href="kendoui_calendar.html">Calendar</a></li> 
+       <li><a href="kendoui_colorpicker.html">ColorPicker</a></li> 
+       <li><a href="kendoui_combobox.html">ComboBox</a></li> 
+       <li><a href="kendoui_datepicker.html">DatePicker</a></li> 
+       <li><a href="kendoui_datetimepicker.html">DateTimePicker</a></li> 
+       <li><a href="kendoui_dropdown_list.html">DropDownList</a></li> 
+       <li><a href="kendoui_masked_input.html">Masked Input</a></li> 
+       <li><a href="kendoui_menu.html">Menu</a></li> 
+       <li><a href="kendoui_multiselect.html">MultiSelect</a></li> 
+       <li><a href="kendoui_numeric_textbox.html">Numeric TextBox</a></li> 
+       <li><a href="kendoui_panelbar.html">PanelBar</a></li> 
+       <li><a href="kendoui_timepicker.html">TimePicker</a></li> 
+       <li><a href="kendoui_toolbar.html">Toolbar</a></li> 
+       <li><a href="kendoui_window.html">Window</a></li> 
+      </ul> </li> 
+     <li> <a href="#"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">Components</span> </a> 
+      <ul> 
+       <li><a href="components_accordion.html">Accordions</a></li> 
+       <li><a href="components_buttons.html">Buttons</a></li> 
+       <li><a href="components_cards.html">Cards</a></li> 
+       <li><a href="components_colors.html">Colors</a></li> 
+       <li><a href="components_common.html">Common</a></li> 
+       <li><a href="components_dropdowns.html">Dropdowns</a></li> 
+       <li><a href="components_dynamic_grid.html">Dynamic Grid</a></li> 
+       <li><a href="components_grid.html">Grid</a></li> 
+       <li><a href="components_icons.html">Icons</a></li> 
+       <li><a href="components_modal.html">Lightbox/Modal</a></li> 
+       <li><a href="components_lists.html">Lists</a></li> 
+       <li><a href="components_nestable.html">Nestable</a></li> 
+       <li><a href="components_notifications.html">Notifications</a></li> 
+       <li><a href="components_preloaders.html">Preloaders</a></li> 
+       <li><a href="components_sortable.html">Sortable</a></li> 
+       <li><a href="components_tables.html">Tables</a></li> 
+       <li><a href="components_tables_examples.html">Tables Examples</a></li> 
+       <li><a href="components_tabs.html">Tabs</a></li> 
+       <li><a href="components_tooltips.html">Tooltips</a></li> 
+       <li><a href="components_typography.html">Typography</a></li> 
+      </ul> </li> 
+     <li> <a href="#"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">E-commerce</span> </a> 
+      <ul> 
+       <li><a href="ecommerce_product_details.html">Product Details</a></li> 
+       <li><a href="ecommerce_product_edit.html">Product Edit</a></li> 
+       <li><a href="ecommerce_products_grid.html">Products Grid</a></li> 
+       <li><a href="ecommerce_products_list.html">Products List</a></li> 
+      </ul> </li> 
+     <li> <a href="#"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">Plugins</span> </a> 
+      <ul> 
+       <li><a href="plugins_calendar.html">Calendar</a></li> 
+       <li><a href="plugins_charts.html">Charts</a></li> 
+       <li><a href="plugins_code_editor.html">Code Editor</a></li> 
+       <li><a href="plugins_datatables.html">Datatables</a></li> 
+       <li><a href="plugins_gantt_chart.html">Gantt Chart</a></li> 
+       <li><a href="plugins_google_maps.html">Google Maps</a></li> 
+       <li><a href="plugins_tablesorter.html">Tablesorter</a></li> 
+       <li><a href="plugins_vector_maps.html">Vector Maps</a></li> 
+      </ul> </li> 
+     <li> <a href="#"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">Pages</span> </a> 
+      <ul> 
+       <li><a href="page_blank.html">Blank</a></li> 
+       <li class="act_item"><a href="page_contact_list.html">Contact List</a></li> 
+       <li><a href="error_404.html">Error 404</a></li> 
+       <li><a href="error_500.html">Error 500</a></li> 
+       <li><a href="page_help.html">Help/Faq</a></li> 
+       <li><a href="login.html">Login Page</a></li> 
+       <li><a href="page_notes.html">Notes</a> </li> 
+       <li><a href="page_settings.html">Settings</a></li> 
+       <li><a href="page_todo.html">Todo</a></li> 
+       <li><a href="page_user_edit.html">User edit</a></li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </aside>
+  <!-- main sidebar end --> 
+  <div id="page_content"> 
+   <div id="page_content_inner"> 
+    <h3 class="heading_b uk-margin-bottom">Contact List</h3> 
+    <div class="md-card uk-margin-medium-bottom"> 
+     <div class="md-card-content"> 
+      <div class="uk-grid" data-uk-grid-margin=""> 
+       <div class="uk-width-medium-1-2"> 
+        <div class="uk-vertical-align"> 
+         <div class="uk-vertical-align-middle"> 
+          <ul id="contact_list_filter" class="uk-subnav uk-subnav-pill uk-margin-remove"> 
+           <li class="uk-active" data-uk-filter=""><a href="#">All</a></li> 
+           <li data-uk-filter="goodwin-nienow"><a href="#">Goodwin-Nienow</a></li> 
+           <li data-uk-filter="strosin groupa"><a href="#">Strosin Groupa</a></li> 
+           <li data-uk-filter="schamberger plc"><a href="#">Schamberger PLC </a></li> 
+          </ul> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="uk-width-medium-1-2"> 
+        <label for="contact_list_search">Find user</label> 
+        <input class="md-input" type="text" id="contact_list_search" /> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="uk-grid-width-small-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-4 uk-grid-width-xlarge-1-5 hierarchical_show" id="contact_list"> 
+     <div data-uk-filter="schamberger plc ,hollie parisian"> 
+      <div class="md-card md-card-hover"> 
+       <div class="md-card-head"> 
+        <div class="md-card-head-menu" data-uk-dropdown=""> 
+         <i class="md-icon material-icons"></i> 
+         <div class="uk-dropdown uk-dropdown-small uk-dropdown-flip"> 
+          <ul class="uk-nav"> 
+           <li><a href="#">Edit</a></li> 
+           <li><a href="#">Remove</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+        <div class="uk-text-center"> 
+         <img class="md-card-head-avatar" src="assets/img/avatars/avatar_11.png" alt="" /> 
+        </div> 
+        <h3 class="md-card-head-text uk-text-center"> Hollie Parisian <span class="uk-text-truncate">Schamberger PLC </span> </h3> 
+       </div> 
+       <div class="md-card-content"> 
+        <ul class="md-list"> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Info</span> 
+           <span class="uk-text-small uk-text-muted">Ut laudantium amet velit accusantium ut ratione officia esse numquam in dignissimos.</span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Email</span> 
+           <span class="uk-text-small uk-text-muted uk-text-truncate"><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="09626c7a61687c67303b4961667d64686065276a6664">[email&nbsp;protected]</a><script data-cfhash="f9e31" type="text/javascript">
+/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("data-cfhash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}t.parentNode.removeChild(t);}}catch(u){}}()/* ]]> */</script></span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Phone</span> 
+           <span class="uk-text-small uk-text-muted">1-257-833-9447</span> 
+          </div> </li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+     <div data-uk-filter="strosin groupa,ms. salma sipes v"> 
+      <div class="md-card md-card-hover"> 
+       <div class="md-card-head"> 
+        <div class="md-card-head-menu" data-uk-dropdown=""> 
+         <i class="md-icon material-icons"></i> 
+         <div class="uk-dropdown uk-dropdown-small uk-dropdown-flip"> 
+          <ul class="uk-nav"> 
+           <li><a href="#">Edit</a></li> 
+           <li><a href="#">Remove</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+        <div class="uk-text-center"> 
+         <img class="md-card-head-avatar" src="assets/img/avatars/avatar_11.png" alt="" /> 
+        </div> 
+        <h3 class="md-card-head-text uk-text-center"> Ms. Salma Sipes V <span class="uk-text-truncate">Strosin Groupa</span> </h3> 
+       </div> 
+       <div class="md-card-content"> 
+        <ul class="md-list"> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Info</span> 
+           <span class="uk-text-small uk-text-muted">Ut voluptatum ab ipsa qui non et dolores qui ea eos voluptas.</span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Email</span> 
+           <span class="uk-text-small uk-text-muted uk-text-truncate"><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="fb979a8e89929a95959ed588989389949e9f9e89bb999482979e939a96969e88d594899c">[email&nbsp;protected]</a><script data-cfhash="f9e31" type="text/javascript">
+/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("data-cfhash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}t.parentNode.removeChild(t);}}catch(u){}}()/* ]]> */</script></span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Phone</span> 
+           <span class="uk-text-small uk-text-muted">053.416.6377x359</span> 
+          </div> </li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+     <div data-uk-filter="goodwin-nienow,shawna hirthe"> 
+      <div class="md-card md-card-hover"> 
+       <div class="md-card-head"> 
+        <div class="md-card-head-menu" data-uk-dropdown=""> 
+         <i class="md-icon material-icons"></i> 
+         <div class="uk-dropdown uk-dropdown-small uk-dropdown-flip"> 
+          <ul class="uk-nav"> 
+           <li><a href="#">Edit</a></li> 
+           <li><a href="#">Remove</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+        <div class="uk-text-center"> 
+         <img class="md-card-head-avatar" src="assets/img/avatars/avatar_10.png" alt="" /> 
+        </div> 
+        <h3 class="md-card-head-text uk-text-center"> Shawna Hirthe <span class="uk-text-truncate">Goodwin-Nienow</span> </h3> 
+       </div> 
+       <div class="md-card-content"> 
+        <ul class="md-list"> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Info</span> 
+           <span class="uk-text-small uk-text-muted">Consequatur rem neque rem quos eum eum molestiae.</span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Email</span> 
+           <span class="uk-text-small uk-text-muted uk-text-truncate"><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="781b0a1d15081d14381a190a0a170f0b0b0f111e0c5611161e17">[email&nbsp;protected]</a><script data-cfhash="f9e31" type="text/javascript">
+/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("data-cfhash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}t.parentNode.removeChild(t);}}catch(u){}}()/* ]]> */</script></span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Phone</span> 
+           <span class="uk-text-small uk-text-muted">557.546.1308x392</span> 
+          </div> </li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+     <div data-uk-filter="strosin groupa,mr. tate jacobi ii"> 
+      <div class="md-card md-card-hover"> 
+       <div class="md-card-head md-bg-cyan-600"> 
+        <div class="md-card-head-menu" data-uk-dropdown=""> 
+         <i class="md-icon material-icons md-icon-light"></i> 
+         <div class="uk-dropdown uk-dropdown-small uk-dropdown-flip"> 
+          <ul class="uk-nav"> 
+           <li><a href="#">Edit</a></li> 
+           <li><a href="#">Remove</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+        <div class="uk-text-center"> 
+         <img class="md-card-head-avatar" src="assets/img/avatars/avatar_09.png" alt="" /> 
+        </div> 
+        <h3 class="md-card-head-text uk-text-center md-color-white"> Mr. Tate Jacobi II <span class="uk-text-truncate">Strosin Groupa</span> </h3> 
+       </div> 
+       <div class="md-card-content"> 
+        <ul class="md-list"> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Info</span> 
+           <span class="uk-text-small uk-text-muted">Et adipisci numquam et ad dolores neque eum minus est.</span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Email</span> 
+           <span class="uk-text-small uk-text-muted uk-text-truncate"><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="f4848186908dda999b9a95b4869d97919c958d9187da979b99">[email&nbsp;protected]</a><script data-cfhash="f9e31" type="text/javascript">
+/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("data-cfhash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}t.parentNode.removeChild(t);}}catch(u){}}()/* ]]> */</script></span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Phone</span> 
+           <span class="uk-text-small uk-text-muted">1-774-675-5691x77648</span> 
+          </div> </li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+     <div data-uk-filter="goodwin-nienow,virginie lind"> 
+      <div class="md-card md-card-hover"> 
+       <div class="md-card-head"> 
+        <div class="md-card-head-menu" data-uk-dropdown=""> 
+         <i class="md-icon material-icons"></i> 
+         <div class="uk-dropdown uk-dropdown-small uk-dropdown-flip"> 
+          <ul class="uk-nav"> 
+           <li><a href="#">Edit</a></li> 
+           <li><a href="#">Remove</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+        <div class="uk-text-center"> 
+         <img class="md-card-head-avatar" src="assets/img/avatars/avatar_12.png" alt="" /> 
+        </div> 
+        <h3 class="md-card-head-text uk-text-center"> Virginie Lind <span class="uk-text-truncate">Goodwin-Nienow</span> </h3> 
+       </div> 
+       <div class="md-card-content"> 
+        <ul class="md-list"> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Info</span> 
+           <span class="uk-text-small uk-text-muted">Unde occaecati assumenda non voluptatibus numquam neque et aut animi molestias.</span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Email</span> 
+           <span class="uk-text-small uk-text-muted uk-text-truncate"><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="9deae8f1f1eff4fef5ddfaf0fcf4f1b3fef2f0">[email&nbsp;protected]</a><script data-cfhash="f9e31" type="text/javascript">
+/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("data-cfhash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}t.parentNode.removeChild(t);}}catch(u){}}()/* ]]> */</script></span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Phone</span> 
+           <span class="uk-text-small uk-text-muted">(302)789-5148x8719</span> 
+          </div> </li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+     <div data-uk-filter="schamberger plc ,ida koelpin"> 
+      <div class="md-card md-card-hover"> 
+       <div class="md-card-head"> 
+        <div class="md-card-head-menu" data-uk-dropdown=""> 
+         <i class="md-icon material-icons"></i> 
+         <div class="uk-dropdown uk-dropdown-small uk-dropdown-flip"> 
+          <ul class="uk-nav"> 
+           <li><a href="#">Edit</a></li> 
+           <li><a href="#">Remove</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+        <div class="uk-text-center"> 
+         <img class="md-card-head-avatar" src="assets/img/avatars/avatar_08.png" alt="" /> 
+        </div> 
+        <h3 class="md-card-head-text uk-text-center"> Ida Koelpin <span class="uk-text-truncate">Schamberger PLC </span> </h3> 
+       </div> 
+       <div class="md-card-content"> 
+        <ul class="md-list"> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Info</span> 
+           <span class="uk-text-small uk-text-muted">Et voluptate expedita animi exercitationem sed ducimus velit cupiditate ipsum.</span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Email</span> 
+           <span class="uk-text-small uk-text-muted uk-text-truncate"><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="3b58575e59485a58507b4f495e4e4f5e574c5e595e4915595241">[email&nbsp;protected]</a><script data-cfhash="f9e31" type="text/javascript">
+/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("data-cfhash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}t.parentNode.removeChild(t);}}catch(u){}}()/* ]]> */</script></span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Phone</span> 
+           <span class="uk-text-small uk-text-muted">1-334-768-0612x689</span> 
+          </div> </li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+     <div data-uk-filter="goodwin-nienow,mr. noe bahringer"> 
+      <div class="md-card md-card-hover"> 
+       <div class="md-card-head md-bg-cyan-600"> 
+        <div class="md-card-head-menu" data-uk-dropdown=""> 
+         <i class="md-icon material-icons md-icon-light"></i> 
+         <div class="uk-dropdown uk-dropdown-small uk-dropdown-flip"> 
+          <ul class="uk-nav"> 
+           <li><a href="#">Edit</a></li> 
+           <li><a href="#">Remove</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+        <div class="uk-text-center"> 
+         <img class="md-card-head-avatar" src="assets/img/avatars/avatar_11.png" alt="" /> 
+        </div> 
+        <h3 class="md-card-head-text uk-text-center md-color-white"> Mr. Noe Bahringer <span class="uk-text-truncate">Goodwin-Nienow</span> </h3> 
+       </div> 
+       <div class="md-card-content"> 
+        <ul class="md-list"> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Info</span> 
+           <span class="uk-text-small uk-text-muted">Perferendis qui incidunt adipisci sapiente totam quidem et itaque ea aut ab.</span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Email</span> 
+           <span class="uk-text-small uk-text-muted uk-text-truncate"><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="2c4f494f4540454d025f5843405849424e495e4b6c554d444343024f4341">[email&nbsp;protected]</a><script data-cfhash="f9e31" type="text/javascript">
+/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("data-cfhash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}t.parentNode.removeChild(t);}}catch(u){}}()/* ]]> */</script></span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Phone</span> 
+           <span class="uk-text-small uk-text-muted">(757)451-8313x69300</span> 
+          </div> </li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+     <div data-uk-filter="schamberger plc ,payton o'conner"> 
+      <div class="md-card md-card-hover"> 
+       <div class="md-card-head"> 
+        <div class="md-card-head-menu" data-uk-dropdown=""> 
+         <i class="md-icon material-icons"></i> 
+         <div class="uk-dropdown uk-dropdown-small uk-dropdown-flip"> 
+          <ul class="uk-nav"> 
+           <li><a href="#">Edit</a></li> 
+           <li><a href="#">Remove</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+        <div class="uk-text-center"> 
+         <img class="md-card-head-avatar" src="assets/img/avatars/avatar_05.png" alt="" /> 
+        </div> 
+        <h3 class="md-card-head-text uk-text-center"> Payton O'Conner <span class="uk-text-truncate">Schamberger PLC </span> </h3> 
+       </div> 
+       <div class="md-card-content"> 
+        <ul class="md-list"> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Info</span> 
+           <span class="uk-text-small uk-text-muted">Repudiandae et sed molestiae qui incidunt quas est aut.</span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Email</span> 
+           <span class="uk-text-small uk-text-muted uk-text-truncate"><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="5b3722373a7538343528323f32353e1b3c373e323833353e2975383436">[email&nbsp;protected]</a><script data-cfhash="f9e31" type="text/javascript">
+/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("data-cfhash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}t.parentNode.removeChild(t);}}catch(u){}}()/* ]]> */</script></span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Phone</span> 
+           <span class="uk-text-small uk-text-muted">+52(4)4374948655</span> 
+          </div> </li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+     <div data-uk-filter="schamberger plc ,mrs. shania weissnat"> 
+      <div class="md-card md-card-hover"> 
+       <div class="md-card-head"> 
+        <div class="md-card-head-menu" data-uk-dropdown=""> 
+         <i class="md-icon material-icons"></i> 
+         <div class="uk-dropdown uk-dropdown-small uk-dropdown-flip"> 
+          <ul class="uk-nav"> 
+           <li><a href="#">Edit</a></li> 
+           <li><a href="#">Remove</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+        <div class="uk-text-center"> 
+         <img class="md-card-head-avatar" src="assets/img/avatars/avatar_04.png" alt="" /> 
+        </div> 
+        <h3 class="md-card-head-text uk-text-center"> Mrs. Shania Weissnat <span class="uk-text-truncate">Schamberger PLC </span> </h3> 
+       </div> 
+       <div class="md-card-content"> 
+        <ul class="md-list"> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Info</span> 
+           <span class="uk-text-small uk-text-muted">Dolor voluptatem quo sit at qui aut adipisci laudantium ipsam ullam at.</span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Email</span> 
+           <span class="uk-text-small uk-text-muted uk-text-truncate"><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="1e6977707a727b6c306c7f6e767f7b725e677f767171307d7173">[email&nbsp;protected]</a><script data-cfhash="f9e31" type="text/javascript">
+/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("data-cfhash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}t.parentNode.removeChild(t);}}catch(u){}}()/* ]]> */</script></span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Phone</span> 
+           <span class="uk-text-small uk-text-muted">840.773.9338</span> 
+          </div> </li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+     <div data-uk-filter="strosin groupa,dr. malika littel"> 
+      <div class="md-card md-card-hover"> 
+       <div class="md-card-head"> 
+        <div class="md-card-head-menu" data-uk-dropdown=""> 
+         <i class="md-icon material-icons"></i> 
+         <div class="uk-dropdown uk-dropdown-small uk-dropdown-flip"> 
+          <ul class="uk-nav"> 
+           <li><a href="#">Edit</a></li> 
+           <li><a href="#">Remove</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+        <div class="uk-text-center"> 
+         <img class="md-card-head-avatar" src="assets/img/avatars/avatar_03.png" alt="" /> 
+        </div> 
+        <h3 class="md-card-head-text uk-text-center"> Dr. Malika Littel <span class="uk-text-truncate">Strosin Groupa</span> </h3> 
+       </div> 
+       <div class="md-card-content"> 
+        <ul class="md-list"> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Info</span> 
+           <span class="uk-text-small uk-text-muted">Eum veniam nobis ducimus itaque sed ullam dolores placeat blanditiis.</span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Email</span> 
+           <span class="uk-text-small uk-text-muted uk-text-truncate"><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="2f484a405d484a015c4c474e424d4a5d484a5d6f424a5d5b555f4e484e4c014c4042">[email&nbsp;protected]</a><script data-cfhash="f9e31" type="text/javascript">
+/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("data-cfhash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}t.parentNode.removeChild(t);}}catch(u){}}()/* ]]> */</script></span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Phone</span> 
+           <span class="uk-text-small uk-text-muted">1-692-559-8332</span> 
+          </div> </li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+     <div data-uk-filter="goodwin-nienow,mr. ryan grant jr."> 
+      <div class="md-card md-card-hover"> 
+       <div class="md-card-head"> 
+        <div class="md-card-head-menu" data-uk-dropdown=""> 
+         <i class="md-icon material-icons"></i> 
+         <div class="uk-dropdown uk-dropdown-small uk-dropdown-flip"> 
+          <ul class="uk-nav"> 
+           <li><a href="#">Edit</a></li> 
+           <li><a href="#">Remove</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+        <div class="uk-text-center"> 
+         <img class="md-card-head-avatar" src="assets/img/avatars/avatar_09.png" alt="" /> 
+        </div> 
+        <h3 class="md-card-head-text uk-text-center"> Mr. Ryan Grant Jr. <span class="uk-text-truncate">Goodwin-Nienow</span> </h3> 
+       </div> 
+       <div class="md-card-content"> 
+        <ul class="md-list"> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Info</span> 
+           <span class="uk-text-small uk-text-muted">Repellendus iste eum tenetur eos deserunt nostrum quis qui esse autem vero.</span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Email</span> 
+           <span class="uk-text-small uk-text-muted uk-text-truncate"><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="b3c0dedac7dbd2de9dded2cad1d6dfdff3c1c6dddcdfd5c0d7dcc7c7dac19ddcc1d4">[email&nbsp;protected]</a><script data-cfhash="f9e31" type="text/javascript">
+/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("data-cfhash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}t.parentNode.removeChild(t);}}catch(u){}}()/* ]]> */</script></span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Phone</span> 
+           <span class="uk-text-small uk-text-muted">(458)856-6932x73007</span> 
+          </div> </li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+     <div data-uk-filter="goodwin-nienow,miss amy hintz"> 
+      <div class="md-card md-card-hover"> 
+       <div class="md-card-head"> 
+        <div class="md-card-head-menu" data-uk-dropdown=""> 
+         <i class="md-icon material-icons"></i> 
+         <div class="uk-dropdown uk-dropdown-small uk-dropdown-flip"> 
+          <ul class="uk-nav"> 
+           <li><a href="#">Edit</a></li> 
+           <li><a href="#">Remove</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+        <div class="uk-text-center"> 
+         <img class="md-card-head-avatar" src="assets/img/avatars/avatar_10.png" alt="" /> 
+        </div> 
+        <h3 class="md-card-head-text uk-text-center"> Miss Amy Hintz <span class="uk-text-truncate">Goodwin-Nienow</span> </h3> 
+       </div> 
+       <div class="md-card-content"> 
+        <ul class="md-list"> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Info</span> 
+           <span class="uk-text-small uk-text-muted">Aliquid atque eius minima est eius ut atque adipisci ipsum accusamus ipsa reprehenderit.</span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Email</span> 
+           <span class="uk-text-small uk-text-muted uk-text-truncate"><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="a7cacecbc6c989d1c8cbcccac6c9e7cfc2cbcbc2d589c4c8ca">[email&nbsp;protected]</a><script data-cfhash="f9e31" type="text/javascript">
+/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("data-cfhash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}t.parentNode.removeChild(t);}}catch(u){}}()/* ]]> */</script></span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Phone</span> 
+           <span class="uk-text-small uk-text-muted">1-172-488-4707x10116</span> 
+          </div> </li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+     <div data-uk-filter="schamberger plc ,dr. myles goodwin"> 
+      <div class="md-card md-card-hover"> 
+       <div class="md-card-head"> 
+        <div class="md-card-head-menu" data-uk-dropdown=""> 
+         <i class="md-icon material-icons"></i> 
+         <div class="uk-dropdown uk-dropdown-small uk-dropdown-flip"> 
+          <ul class="uk-nav"> 
+           <li><a href="#">Edit</a></li> 
+           <li><a href="#">Remove</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+        <div class="uk-text-center"> 
+         <img class="md-card-head-avatar" src="assets/img/avatars/avatar_06.png" alt="" /> 
+        </div> 
+        <h3 class="md-card-head-text uk-text-center"> Dr. Myles Goodwin <span class="uk-text-truncate">Schamberger PLC </span> </h3> 
+       </div> 
+       <div class="md-card-content"> 
+        <ul class="md-list"> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Info</span> 
+           <span class="uk-text-small uk-text-muted">Omnis aut placeat architecto voluptas distinctio iure quod qui amet.</span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Email</span> 
+           <span class="uk-text-small uk-text-muted uk-text-truncate"><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="b6dadfd8d2d1c4d3d898ded7d8ddf6cfd7ded9d998d5d9db">[email&nbsp;protected]</a><script data-cfhash="f9e31" type="text/javascript">
+/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("data-cfhash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}t.parentNode.removeChild(t);}}catch(u){}}()/* ]]> */</script></span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Phone</span> 
+           <span class="uk-text-small uk-text-muted">1-093-202-4090</span> 
+          </div> </li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+     <div data-uk-filter="strosin groupa,gisselle gleason"> 
+      <div class="md-card md-card-hover"> 
+       <div class="md-card-head"> 
+        <div class="md-card-head-menu" data-uk-dropdown=""> 
+         <i class="md-icon material-icons"></i> 
+         <div class="uk-dropdown uk-dropdown-small uk-dropdown-flip"> 
+          <ul class="uk-nav"> 
+           <li><a href="#">Edit</a></li> 
+           <li><a href="#">Remove</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+        <div class="uk-text-center"> 
+         <img class="md-card-head-avatar" src="assets/img/avatars/avatar_05.png" alt="" /> 
+        </div> 
+        <h3 class="md-card-head-text uk-text-center"> Gisselle Gleason <span class="uk-text-truncate">Strosin Groupa</span> </h3> 
+       </div> 
+       <div class="md-card-content"> 
+        <ul class="md-list"> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Info</span> 
+           <span class="uk-text-small uk-text-muted">Praesentium sint inventore aut magni voluptas voluptatem culpa.</span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Email</span> 
+           <span class="uk-text-small uk-text-muted uk-text-truncate"><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="93fae0f2fabde0f0fbe6fffae0e7d3f4fef2faffbdf0fcfe">[email&nbsp;protected]</a><script data-cfhash="f9e31" type="text/javascript">
+/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("data-cfhash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}t.parentNode.removeChild(t);}}catch(u){}}()/* ]]> */</script></span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Phone</span> 
+           <span class="uk-text-small uk-text-muted">497-459-6459</span> 
+          </div> </li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+     <div data-uk-filter="goodwin-nienow,merl zieme"> 
+      <div class="md-card md-card-hover"> 
+       <div class="md-card-head"> 
+        <div class="md-card-head-menu" data-uk-dropdown=""> 
+         <i class="md-icon material-icons"></i> 
+         <div class="uk-dropdown uk-dropdown-small uk-dropdown-flip"> 
+          <ul class="uk-nav"> 
+           <li><a href="#">Edit</a></li> 
+           <li><a href="#">Remove</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+        <div class="uk-text-center"> 
+         <img class="md-card-head-avatar" src="assets/img/avatars/avatar_08.png" alt="" /> 
+        </div> 
+        <h3 class="md-card-head-text uk-text-center"> Merl Zieme <span class="uk-text-truncate">Goodwin-Nienow</span> </h3> 
+       </div> 
+       <div class="md-card-content"> 
+        <ul class="md-list"> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Info</span> 
+           <span class="uk-text-small uk-text-muted">Animi consequuntur quia est dolores cumque quidem nostrum aut minus hic dolorem.</span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Email</span> 
+           <span class="uk-text-small uk-text-muted uk-text-truncate"><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="bbd8c8d8d3d4ccdad7cfdec9fbc9d4dfc9d2dccedec195d8d4d6">[email&nbsp;protected]</a><script data-cfhash="f9e31" type="text/javascript">
+/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("data-cfhash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}t.parentNode.removeChild(t);}}catch(u){}}()/* ]]> */</script></span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Phone</span> 
+           <span class="uk-text-small uk-text-muted">(010)506-2658x3457</span> 
+          </div> </li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+     <div data-uk-filter="goodwin-nienow,wilfred nitzsche"> 
+      <div class="md-card md-card-hover"> 
+       <div class="md-card-head"> 
+        <div class="md-card-head-menu" data-uk-dropdown=""> 
+         <i class="md-icon material-icons"></i> 
+         <div class="uk-dropdown uk-dropdown-small uk-dropdown-flip"> 
+          <ul class="uk-nav"> 
+           <li><a href="#">Edit</a></li> 
+           <li><a href="#">Remove</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+        <div class="uk-text-center"> 
+         <img class="md-card-head-avatar" src="assets/img/avatars/avatar_01.png" alt="" /> 
+        </div> 
+        <h3 class="md-card-head-text uk-text-center"> Wilfred Nitzsche <span class="uk-text-truncate">Goodwin-Nienow</span> </h3> 
+       </div> 
+       <div class="md-card-content"> 
+        <ul class="md-list"> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Info</span> 
+           <span class="uk-text-small uk-text-muted">Dignissimos sit non voluptate natus iste id non enim praesentium aut repudiandae sed.</span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Email</span> 
+           <span class="uk-text-small uk-text-muted uk-text-truncate"><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="5b2f292238323a75373a292834351b302932287532353d34">[email&nbsp;protected]</a><script data-cfhash="f9e31" type="text/javascript">
+/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("data-cfhash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}t.parentNode.removeChild(t);}}catch(u){}}()/* ]]> */</script></span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Phone</span> 
+           <span class="uk-text-small uk-text-muted">(642)420-5501x1970</span> 
+          </div> </li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+     <div data-uk-filter="strosin groupa,prof. arlo buckridge iii"> 
+      <div class="md-card md-card-hover"> 
+       <div class="md-card-head"> 
+        <div class="md-card-head-menu" data-uk-dropdown=""> 
+         <i class="md-icon material-icons"></i> 
+         <div class="uk-dropdown uk-dropdown-small uk-dropdown-flip"> 
+          <ul class="uk-nav"> 
+           <li><a href="#">Edit</a></li> 
+           <li><a href="#">Remove</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+        <div class="uk-text-center"> 
+         <img class="md-card-head-avatar" src="assets/img/avatars/avatar_08.png" alt="" /> 
+        </div> 
+        <h3 class="md-card-head-text uk-text-center"> Prof. Arlo Buckridge III <span class="uk-text-truncate">Strosin Groupa</span> </h3> 
+       </div> 
+       <div class="md-card-content"> 
+        <ul class="md-list"> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Info</span> 
+           <span class="uk-text-small uk-text-muted">Voluptate qui aut voluptate accusantium voluptatem accusantium consequatur id facilis.</span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Email</span> 
+           <span class="uk-text-small uk-text-muted uk-text-truncate"><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="bbd6dad5cfde95dcd2d4cddad5d5d2fbdcd6dad2d795d8d4d6">[email&nbsp;protected]</a><script data-cfhash="f9e31" type="text/javascript">
+/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("data-cfhash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}t.parentNode.removeChild(t);}}catch(u){}}()/* ]]> */</script></span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Phone</span> 
+           <span class="uk-text-small uk-text-muted">1-331-511-9792x931</span> 
+          </div> </li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+     <div data-uk-filter="strosin groupa,antonia wilderman"> 
+      <div class="md-card md-card-hover"> 
+       <div class="md-card-head"> 
+        <div class="md-card-head-menu" data-uk-dropdown=""> 
+         <i class="md-icon material-icons"></i> 
+         <div class="uk-dropdown uk-dropdown-small uk-dropdown-flip"> 
+          <ul class="uk-nav"> 
+           <li><a href="#">Edit</a></li> 
+           <li><a href="#">Remove</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+        <div class="uk-text-center"> 
+         <img class="md-card-head-avatar" src="assets/img/avatars/avatar_01.png" alt="" /> 
+        </div> 
+        <h3 class="md-card-head-text uk-text-center"> Antonia Wilderman <span class="uk-text-truncate">Strosin Groupa</span> </h3> 
+       </div> 
+       <div class="md-card-content"> 
+        <ul class="md-list"> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Info</span> 
+           <span class="uk-text-small uk-text-muted">Alias in rem minus deserunt sequi odit voluptatem repellat ipsum enim saepe consectetur.</span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Email</span> 
+           <span class="uk-text-small uk-text-muted uk-text-truncate"><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="ea8e8b989d8384dfd3aa82859e878b8386c4898587">[email&nbsp;protected]</a><script data-cfhash="f9e31" type="text/javascript">
+/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("data-cfhash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}t.parentNode.removeChild(t);}}catch(u){}}()/* ]]> */</script></span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Phone</span> 
+           <span class="uk-text-small uk-text-muted">254.200.5371</span> 
+          </div> </li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+     <div data-uk-filter="goodwin-nienow,tierra cole"> 
+      <div class="md-card md-card-hover"> 
+       <div class="md-card-head"> 
+        <div class="md-card-head-menu" data-uk-dropdown=""> 
+         <i class="md-icon material-icons"></i> 
+         <div class="uk-dropdown uk-dropdown-small uk-dropdown-flip"> 
+          <ul class="uk-nav"> 
+           <li><a href="#">Edit</a></li> 
+           <li><a href="#">Remove</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+        <div class="uk-text-center"> 
+         <img class="md-card-head-avatar" src="assets/img/avatars/avatar_09.png" alt="" /> 
+        </div> 
+        <h3 class="md-card-head-text uk-text-center"> Tierra Cole <span class="uk-text-truncate">Goodwin-Nienow</span> </h3> 
+       </div> 
+       <div class="md-card-content"> 
+        <ul class="md-list"> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Info</span> 
+           <span class="uk-text-small uk-text-muted">Dolor dolorum et assumenda omnis corporis odio sit consequatur qui est natus.</span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Email</span> 
+           <span class="uk-text-small uk-text-muted uk-text-truncate"><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="563e373a333f313e61651625353e23252233247835393b">[email&nbsp;protected]</a><script data-cfhash="f9e31" type="text/javascript">
+/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("data-cfhash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}t.parentNode.removeChild(t);}}catch(u){}}()/* ]]> */</script></span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Phone</span> 
+           <span class="uk-text-small uk-text-muted">(012)642-9016x7372</span> 
+          </div> </li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+     <div data-uk-filter="schamberger plc ,trudie jacobs"> 
+      <div class="md-card md-card-hover"> 
+       <div class="md-card-head md-bg-cyan-600"> 
+        <div class="md-card-head-menu" data-uk-dropdown=""> 
+         <i class="md-icon material-icons md-icon-light"></i> 
+         <div class="uk-dropdown uk-dropdown-small uk-dropdown-flip"> 
+          <ul class="uk-nav"> 
+           <li><a href="#">Edit</a></li> 
+           <li><a href="#">Remove</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+        <div class="uk-text-center"> 
+         <img class="md-card-head-avatar" src="assets/img/avatars/avatar_03.png" alt="" /> 
+        </div> 
+        <h3 class="md-card-head-text uk-text-center md-color-white"> Trudie Jacobs <span class="uk-text-truncate">Schamberger PLC </span> </h3> 
+       </div> 
+       <div class="md-card-content"> 
+        <ul class="md-list"> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Info</span> 
+           <span class="uk-text-small uk-text-muted">Illum occaecati qui ut culpa voluptatum dolorem dolore ducimus consequatur odit est nihil praesentium.</span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Email</span> 
+           <span class="uk-text-small uk-text-muted uk-text-truncate"><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="f99c9498978c9c95d79198979db99e94989095d79a9694">[email&nbsp;protected]</a><script data-cfhash="f9e31" type="text/javascript">
+/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("data-cfhash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}t.parentNode.removeChild(t);}}catch(u){}}()/* ]]> */</script></span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Phone</span> 
+           <span class="uk-text-small uk-text-muted">1-500-552-0707x1024</span> 
+          </div> </li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+     <div data-uk-filter="goodwin-nienow,caesar gutmann"> 
+      <div class="md-card md-card-hover"> 
+       <div class="md-card-head"> 
+        <div class="md-card-head-menu" data-uk-dropdown=""> 
+         <i class="md-icon material-icons"></i> 
+         <div class="uk-dropdown uk-dropdown-small uk-dropdown-flip"> 
+          <ul class="uk-nav"> 
+           <li><a href="#">Edit</a></li> 
+           <li><a href="#">Remove</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+        <div class="uk-text-center"> 
+         <img class="md-card-head-avatar" src="assets/img/avatars/avatar_09.png" alt="" /> 
+        </div> 
+        <h3 class="md-card-head-text uk-text-center"> Caesar Gutmann <span class="uk-text-truncate">Goodwin-Nienow</span> </h3> 
+       </div> 
+       <div class="md-card-content"> 
+        <ul class="md-list"> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Info</span> 
+           <span class="uk-text-small uk-text-muted">Labore autem ipsa autem quod accusamus quae est excepturi voluptatem non ut.</span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Email</span> 
+           <span class="uk-text-small uk-text-muted uk-text-truncate"><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="92f7e4f7e0f7e6e6f7bce8f0fdfcf1f3f9d2f9e0f7fbf5f7e0bcfde0f5">[email&nbsp;protected]</a><script data-cfhash="f9e31" type="text/javascript">
+/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("data-cfhash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}t.parentNode.removeChild(t);}}catch(u){}}()/* ]]> */</script></span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Phone</span> 
+           <span class="uk-text-small uk-text-muted">765.482.0997</span> 
+          </div> </li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+     <div data-uk-filter="goodwin-nienow,alessandro jacobson"> 
+      <div class="md-card md-card-hover"> 
+       <div class="md-card-head"> 
+        <div class="md-card-head-menu" data-uk-dropdown=""> 
+         <i class="md-icon material-icons"></i> 
+         <div class="uk-dropdown uk-dropdown-small uk-dropdown-flip"> 
+          <ul class="uk-nav"> 
+           <li><a href="#">Edit</a></li> 
+           <li><a href="#">Remove</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+        <div class="uk-text-center"> 
+         <img class="md-card-head-avatar" src="assets/img/avatars/avatar_04.png" alt="" /> 
+        </div> 
+        <h3 class="md-card-head-text uk-text-center"> Alessandro Jacobson <span class="uk-text-truncate">Goodwin-Nienow</span> </h3> 
+       </div> 
+       <div class="md-card-content"> 
+        <ul class="md-list"> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Info</span> 
+           <span class="uk-text-small uk-text-muted">Quas facere officiis pariatur asperiores nihil laudantium aperiam.</span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Email</span> 
+           <span class="uk-text-small uk-text-muted uk-text-truncate"><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="651f090016060d25080a0a17004b070c1f">[email&nbsp;protected]</a><script data-cfhash="f9e31" type="text/javascript">
+/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("data-cfhash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}t.parentNode.removeChild(t);}}catch(u){}}()/* ]]> */</script></span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Phone</span> 
+           <span class="uk-text-small uk-text-muted">557.542.6160</span> 
+          </div> </li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+     <div data-uk-filter="strosin groupa,dr. kaleb mosciski dvm"> 
+      <div class="md-card md-card-hover"> 
+       <div class="md-card-head"> 
+        <div class="md-card-head-menu" data-uk-dropdown=""> 
+         <i class="md-icon material-icons"></i> 
+         <div class="uk-dropdown uk-dropdown-small uk-dropdown-flip"> 
+          <ul class="uk-nav"> 
+           <li><a href="#">Edit</a></li> 
+           <li><a href="#">Remove</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+        <div class="uk-text-center"> 
+         <img class="md-card-head-avatar" src="assets/img/avatars/avatar_06.png" alt="" /> 
+        </div> 
+        <h3 class="md-card-head-text uk-text-center"> Dr. Kaleb Mosciski DVM <span class="uk-text-truncate">Strosin Groupa</span> </h3> 
+       </div> 
+       <div class="md-card-content"> 
+        <ul class="md-list"> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Info</span> 
+           <span class="uk-text-small uk-text-muted">Sint magni qui ut nulla sint qui asperiores quibusdam iusto.</span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Email</span> 
+           <span class="uk-text-small uk-text-muted uk-text-truncate"><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="1b78787a686872755b69726b6b727535787476">[email&nbsp;protected]</a><script data-cfhash="f9e31" type="text/javascript">
+/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("data-cfhash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}t.parentNode.removeChild(t);}}catch(u){}}()/* ]]> */</script></span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Phone</span> 
+           <span class="uk-text-small uk-text-muted">844-876-6508x96603</span> 
+          </div> </li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+     <div data-uk-filter="strosin groupa,keyon kuhlman"> 
+      <div class="md-card md-card-hover"> 
+       <div class="md-card-head"> 
+        <div class="md-card-head-menu" data-uk-dropdown=""> 
+         <i class="md-icon material-icons"></i> 
+         <div class="uk-dropdown uk-dropdown-small uk-dropdown-flip"> 
+          <ul class="uk-nav"> 
+           <li><a href="#">Edit</a></li> 
+           <li><a href="#">Remove</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+        <div class="uk-text-center"> 
+         <img class="md-card-head-avatar" src="assets/img/avatars/avatar_03.png" alt="" /> 
+        </div> 
+        <h3 class="md-card-head-text uk-text-center"> Keyon Kuhlman <span class="uk-text-truncate">Strosin Groupa</span> </h3> 
+       </div> 
+       <div class="md-card-content"> 
+        <ul class="md-list"> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Info</span> 
+           <span class="uk-text-small uk-text-muted">Est consequatur rerum quae ratione facilis fugiat tempore ut sint repellat quia.</span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Email</span> 
+           <span class="uk-text-small uk-text-muted uk-text-truncate"><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="8de4e5e8fefee8e1cdeae0ece4e1a3eee2e0">[email&nbsp;protected]</a><script data-cfhash="f9e31" type="text/javascript">
+/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("data-cfhash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}t.parentNode.removeChild(t);}}catch(u){}}()/* ]]> */</script></span> 
+          </div> </li> 
+         <li> 
+          <div class="md-list-content"> 
+           <span class="md-list-heading">Phone</span> 
+           <span class="uk-text-small uk-text-muted">852.462.2303x9702</span> 
+          </div> </li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="md-fab-wrapper"> 
+    <a class="md-fab md-fab-accent" href="#"> <i class="material-icons"></i> </a> 
+   </div> 
+   <!-- google web fonts --> 
+   <script>
+        WebFontConfig = {
+            google: {
+                families: [
+                    'Source+Code+Pro:400,700:latin',
+                    'Roboto:400,300,500,700,400italic:latin'
+                ]
+            }
+        };
+        (function() {
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+            '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        })();
+    </script> 
+   <!-- common functions --> 
+   <script src="assets/js/common.min.js"></script> 
+   <!-- uikit functions --> 
+   <script src="assets/js/uikit_custom.min.js"></script> 
+   <!-- altair common functions/helpers --> 
+   <script src="assets/js/altair_admin_common.min.js"></script> 
+   <!-- page specific plugins --> 
+   <!--  contact list functions --> 
+   <script src="assets/js/pages/page_contact_list.min.js"></script> 
+   <script>
+        $(function() {
+            // enable hires images
+            altair_helpers.retina_images();
+            // fastClick (touch devices)
+            if(Modernizr.touch) {
+                FastClick.attach(document.body);
+            }
+        });
+    </script> 
+   <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-65191727-1', 'auto');
+        ga('send', 'pageview');
+    </script> 
+   <div id="style_switcher"> 
+    <div id="style_switcher_toggle">
+     <i class="material-icons"></i>
+    </div> 
+    <div class="uk-margin-medium-bottom"> 
+     <h4 class="heading_c uk-margin-bottom">Colors</h4> 
+     <ul class="switcher_app_themes" id="theme_switcher"> 
+      <li class="app_style_default active_theme" data-app-theme=""> <span class="app_color_main"></span> <span class="app_color_accent"></span> </li> 
+      <li class="switcher_theme_a" data-app-theme="app_theme_a"> <span class="app_color_main"></span> <span class="app_color_accent"></span> </li> 
+      <li class="switcher_theme_b" data-app-theme="app_theme_b"> <span class="app_color_main"></span> <span class="app_color_accent"></span> </li> 
+      <li class="switcher_theme_c" data-app-theme="app_theme_c"> <span class="app_color_main"></span> <span class="app_color_accent"></span> </li> 
+      <li class="switcher_theme_d" data-app-theme="app_theme_d"> <span class="app_color_main"></span> <span class="app_color_accent"></span> </li> 
+      <li class="switcher_theme_e" data-app-theme="app_theme_e"> <span class="app_color_main"></span> <span class="app_color_accent"></span> </li> 
+      <li class="switcher_theme_f" data-app-theme="app_theme_f"> <span class="app_color_main"></span> <span class="app_color_accent"></span> </li> 
+      <li class="switcher_theme_g" data-app-theme="app_theme_g"> <span class="app_color_main"></span> <span class="app_color_accent"></span> </li> 
+     </ul> 
+    </div> 
+    <div class="uk-visible-large"> 
+     <h4 class="heading_c">Sidebar</h4> 
+     <p> <input type="checkbox" name="style_sidebar_mini" id="style_sidebar_mini" data-md-icheck="" /> <label for="style_sidebar_mini" class="inline-label">Mini Sidebar</label> </p> 
+    </div> 
+   </div> 
+   <script>
+    $(function() {
+        var $switcher = $('#style_switcher'),
+            $switcher_toggle = $('#style_switcher_toggle'),
+            $theme_switcher = $('#theme_switcher'),
+            $mini_sidebar_toggle = $('#style_sidebar_mini');
+
+        $switcher_toggle.click(function(e) {
+            e.preventDefault();
+            $switcher.toggleClass('switcher_active');
+        });
+
+        $theme_switcher.children('li').click(function(e) {
+            e.preventDefault();
+            var $this = $(this),
+                this_theme = $this.attr('data-app-theme');
+
+            $theme_switcher.children('li').removeClass('active_theme');
+            $(this).addClass('active_theme');
+            $('body')
+                .removeClass('app_theme_a app_theme_b app_theme_c app_theme_d app_theme_e app_theme_f app_theme_g')
+                .addClass(this_theme);
+
+            if(this_theme == '') {
+                localStorage.removeItem('altair_theme');
+            } else {
+                localStorage.setItem("altair_theme", this_theme);
+            }
+
+        });
+
+        // change input's state to checked if mini sidebar is active
+        if((localStorage.getItem("altair_sidebar_mini") !== null && localStorage.getItem("altair_sidebar_mini") == '1') || $('body').hasClass('sidebar_mini')) {
+            $mini_sidebar_toggle.iCheck('check');
+        }
+
+        // toggle mini sidebar
+        $mini_sidebar_toggle
+            .on('ifChecked', function(event){
+                $switcher.removeClass('switcher_active');
+                localStorage.setItem("altair_sidebar_mini", '1');
+                location.reload(true);
+            })
+            .on('ifUnchecked', function(event){
+                $switcher.removeClass('switcher_active');
+                localStorage.removeItem('altair_sidebar_mini');
+                location.reload(true);
+            });
+
+        // hide style switcher
+        $document.on('click keyup', function(e) {
+            if( $switcher.hasClass('switcher_active') ) {
+                if (
+                    ( !$(e.target).closest($switcher).length )
+                    || ( e.keyCode == 27 )
+                ) {
+                    $switcher.removeClass('switcher_active');
+                }
+            }
+        });
+
+        if(localStorage.getItem("altair_theme") !== null) {
+            $theme_switcher.children('li[data-app-theme='+localStorage.getItem("altair_theme")+']').click();
+        }
+    });
+</script> 
+  </div>
+ </body>
+</html>

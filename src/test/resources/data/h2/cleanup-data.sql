@@ -1,0 +1,12 @@
+delete from ss_task;
+delete from ss_user;
+delete from ss_task;
+delete from ss_user;
+delete from t_te_course;
+delete from t_te_project;
+delete from t_te_make_exam;
+delete from t_te_exam_question;
+delete from t_te_select_items;
+delete from t_te_question_exampaper;
+delete from t_te_exam_result;
+delete from t_te_exam_paper_result;

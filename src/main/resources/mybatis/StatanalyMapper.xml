@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.school.exam.repository.StatanalyDao">
+	<select id="statanalyQueryByExamId" parameterType="long" resultType="com.school.exam.entity.StatanalyViewVO">
+		select a.scale,e.question_cont as questionCont,e.id,e.type,e.question_score as questionScore from 
+		(select sum(question_score>1
+		) /count(id)*100 as scale ,exam_question_id
+		from t_te_exam_result 
+		<where>
+			depd_id=#{examId}  
+		</where>
+		group by exam_question_id) a
+		left join t_te_exam_question e on a. exam_question_id=e.id 
+	</select>
+	<select id="statanalyDetailById" parameterType="long" resultType="com.school.exam.entity.StatanalyViewVO">
+		select person_name as personName,(question_score>1) as isOk 
+		from t_te_exam_result 
+		<where>
+			depd_id=#{examId}  
+			and exam_question_id=#{id}
+		</where> 
+	</select>
+</mapper>
