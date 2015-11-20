@@ -10,6 +10,16 @@
  <!-- kendo UI -->
     <link rel="stylesheet" href="${ctx}/static/altair/bower_components/kendo-ui/styles/kendo.common-material.min.css" />
     <link rel="stylesheet" href="${ctx}/static/altair/bower_components/kendo-ui/styles/kendo.material.min.css" />
+
+    <script>
+        function uploadFile(){
+            var uploadForm = document.getElementById("uploadForm");
+            if(undefined != uploadForm){
+                modal = UIkit.modal.blockUI('<div class=\'uk-text-center\'><div class="md-preloader"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="16" width="16" viewbox="0 0 75 75"><circle cx="37.5" cy="37.5" r="33.5" stroke-width="8" /></svg></div> 导入题库...</div>');
+                uploadForm.submit();
+            }
+        }
+    </script>
 </head>
 <body>
 	<c:if test="${not empty message}">
@@ -56,25 +66,25 @@
        </div>
       </div>
        </form>
-        <form name="uploadForm" class="form-search " action="${ctx}/question/upload/${projectId}" method="post" enctype="multipart/form-data">
-            <input type="hidden" name="projectId"  value="${projectId}">
-            <div class="uk-grid">
-                <div class="uk-width-1-1">
-                    <div class="md-btn md-btn-primary">
-                        Select
-                        <input type="file"  name="file">
-                        <button type="submit" class="md-btn md-btn-primary uk-margin-small-top">upload</button>
-                    </div>
-                </div>
-            </div>
-        </form>
      </div>
  </div>
 <div class="md-card uk-margin-medium-bottom">
     <div class="md-card-content">
 		<c:if test="${null!=projectId}">
 	    <div class="row-fluid" align="right">
-				<a href="${ctx }/question/create/${projectId}" class="md-btn md-btn-flat md-btn-flat-primary" id="add_btn" >新增试题</a>
+
+            <form name="uploadForm" id="uploadForm" class="form-search " action="${ctx}/question/upload/${projectId}" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="projectId"  value="${projectId}">
+                <div class="uk-grid">
+                    <div class="uk-width-1-1">
+                        <div class="uk-form-file uk-text-primary">
+                            题库导入
+                            <input type="file"  name="file" id="file" onchange="uploadFile()">
+                        </div>
+                        <a href="${ctx }/question/create/${projectId}" class="md-btn md-btn-flat md-btn-flat-primary" id="add_btn" >新增试题</a>
+                    </div>
+                </div>
+            </form>
 	    </div>
 	    </c:if>
 	    <div class="uk-accordion" data-uk-accordion="" style="width:100%"> 
@@ -111,5 +121,6 @@
 		</div>
 	</div>
 </div>
+
 </body>
 </html>
