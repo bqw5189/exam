@@ -6,49 +6,48 @@
 	<title>编辑问题</title>
 </head>
 <body>
-	<form id="inputForm" action="${ctx}/question/create" method="post" class="uk-form-stacked">
-		<input type="hidden" name="id" value="${question.id}"/>
-		<input type="hidden" name="projectId" value="${question.project.id}"/>
-		<fieldset>
-			<legend><small>试题管理</small></legend>
-			<div class="md-card"> 
-     			<div class="md-card-content large-padding"> 
-     			<fieldset>
-     			<legend><small>试题信息</small></legend>
-     			 
-				     <div class="uk-width-medium-1-2"> 
-			         <div class="uk-form-row parsley-row"> 
-			          <label for="gender" class="uk-form-label">类型<span class="req">*</span></label> 
-			          <span class="icheck-inline"> <input type="radio" name="type" id="type1" value="1" checked="checked"/> <label for="val_radio_male" class="inline-label">单选</label> </span> 
-			          <span class="icheck-inline"> <input type="radio" name="type" id="type2" value="2"/> <label for="val_radio_female" class="inline-label">多选</label> </span> 
-			         </div> 
-			        </div> 
-			        <div class="uk-width-1-1"> 
-			         <div class="parsley-row"> 
-			          <label for="settings_page_description">问题内容<span class="req">*</span></label>
-			          <textarea class="md-input" name="questionCont" id="settings_page_description" cols="35" rows="4" required="">
-		              	${question.questionCont}
-		              </textarea> 
-			         </div> 
-			        </div> 
-			        
-			       <br/>
-					<div class="uk-width-1-1"> 
-				        <div class="parsley-row">
-				        	<label for="questionScore">分值</label>
-				        	<input type="text"  value="${question.questionScore}" data-inputmask-showmaskonhover="false" data-inputmask="'alias': 'numeric', 'groupSeparator': ',', 'autoGroup': true, 'number': 0, 'digitsOptional': false, 'prefix': '', 'placeholder': '100'" id="questionScore" name="questionScore" class="md-input masked_input" style="text-align: right;" required max="100"><span class="md-input-bar"></span>
-				        </div> 
-			         
-			       </div>
-					<div align="center">
-						<input id="submit_btn" class="md-btn md-btn-primary" type="submit" value="提交"/>&nbsp;	
-						<input id="cancel_btn" class="md-btn md-btn-primary" type="button" value="返回" onclick="history.back()"/>
-					</div>
-				</fieldset>
-			</div>
-		</div>
-		</fieldset>
-	</form>
+<h3 class="heading_b uk-margin-bottom">试题管理 -> 试题信息</h3>
+<div class="md-card">
+    <div class="md-card-content large-padding">
+        <form id="inputForm" action="${ctx}/question/create" method="post" class="uk-form-stacked">
+            <input type="hidden" name="id" value="${question.id}"/>
+            <input type="hidden" name="projectId" value="${question.project.id}"/>
+
+
+            <div class="uk-grid" data-uk-grid-margin="">
+                <div class="uk-width-medium-1-1">
+                    <div class="uk-form-row parsley-row">
+                        <label for="type" class="uk-form-label">题型<span class="req">*</span></label>
+                        <span class="icheck-inline"> <input type="radio" name="type" id="val_radio_type1" value="1" data-md-icheck="" required="" /> <label for="val_radio_type1" class="inline-label">单选</label> </span>
+                        <span class="icheck-inline"> <input type="radio" name="type" id="val_radio_type2" value="2" data-md-icheck="" /> <label for="val_radio_type2" class="inline-label">多选</label> </span>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-grid">
+                <div class="uk-width-1-1">
+                    <div class="parsley-row">
+                        <label for="settings_page_description">问题内容</label>
+                        <textarea class="md-input" name="questionCont" id="settings_page_description" required="" cols="10" rows="8" data-parsley-trigger="keyup" data-parsley-minlength="5" data-parsley-maxlength="100" data-parsley-validation-threshold="10" data-parsley-minlength-message="">${question.questionCont}</textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-grid" data-uk-grid-margin="">
+
+                <div class="uk-width-medium-1-1">
+                    <div class="parsley-row">
+                        <label for="questionScore">分值</label>
+                        <input type="text"  value="${question.questionScore}" data-inputmask-showmaskonhover="false" data-inputmask="'alias': 'numeric', 'groupSeparator': ',', 'autoGroup': true, 'number': 1, 'digitsOptional': false, 'prefix': '', 'placeholder': '100'" id="questionScore" name="questionScore" class="md-input masked_input" style="text-align: right;" required max="100"><span class="md-input-bar"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-grid">
+                <div class="uk-width-1-1">
+                    <input id="submit_btn" class="md-btn md-btn-primary" type="submit" value="提交"/>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 	 
  
 	<script src="${ctx}/static/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
