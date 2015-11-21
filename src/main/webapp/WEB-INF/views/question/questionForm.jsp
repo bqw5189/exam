@@ -25,7 +25,7 @@
 			        </div> 
 			        <div class="uk-width-1-1"> 
 			         <div class="parsley-row"> 
-			          <label for="message">问题内容<span class="req">*</span></label> 
+			          <label for="settings_page_description">问题内容<span class="req">*</span></label>
 			          <textarea class="md-input" name="questionCont" id="settings_page_description" cols="35" rows="4" required="">
 		              	${question.questionCont}
 		              </textarea> 
@@ -59,7 +59,15 @@
 		$(document).ready(function(){
 			$maskedInput = $(".masked_input"),
 	        $maskedInput.length && $maskedInput.inputmask()
-			
+            var i = $("#inputForm");
+            i.parsley().on("form:validated",
+                    function() {
+                        altair_md.update_input(i.find(".md-input-danger"));
+
+                    }).on("field:validated",
+                    function(i) {
+                        $(i.$element).hasClass("md-input") && altair_md.update_input($(i.$element))
+                    })
 			/* var i = $("#inputForm");
 		    i.parsley().on("form:validated",
 		    function() {

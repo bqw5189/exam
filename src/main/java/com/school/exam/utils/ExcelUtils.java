@@ -38,7 +38,7 @@ public class ExcelUtils {
 
             teExamQuestionVO.setQuestionCont(question.get(1));
             teExamQuestionVO.setState(1);
-            teExamQuestionVO.setType(1);
+            teExamQuestionVO.setType("单选".equals(question.get(0))?1:2);
             teExamQuestionVO.setQuestionScore(Double.parseDouble(StringUtils.defaultString(question.get(2), "5")));
 
             List<String> answerIndex = CollectionUtils.arrayToList(question.get(4).split("/"));

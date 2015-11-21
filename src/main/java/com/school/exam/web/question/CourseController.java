@@ -130,7 +130,7 @@ public class CourseController {
         return "redirect:/question/"+projectId;
     }
 	@RequestMapping(value = "update/{id}", method = RequestMethod.GET)
-	public String updateForm(@PathVariable(value="id") Long id, Model model) throws JsonProcessingException {
+	public String updateQuestion(@PathVariable(value="id") Long id, Model model) throws JsonProcessingException {
 		TeExamQuestionVO question = (TeExamQuestionVO) courseService.getQuestion(id);
 		model.addAttribute("question", question);
 		//ObjectMapper objectMapper = new ObjectMapper();
@@ -221,6 +221,20 @@ public class CourseController {
 	@RequestMapping(value="deleteitem/{id}")
 	public String deleteItems(@PathVariable("id") Long id, RedirectAttributes redirectAttributes,ServletRequest request) {
 		String questionId = request.getParameter("questionId");
+        TeExamQuestionVO questionVO = questionService.getQuestionById(Long.parseLong(questionId));
+        String answer = questionVO.getQuestionAnswerId();
+        StringBuffer sb = new StringBuffer();
+        if(answer.contains(id.toString())){
+            String[] s = answer.split(",");
+            for(String sigleId:s){
+                if(!sigleId.equals(id.toString())){
+                    sb.append(sigleId + ",");
+                }
+            }
+            String qai = sb.toString();
+            questionVO.setQuestionAnswerId(qai.substring(0,qai.length()-1));
+            questionService.saveQuestion(questionVO);
+        }
 		courseService.getSelectItemDao().delete(id);
 		
 		redirectAttributes.addFlashAttribute("message", "删除成功");

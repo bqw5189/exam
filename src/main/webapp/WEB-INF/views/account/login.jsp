@@ -53,18 +53,23 @@
             </div>
             
             <form id="loginForm" action="${ctx}/login" method="post" class="uk-form-stacked">
-                
-                <div class="parsley-row"> 
-                    <label for="username">登录名</label>
-                    <input class="md-input" type="text" id="username" name="username" required=""/>
+                <div class="uk-grid" data-uk-grid-margin="">
+                <div class="uk-width-medium-1-1">
+                    <div class="parsley-row">
+                        <label for="username">登录名</label>
+                        <input class="md-input" type="text" id="username" name="username" required=""/>
+                    </div>
                 </div>
-                <div class="parsley-row">
-                    <label for="password">密码</label>
-                    <input class="md-input" type="password" id="password" name="password" required/>
+                <div class="uk-width-medium-1-1">
+                    <div class="parsley-row">
+                        <label for="password">密码</label>
+                        <input class="md-input" type="password" id="password" name="password" required/>
+                    </div>
                 </div>
+                    </div>
                  <div class="uk-margin-medium-top">
-                	<label class="checkbox" for="rememberMe"><input type="checkbox" id="rememberMe" name="rememberMe"/> 记住我</label>
-                	<a href="#" id="login_help_show" class="uk-float-right">帮助?</a>
+                     <span class="icheck-inline"> <input type="checkbox" id="rememberMe" name="rememberMe" data-md-icheck="" /> <label for="rememberMe" class="inline-label">记住我</label> </span>
+                     <a href="#" id="login_help_show" class="uk-float-right">帮助?</a>
                 </div>
                 <div class="uk-margin-medium-top" align="center">
                     <button type="submit" class="md-btn md-btn-primary">登陆</button>
@@ -78,19 +83,19 @@
 	     <form id="inputForm" action="${ctx}/register" method="post"> 
 	     
 	      <div class="parsley-row"> 
-	       <label for="register_username">登录名</label> 
+	       <label for="loginName">登录名</label>
 	       <input class="md-input" type="text" id="loginName" name="loginName" required=""/> 
 	      </div> 
 	      <div class="parsley-row"> 
-	       <label for="register_username">用户名</label> 
+	       <label for="name">用户名</label>
 	       <input class="md-input" type="text" id="name" name="name" required=""/> 
 	      </div> 
 	      <div class="parsley-row"> 
-	       <label for="register_password">密码</label> 
+	       <label for="plainPassword">密码</label>
 	       <input class="md-input" type="password" id="plainPassword" name="plainPassword" required=""/> 
 	      </div> 
 	      <div class="parsley-row"> 
-	       <label for="register_password_repeat">确认密码</label> 
+	       <label for="confirmPassword">确认密码</label>
 	       <input class="md-input" type="password" id="confirmPassword" name="confirmPassword" required=""/> 
 	      </div> 
 	      <!-- div class="uk-form-row"> 

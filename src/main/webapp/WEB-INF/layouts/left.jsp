@@ -12,6 +12,7 @@
 
 <c:set var="user" value="${ctx}/admin/user"/>
 <c:set var="question" value="${ctx}/question"/>
+<c:set var="course" value="${ctx}/course"/>
 
 <!-- main sidebar -->
 <aside id="sidebar_main">
@@ -33,6 +34,7 @@
             <shiro:hasRole name="admin">
                 <li class="<c:if test="${fn:contains(uri,user)}">current_section</c:if>"> <a href="${user}"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">用户管理</span> </a></li>
                 <li class="<c:if test="${fn:contains(uri,question)}">current_section</c:if>"> <a href="${question}"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">试题管理</span> </a></li>
+                <li class="<c:if test="${fn:contains(uri,question)}">current_section</c:if>"> <a href="${course}"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">课程项目管理</span> </a></li>
                 <li class="divider"></li>
             </shiro:hasRole>
             <shiro:hasRole name="user">

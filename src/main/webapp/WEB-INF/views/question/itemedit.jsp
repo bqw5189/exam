@@ -15,7 +15,7 @@
      			<div class="md-card-content large-padding"> 
 			        <div class="uk-width-1-1"> 
 			         <div class="parsley-row"> 
-			          <label for="message">选项内容<span class="req">*</span></label> 
+			          <label for="settings_page_description">选项内容<span class="req">*</span></label>
 			          <textarea class="md-input" name="selectCont" id="settings_page_description" cols="35" rows="4" required="">
 		              	${item.selectCont}
 		              </textarea> 

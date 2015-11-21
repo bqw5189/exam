@@ -10,7 +10,7 @@
 <body>
 <div id="mainPage">
 
-	<form id="inputForm" action="${ctx}/makexam/create" method="post" class="form-horizontal">
+	<form id="inputForm" onsubmit="return check()"  action="${ctx}/makexam/create" method="post" class="form-horizontal">
  		<input type="hidden" name="id" value="${makexam.id}"/>
  		<input type="hidden" name="questionIds" id="questionIds" value="${questionIds }"/>
 		<input type="hidden" name="state" value="${makexam.state}"/>
@@ -66,11 +66,44 @@
 			//聚焦第一个输入框
 			//$("#task_title").focus();
 			//为inputForm注册validate函数
-		//	$("#inputForm").validate();
+			//$("#inputForm").validate({
+            //    rules : {
+            //        examName:{
+            //            required:true,
+             //           minlength:"3"
+           //         },
+           //         examRemark:{
+           //             required:true,
+           //             minlength:"10"
+           //         }
+           //     },
+
+           //     messages : {
+           //         required: "不可为空",
+           //         minlength: $.validator.format("请输入至少 {0} 个文字")
+           //     }
+
+           // });
 			selectQuestion();
 		   });
+
+        function check(){
+            var examname = document.getElementById("user_edit_uname_control").value;
+            var ids = document.getElementById("questionIds").value;
+            if(examname==''||examname.length==0){
+                alert("请添加试题名称");
+                return false;
+            }else if(ids==''||ids.length==0){
+                alert("请添加试题");
+                return false;
+            }else{
+                return true;
+            }
+        }
+
 		function selectQuestion(){
 			var ids = document.getElementById("questionIds").value;
+            alert(ids);
 			var questionIds = (""==ids ? "null" : ids);
 			$.ajax({
 				url:"${reqUrl}/api/v1/ajaxmakexam/selectquestion/"+questionIds,

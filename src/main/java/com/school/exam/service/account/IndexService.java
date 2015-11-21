@@ -11,6 +11,8 @@ import java.util.Map;
 import javax.transaction.Transactional;
 
 import org.hibernate.internal.util.collections.CollectionHelper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import com.school.exam.entity.IndexShowVO;
@@ -23,7 +25,9 @@ import com.school.exam.repository.MakeExamsDao;
 public class IndexService {
 	private IndexShowDao indexdao;
 	private MakeExamsDao examdao;
-	public IndexShowVO getIndexShowVo(Long id){
+    private static Logger logger = LoggerFactory.getLogger(IndexService.class);
+
+    public IndexShowVO getIndexShowVo(Long id){
 		IndexShowVO vo = null;
 		if(null==id){
 			vo = indexdao.findMaxId();
@@ -46,8 +50,11 @@ public class IndexService {
 			param.put("score",totalScore);
 			Integer passnum = indexdao.findPassNum(param);
 			DecimalFormat df = new DecimalFormat(".##");
-			scale = df.format(passnum/totalnum.doubleValue());
+            if(totalnum!=0) {
+                scale = df.format(passnum / totalnum.doubleValue());
+            }
 		}
+        logger.debug("totalnum:{}, scale:{}", totalnum,scale);
 		vo.setPersonNum(totalnum);
 		vo.setScale(Double.valueOf(scale));
 		vo.setSumScore(totalScore);

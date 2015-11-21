@@ -47,7 +47,7 @@
 		</tfoot>
 	</table>
 	<div align="center" >
-				<a href="#" onclick="history.go(-1);return false;" class="md-btn md-btn-primary">返回</a>
+				<a href="${ctx}/question" class="md-btn md-btn-primary">返回</a>
 				<font color="red">注意：指定正确答案后试卷才生效</font>
 				</div>
 	</div>

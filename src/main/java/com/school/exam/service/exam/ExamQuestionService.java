@@ -110,6 +110,13 @@ public class ExamQuestionService {
 		}
 		return vo;
 	}
+
+    public TeExamQuestionVO getQuestionById(Long id){
+        return questionDao.findOne(id);
+    }
+    public void saveQuestion(TeExamQuestionVO vo){
+        questionDao.save(vo);
+    }
 	/**
 	 * 通过项目ID查询试卷
 	 * @param projectId
@@ -155,18 +162,6 @@ public class ExamQuestionService {
 	}
 	
 	/**
-	 * 通过项目ID获取试题
-	 * @param projectId
-	 * @return
-	 */
-	public Page<TeExamQuestionVO> findByProjectId(Long projectId,Map<String, Object> searchParams, int pageNumber, int pageSize,
-			String sortType) {
-		PageRequest pageRequest = buildPageRequest(pageNumber, pageSize, sortType);
-		Specification<TeExamQuestionVO> spec = buildSpecification(projectId,searchParams);
-		//return questionDao.findAll(spec);
-		return questionDao.findAll(spec, pageRequest);
-	}
-	/**
 	 * 通过项目ID获取所以试题
 	 * @param projectId
 	 * @return
@@ -177,7 +172,19 @@ public class ExamQuestionService {
 		Specification<TeExamQuestionVO> spec = buildSpecification(projectId,searchParams);
 		return questionDao.findAll(spec);
 	}
-	/**
+    /**
+     * 通过项目ID获取试题
+     * @param projectId
+     * @return
+     */
+    public Page<TeExamQuestionVO> findByProjectId(Long projectId,Map<String, Object> searchParams, int pageNumber, int pageSize,
+                                                  String sortType) {
+        PageRequest pageRequest = buildPageRequest(pageNumber, pageSize, sortType);
+        Specification<TeExamQuestionVO> spec = buildSpecification(projectId,searchParams);
+        //return questionDao.findAll(spec);
+        return questionDao.findAll(spec, pageRequest);
+    }
+    /**
 	 * 项目ID
 	 * @param projectId
 	 * @return
