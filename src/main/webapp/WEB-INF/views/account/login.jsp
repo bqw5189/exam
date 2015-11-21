@@ -77,34 +77,44 @@
                 </div>
             </form>
         </div>
-        <div class="md-card-content large-padding" id="register_form" style="display: none"> 
+
+        <div class="md-card-content large-padding" id="register_form" style="display: none">
 	     <button type="button" class="uk-position-top-right uk-close uk-margin-right uk-margin-top back_to_login"></button> 
-	     <h2 class="heading_a uk-margin-medium-bottom">注册一个账号</h2> 
-	     <form id="inputForm" action="${ctx}/register" method="post"> 
-	     
-	      <div class="parsley-row"> 
-	       <label for="loginName">登录名</label>
-	       <input class="md-input" type="text" id="loginName" name="loginName" required=""/> 
-	      </div> 
-	      <div class="parsley-row"> 
-	       <label for="name">用户名</label>
-	       <input class="md-input" type="text" id="name" name="name" required=""/> 
-	      </div> 
-	      <div class="parsley-row"> 
-	       <label for="plainPassword">密码</label>
-	       <input class="md-input" type="password" id="plainPassword" name="plainPassword" required=""/> 
-	      </div> 
-	      <div class="parsley-row"> 
-	       <label for="confirmPassword">确认密码</label>
-	       <input class="md-input" type="password" id="confirmPassword" name="confirmPassword" required=""/> 
-	      </div> 
-	      <!-- div class="uk-form-row"> 
-	       <label for="register_email">E-mail</label> 
-	       <input class="md-input" type="text" id="register_email" name="register_email" /> 
-	      </div --> 
-	      <div class="uk-margin-medium-top" align="center"> 
-	       <input id="submit_btn" class="md-btn md-btn-primary md-btn-block md-btn-large" type="submit" value="确认注册"/>&nbsp;	
-	      </div> 
+	     <h2 class="heading_a uk-margin-medium-bottom">注册一个账号</h2>
+	     <form id="inputForm" action="${ctx}/register" method="post"  class="uk-form-stacked">
+             <div class="uk-grid" data-uk-grid-margin="">
+                 <div class="uk-width-medium-1-1">
+                  <div class="parsley-row">
+                   <label for="loginName">登录名</label>
+                   <input class="md-input" type="text" id="loginName" name="loginName" required=""/>
+                  </div>
+                 </div>
+                 <div class="uk-width-medium-1-1">
+                  <div class="parsley-row">
+                   <label for="name">用户名</label>
+                   <input class="md-input" type="text" id="name" name="name" required=""/>
+                  </div>
+                 </div>
+                 <div class="uk-width-medium-1-1">
+                  <div class="parsley-row">
+                   <label for="plainPassword">密码</label>
+                   <input class="md-input" type="password" id="plainPassword" name="plainPassword" required=""/>
+                  </div>
+                 </div>
+                 <div class="uk-width-medium-1-1">
+                  <div class="parsley-row">
+                   <label for="confirmPassword">确认密码</label>
+                   <input class="md-input" type="password" id="confirmPassword" name="confirmPassword" required=""/>
+                  </div>
+                 </div>
+              <!-- div class="uk-form-row">
+               <label for="register_email">E-mail</label>
+               <input class="md-input" type="text" id="register_email" name="register_email" />
+              </div -->
+              <div class="uk-margin-medium-top" align="center">
+               <input id="submit_btn" class="md-btn md-btn-primary md-btn-block md-btn-large" type="submit" value="确认注册"/>&nbsp;
+              </div>
+             </div>
 	     </form> 
 	    </div> 
     </div>
@@ -122,7 +132,7 @@
 <script>
     // load parsley config (altair_admin_common.js)
     altair_forms.parsley_validation_config();
-    </script> 
+    </script>
     
   <script src="${ctx}/static/altair/bower_components/parsleyjs/dist/parsley.min.js"></script> 
 <!-- altair login page functions -->
