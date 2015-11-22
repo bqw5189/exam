@@ -20,107 +20,131 @@
             }
         }
     </script>
+    <style>
+        #page_content_inner {
+            padding: 24px 24px 0px;
+        }
+    </style>
 </head>
 <body>
-	<c:if test="${not empty message}">
-		<div data-uk-alert="" class="uk-alert uk-alert-danger"><a class="uk-alert-close uk-close" href="#"></a> ${message}</div>
-	</c:if>
-	<div class="md-card">
-    <div class="md-card-content">
-        <div class="uk-grid" data-uk-grid-margin="">
-            <div class="uk-width-large-1-1">
-                <ul id="kUI_menu">
-                    <c:forEach items="${course }" var="cour">
-                    <li> ${cour.courseName }
-                        <c:if test="${fn:length(cour.project)>0}">
-                        <ul>
-                            <c:forEach items="${cour.project }" var="pro">
-                            <li>
-                                <a href="${ctx }/question/${pro.id}"
-                                        <c:if test="${ projectId==pro.id}">
-                                            class="text-success"
-                                        </c:if>
-                                        >${pro.projectName }</a>
-                            </li>
-                            </c:forEach>
-                        </ul>
-                        </c:if>
-                    </li>
-                    </c:forEach>
-                </ul>
+
+<div id="top_bar">
+    <div class="md-top-bar">
+        <div class="uk-width-large-8-10 uk-container-center">
+            <c:forEach items="${course }" var="cour">
+                <div data-uk-dropdown="" class="uk-button-dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="md-btn"> ${cour.courseName } <c:if test="${fn:length(cour.project)>0}"><i class="material-icons"></i></c:if></button>
+                    <c:if test="${fn:length(cour.project)>0}">
+                        <div class="uk-dropdown uk-dropdown-small" style="min-width: 160px;">
+                            <ul class="uk-nav uk-nav-dropdown uk-panel">
+                                <c:forEach items="${cour.project }" var="pro">
+                                    <li>
+                                        <a href="${ctx }/question/${pro.id}"
+                                                <c:if test="${ projectId==pro.id}">
+                                                    class="text-success"
+                                                </c:if>
+                                                >${pro.projectName }</a>
+                                    </li>
+                                </c:forEach>
+                            </ul>
+                        </div>
+                    </c:if>
+                </div>
+            </c:forEach>
             </div>
         </div>
     </div>
 </div>
-<div class="md-card">
-<div class="md-card-content"> 
-		<form class="form-search " action="#">
-			<input type="hidden" name="projectId" id="projectId" value="${projectId}">
-			<div data-uk-grid-margin="" class="uk-grid">
-       <div class="uk-width-medium-3-10">
-        <div class="md-input-wrapper"><label for="product_search_name"></label><input type="text" id="product_search_name" name="search_LIKE_questionCont" class="md-input" value="${param.search_LIKE_questionCont}"><span class="md-input-bar"></span></div>
 
-       </div>
-       <div class="uk-width-medium-2-10 uk-text-center">
-	        <button type="submit" class="md-btn md-btn-primary uk-margin-small-top" id="search_btn">搜索</button>
-       </div>
-      </div>
-       </form>
-     </div>
- </div>
-<div class="md-card uk-margin-medium-bottom">
-    <div class="md-card-content">
-		<c:if test="${null!=projectId}">
-	    <div class="row-fluid" align="right">
+	<c:if test="${not empty message}">
+		<div data-uk-alert="" class="uk-alert uk-alert-danger uk-width-large-8-10 uk-container-center"><a class="uk-alert-close uk-close" href="#"></a> ${message}</div>
+        <br/>
+	</c:if>
 
-            <form name="uploadForm" id="uploadForm" class="form-search " action="${ctx}/question/upload/${projectId}" method="post" enctype="multipart/form-data">
-                <input type="hidden" name="projectId"  value="${projectId}">
-                <div class="uk-grid">
-                    <div class="uk-width-1-1">
-                        <div class="uk-form-file uk-text-primary">
-                            题库导入
-                            <input type="file"  name="file" id="file" onchange="uploadFile()">
+
+<div class="md-card-list-wrapper" id="mailbox">
+    <div class="uk-width-large-8-10 uk-container-center">
+        <div class="md-card-list">
+
+            <div class="md-card-list-header heading_list">
+                题库
+            </div>
+            <ul class="hierarchical_slide">
+                <c:forEach items="${question.content }" var="que">
+                <li>
+                    <div class="md-card-list-item-menu" data-uk-dropdown="{mode:'click'}">
+                        <a href="#" class="md-icon material-icons"></a>
+                        <div class="uk-dropdown uk-dropdown-flip uk-dropdown-small">
+                            <ul class="uk-nav">
+                                <li><a href="${ctx }/question/update/${que.id}"><i class="material-icons"></i> 修改</a></li>
+                                <li><a href="${ctx }/question/itemlist/${que.id}"><i class="material-icons"></i> 管理</a></li>
+                                <li><a href="${ctx }/question/delete/${que.id}?projectId=${projectId}"><i class="material-icons"></i> 删除</a></li>
+                            </ul>
                         </div>
-                        <a href="${ctx }/question/create/${projectId}" class="md-btn md-btn-flat md-btn-flat-primary" id="add_btn" >新增试题</a>
+                    </div> <span class="md-card-list-item-date">${ que.questionScore}</span>
+
+                    <div class="md-card-list-item-avatar-wrapper">
+                        <span class="md-card-list-item-avatar md-bg-cyan"><c:if test="${que.type==1 }">单</c:if>
+					<c:if test="${que.type==2 }">多</c:if></span>
+                    </div>
+                    <div class="md-card-list-item-subject">
+                        <span>${ que.questionCont}</span>
+                    </div>
+                    <div class="md-card-list-item-content-wrapper">
+                        <div class="md-card-list-item-content">
+                            <ol style="list-style-type: upper-alpha">
+                                <c:forEach items="${ que.selectItems}" var="item">
+                                <li>${item.selectCont } <c:if test="${item.isAnswer==1 }">
+                                    <i class="uk-icon-check"></i>
+                                </c:if></li>
+                                </c:forEach>
+                            </ol>
+                        </div>
+                    </div>
+                </li>
+                </c:forEach>
+            </ul>
+        </div>
+    </div>
+    <br/>
+    <tags:pagination paginationSize="10" page="${question }"></tags:pagination>
+    <br/>
+</div>
+<c:if test="${null!=projectId}">
+<div class="md-fab-wrapper">
+    <div class="row-fluid" align="right">
+        <form name="uploadForm" id="uploadForm" class="form-search " action="${ctx}/question/upload/${projectId}" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="projectId"  value="${projectId}">
+            <div class="uk-grid">
+                <div class="uk-width-1-1">
+                    <div class="uk-form-file uk-text-primary">
+                        <a href="javascript:void(0)" class="md-fab md-fab-accent"> <i class="uk-icon-archive"></i> </a>
+                        <input type="file"  name="file" id="file" onchange="uploadFile()">
                     </div>
                 </div>
-            </form>
-	    </div>
-	    </c:if>
-	    <div class="uk-accordion" data-uk-accordion="" style="width:100%"> 
-				<c:set var="no" value="1"></c:set>
-				<c:forEach items="${question.content }" var="que">
-				<h3 class="uk-accordion-title">	
-					${ no}、${ que.questionCont}&nbsp;&nbsp;&nbsp;&nbsp;
-					<c:if test="${que.type==1 }">单选</c:if>
-					<c:if test="${que.type==2 }">多选</c:if>
-					(${ que.questionScore})
-					</h3>
-		         <div class="uk-accordion-content">
-		          <c:set var="itemno" value="1"></c:set>
-		         	<c:forEach items="${ que.selectItems}" var="item">
-		         	${ itemno}、
-		         		${item.selectCont }&nbsp;&nbsp;&nbsp;&nbsp;
-		         		<c:if test="${item.isAnswer==1 }">
-		         			<img alt="" src="${ctx }/static/images/button_ok.png">
-						</c:if>
-						</br>
-					<c:set var="itemno" value="${itemno+1 }"></c:set>
-		         	</c:forEach>
-		         </div> 
-				<c:set var="no" value="${no+1 }"></c:set>
-				<div align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<a href="${ctx }/question/delete/${que.id}?projectId=${projectId}"><i class="md-icon material-icons"></i></a> 
-					&nbsp;&nbsp;&nbsp;&nbsp;
-					<a href="${ctx }/question/update/${que.id}"><i class="md-icon material-icons"></i></a>
-					&nbsp;&nbsp;&nbsp;&nbsp;
-					<a href="${ctx }/question/itemlist/${que.id}"><img alt="" src="${ctx }/static/images/edit_add.png"></a>
-					&nbsp;&nbsp;&nbsp;&nbsp;</div>
-			</c:forEach>
-			<tags:pagination paginationSize="10" page="${question }"></tags:pagination>
-		</div>
-	</div>
+            </div>
+        </form>
+    </div>
+
+    <a href="${ctx }/question/create/${projectId}" class="md-fab md-fab-accent"> <i class="material-icons"></i> </a>
 </div>
+</c:if>
+<%--<div class="md-card">--%>
+<%--<div class="md-card-content"> --%>
+		<%--<form class="form-search " action="#">--%>
+			<%--<input type="hidden" name="projectId" id="projectId" value="${projectId}">--%>
+			<%--<div data-uk-grid-margin="" class="uk-grid">--%>
+       <%--<div class="uk-width-medium-3-10">--%>
+        <%--<div class="md-input-wrapper"><label for="product_search_name"></label><input type="text" id="product_search_name" name="search_LIKE_questionCont" class="md-input" value="${param.search_LIKE_questionCont}"><span class="md-input-bar"></span></div>--%>
+
+       <%--</div>--%>
+       <%--<div class="uk-width-medium-2-10 uk-text-center">--%>
+	        <%--<button type="submit" class="md-btn md-btn-primary uk-margin-small-top" id="search_btn">搜索</button>--%>
+       <%--</div>--%>
+      <%--</div>--%>
+       <%--</form>--%>
+     <%--</div>--%>
+ <%--</div>--%>
 
 </body>
 </html>
