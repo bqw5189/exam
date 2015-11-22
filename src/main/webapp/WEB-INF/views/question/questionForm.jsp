@@ -18,7 +18,7 @@
                 <div class="uk-width-medium-1-1">
                     <div class="uk-form-row parsley-row">
                         <label for="type" class="uk-form-label">题型<span class="req">*</span></label>
-                        <span class="icheck-inline"> <input type="radio" name="type" id="val_radio_type1" value="1" data-md-icheck="" required="" /> <label for="val_radio_type1" class="inline-label">单选</label> </span>
+                        <span class="icheck-inline"> <input type="radio" name="type" id="val_radio_type1" value="1" data-md-icheck="" required="" checked="checked" /> <label for="val_radio_type1" class="inline-label">单选</label> </span>
                         <span class="icheck-inline"> <input type="radio" name="type" id="val_radio_type2" value="2" data-md-icheck="" /> <label for="val_radio_type2" class="inline-label">多选</label> </span>
                     </div>
                 </div>

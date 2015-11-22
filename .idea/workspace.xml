@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f90a0bed-6075-4286-86dc-b8246f67a9ca" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/layouts/default.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/layouts/default.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/question/questionlist.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/question/questionlist.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/question/itemedit.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/question/itemedit.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/question/questionForm.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/question/questionForm.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/question/questionUpdateForm.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/question/questionUpdateForm.jsp" />
     </list>
     <ignored path="exam.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,21 +60,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.min.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/static/altair/assets/js/pages/login.min.js">
+      <file leaf-file-name="questionForm.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/question/questionForm.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="1140">
-              <caret line="37" column="77" selection-start-line="37" selection-start-column="77" selection-end-line="37" selection-end-column="77" />
+            <state vertical-scroll-proportion="-5.125" vertical-offset="747" max-vertical-offset="1560">
+              <caret line="58" column="12" selection-start-line="58" selection-start-column="12" selection-end-line="68" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="questionForm.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/question/questionForm.jsp">
+      <file leaf-file-name="itemedit.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/question/itemedit.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="21.541666" vertical-offset="1087" max-vertical-offset="1560">
-              <caret line="38" column="384" selection-start-line="38" selection-start-column="384" selection-end-line="38" selection-end-column="384" />
+            <state vertical-scroll-proportion="0.5588235" vertical-offset="552" max-vertical-offset="1110">
+              <caret line="52" column="16" selection-start-line="52" selection-start-column="16" selection-end-line="58" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="questionUpdateForm.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/question/questionUpdateForm.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-18.875" vertical-offset="1092" max-vertical-offset="1665">
+              <caret line="103" column="8" selection-start-line="103" selection-start-column="8" selection-end-line="103" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -90,10 +100,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="questionlist.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="questionlist.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/question/questionlist.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.403183" vertical-offset="1303" max-vertical-offset="2325">
+            <state vertical-scroll-proportion="-6.3333335" vertical-offset="1303" max-vertical-offset="2325">
               <caret line="97" column="65" selection-start-line="97" selection-start-column="65" selection-end-line="97" selection-end-column="65" />
               <folding />
             </state>
@@ -140,16 +150,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="altair_admin_common.min.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/static/altair/assets/js/altair_admin_common.min.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="90">
-              <caret line="0" column="7204" selection-start-line="0" selection-start-column="7193" selection-end-line="0" selection-end-column="7204" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -187,7 +187,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/school/exam/web/project/ProjectController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/question/itemlist.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/course/addcourse.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/question/itemedit.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/school/exam/web/course/CourseMainController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/course/projectedit.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/school/exam/service/exam/ExamQuestionService.java" />
@@ -196,10 +195,12 @@
         <option value="$PROJECT_DIR$/src/main/webapp/static/altair/assets/css/login_page.min.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/account/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/altair/assets/js/pages/login.min.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/question/questionForm.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/layouts/default.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/applicationContext.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/question/questionlist.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/question/questionUpdateForm.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/question/questionForm.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/question/itemedit.jsp" />
       </list>
     </option>
   </component>
@@ -967,12 +968,12 @@
       <option name="number" value="Default" />
       <updated>1447979335959</updated>
       <workItem from="1447979339557" duration="16455000" />
-      <workItem from="1448071312572" duration="37661000" />
+      <workItem from="1448071312572" duration="39048000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54116000" />
+    <option name="totallyTimeSpent" value="55503000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1007,12 +1008,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3286385" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286385" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24959612" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959612" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2801252" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2801252" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1277,14 +1278,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/question/itemedit.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.490196" vertical-offset="713" max-vertical-offset="1275">
-          <caret line="56" column="63" selection-start-line="56" selection-start-column="48" selection-end-line="56" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/question/itemlist.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.583333" vertical-offset="505" max-vertical-offset="915">
@@ -1312,14 +1305,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/question/questionlistview.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="44.791668" vertical-offset="1075" max-vertical-offset="1485">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/question/questionUpdateForm.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="34.166668" vertical-offset="820" max-vertical-offset="1365">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -1470,14 +1455,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/question/questionForm.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="21.541666" vertical-offset="1087" max-vertical-offset="1560">
-          <caret line="38" column="384" selection-start-line="38" selection-start-column="384" selection-end-line="38" selection-end-column="384" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/static/altair/assets/js/pages/page_mailbox.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="401">
@@ -1512,8 +1489,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/question/questionlist.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.403183" vertical-offset="1303" max-vertical-offset="2325">
+        <state vertical-scroll-proportion="-6.3333335" vertical-offset="1303" max-vertical-offset="2325">
           <caret line="97" column="65" selection-start-line="97" selection-start-column="65" selection-end-line="97" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/question/questionUpdateForm.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.875" vertical-offset="1092" max-vertical-offset="1665">
+          <caret line="103" column="8" selection-start-line="103" selection-start-column="8" selection-end-line="103" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/question/questionForm.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.125" vertical-offset="747" max-vertical-offset="1560">
+          <caret line="58" column="12" selection-start-line="58" selection-start-column="12" selection-end-line="68" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/question/itemedit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5588235" vertical-offset="552" max-vertical-offset="1110">
+          <caret line="52" column="16" selection-start-line="52" selection-start-column="16" selection-end-line="58" selection-end-column="10" />
           <folding />
         </state>
       </provider>
