@@ -37,7 +37,7 @@
                 <li class="<c:if test="${fn:contains(uri,course)}">current_section</c:if>"> <a href="${course}"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">课程项目管理</span> </a></li>
                 <li class="divider"></li>
             </shiro:hasRole>
-            <shiro:hasRole name="user">
+            <shiro:hasRole name="student">
                 <li class="<c:if test="${fn:contains(uri,examlist)}">current_section</c:if>"> <a href="${examlist}"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">在线考试</span> </a></li>
             </shiro:hasRole>
         </ul>

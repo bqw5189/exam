@@ -1,0 +1,378 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0px;padding:0px;font-size:13px;font-family:"微软雅黑";text-decoration:none;}
+img{border:none;}
+li{list-style:none;}
+
+html,body{width:100%;height:100%;}
+
+.contentbox{
+	width:1003px;
+	margin:auto;
+	min-height:760px;
+	background:url(../img/indexbg.jpg);
+	background-repeat:no-repeat;
+	position:relative;
+	overflow:hidden;
+	}
+.contentbox img{
+	}
+.contentbox .logo{
+	position:absolute;
+	left:16px;
+	top:12px;
+	display:block;
+	width:213px;
+	height:33px;
+	}
+.contentbox .text01{
+	position:absolute;
+	left:105px;
+	top:248px;
+	display:block;
+	width:538px;
+	height:58px;
+	}
+
+.indexNavbox{
+	height:45px;
+	background:url(../img/navbg.jpg);
+	position:relative;
+	top:67px;
+	left:47px;
+	border-radius:10px 0px 0px 10px;
+	padding-left:15px;
+	}
+.indexNavbox ul{
+	
+	}
+.indexNavbox li{
+	float:left;
+	position:relative;
+	}
+.indexNavbox li a{
+	line-height:45px;
+	font-size:15px;
+	color:#fff;
+	font-weight:bold;
+	padding-left:18px;
+	padding-right:18px;
+	
+	}
+.indexNavbox li a:hover{
+	color:#f4ff00;
+	}
+.indexNavbox li a.onhere{
+	color:#f4ff00;
+	}
+.indexNavbox li i{
+	background:url(../img/navli.jpg);
+	background-repeat:no-repeat;
+	width:2px;
+	height:21px;
+	display:block;
+	position:absolute;
+	pointer-events:none;
+	top:13px;
+	right:0px;
+	}
+.rollBox{
+	position:absolute;
+	
+	width:1003px;
+	height:170px;
+	left:0px;
+	top:459px;
+	}
+.rollBox span{
+	display:block;
+	position:absolute;
+	}
+.rollBox .img01{
+	background:url(../img/pic01.png);
+	background-repeat:no-repeat;
+	width:116px;
+	height:116px;
+	top:55px;
+	left:364px;
+	}
+.rollBox .img02{
+	background:url(../img/pic02.png);
+	background-repeat:no-repeat;
+	width:116px;
+	height:116px;
+	top:34px;
+	left:491px;
+	}
+.rollBox .img03{
+	background:url(../img/pic03.png);
+	background-repeat:no-repeat;
+	width:116px;
+	height:116px;
+	top:6px;
+	right:271px;
+	}
+.rollBox .img04{
+	background:url(../img/pic04.png);
+	background-repeat:no-repeat;
+	width:116px;
+	height:116px;
+	top:0px;
+	right:142px;
+	}
+.rollBox .img05{
+	background:url(../img/pic05.png);
+	background-repeat:no-repeat;
+	width:116px;
+	height:116px;
+	top:7px;
+	right:11px;
+	}
+
+
+/*page01 css*/
+.topbox{
+	width:1003px;
+	margin:auto;
+	background:url(../img/topbg.jpg);
+	background-repeat:no-repeat;
+	position:relative;
+	height:157px;
+	}
+.topbox img{
+	
+	}
+.topbox .text02{
+	position:absolute;
+	left:118px;
+	top:60px;
+	display:block;
+	width:502px;
+	height:82px;
+	}
+.topbox .logo{
+	position:absolute;
+	left:16px;
+	top:12px;
+	display:block;
+	width:213px;
+	height:33px;
+	}
+
+.navbox{
+	height:45px;
+	background:url(../img/navbg.jpg);
+	width:1003px;
+	margin:auto;
+	}
+.navbox ul{
+	*padding-left:40px;
+	text-align:center;
+	}
+.navbox li{
+	display:inline-block;
+	*float:left;
+	position:relative;
+	}
+.navbox li a{
+	line-height:45px;
+	font-size:15px;
+	color:#fff;
+	font-weight:bold;
+	padding-left:18px;
+	padding-right:18px;
+	
+	}
+.navbox li a:hover{
+	color:#f4ff00;
+	}
+.navbox li a.onhere{
+	color:#f4ff00;
+	}
+.navbox li i{
+	background:url(../img/navli.jpg);
+	background-repeat:no-repeat;
+	width:2px;
+	height:21px;
+	display:block;
+	position:absolute;
+	pointer-events:none;
+	top:13px;
+	right:0px;
+	}
+
+.listbox{
+	width:1003px;
+	margin:auto;
+	}
+.listbox h1{
+	width:1003px;
+	margin:auto;
+	background:url(../img/booktop.png);
+	background-repeat:no-repeat;
+	position:relative;
+	height:66px;
+	margin-top:84px;
+	}
+
+.list{
+	width:258px;
+	height:290px;
+	background:url(../img/book.png);
+	background-repeat:no-repeat;
+	float:left;
+	margin-right:47px;
+	*position:relative;
+	*top:-19px;
+	}
+.list.first{
+	margin-left:75px;
+	}
+.list.end{
+	
+	}
+.list h2{
+	font-size:15px;
+	color:#333;
+	width:225px;
+	margin:auto;
+	white-space:nowrap;/* 不换行 */
+	overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+	text-overflow:ellipsis;
+	padding-bottom:8px;
+	padding-top:33px;
+	*padding-top:14px;
+	text-indent:5px;
+	margin-bottom:10px;
+	}
+.list a{
+	display:block;
+	font-size:14px;
+	color:#333;
+	white-space:nowrap;/* 不换行 */
+	overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+	text-overflow:ellipsis;
+	width:195px;
+	margin-left:43px;
+	line-height:38px;
+	}
+.list a:hover{
+	color:#1c6b11;
+	}
+.list a.onhere{
+	color:#1c6b11;
+	}
+
+/*page01 css end*/
+
+/*page02 css*/
+.tearchpagebox{
+	width:1003px;
+	margin:auto;
+	margin-top:20px;
+	}
+.leftMenubox{
+	float:left;
+	width:237px;
+	border:1px solid #5ea700;
+	margin-left:11px;
+	margin-right:26px;
+	border-radius:6px;
+	background:#fbfbfb;
+	position:relative;
+	margin-bottom:100px;
+	min-height:550px;
+	padding-top:40px;
+	}
+.leftMenubox i{
+	
+	background:url(../img/look.png);
+	background-repeat:no-repeat;
+	width:30px;
+	height:36px;
+	display:block;
+	position:absolute;
+	pointer-events:none;
+
+	}
+.leftMenubox .L{
+	top:-18px;
+	left:14px;
+	}
+.leftMenubox .R{
+	top:-18px;
+	right:14px;
+	}
+
+.leftMenulist{
+	margin-bottom:10px;
+	}
+.leftMenulist h1{
+	font-size:14px;
+	color:#666;
+	background:#e0e0e0;
+	height:25px;
+	line-height:25px;
+	border-radius:11px;
+	width:220px;
+	margin:auto;
+	text-indent:24px;
+	margin-bottom:10px;
+	cursor:pointer;
+	}
+.leftMenulist h1:hover{
+	color:#fff;
+	background:#146705;
+	}
+.leftMenulist h1.onhere{
+	color:#fff;
+	background:#146705;
+	}
+.leftMenulist a{
+	font-size:13px;
+	color:#333;
+	position:relative;
+	line-height:32px;
+	display:block;
+	padding-left:44px;
+	display:none;
+	}
+.leftMenulist a:hover{
+	color:#1c6b11;
+	}
+.leftMenulist a.onhere{
+	color:#1c6b11;
+	}
+.leftMenulist a i{
+	background:url(../img/li.png);
+	background-repeat:no-repeat;
+	width:4px;
+	height:6px;
+	display:block;
+	position:absolute;
+	pointer-events:none;
+	left:29px;
+	top:13px;
+	*top:8px;
+	}
+.rightData{
+	float:left;
+	width:700px;
+	margin-bottom:100px;
+	}
+.rightData .img01{
+	width:700px;
+	height:450px;
+	border:none;
+	margin-top:32px;
+	}
+
+/*page02 css end*/
+
+
+
+
+
+
+
+

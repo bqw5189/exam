@@ -57,7 +57,7 @@ public class AccountService {
 
 	public void registerUser(User user) {
 		entryptPassword(user);
-		user.setRoles("user");
+		user.setRoles("student");
 		user.setRegisterDate(clock.getCurrentDate());
 
 		userDao.save(user);
