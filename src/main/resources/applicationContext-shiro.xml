@@ -11,6 +11,19 @@
 		<property name="cacheManager" ref="shiroEhcacheManager" />
 	</bean>
 
+    <!-- remenberMe配置 -->
+    <bean id="rememberMeCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
+        <constructor-arg value="rememberMe" />
+        <property name="httpOnly" value="true" />
+        <!-- 默认记住7天（单位：秒） -->
+        <property name="maxAge" value="604800" />
+    </bean>
+    <!-- rememberMe管理器 -->
+    <bean id="rememberMeManager" class="org.apache.shiro.web.mgt.CookieRememberMeManager">
+        <property name="cipherKey" value="#{T(org.apache.shiro.codec.Base64).decode('4AvVhmFLUs0KTA3Kprsdag==')}" />
+        <property name="cookie" ref="rememberMeCookie" />
+    </bean>
+
 	<!-- 項目自定义的Realm, 所有accountService依赖的dao都需要用depends-on声明 -->
 	<bean id="shiroDbRealm" class="com.school.exam.service.account.ShiroDbRealm">
 		<property name="accountService" ref="accountService"/>
@@ -29,7 +42,7 @@
 				/api/** = anon
 				/register/** = anon
 				/admin/** = roles[admin]
-                /student/** = roles[student]
+                /student/** = user
 				/** = user
 			</value>
 		</property>

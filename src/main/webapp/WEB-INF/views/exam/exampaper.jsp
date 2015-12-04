@@ -9,7 +9,7 @@
 </head>
 
 <body>
-	<form id="submitForm" action="${ctx}/examlist/submitpaper" method="post" class="form-horizontal">
+	<form id="submitForm" name="myForm" action="${ctx}/examlist/submitpaper" method="post" class="form-horizontal">
 	<fieldset>
 	<legend><small>开始答卷</small></legend>
 	<div class="md-card">
@@ -105,7 +105,8 @@ function onTimer()
         $("#submit_btn").click(); //调用form的submit方法，走Post方式
         // 退出系统
         alert("对不起，您的答卷时间已到！");
-        window.open("${ctx}/login", "", "");
+        //window.open("${ctx}/login", "", "");
+        document.myForm.submit(); 
         //setTimeout('window.opener=null;window.close();', 100);
         return;
     }

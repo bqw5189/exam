@@ -103,7 +103,6 @@
 
 		function selectQuestion(){
 			var ids = document.getElementById("questionIds").value;
-            alert(ids);
 			var questionIds = (""==ids ? "null" : ids);
 			$.ajax({
 				url:"${reqUrl}/api/v1/ajaxmakexam/selectquestion/"+questionIds,

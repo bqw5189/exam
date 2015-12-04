@@ -6,11 +6,11 @@
 <html>
 <head>
 	<title>用户注册</title>
-    <shiro:hasRole name="student">
-        <script>
-            location.href="${ctx}/student"
-        </script>
-    </shiro:hasRole>
+    <%--<shiro:hasRole name="student">--%>
+        <%--<script>--%>
+            <%--location.href="${ctx}/student"--%>
+        <%--</script>--%>
+    <%--</shiro:hasRole>--%>
 </head>
 <body>
 <!-- statistics (small charts) -->

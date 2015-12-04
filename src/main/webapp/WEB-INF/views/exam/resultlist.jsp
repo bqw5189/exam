@@ -41,12 +41,16 @@
 									<td>
 										<input type='radio' name='${que.id }' id='${item.id}' value='${item.id}'
 										<c:if test="${result.chooseQuestionId==item.id}">
+										
+										<c:set var="reply" value="学生答案：${item.selectCont}" />
 										 checked=true
 										 </c:if>
 										 >
-										 <c:if test="${que.questionAnswerId==item.id}"><font color="red"></c:if>
+										 <c:if test="${que.questionAnswerId==item.id}"><c:set var="answer" value="正确答案：${item.selectCont}" /> </c:if>
 										 ${item.selectCont }
 										 <c:if test="${que.questionAnswerId==item.id}"></font></c:if>
+										 <c:if test="${que.questionAnswerId==item.id&&result.chooseQuestionId==item.id }">
+										 <c:set var="score" value="得分：${que.questionScore}" /></c:if>
 										 </input>
 									</td>
 								</tr>
@@ -70,11 +74,21 @@
 					</c:if>
 				</c:forEach>
 				<c:set var="indexno" value="${indexno+1 }"></c:set>
+				<tr>
+					<td>
+						<font color="red"><c:out value="${answer }"></c:out>   <c:out value="${ reply}"></c:out>    <c:out value="${score }"></c:out></font>
+					</td>
+				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
 	<div align="center">
+		<c:if test="${role=='user' }">
 		<input id="cancel_btn" class="md-btn md-btn-primary" type="button" value="返回" onclick="window.location='${ctx}/examlist'"/>
+		</c:if>
+		<c:if test="${role=='teacher' }">
+		<input id="cancel_btn" class="md-btn md-btn-primary" type="button" value="返回" onclick="history.back()"/>
+		</c:if>
 	</div>
 	</div>
 	</div>

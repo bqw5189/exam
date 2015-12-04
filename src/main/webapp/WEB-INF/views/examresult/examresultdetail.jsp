@@ -23,7 +23,7 @@
 					<c:set value="1" var="no"></c:set>
 						<c:forEach items="${examresult }" var="er">
 							<tr>
-								<td>${ er.examName}</td>
+								<td><a href="${ctx}/examlist/showexam/${er.examId}?personId=${er.personId}"/>${ er.examName}</td>
 								<td>${er.personName }</td>
 								<td>${ er.sumScore}</td>
 								<td>${ er.examOrder}</td>

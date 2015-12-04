@@ -57,13 +57,13 @@
                 <div class="uk-width-medium-1-1">
                     <div class="parsley-row">
                         <label for="username">登录名</label>
-                        <input class="md-input" type="text" id="username" name="username" required=""/>
+                        <input class="md-input" type="text" id="username" name="username" required="" value="${username}" />
                     </div>
                 </div>
                 <div class="uk-width-medium-1-1">
                     <div class="parsley-row">
                         <label for="password">密码</label>
-                        <input class="md-input" type="password" id="password" name="password" required/>
+                        <input class="md-input" type="password" id="password" name="password" required />
                     </div>
                 </div>
                     </div>
@@ -141,7 +141,7 @@
 <%-- <script src="${ctx}/static/jquery/jquery-1.9.1.min.js" type="text/javascript"></script> --%>
 	<script src="${ctx}/static/jquery-validation/1.11.1/jquery.validate.min.js" type="text/javascript"></script>
 	<script>
-		/* $(document).ready(function() {
+        /* $(document).ready(function() {
 			//聚焦第一个输入框
 			$("#loginName").focus();
 			//为inputForm注册validate函数

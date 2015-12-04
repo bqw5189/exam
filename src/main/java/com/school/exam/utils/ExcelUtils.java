@@ -1,8 +1,6 @@
 package com.school.exam.utils;
 
-import com.school.exam.entity.TeExamQuestionVO;
-import com.school.exam.entity.TeProjectVO;
-import com.school.exam.entity.TeSelectItemsVO;
+import com.school.exam.entity.*;
 import jxl.Cell;
 import jxl.Sheet;
 import jxl.Workbook;
@@ -11,11 +9,14 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.CollectionUtils;
+import org.springside.modules.mapper.JsonMapper;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by baiqw on 15/11/20.
@@ -25,6 +26,42 @@ public class ExcelUtils {
     public static final int ANSWER_TRUE = 1;
     public static final int ANSWER_FALSE = 0;
     private static Logger logger = LoggerFactory.getLogger(ExcelUtils.class);
+    private static JsonMapper jsonMapper = new JsonMapper();
+
+    public static Map<String, Course> toCourse(List<List<String>> courses){
+        Map<String, Course> result = new LinkedHashMap<String,Course>();
+
+        for (List<String> row: courses){
+            //课程
+            String title = row.get(0);
+            Course course = result.get(title);
+            if (null == course){
+                course = new Course(title);
+                result.put(row.get(0), course);
+            }
+
+            //任务
+            title = row.get(1);
+            CourseTask courseTask = course.getEntity(new CourseTask(title));
+
+            //子任务
+            title = row.get(2);
+            CourseSubTask courseSubTask = courseTask.getEntity(new CourseSubTask(title));
+
+            //步骤
+            title = row.get(3);
+            CourseSubStepTask courseSubStepTask = courseSubTask.getEntity(new CourseSubStepTask(title));
+
+
+            //资源
+            title = row.get(4);
+            CourseResource courseResource =new CourseResource(title);
+            courseSubStepTask.getResources().add(courseResource);
+        }
+        logger.debug("result:{}",jsonMapper.toJson(result));
+
+        return result;
+    }
 
     public static List<TeExamQuestionVO> toQuestion(Long projectId, List<List<String>> questions){
         List<TeExamQuestionVO> result = new ArrayList<TeExamQuestionVO>();

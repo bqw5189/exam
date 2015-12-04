@@ -95,16 +95,25 @@ public class ExamQuestionCotroller {
 	 * @return
 	 */
 	@RequestMapping(value = "showexam/{id}",method = RequestMethod.GET)
-	public String showPaper(@PathVariable(value="id") Long id, Model model){
+	public String showPaper(@PathVariable(value="id") Long id, Model model, ServletRequest request){
 		TeMakeExamVO examvo = questionService.findExamQuestions(id);
 		List<TeExamQuestionVO> list = examvo.getQuestionList();
-		
-		//examvo = addRemark(examvo,id);
-		ShiroUser user = getCurrentUser();
-		List<TeExamPaperResultVO> eprlist = resultService.getExamPaperByPersonId(user.id, id);
+		String personId = request.getParameter("personId");
+		Long userId = null;
+		if(null==personId){
+			//examvo = addRemark(examvo,id);
+			ShiroUser user = getCurrentUser();
+			userId = user.id;
+			model.addAttribute("role", "user");
+		}else{
+			userId = Long.parseLong(personId);
+			model.addAttribute("role", "teacher");
+		}
+		List<TeExamPaperResultVO> eprlist = resultService.getExamPaperByPersonId(userId, id);
 		model.addAttribute("sumScore", null==eprlist?0:eprlist.get(0).getSumScore());
 		model.addAttribute("examvo", examvo);
-		model.addAttribute("resultlist", questionService.findByDepdIdAndPersonId(id, user.id));
+		model.addAttribute("resultlist", questionService.findByDepdIdAndPersonId(id, userId));
+		
 		return "exam/resultlist";
 	}
 	@RequestMapping(value = "submitpaper",method = RequestMethod.POST)
