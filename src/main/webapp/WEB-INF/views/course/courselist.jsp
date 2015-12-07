@@ -58,7 +58,7 @@
                             说明：${pro.remark}
                         </c:if>
 
-                        </br>
+                        <br><br>
                     </c:forEach>
                 </div>
                 <c:set var="no" value="${no+1 }"></c:set>

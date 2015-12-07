@@ -7,15 +7,20 @@ package com.school.exam.web.account;
 
 import javax.validation.Valid;
 
+import com.school.exam.entity.FileUploadForm;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.school.exam.entity.User;
 import com.school.exam.service.account.AccountService;
+import com.school.exam.service.ssclass.SSClassService;
+import sun.jvm.hotspot.asm.Register;
+
+import java.io.IOException;
 
 /**
  * 用户注册的Controller.
@@ -28,9 +33,24 @@ public class RegisterController {
 
 	@Autowired
 	private AccountService accountService;
+	@Autowired
+	private SSClassService classService;
+    private Logger logger  = LoggerFactory.getLogger(RegisterController.class);
+
+    @RequestMapping(value = "upload", method = RequestMethod.POST)
+    public String create(FileUploadForm uploadForm) {
+        logger.debug("upload/->file:{}", uploadForm);
+        try {
+            accountService.inputUser(uploadForm.getFile().getInputStream());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "redirect:/admin/user";
+    }
 
 	@RequestMapping(method = RequestMethod.GET)
-	public String registerForm() {
+	public String registerForm(RedirectAttributes redirectAttributes) {
+		redirectAttributes.addFlashAttribute("classLists", classService.getAllSSClass());
 		return "account/register";
 	}
 

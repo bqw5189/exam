@@ -22,6 +22,7 @@ import com.school.exam.entity.IndexShowVO;
 import com.school.exam.entity.TeMakeExamVO;
 import com.school.exam.service.account.IndexService;
 import com.school.exam.service.exam.ExamQuestionService;
+import com.school.exam.service.ssclass.SSClassService;
 
 /**
  * LoginController负责打开登录页面(GET请求)和登录出错页面(POST请求)，

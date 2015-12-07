@@ -11,6 +11,9 @@
 
     <decorator name="student" page="default-student.jsp">
         <pattern>/student/classes/*</pattern>
+        <pattern>/student/project/*</pattern>
+        <pattern>/student/*</pattern>
+        <pattern>/student/examlist/*</pattern>
     </decorator>
 
 	<decorator name="default" page="default.jsp">

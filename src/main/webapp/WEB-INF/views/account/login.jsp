@@ -57,23 +57,18 @@
                 <div class="uk-width-medium-1-1">
                     <div class="parsley-row">
                         <label for="username">登录名</label>
-                        <input class="md-input" type="text" id="username" name="username" required="" value="${username}" />
+                        <input class="md-input" type="text" id="username" name="username" required=""/>
                     </div>
                 </div>
                 <div class="uk-width-medium-1-1">
                     <div class="parsley-row">
                         <label for="password">密码</label>
-                        <input class="md-input" type="password" id="password" name="password" required />
+                        <input class="md-input" type="password" id="password" name="password" required/>
                     </div>
                 </div>
                     </div>
-                 <div class="uk-margin-medium-top">
-                     <span class="icheck-inline"> <input type="checkbox" id="rememberMe" name="rememberMe" data-md-icheck="" /> <label for="rememberMe" class="inline-label">记住我</label> </span>
-                     <a href="#" id="login_help_show" class="uk-float-right">帮助?</a>
-                </div>
                 <div class="uk-margin-medium-top" align="center">
                     <button type="submit" class="md-btn md-btn-primary">登陆</button>
-                    <a class="md-btn md-btn-primary" href="#" id="signup_form_show">注册</a>
                 </div>
             </form>
         </div>
@@ -93,6 +88,18 @@
                   <div class="parsley-row">
                    <label for="name">用户名</label>
                    <input class="md-input" type="text" id="name" name="name" required=""/>
+                  </div>
+                 </div>
+                 <div class="uk-width-medium-1-1">
+                  <div class="parsley-row">
+                  		<label for="register_username">所属班级:</label>
+								<select name="ssClass.id">
+									<c:forEach var="s" items="${classLists }">
+										<option value="${s.id }" 
+										<c:if test="${ssClass.id==s.id }">selected="selected" </c:if>
+										>${s.className }</option>
+									</c:forEach>
+								</select>
                   </div>
                  </div>
                  <div class="uk-width-medium-1-1">
@@ -141,7 +148,7 @@
 <%-- <script src="${ctx}/static/jquery/jquery-1.9.1.min.js" type="text/javascript"></script> --%>
 	<script src="${ctx}/static/jquery-validation/1.11.1/jquery.validate.min.js" type="text/javascript"></script>
 	<script>
-        /* $(document).ready(function() {
+		/* $(document).ready(function() {
 			//聚焦第一个输入框
 			$("#loginName").focus();
 			//为inputForm注册validate函数

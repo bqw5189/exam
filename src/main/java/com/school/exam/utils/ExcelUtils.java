@@ -57,6 +57,10 @@ public class ExcelUtils {
             title = row.get(4);
             CourseResource courseResource =new CourseResource(title);
             courseSubStepTask.getResources().add(courseResource);
+
+            courseResource.setContent(title);
+            courseResource.setType(row.get(5));
+            courseResource.setFile(row.get(6));
         }
         logger.debug("result:{}",jsonMapper.toJson(result));
 

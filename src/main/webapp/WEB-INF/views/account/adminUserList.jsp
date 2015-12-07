@@ -6,19 +6,30 @@
 <html>
 <head>
 	<title>用户管理</title>
+	<!--  style type="text/css">
+		.heading_list{
+			color:#333333;
+			font-size:18px;
+			font-weight: bold;
+		}
+	</style> -->
 </head>
-
+<
 <body>
 	<c:if test="${not empty message}">
 		<div id="message" class="k-alert uk-alert-danger"><a class="uk-alert-close uk-close" href="#"></a>${message}</div>
 	</c:if>
 	<div class="md-card uk-margin-medium-bottom">
     <div class="md-card-content">
+     <div class="heading_list">
+                用户信息列表
+            </div>
 	<table id="dt_default" class="uk-table" >
-		<thead><tr><th>登录名</th><th>用户名</th><th>注册时间<th>管理</th></tr></thead>
+		<thead><tr><th>所属班级</th><th>登录名</th><th>用户名</th><th>注册时间<th>管理</th></tr></thead>
 		<tbody>
 		<c:forEach items="${users}" var="user">
 			<tr>
+				<td>${user.ssClass.className}</a></td>
 				<td><a href="${ctx}/admin/user/update/${user.id}">${user.loginName}</a></td>
 				<td>${user.name}</td>
 				<td>

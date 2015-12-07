@@ -50,6 +50,25 @@ alter table album auto_increment=1;
 alter table t_te_exam_result change id id int primary key auto_increment;
 
 alter table ss_user change id id bigint auto_increment;
+create table ss_class(
+	id bigint not null auto_increment,
+	class_name varchar(50),
+	class_remark varchar(80),
+	PRIMARY KEY (`id`)
+)ENGINE=InnoDB;
+alter table ss_user add column class_id BIGINT NOT NULL;
+update ss_user set class_id = '2014届数控系01班' where roles='student';
+CREATE TABLE `database`.`ss_user` (
+	`id` BIGINT NOT NULL auto_increment,
+	class_id bigint not null,
+	`login_name` VARCHAR(64) NOT NULL,
+	`name` VARCHAR(64) NOT NULL,
+	`password` VARCHAR(255) NOT NULL,
+	`salt` VARCHAR(64) NOT NULL,
+	`roles` VARCHAR(255) NOT NULL,
+	`register_date` TIMESTAMP DEFAULT '0000-00-00 00:00:00' NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
 
 CREATE TABLE  `t_te_exam_result` (
 	`id` BIGINT auto_increment,

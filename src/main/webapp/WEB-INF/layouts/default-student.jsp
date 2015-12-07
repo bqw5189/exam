@@ -12,11 +12,15 @@
     <title><sitemesh:title/></title>
 
     <link href="${ctx}/static/student/css/main.css" rel="stylesheet"  />
+    <link href="${ctx}/static/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet"  />
+    <link href="${ctx}/static/bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet"  />
+
     <script type="text/javascript">
         var ctx="${ctx}/static/student/";
     </script>
     <script src="${ctx}/static/student/js/jquery.js" type="text/javascript"></script>
     <script src="${ctx}/static/student/js/all.js" type="text/javascript"></script>
+    <script src="${ctx}/static/bootstrap/2.3.2/js/bootstrap.min.js" type="text/javascript"></script>
     <style>
     </style>
 </head>
@@ -26,6 +30,7 @@
     <div class="topbox">
         <img src="${ctx}/static/student/img/logo.png" class="logo" />
         <img src="${ctx}/static/student/img/text02.png" class="text02" />
+        <span style="position: absolute;right: 0px">欢迎,<shiro:principal property="name"></shiro:principal> <a href="${ctx}/logout">退出</a></span>
     </div>
 
     <!--头部 end-->
@@ -33,16 +38,9 @@
     <!--导航-->
     <div class="navbox">
         <ul>
-            <li><a href="#" target="_blank">首页</a><i></i></li>
-            <li><a href="#" target="_blank">课程导学</a><i></i></li>
-            <li><a href="#" target="_blank" class="onhere">课程学习</a><i></i></li>
-            <li><a href="#" target="_blank">模拟实验室</a><i></i></li>
-            <li><a href="#" target="_blank">习题库</a><i></i></li>
-            <li><a href="#" target="_blank">参考资料</a><i></i></li>
-            <li><a href="#" target="_blank">名词索引</a><i></i></li>
-            <li><a href="#" target="_blank">视频索引</a><i></i></li>
-            <li><a href="#" target="_blank">动画索引</a><i></i></li>
-            <li><a href="#" target="_blank">图片索引</a></li>
+            <c:forEach items="${nav}" var="nav">
+                <li><a href="${ctx}/${nav.value}" class="<c:if test="${nav.key==curent}"> onhere</c:if>">${nav.key}</a><i></i></li>
+            </c:forEach>
         </ul>
     </div>
     <!--导航end-->

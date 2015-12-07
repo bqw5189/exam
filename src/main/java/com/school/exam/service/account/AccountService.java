@@ -5,8 +5,11 @@
  *******************************************************************************/
 package com.school.exam.service.account;
 
+import java.io.InputStream;
 import java.util.List;
 
+import com.school.exam.service.ssclass.SSClassService;
+import com.school.exam.utils.ExcelUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.SecurityUtils;
 import org.slf4j.Logger;
@@ -14,6 +17,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.school.exam.entity.SSClassVO;
 import com.school.exam.entity.User;
 import com.school.exam.repository.TaskDao;
 import com.school.exam.repository.UserDao;
@@ -40,8 +45,10 @@ public class AccountService {
 	private static Logger logger = LoggerFactory.getLogger(AccountService.class);
 
 	private UserDao userDao;
-	private TaskDao taskDao;
 	private Clock clock = Clock.DEFAULT;
+
+    @Autowired
+    private SSClassService ssClassService;
 
 	public List<User> getAllUser() {
 		return (List<User>) userDao.findAll();
@@ -59,14 +66,24 @@ public class AccountService {
 		entryptPassword(user);
 		user.setRoles("student");
 		user.setRegisterDate(clock.getCurrentDate());
-
-		userDao.save(user);
+		if(null!=user.getSsClass().getId()){
+			SSClassVO ssclass = new SSClassVO();
+			ssclass.setId(user.getSsClass().getId());
+			user.setSsClass(ssclass);
+			userDao.save(user);
+		}else{
+			new Exception("班级不可为空");
+		}
+		
 	}
 
 	public void updateUser(User user) {
 		if (StringUtils.isNotBlank(user.getPlainPassword())) {
 			entryptPassword(user);
 		}
+		SSClassVO ssclass = new SSClassVO();
+		ssclass.setId(user.getSsClass().getId());
+		user.setSsClass(ssclass);
 		userDao.save(user);
 	}
 
@@ -76,7 +93,6 @@ public class AccountService {
 			throw new ServiceException("不能删除超级管理员用户");
 		}
 		userDao.delete(id);
-		taskDao.deleteByUserId(id);
 		
 	}
 
@@ -111,12 +127,37 @@ public class AccountService {
 		this.userDao = userDao;
 	}
 
-	@Autowired
-	public void setTaskDao(TaskDao taskDao) {
-		this.taskDao = taskDao;
-	}
-
 	public void setClock(Clock clock) {
 		this.clock = clock;
 	}
+
+    public void inputUser(InputStream inputStream) {
+        List<List<String>> userList = ExcelUtils.toList(inputStream);
+
+        for(List<String> row: userList){
+
+            SSClassVO ssClassVO =ssClassService.findClassByClassName(row.get(0));
+
+            if (null == ssClassVO){
+                ssClassVO = new SSClassVO();
+                ssClassVO.setClassName(row.get(0));
+                ssClassService.registerClass(ssClassVO);
+            }
+
+
+            User user = userDao.findByLoginName(row.get(2)+"");
+            if (null == user){
+                user = new User();
+                user.setLoginName(row.get(2));
+                user.setRoles("student");
+                user.setPlainPassword(row.get(3));
+                user.setName(row.get(1));
+
+                registerUser(user);
+
+            }
+
+        }
+
+    }
 }

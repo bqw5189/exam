@@ -9,6 +9,9 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -30,6 +33,17 @@ public class User extends IdEntity {
 	private String salt;
 	private String roles;
 	private Date registerDate;
+	
+	private SSClassVO ssClass;
+	// JPA 基于class_id列的多对一关系定义
+	@ManyToOne(fetch = FetchType.EAGER,targetEntity = SSClassVO.class)
+	@JoinColumn(name = "class_id",referencedColumnName="id")
+	public SSClassVO getSsClass() {
+		return ssClass;
+	}
+	public void setSsClass(SSClassVO ssClass) {
+		this.ssClass = ssClass;
+	}
 
 	public User() {
 	}

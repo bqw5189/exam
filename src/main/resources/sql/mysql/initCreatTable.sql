@@ -45,7 +45,25 @@ create database if not exists exam default character set utf8 collate utf8_unico
 --DROP TABLE `database`.`t_te_project`;
 
 --DROP TABLE `database`.`t_te_select_items`;
-
+create table ss_class(
+	id bigint not null auto_increment,
+	class_name varchar(50),
+	class_remark varchar(80),
+	PRIMARY KEY (`id`)
+)ENGINE=InnoDB;
+alter table ss_user add column class_id BIGINT NOT NULL;
+update ss_user set class_id = '2014届数控系01班' where roles='student';
+CREATE TABLE `database`.`ss_user` (
+	`id` BIGINT NOT NULL auto_increment,
+	class_id bigint not null,
+	`login_name` VARCHAR(64) NOT NULL,
+	`name` VARCHAR(64) NOT NULL,
+	`password` VARCHAR(255) NOT NULL,
+	`salt` VARCHAR(64) NOT NULL,
+	`roles` VARCHAR(255) NOT NULL,
+	`register_date` TIMESTAMP DEFAULT '0000-00-00 00:00:00' NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
 CREATE TABLE `database`.`t_te_question_exampaper` (
 	`id` BIGINT NOT NULL,
 	`exampaper_id` BIGINT NOT NULL,

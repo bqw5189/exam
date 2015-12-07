@@ -316,6 +316,9 @@ public class ExamQuestionService {
 	public void setCountDao(CountQuestionDao countDao) {
 		this.countDao = countDao;
 	}
-	
-	
+
+
+    public List<TeMakeExamVO> findByExamName(String examName) {
+        return examDao.findByExamName(examName);
+    }
 }

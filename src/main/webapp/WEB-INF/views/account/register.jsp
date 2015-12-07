@@ -72,6 +72,14 @@
 				<label for="name" class="control-label">用户名:</label>
 				<input type="text" id="user_edit_uname_control" name="name" class="md-input" required/>
 			</div>
+			<div class="uk-width-medium-1-2"> 
+				<label for="register_username" class="control-label">所属班级:</label>
+					<select name="ssClass.id" id="ssClass">
+						<c:forEach var="s" items="ssClass">
+							<option value="${s.id }" label="${s.className }">
+						</c:forEach>
+					</select>
+			</div>
 			<div class="uk-width-medium-1-2">
 				<label for="plainPassword" class="control-label">密码:</label>
 					<input type="password" id="plainPassword" name="plainPassword" class="md-input" required/>

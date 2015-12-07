@@ -2,7 +2,7 @@
 --drop table if exists ss_user;
 --drop table if exists t_te_make_exam;
 --CREATE USER 'exam'@'127.0.0.1' IDENTIFIED BY 'exam';
---CREATE DATABASE IF NOT EXISTS exam DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+--CREATE DATABASE IF NOT EXISTS exam_old DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 
 create table ss_task (
@@ -106,6 +106,12 @@ create table T_TE_EXAM_PAPER_RESULT (
    primary key (id)
 )
 
+create table t_te_answer(
+  id bigint auto_increment,
+  title VARCHAR(512),
+  email VARCHAR(128),
+  answer VARCHAR(512)
+)
 
 
 select a.scale,e.QUESTION_CONT as questionCont,e.id from 
