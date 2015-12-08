@@ -17,6 +17,7 @@
 </c:if>
 <div class="md-card">
     <div class="md-card-content">
+
         <form class="form-search " action="#">
             <div data-uk-grid-margin="" class="uk-grid">
                 <div class="uk-width-medium-3-10">
@@ -31,6 +32,7 @@
 </div>
 <div class="md-card uk-margin-medium-bottom">
     <div class="md-card-content">
+        <div><b>当前位置：>>课程项目管理</b></div>
             <div class="row-fluid" align="right">
                     <div class="uk-grid">
                         <div class="uk-width-1-1">

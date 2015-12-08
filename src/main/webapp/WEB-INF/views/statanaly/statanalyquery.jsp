@@ -12,7 +12,7 @@
 	<form id="inputForm" action="#" method="post" class="form-horizontal">
 		<input type="hidden" name="examId" id="examId" value="${exam.id}"> 
 		<fieldset>
-			<legend><small>统计分析</small></legend>
+			<legend><b>当前位置:>>统计分析>>统计列表</b></legend>
 			
 			<div class="md-card">
     			<div class="md-card-content">

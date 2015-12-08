@@ -14,7 +14,7 @@
 		<button data-dismiss="alert" class="close">×</button>${message}</div>
 	</c:if>
 	<fieldset>
-	<legend><small>考试成绩单</small></legend>
+	<legend><b>当前位置:>>考试结果>>考试成绩单</b></legend>
 	 <div class="md-card uk-margin-medium-bottom">
     	<div class="md-card-content">
 				     <table id="dt_default" class="uk-table">

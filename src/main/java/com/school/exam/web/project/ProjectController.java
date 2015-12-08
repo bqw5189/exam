@@ -56,10 +56,12 @@ public class ProjectController {
     @RequestMapping(value="delete/{id}")
     public String deleteProject(@PathVariable("id") Long id, RedirectAttributes redirectAttributes,ServletRequest request) {
         String courseId = request.getParameter("courseId");
-            projectService.deleteProject(id);
-            redirectAttributes.addFlashAttribute("message", "删除项目成功");
-
-
+            boolean flag = projectService.deleteProject(id);
+            if(flag){
+            	redirectAttributes.addFlashAttribute("message", "删除项目成功");
+            }else{
+            	redirectAttributes.addFlashAttribute("message", "项目中包含试题信息不可进行删除操作");
+            }
         return "redirect:/project/add/"+Long.parseLong(courseId);
     }
     @RequestMapping(value = "create/{id}", method = RequestMethod.GET)

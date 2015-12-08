@@ -13,8 +13,17 @@
 			font-weight: bold;
 		}
 	</style> -->
+    <script>
+        function uploadFile(){
+            var uploadForm = document.getElementById("uploadForm");
+            if(undefined != uploadForm){
+                modal = UIkit.modal.blockUI('<div class=\'uk-text-center\'><div class="md-preloader"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="16" width="16" viewbox="0 0 75 75"><circle cx="37.5" cy="37.5" r="33.5" stroke-width="8" /></svg></div> 导入学生...</div>');
+                uploadForm.submit();
+            }
+        }
+    </script>
 </head>
-<
+
 <body>
 	<c:if test="${not empty message}">
 		<div id="message" class="k-alert uk-alert-danger"><a class="uk-alert-close uk-close" href="#"></a>${message}</div>
@@ -22,8 +31,11 @@
 	<div class="md-card uk-margin-medium-bottom">
     <div class="md-card-content">
      <div class="heading_list">
-                用户信息列表
+                当前位置:>>用户管理
             </div>
+        <div class="row-fluid" align="right">
+            <a href="${ctx }/register" class="md-btn md-btn-flat md-btn-flat-primary" id="add_btn">新增用户</a>
+        </div>
 	<table id="dt_default" class="uk-table" >
 		<thead><tr><th>所属班级</th><th>登录名</th><th>用户名</th><th>注册时间<th>管理</th></tr></thead>
 		<tbody>
@@ -42,6 +54,22 @@
 	</table>
     </div>
 </div>
-	
+    <div class="md-fab-wrapper">
+        <div class="row-fluid" align="right">
+            <form name="uploadForm" id="uploadForm" class="form-search " action="${ctx}/register/upload" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="projectId"  value="1">
+                <div class="uk-grid">
+                    <div class="uk-width-1-1">
+                        <div class="uk-form-file uk-text-primary">
+                            <a href="javascript:void(0)" class="md-fab md-fab-accent"> <i class="uk-icon-archive"></i> </a>
+                            <input type="file"  name="file" id="file" onchange="uploadFile()">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+    </div>
 </body>
 </html>

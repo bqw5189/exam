@@ -152,6 +152,7 @@ public class AccountService {
                 user.setRoles("student");
                 user.setPlainPassword(row.get(3));
                 user.setName(row.get(1));
+                user.setSsClass(ssClassVO);
 
                 registerUser(user);
 

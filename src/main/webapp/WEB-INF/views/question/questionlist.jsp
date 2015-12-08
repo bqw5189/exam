@@ -67,7 +67,7 @@
         <div class="md-card-list">
 
             <div class="md-card-list-header heading_list">
-                题库
+                <div><b>当前位置：>>试题管理</b></div>
             </div>
             <ul class="hierarchical_slide">
                 <c:forEach items="${question.content }" var="que">

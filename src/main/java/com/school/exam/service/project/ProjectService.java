@@ -2,6 +2,7 @@ package com.school.exam.service.project;
 
 import com.school.exam.entity.TeCourseVO;
 import com.school.exam.entity.TeProjectVO;
+import com.school.exam.repository.ExamQuestionDao;
 import com.school.exam.repository.ProjectDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -17,6 +18,7 @@ import java.util.List;
 @Transactional
 public class ProjectService {
     private ProjectDao projectDao;
+    private ExamQuestionDao questionDao;
     @Autowired
     public void setProjectDao(ProjectDao projectDao) {
         this.projectDao = projectDao;
@@ -24,8 +26,19 @@ public class ProjectService {
     public void addProject(TeProjectVO vo){
         projectDao.save(vo);
     }
-    public void deleteProject(Long id){
-        projectDao.delete(id);
+    /**
+     * 项目删除操作
+     * @param id
+     * @return
+     */
+    public boolean deleteProject(Long id){
+    	Integer count = questionDao.findByProjectId(id);
+    	if(count>0){
+    		return false;
+    	}else{
+    		projectDao.delete(id);
+    		return true;
+    	}
     }
     /**
      * 获得所有课程及项目信息

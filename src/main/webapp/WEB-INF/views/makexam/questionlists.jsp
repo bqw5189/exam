@@ -13,7 +13,7 @@
 		<div data-uk-alert="" class="uk-alert uk-alert-danger"><a class="uk-alert-close uk-close" href="#"></a> ${message}</div>
 	</c:if>
 	<fieldset>
-	<legend><small>试题选择</small></legend>
+	<legend><b>当前位置:>>制定试卷>>编辑试卷>>试题选择</b></legend>
 	<div class="md-card">
     <div class="md-card-content">
          <table id="dt_default" class="uk-table">

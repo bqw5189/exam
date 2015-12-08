@@ -8,8 +8,8 @@
 </head>
 <body>
 		    <div class="md-card"> 
-		     <div class="md-card-content"> 
-		      <h3 class="heading_a">查看明细</h3> 
+		     <div class="md-card-content">
+                 <div><b>当前位置：>>试题查看>查看明细</b></div>
 		      <table id="dt_default" class="uk-table">
 			      <tr>
 				      <td>

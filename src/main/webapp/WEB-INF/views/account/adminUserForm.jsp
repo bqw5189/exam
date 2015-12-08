@@ -12,7 +12,7 @@
 	<form id="inputForm" action="${ctx}/admin/user/update" method="post" class="form-horizontal">
 		<input type="hidden" name="id" value="${user.id}"/>
 		<fieldset>
-			<legend><small>用户管理</small></legend>
+			<legend><b>当前位置:>>用户管理>>用户修改</b></legend>
 				<div class="md-card"> 
 			     	<div class="md-card-content"> 
 				     <div class="parsley-row"> 

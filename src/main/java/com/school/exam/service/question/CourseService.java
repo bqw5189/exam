@@ -14,6 +14,7 @@ import com.school.exam.entity.TeExamQuestionVO;
 import com.school.exam.entity.TeSelectItemsVO;
 import com.school.exam.repository.CourseDao;
 import com.school.exam.repository.ExamQuestionDao;
+import com.school.exam.repository.ProjectDao;
 import com.school.exam.repository.SelectItemsDao;
 import org.springside.modules.persistence.Hibernates;
 
@@ -41,7 +42,19 @@ public class CourseService {
 
         return true;
     }
-
+    /**
+     * 是否可以删除试题信息
+     * @param id
+     * @return
+     */
+    public boolean isNotDeleteQuestion(Long id){
+    	Integer count = questionDao.findByProjectId(id);
+    	if(count>0){
+    		return false;
+    	}else{
+    		return true;
+    	}
+    }
     private String getAswerIds(List<TeSelectItemsVO> selectItems) {
         String result = "";
 

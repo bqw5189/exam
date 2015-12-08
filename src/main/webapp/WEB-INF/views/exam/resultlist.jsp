@@ -12,7 +12,7 @@
 <body>
 	<form id="submitForm" action="" method="post" class="form-horizontal">
 	<fieldset>
-	<legend><small>考试得分</small></legend>
+	<legend><b>当前位置:>>在线考试>>考试得分</b></legend>
 	<div class="md-card">
     <div class="md-card-content">
 	<table id="dt_default" class="uk-table">

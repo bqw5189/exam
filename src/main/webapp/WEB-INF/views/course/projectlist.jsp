@@ -17,9 +17,10 @@
 </c:if>
 <div class="md-card uk-margin-medium-bottom">
     <div class="md-card-content">
+
         <div align="right">
             <a href="${ctx }/project/create/${courseId}" class="md-btn md-btn-flat md-btn-flat-primary" id="add_btn" >新增项目</a>
-        </div>
+        </div><div><b>当前位置：>>课程项目列表>>项目列表</b></div>
         <table id="dt_default" class="uk-table" >
             <thead><tr><th style="width:8%">序号</th><th style="width:62%">项目名称</th><th style="width:12%">说明</th><th style="width:8%">操作</th>
             </tr></thead>

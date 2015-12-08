@@ -87,9 +87,14 @@ public class CourseController {
 	}
 	@RequestMapping(value="delete/{id}")
 	public String deleteQuestion(@PathVariable("id") Long id, RedirectAttributes redirectAttributes,ServletRequest request) {
-		courseService.deleteQuestionById(id);
+		boolean flag = courseService.isNotDeleteQuestion(id);
 		String projectId = request.getParameter("projectId");
-		redirectAttributes.addFlashAttribute("message", "删除问题成功");
+		if(flag){
+			courseService.deleteQuestionById(id);
+			redirectAttributes.addFlashAttribute("message", "删除问题成功");
+		}else{
+			redirectAttributes.addFlashAttribute("message", "试题已经使用不可进行删除");
+		}
 		return "redirect:/question/"+projectId;
 	}
 	@RequestMapping(value = "create/{projectId}", method = RequestMethod.GET)

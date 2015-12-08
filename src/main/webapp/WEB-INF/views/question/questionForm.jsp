@@ -9,6 +9,7 @@
 <h3 class="heading_b uk-margin-bottom">试题管理 -> 试题信息</h3>
 <div class="md-card">
     <div class="md-card-content large-padding">
+        <div><b>当前位置：>>试题管理>>编辑试题</b></div>
         <form id="inputForm" action="${ctx}/question/create" method="post" class="uk-form-stacked">
             <input type="hidden" name="id" value="${question.id}"/>
             <input type="hidden" name="projectId" value="${question.project.id}"/>

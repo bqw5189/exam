@@ -17,6 +17,7 @@
 </c:if>
 <div class="md-card uk-margin-medium-bottom">
     <div class="md-card-content">
+            <div><b>当前位置：>>班级管理</b></div>
         <div align="right">
             <a href="${ctx }/ssclass/create" class="md-btn md-btn-flat md-btn-flat-primary" id="add_btn" >新增班级</a>
         </div>

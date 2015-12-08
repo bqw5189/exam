@@ -17,6 +17,7 @@
 	</c:if>
 	<div class="md-card">
     <div class="md-card-content">
+
         <div class="uk-grid" data-uk-grid-margin="">
             <div class="uk-width-large-1-1">
                 <ul id="kUI_menu">
@@ -44,6 +45,7 @@
 </div>
 <div class="md-card uk-margin-medium-bottom">
     <div class="md-card-content">
+        <div><b>当前位置：>>统计分析</b></div>
         <table id="dt_default" class="uk-table" cellspacing="0" width="100%">
             <thead>
             <tr>

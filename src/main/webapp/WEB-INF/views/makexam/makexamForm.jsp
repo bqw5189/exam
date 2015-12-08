@@ -16,11 +16,9 @@
 		<input type="hidden" name="state" value="${makexam.state}"/>
 		<input type="hidden" name="projectId" value="${makexam.project.id}"/>
 		<fieldset>
-			<legend><small>编辑试卷</small></legend>
+			<legend><b>当前位置:>>制定试卷>>编辑试卷</b></legend>
 			<div class="md-card"> 
-		     <div class="md-card-content"> 
-		    <fieldset>
-			<legend><small>试卷信息</small></legend>
+		     <div class="md-card-content">
 				<div class="uk-width-medium-1-2">
 					<label>试卷名称</label>
 					  <input type="text" id="user_edit_uname_control" name="examName"  value="${makexam.examName}" class="md-input required" minlength="3"/>

@@ -11,7 +11,7 @@
 <body>
 	<form id="submitForm" name="myForm" action="${ctx}/examlist/submitpaper" method="post" class="form-horizontal">
 	<fieldset>
-	<legend><small>开始答卷</small></legend>
+	<legend><b>当前位置:>>在线考试>>开始答卷</b></legend>
 	<div class="md-card">
     <div class="md-card-content">
 	

@@ -9,20 +9,19 @@
 <form id="inputForm" action="${ctx}/ssclass/create/save" method="post" class="uk-form-stacked">
     <input type="hidden" name="id" value="${ssclass.id}"/>
     <fieldset>
-        <legend><small>班级管理</small></legend>
+        <legend><b>当前位置：>>班级管理>>班级编辑</b></legend>
         <div class="md-card">
             <div class="md-card-content large-padding">
                 <div class="uk-width-1-1">
                     <div class="parsley-row">
                         <label for="uk-form-row">班级名称<span class="req">*</span></label>
-                        <input class="md-input" type="text" id="uk-form-row" name="className" required="" value="${ssclass.className}"/>
+                        <input class="md-input" type="text" id="uk-form-row" name="className" required="true" value="${ssclass.className}"/>
                     </div>
                 </div>
-
                 <br/>
                 <div class="uk-width-1-1">
                     <div class="parsley-row">
-                        <label for="uk-form-row">说明<span class="req">*</span></label>
+                        <label for="uk-form-row">说明<span class="req"></span></label>
 			          <textarea class="md-input" name="classRemark" id="uk-form-row" cols="35" rows="4" required="">
                           ${ssclass.classRemark}
                       </textarea>
@@ -43,7 +42,7 @@
 
 
 <script>
-    $(document).ready(function(){
+    /* $(document).ready(function(){
         var i = $("#inputForm");
         i.parsley().on("form:validated",
                 function() {
@@ -54,7 +53,7 @@
                     $(i.$element).hasClass("md-input") && altair_md.update_input($(i.$element))
                 })
 
-    });
+    }); */
 </script>
 </body>
 </html>

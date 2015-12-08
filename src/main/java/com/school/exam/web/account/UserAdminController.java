@@ -10,6 +10,7 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.apache.log4j.spi.LoggerFactory;
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,7 +34,7 @@ import com.school.exam.service.ssclass.SSClassService;
 @Controller
 @RequestMapping(value = "/admin/user")
 public class UserAdminController {
-
+	Logger logger = org.slf4j.LoggerFactory.getLogger(UserAdminController.class);
 	@Autowired
 	private AccountService accountService;
 	@Autowired
@@ -53,6 +54,7 @@ public class UserAdminController {
 		List<SSClassVO> sclass = classService.getAllSSClass();
 		model.addAttribute("user", accountService.getUser(id));
 		model.addAttribute("classLists", sclass);
+		model.addAttribute("pathUrl","更新用户");
 		return "account/adminUserForm";
 	}
 
@@ -61,6 +63,15 @@ public class UserAdminController {
 		accountService.updateUser(user);
 		redirectAttributes.addFlashAttribute("message", "更新用户" + user.getLoginName() + "成功");
 		return "redirect:/admin/user";
+	}
+	@RequestMapping(value = "create", method = RequestMethod.GET)
+	public String create(Model model) {
+		User user = new User();
+		List<SSClassVO> sclass = classService.getAllSSClass();
+		model.addAttribute("user", user);
+		model.addAttribute("classLists", sclass);
+		model.addAttribute("pathUrl","新增用户");
+		return "account/adminUserForm";
 	}
 
 	@RequestMapping(value = "delete/{id}")

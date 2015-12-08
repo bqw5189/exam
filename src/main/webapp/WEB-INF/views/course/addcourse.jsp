@@ -8,12 +8,10 @@
 <body>
 <form id="inputForm" action="${ctx}/course/create/save" method="post" class="uk-form-stacked">
     <input type="hidden" name="id" value="${course.id}"/>
-    <fieldset>
-        <legend><small>课程管理</small></legend>
         <div class="md-card">
             <div class="md-card-content large-padding">
                 <fieldset>
-                    <legend><small>课程信息</small></legend>
+                    <legend><b>当前位置：>>课程项目管理>>编辑课程</b></legend>
                     <div class="uk-width-1-1">
                         <div class="parsley-row">
                             <label for="message">课程名称<span class="req">*</span></label>
@@ -37,7 +35,6 @@
                 </fieldset>
             </div>
         </div>
-    </fieldset>
 </form>
 
 

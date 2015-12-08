@@ -11,7 +11,7 @@
 
 	<form id="inputForm" action="#" method="post" class="form-horizontal">
 		<fieldset>
-			<legend><small>明细</small></legend>
+			<legend><b>当前位置：>> 统计分析>>明细</b></legend>
 			<div class="md-card">
     		<div class="md-card-content">
 			<table id="dt_default" class="uk-table">

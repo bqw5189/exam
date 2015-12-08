@@ -11,7 +11,7 @@
     <input type="hidden" name="courseId" value="${courseId}"/>
     <input type="hidden" name="project.course.id" value="${project.course.id}"/>
     <fieldset>
-        <legend><small>项目管理</small></legend>
+        <legend><b>当前位置：>>课程项目列表>>项目列表>>新增项目</b></legend>
         <div class="md-card">
             <div class="md-card-content large-padding">
                 <div class="uk-width-1-1">
