@@ -14,26 +14,26 @@
 		<fieldset>
 			<legend><b>当前位置:>>用户管理>>用户修改</b></legend>
 				<div class="md-card"> 
-			     	<div class="md-card-content"> 
-				     <div class="parsley-row"> 
-						<label for="register_username">登录名:</label>
-							<input type="text" value="${user.loginName}" class="md-input" disabled="" required=""/>
-					</div>
-					<div class="parsley-row"> 
-						<label for="register_username">用户名:</label>
-							<input type="text" id="name" name="name" value="${user.name}" class="md-input" required=""/>
-					</div>
-					<div class="parsley-row"> 
-						<label for="register_username">所属班级:</label>
-								<select name="ssClass.id">
-									<c:forEach var="s" items="${classLists }">
-										<option value="${s.id }" 
-										<c:if test="${ssClass.id==s.id }">selected="selected" </c:if>
-										>${s.className }</option>
-									</c:forEach>
-								</select>
-					</div>
-					<div class="parsley-row"> 
+			     	<div class="md-card-content">
+                        <div class="parsley-row">
+                            <label for="register_username">所属班级:</label>
+                            <select name="user.ssClass.id">
+                                <c:forEach var="s" items="${classLists }">
+                                    <option value="${s.id }"
+                                            <c:if test="${user.ssClass.id==s.id }">selected="selected" </c:if>
+                                            >${s.className }</option>
+                                </c:forEach>
+                            </select>
+                        </div>
+                        <div class="parsley-row">
+                         <label for="register_username">登录名:</label>
+                         <input type="text" value="${user.loginName}" class="md-input" disabled="" required=""/>
+                     </div>
+                        <div class="parsley-row">
+                        <label for="register_username">用户名:</label>
+                        <input type="text" id="name" name="name" value="${user.name}" class="md-input" required=""/>
+                    </div>
+					<div class="parsley-row">
 						<label for="register_password">密码:</label>
 							<input type="password" id="plainPassword" name="plainPassword" class="md-input" placeholder="...Leave it blank if no change"/>
 					</div>

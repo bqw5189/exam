@@ -48,7 +48,7 @@ public class CourseService {
      * @return
      */
     public boolean isNotDeleteQuestion(Long id){
-    	Integer count = questionDao.findByProjectId(id);
+    	Integer count = questionDao.findByCountProjectId(id);
     	if(count>0){
     		return false;
     	}else{
@@ -127,7 +127,7 @@ public class CourseService {
 		TeExamQuestionVO question = item.getQuestion();
 		if(item.getIsAnswer().equals(1)){
 			if(null!=question.getQuestionAnswerId()){
-			question.setQuestionAnswerId(question.getQuestionAnswerId()+","+String.valueOf(item.getId()));
+			    question.setQuestionAnswerId(question.getQuestionAnswerId()+","+String.valueOf(item.getId()));
 			}else{
 				question.setQuestionAnswerId(String.valueOf(item.getId()));
 			}

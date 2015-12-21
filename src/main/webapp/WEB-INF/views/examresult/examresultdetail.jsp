@@ -13,10 +13,9 @@
 		<div id="message" class="alert alert-success">
 		<button data-dismiss="alert" class="close">×</button>${message}</div>
 	</c:if>
-	<fieldset>
-	<legend><b>当前位置:>>考试结果>>考试成绩单</b></legend>
 	 <div class="md-card uk-margin-medium-bottom">
     	<div class="md-card-content">
+            <div><b>当前位置:>>考试结果>>考试成绩单</b></div>
 				     <table id="dt_default" class="uk-table">
 						<thead><tr><th style="width:40%">试卷名称</th><th style="width:20%">姓名</th><th style="width:20%">得分</th><th style="width:20%">排名</th></tr></thead>
 					<tbody>
@@ -36,7 +35,6 @@
 				</div>
 		</div>
 		</div>
-		</fieldset>
 		</form>
 </body>
 </html>

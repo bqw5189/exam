@@ -218,9 +218,23 @@ public class CourseController {
 //					question.setState(0);
 //				}
 //			}
+            boolean flag = true;
 			item.setQuestion(question);
-			courseService.saveItem(item);
-			redirectAttributes.addFlashAttribute("message", "操作成功");
+            if(question.getType().equals(1)&&question.getQuestionAnswerId().length()>0){
+                if(item.getIsAnswer().equals(1)){
+                    redirectAttributes.addFlashAttribute("message", "单选题不可以有多个答案，请正确填写选项信息！");
+                    item.setIsAnswer(0);
+                    flag = false;
+                }else{
+                    if(null!=item.getId()&&question.getQuestionAnswerId().equals(item.getId())) {
+                        question.setQuestionAnswerId("");
+                    }
+                }
+            }
+        courseService.saveItem(item);
+        if(flag){
+            redirectAttributes.addFlashAttribute("message", "操作成功");
+        }
 		return "redirect:/question/itemlist/"+questionId;
 	}
 	@RequestMapping(value="deleteitem/{id}")

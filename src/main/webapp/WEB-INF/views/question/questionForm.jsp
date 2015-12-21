@@ -6,7 +6,6 @@
 	<title>编辑问题</title>
 </head>
 <body>
-<h3 class="heading_b uk-margin-bottom">试题管理 -> 试题信息</h3>
 <div class="md-card">
     <div class="md-card-content large-padding">
         <div><b>当前位置：>>试题管理>>编辑试题</b></div>
@@ -28,7 +27,7 @@
                 <div class="uk-width-1-1">
                     <div class="parsley-row">
                         <label for="settings_page_description">问题内容</label>
-                        <textarea class="md-input" name="questionCont" id="settings_page_description" required="" cols="10" rows="8" data-parsley-trigger="keyup" data-parsley-minlength="5" data-parsley-maxlength="100" data-parsley-validation-threshold="10" data-parsley-minlength-message="">${question.questionCont}</textarea>
+                        <textarea class="md-input" name="questionCont" id="settings_page_description" required="" cols="10" rows="8" data-parsley-trigger="keyup" data-parsley-minlength="1" data-parsley-maxlength="100" data-parsley-validation-threshold="10" data-parsley-minlength-message="">${question.questionCont}</textarea>
                     </div>
                 </div>
             </div>
@@ -42,8 +41,9 @@
                 </div>
             </div>
             <div class="uk-grid">
-                <div class="uk-width-1-1">
+                <div class="uk-width-1-1" align="center">
                     <input id="submit_btn" class="md-btn md-btn-primary" type="submit" value="提交"/>
+                    <a href="#" onclick="history.go(-1);return false;" class="md-btn md-btn-primary">返回</a>
                 </div>
             </div>
         </form>

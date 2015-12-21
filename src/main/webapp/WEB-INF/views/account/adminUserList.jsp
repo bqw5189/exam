@@ -25,14 +25,12 @@
 </head>
 
 <body>
-	<c:if test="${not empty message}">
-		<div id="message" class="k-alert uk-alert-danger"><a class="uk-alert-close uk-close" href="#"></a>${message}</div>
-	</c:if>
-	<div class="md-card uk-margin-medium-bottom">
+<c:if test="${not empty message}">
+    <div data-uk-alert="" class="uk-alert uk-alert-danger"><a class="uk-alert-close uk-close" href="#"></a> ${message}</div>
+</c:if>
+<div class="md-card">
     <div class="md-card-content">
-     <div class="heading_list">
-                当前位置:>>用户管理
-            </div>
+        <div><b>当前位置:>>用户管理</b></div>
         <div class="row-fluid" align="right">
             <a href="${ctx }/register" class="md-btn md-btn-flat md-btn-flat-primary" id="add_btn">新增用户</a>
         </div>
@@ -48,6 +46,7 @@
 					<fmt:formatDate value="${user.registerDate}" pattern="yyyy年MM月dd日  HH时mm分ss秒" />
 				</td>
 				<td><a href="${ctx}/admin/user/delete/${user.id}" class="md-btn md-btn-flat md-btn-flat-primary"><i class="md-icon material-icons"></i></a></td>
+                <td><a href="${ctx}/admin/user/update/${user.id}" class="md-btn md-btn-flat md-btn-flat-primary"><i class="md-icon material-icons"></i></a></td>
 			</tr>
 		</c:forEach>
 		</tbody>

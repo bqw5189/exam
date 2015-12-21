@@ -20,7 +20,7 @@
 
         <div align="right">
             <a href="${ctx }/project/create/${courseId}" class="md-btn md-btn-flat md-btn-flat-primary" id="add_btn" >新增项目</a>
-        </div><div><b>当前位置：>>课程项目列表>>项目列表</b></div>
+        </div><div><b>当前位置：>>课程项目管理>>项目列表</b></div>
         <table id="dt_default" class="uk-table" >
             <thead><tr><th style="width:8%">序号</th><th style="width:62%">项目名称</th><th style="width:12%">说明</th><th style="width:8%">操作</th>
             </tr></thead>
@@ -33,7 +33,7 @@
                             ${pro.projectName }
                     </td>
                     <td>
-                        ${pro.remark}
+                           ${pro.remark}
                     </td>
                     <td>
                         <a href="${ctx }/project/delete/${pro.id}?courseId=${courseId}"><i class="md-icon material-icons"></i></a>

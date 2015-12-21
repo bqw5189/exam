@@ -17,7 +17,7 @@
                 <div class="uk-width-1-1">
                     <div class="parsley-row">
                         <label for="settings_page_description">选项内容</label>
-                        <textarea class="md-input" name="selectCont" id="settings_page_description" required="" cols="10" rows="8" data-parsley-trigger="keyup" data-parsley-minlength="5" data-parsley-maxlength="100" data-parsley-validation-threshold="10" data-parsley-minlength-message="">${item.selectCont}</textarea>
+                        <textarea class="md-input" name="selectCont" id="settings_page_description" required="" cols="10" rows="8" data-parsley-trigger="keyup" data-parsley-minlength="1" data-parsley-maxlength="100" data-parsley-validation-threshold="10" data-parsley-minlength-message="">${item.selectCont}</textarea>
                     </div>
                 </div>
             </div>
@@ -33,6 +33,7 @@
             <div class="uk-grid">
                 <div class="uk-width-1-1">
                     <input id="submit_btn" class="md-btn md-btn-primary" type="submit" value="提交"/>
+                    <a href="#" onclick="history.go(-1);return false;" class="md-btn md-btn-primary">返回</a>
                 </div>
             </div>
         </form>

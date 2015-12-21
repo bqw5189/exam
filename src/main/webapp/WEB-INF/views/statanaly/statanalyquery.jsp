@@ -10,31 +10,13 @@
 <div id="mainPage">
 
 	<form id="inputForm" action="#" method="post" class="form-horizontal">
-		<input type="hidden" name="examId" id="examId" value="${exam.id}"> 
-		<fieldset>
-			<legend><b>当前位置:>>统计分析>>统计列表</b></legend>
-			
+		<input type="hidden" name="examId" id="examId" value="${exam.id}">
 			<div class="md-card">
     			<div class="md-card-content">
-    			<fieldset>
-				<legend><small>试卷信息</small></legend>
-    			<div class="uk-width-medium-1-2">
-				<label>试卷名称:</label>
-				  <input type="text" id="user_edit_uname_control" name="examName"  value="${exam.examName}" class="md-input required" minlength="3"/>
-				 </div>
-				 <div class="uk-width-medium-1-2">
-				<label>说明:</label>
-				<textarea class="md-input required" name="examRemark" id="settings_page_description" cols="35" rows="4">
-	              	${exam.examRemark}
-	              </textarea> 
-				</div>
-				</fieldset>
-			</div>
-			</div>
-	<div class="md-card"> 
-		<div class="md-card-content"> 
-			<fieldset>
-			<legend><small>统计分析列表</small></legend>
+                    <div><b>当前位置:>>统计分析>>统计列表</b></div>
+                    <br>
+                    <br>
+			<div><b>试卷名称:    ${exam.examName}</b></div>
 			<table id="contentTable" class="uk-table">
 					<thead><tr><th style="width:8%">序号</th><th style="width:12%">试题类型</th><th style="width:62%">试题名称</th><th style="width:10%">答对率(%)</th>
 					<th style="width:8%">操作</th>
@@ -61,10 +43,8 @@
 			<div align="center">
 				<input id="cancel_btn" class="md-btn md-btn-primary" type="button" value="返回" onclick="history.back()"/>
 			</div>
-			</fieldset>
 			</div>
 		</div>
-		</fieldset>
 	</form>
 </div>
 	<script>

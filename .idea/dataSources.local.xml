@@ -7,5 +7,11 @@
       <schema-pattern>exam.*</schema-pattern>
       <default-schemas>exam.*</default-schemas>
     </data-source>
+    <data-source name="SQL Server - servicedesk@101.200.197.74" uuid="e654ce9d-b383-4c9c-a3f9-9bc85cc4c052">
+      <secret-storage>master_key</secret-storage>
+      <user-name>sa</user-name>
+      <schema-pattern>ServiceDesk.*</schema-pattern>
+      <default-schemas>ServiceDesk.*</default-schemas>
+    </data-source>
   </component>
 </project>

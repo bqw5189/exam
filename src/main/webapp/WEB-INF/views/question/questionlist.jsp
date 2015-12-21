@@ -67,7 +67,7 @@
         <div class="md-card-list">
 
             <div class="md-card-list-header heading_list">
-                <div><b>当前位置：>>试题管理</b></div>
+                当前位置：>>试题管理
             </div>
             <ul class="hierarchical_slide">
                 <c:forEach items="${question.content }" var="que">
@@ -76,9 +76,9 @@
                         <a href="#" class="md-icon material-icons"></a>
                         <div class="uk-dropdown uk-dropdown-flip uk-dropdown-small">
                             <ul class="uk-nav">
-                                <li><a href="${ctx }/question/update/${que.id}"><i class="material-icons"></i> 修改</a></li>
-                                <li><a href="${ctx }/question/itemlist/${que.id}"><i class="material-icons"></i> 管理</a></li>
-                                <li><a href="${ctx }/question/delete/${que.id}?projectId=${projectId}"><i class="material-icons"></i> 删除</a></li>
+                                <li><a href="${ctx }/question/update/${que.id}"><i class="md-icon material-icons"></i>修改试题</a></li>
+                                <li><a href="${ctx }/question/itemlist/${que.id}"><i class="material-icons"></i></span> 选项管理</a></li>
+                                <li><a href="${ctx }/question/delete/${que.id}?projectId=${projectId}"><i class="material-icons"></i> 删除试题</a></li>
                             </ul>
                         </div>
                     </div> <span class="md-card-list-item-date">${ que.questionScore}</span>
@@ -92,11 +92,12 @@
                     </div>
                     <div class="md-card-list-item-content-wrapper">
                         <div class="md-card-list-item-content">
+
                             <ol style="list-style-type: upper-alpha">
                                 <c:forEach items="${ que.selectItems}" var="item">
                                 <li>${item.selectCont } <c:if test="${item.isAnswer==1 }">
                                     <i class="uk-icon-check"></i>
-                                </c:if></li>
+                                </c:if></li><br>
                                 </c:forEach>
                             </ol>
                         </div>

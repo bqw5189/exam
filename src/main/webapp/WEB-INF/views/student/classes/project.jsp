@@ -127,8 +127,29 @@
         function showData(data){
             if ("IMG" === data.type){
                 $("#showData").html("<img src='${ctx}/static/${resourcePath}/" + data.file + "'/>" );
-            }else if("TEXT" === data.type){
-                $("#showData").html(data.content);
+            }else if("TEXT" === data.type || "IMG-TEXT" === data.type){
+                var html = '<div><span id="title">' + data.content + '</span></div>';
+
+                if ("IMG-TEXT" === data.type) {
+                    html += "<img src='${ctx}/static/${resourcePath}/" + data.file + "'/>";
+                }
+
+                html += '<div> 答案:<textarea name="answer" id="answer" style="min-height: 300px;width: 100%"></textarea></div>';
+                html += '<div> <input type="button" class="btn" name="submit" id="submit" value="提交"/></div>';
+
+                $("#showData").html(html);
+
+                $("#submit").click(function(){
+                    var email = $("#email").val();
+                    var answer = $("#answer").val();
+                    var title = $("#title").text();
+
+                    $.get("${ctx}/api/v1/student/answer",{title:'北校区大气PM2.5中多环芳烃分析' + title, email:'<shiro:principal property="name"></shiro:principal>',answer:answer}, function(data){
+                        alert("提交成功");
+                    });
+
+
+                });
             }else if("SELECT" === data.type ||"FLASH" === data.type){
                 $("#showData").html('<embed src="${ctx}/static/${resourcePath}/' + data.file + '" width="700" height="500"></embed>');
             }

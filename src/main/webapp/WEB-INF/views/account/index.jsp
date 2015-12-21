@@ -12,7 +12,7 @@
         <%--</script>--%>
     <%--</shiro:hasRole>--%>
 </head>
-<body>
+<body >
 <!-- statistics (small charts) -->
 <div class="uk-grid uk-grid-width-large-1-4 uk-grid-width-medium-1-2 uk-grid-medium uk-sortable sortable-handler hierarchical_show" data-uk-sortable="" data-uk-grid-margin="">
     <div>

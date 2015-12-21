@@ -15,6 +15,6 @@ public interface ExamQuestionDao extends PagingAndSortingRepository<TeExamQuesti
 	public Integer updateQuestion(String answerId,Long id);
 
     @Query("select count(id) from TeExamQuestionVO where project.id=?1")
-    public Integer findByProjectId(Long id);
+    public Integer findByCountProjectId(Long id);
 
 }

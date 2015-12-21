@@ -27,8 +27,8 @@
     <div class="menu_section">
         <ul>
             <shiro:hasRole name="teacher">
-                <li class="<c:if test="${fn:contains(uri,makexam)}">current_section</c:if>"> <a href="${makexam}"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">制定试卷</span> </a></li>
                 <li class="<c:if test="${fn:contains(uri,questionsee)}">current_section</c:if>"> <a href="${questionsee}"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">试题查看</span> </a></li>
+                <li class="<c:if test="${fn:contains(uri,makexam)}">current_section</c:if>"> <a href="${makexam}"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">制定试卷</span> </a></li>
                 <li class="<c:if test="${fn:contains(uri,examresult)}">current_section</c:if>"> <a href="${examresult}"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">学生答题情况</span> </a></li>
                 <li class="<c:if test="${fn:contains(uri,statanaly)}">current_section</c:if>"> <a href="${statanaly}"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">统计分析</span> </a></li>
             </shiro:hasRole>

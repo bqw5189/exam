@@ -54,10 +54,7 @@
 	       </div> 
 	       <div class="uk-width-medium-2-10 uk-text-center"> 
 		        <button type="submit" class="md-btn md-btn-primary uk-margin-small-top" id="search_btn">搜索</button>
-	       </div> 
-	       <div class="uk-width-medium-2-10 uk-text-center" align="right"> 
-		        <tags:sort></tags:sort>
-		   </div>
+	       </div>
 	      </div>
        </form>
      </div>
@@ -75,15 +72,18 @@
 					</h3>
 		         <div class="uk-accordion-content">
 		          <c:set var="itemno" value="1"></c:set>
+                     <ol type="A">
 		         	<c:forEach items="${ que.selectItems}" var="item">
-		         	${ itemno}、
+		         	    <li>
 		         		${item.selectCont }&nbsp;&nbsp;&nbsp;&nbsp;
 		         		<c:if test="${item.isAnswer==1 }">
 		         			<img alt="" src="${ctx }/static/images/button_ok.png">
 						</c:if>
+                        </li>
 						</br>
 					<c:set var="itemno" value="${itemno+1 }"></c:set>
 		         	</c:forEach>
+                     </ol>
 		         </div> 
 				<c:set var="no" value="${no+1 }"></c:set>
 			</c:forEach>

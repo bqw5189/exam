@@ -11,6 +11,7 @@ import com.school.exam.repository.Token;
 import com.school.exam.service.account.ShiroDbRealm;
 import com.school.exam.service.exam.ExamPaperResultService;
 import com.school.exam.service.exam.ExamQuestionService;
+import com.school.exam.service.question.WordsService;
 import com.school.exam.utils.ExcelUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.util.StringUtils;
@@ -43,6 +44,7 @@ public class StudentController {
 
     public static Map<String, String> NAV_MAP = new LinkedHashMap<String, String>();
     public static Map<String, Course> COURSE_MAP = new LinkedHashMap<String, Course>();
+    public static List<List<String>> RESOURCES = new ArrayList<List<String>>();
     public static final String COURSE_NAME = "复杂基体有机物指标分析";
 
     static{
@@ -51,21 +53,27 @@ public class StudentController {
         NAV_MAP.put("课程学习", "student/classes/study");
         NAV_MAP.put("模拟实验室", "student/testroom");
         NAV_MAP.put("习题库", "student/examlist");
-        NAV_MAP.put("参考资料", "student/classes/lib/books");
-        NAV_MAP.put("名词索引", "student/classes/lib/words");
-        NAV_MAP.put("视频索引", "student/classes/lib/moves");
-        NAV_MAP.put("动画索引", "student/classes/lib/flash");
-        NAV_MAP.put("图片索引", "student/classes/lib/images");
+        NAV_MAP.put("参考资料", "student/classes/books");
+        NAV_MAP.put("名词索引", "student/words");
+        NAV_MAP.put("视频索引", "student/classes/moves");
+        NAV_MAP.put("动画索引", "student/classes/flash");
+        NAV_MAP.put("图片索引", "student/classes/images");
 
         InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("classes.xls");
 
-        COURSE_MAP.putAll(ExcelUtils.toCourse(ExcelUtils.toList(inputStream)));
+        RESOURCES.addAll(ExcelUtils.toList(inputStream));
+        COURSE_MAP.putAll(ExcelUtils.toCourse(RESOURCES));
+
+
+
     }
 
     @Autowired
     private ExamQuestionService questionService;
     @Autowired
     private ExamPaperResultService resultService;
+    @Autowired
+    private WordsService wordsService;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String index(Model model) {
@@ -74,6 +82,69 @@ public class StudentController {
 		return "student/index";
 	}
 
+    public List<List<String>> getResourceByTaskName(String taskName){
+        List<List<String>> resource = new ArrayList<List<String>>();
+
+        for (List<String> r: RESOURCES){
+            if (taskName.equals(r.get(1))){
+                resource.add(r);
+            }
+        }
+
+//        System.out.println("resource = " + resource.size());
+
+        return resource;
+    }
+
+    @RequestMapping(value = "classes/images", method = RequestMethod.GET)
+    public String images(Model model, @RequestParam(value = "taskName", defaultValue = "北校区大气PM2.5中多环芳烃分析") String taskName) {
+
+        model.addAttribute("nav", NAV_MAP);
+        model.addAttribute("curent", "图片索引");
+        model.addAttribute("resources",getResourceByTaskName(taskName));
+
+        return NAV_MAP.get("图片索引");
+    }
+
+    @RequestMapping(value = "classes/flash", method = RequestMethod.GET)
+    public String flash(Model model, @RequestParam(value = "taskName", defaultValue = "北校区大气PM2.5中多环芳烃分析") String taskName) {
+
+        model.addAttribute("nav", NAV_MAP);
+        model.addAttribute("curent", "动画索引");
+        model.addAttribute("resources",getResourceByTaskName(taskName));
+
+        return NAV_MAP.get("动画索引");
+    }
+
+    @RequestMapping(value = "classes/moves", method = RequestMethod.GET)
+    public String moves(Model model, @RequestParam(value = "taskName", defaultValue = "北校区大气PM2.5中多环芳烃分析") String taskName) {
+
+        model.addAttribute("nav", NAV_MAP);
+        model.addAttribute("curent", "视频索引");
+        model.addAttribute("resources",getResourceByTaskName(taskName));
+
+        return NAV_MAP.get("视频索引");
+    }
+
+    @RequestMapping(value = "classes/books", method = RequestMethod.GET)
+    public String books(Model model) {
+
+        model.addAttribute("nav", NAV_MAP);
+        model.addAttribute("curent", "参考资料");
+        model.addAttribute("course",COURSE_MAP);
+
+        return NAV_MAP.get("参考资料");
+    }
+
+    @RequestMapping(value = "testroom", method = RequestMethod.GET)
+    public String testroom(Model model) {
+
+        model.addAttribute("nav", NAV_MAP);
+        model.addAttribute("curent", "模拟实验室");
+        model.addAttribute("course",COURSE_MAP);
+
+        return NAV_MAP.get("模拟实验室");
+    }
 
     @RequestMapping(value = "classes/study", method = RequestMethod.GET)
     public String classes(Model model) {
@@ -84,6 +155,13 @@ public class StudentController {
 
         return NAV_MAP.get("课程学习");
     }
+    @RequestMapping(value = "classes/index", method = RequestMethod.GET)
+    public String classIndex(Model model) {
+        model.addAttribute("nav", NAV_MAP);
+        model.addAttribute("curent", "课程导学");
+        return NAV_MAP.get("课程导学");
+    }
+
     @RequestMapping(value = "project", method = RequestMethod.GET)
     public String project(Model model, @RequestParam("project_title") String projectTitle, @RequestParam("task_title") String taskTitle) {
 
@@ -97,6 +175,16 @@ public class StudentController {
         model.addAttribute("resourcePath", "pmfj");
 
         return "student/classes/project";
+    }
+
+    @RequestMapping(value = "words", method = RequestMethod.GET)
+    public String project(Model model, @RequestParam(defaultValue = "北校区大气PM2.5中多环芳烃分析") String type) {
+
+        model.addAttribute("nav", NAV_MAP);
+        model.addAttribute("curent", "名词索引");
+        model.addAttribute("words",wordsService.findAll());
+
+        return NAV_MAP.get("名词索引");
     }
 
     @RequestMapping(value = "examlist", method = RequestMethod.GET)

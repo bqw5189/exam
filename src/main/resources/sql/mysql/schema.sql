@@ -4,6 +4,8 @@
 --CREATE USER 'exam'@'127.0.0.1' IDENTIFIED BY 'exam';
 --CREATE DATABASE IF NOT EXISTS exam_old DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
+CREATE DATABASE IF NOT EXISTS es DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+
 
 create table ss_task (
 	id bigint auto_increment,
@@ -110,7 +112,16 @@ create table t_te_answer(
   id bigint auto_increment,
   title VARCHAR(512),
   email VARCHAR(128),
-  answer VARCHAR(512)
+  answer VARCHAR(512),
+  primary key (id)
+)
+
+create table t_te_words(
+  id bigint auto_increment,
+  type VARCHAR(128),
+  word VARCHAR(128),
+  remark VARCHAR(1024),
+  primary key (id)
 )
 
 

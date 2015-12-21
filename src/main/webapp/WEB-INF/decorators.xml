@@ -4,10 +4,9 @@
 		<pattern>/static/*</pattern>
 		<pattern>/api/*</pattern>
         <pattern>/login</pattern>
-        <pattern>/register</pattern>
-        <pattern>/student/</pattern>
         <pattern>/student</pattern>
-	</excludes>
+        <pattern>/student/</pattern>
+    </excludes>
 
     <decorator name="student" page="default-student.jsp">
         <pattern>/student/classes/*</pattern>

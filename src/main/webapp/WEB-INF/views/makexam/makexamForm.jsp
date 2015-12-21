@@ -15,45 +15,41 @@
  		<input type="hidden" name="questionIds" id="questionIds" value="${questionIds }"/>
 		<input type="hidden" name="state" value="${makexam.state}"/>
 		<input type="hidden" name="projectId" value="${makexam.project.id}"/>
-		<fieldset>
-			<legend><b>当前位置:>>制定试卷>>编辑试卷</b></legend>
-			<div class="md-card"> 
+			<div class="md-card">
 		     <div class="md-card-content">
+                 <div><b>当前位置:>>制定试卷>>编辑试卷</b></div>
 				<div class="uk-width-medium-1-2">
 					<label>试卷名称</label>
 					  <input type="text" id="user_edit_uname_control" name="examName"  value="${makexam.examName}" class="md-input required" minlength="3"/>
-				</div>	
+				</div>
 				<div class="uk-width-medium-1-2">
 					<label>说明</label>
-						<textarea class="md-input required" name="examRemark" id="settings_page_description" cols="35" rows="4">
-	              	${makexam.examRemark}
-	              </textarea> 
-				</div>	
+						<textarea class="md-input required" name="examRemark" id="user_edit_personal_info_control" cols="35" rows="4">${makexam.examRemark}</textarea>
+				</div>
 				<div class="uk-width-medium-1-2">
 					<label>考试时间(分钟)</label>
 					<input type="text"  value="${makexam.examTime}" data-inputmask-showmaskonhover="false" data-inputmask="'alias': 'numeric', 'groupSeparator': ',', 'autoGroup': true, 'digits': 0, 'digitsOptional': false, 'prefix': '', 'placeholder': '100'" id="examTime" name="examTime" class="md-input masked_input" style="text-align: right;" required max="100"><span class="md-input-bar"></span>
 				</div>
-				</fieldset>
-			</div>
+
 		</div>
-		<div class="md-card"> 
-		     <div class="md-card-content"> 
-			<div  align="right">
-					<input id="add_btn" class="md-btn md-btn-flat md-btn-flat-primary" type="button" value="添加试题"/>
+		<div class="md-card">
+		     <div class="md-card-content">
+			<div align="right">
+					<input id="add_btn" class="md-btn md-btn-flat md-btn-flat-primary" type="button" value="添加试卷中的试题"/>
 		    </div>
 		    <div id="selectQuestion">
-		    
+
 		    </div>
 			<div align="center">
-				<input id="submit_btn" class="md-btn md-btn-primary" type="submit" value="提交"/>&nbsp;	
+				<input id="submit_btn" class="md-btn md-btn-primary" type="submit" value="提交"/>&nbsp;
 				<input id="cancel_btn" class="md-btn md-btn-primary" type="button" value="返回" onclick="history.back()"/>
 			</div>
 		</div>
 		</div>
-		</fieldset>
+      </div>
 	</form>
 </div>
-<div id="subPage" hidden="true">
+<div id="subPage" hidden="true" class="md-card">
 </div>
 <script src="${ctx}/static/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
 <script src="${ctx}/static/jquery-validation/1.11.1/jquery.validate.min.js" type="text/javascript"></script>
@@ -216,10 +212,9 @@
 	<!-- /modal with message list -->
 <script id="quest_list_temp" type="text/html">
 <form id="selectForm" action="#" method="post" class="form-horizontal">
-	<fieldset>
-	<legend><small>试题选择</small></legend>
-	<div class="md-card"> 
-		<div class="md-card-content"> 
+	<div class="md-card">
+		<div class="md-card-content">
+            <div><b>当前位置：>>制定试卷>>编辑试卷>>试题选择</b></div>
 			<table id="dt_default" class="uk-table" cellspacing="0" width="100%">
             	<thead>
             		<tr><th style="width:8%">序号</th><th style="width:54%">试题名称</th><th style="width:12%">试题类型</th><th style="width:8%">分数</th></tr>
@@ -250,15 +245,15 @@
 	</div>
 	</div>
 </div>
-		</fieldset>
     </form>
 </script>
 
 <script id="select_question_list" type="text/html">
+    <form id="inputForm1"  class="form-horizontal">
 <fieldset>
-	<legend><small>试题列表</small></legend>
+	<legend><b>试题列表</b></legend>
 	<table id="dt_default_list" class="uk-table">
-		<tr><th style="width:8%">序号</th><th style="width:54%">试题名称</th><th style="width:12%">试题类型</th><th style="width:8%">分数</th><th style="width:8%">操作</th></tr>
+		<tr><th style="width:8%">序号</th><th style="width:20%">试题名称</th><th style="width:12%">试题类型</th><th style="width:8%">分数</th><th style="width:8%">操作</th></tr>
 		<#if(null!=data){#>
 		<#for (var i = 0; i < data.length; i++){#>
 		<tr><td><input type="hidden" name="id" value="<#=data[i].id#>"/><#=i+1#></td>
@@ -276,6 +271,7 @@
 		<#}}#>
 	</table>
 </fieldset>
+</form>
 </script>
 </body>
 

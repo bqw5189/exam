@@ -10,10 +10,9 @@
 <div id="mainPage">
 
 	<form id="inputForm" action="#" method="post" class="form-horizontal">
-		<fieldset>
-			<legend><b>当前位置：>> 统计分析>>明细</b></legend>
 			<div class="md-card">
     		<div class="md-card-content">
+                <div><b>当前位置：>>统计分析>>统计列表>>明细</b></div>
 			<table id="dt_default" class="uk-table">
 					<thead><tr><th style="width:33%">序号</th><th style="width:33%">姓名</th><th style="width:34%">答题情况</th>
 					</tr></thead>
@@ -41,7 +40,6 @@
 				</div>
 				</div>
 			</div>
-		</fieldset>
 	</form>
 </div>
 </body>

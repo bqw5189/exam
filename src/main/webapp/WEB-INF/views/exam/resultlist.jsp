@@ -11,11 +11,10 @@
 
 <body>
 	<form id="submitForm" action="" method="post" class="form-horizontal">
-	<fieldset>
-	<legend><b>当前位置:>>在线考试>>考试得分</b></legend>
 	<div class="md-card">
     <div class="md-card-content">
 	<table id="dt_default" class="uk-table">
+        <div><b>当前位置:>>考试得分</b></div>
 		<tbody>	
 			<tr>
 				<td align="center"><center><strong>${examvo.examName }</strong></center>本次答卷得分：<font color="red" size="6">${sumScore }</font></td>
@@ -93,6 +92,5 @@
 	</div>
 	</div>
 	</form>
-	</fieldset>
 </body>
 </html>

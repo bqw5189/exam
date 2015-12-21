@@ -10,10 +10,9 @@
     <input type="hidden" name="id" value="${project.id}"/>
     <input type="hidden" name="courseId" value="${courseId}"/>
     <input type="hidden" name="project.course.id" value="${project.course.id}"/>
-    <fieldset>
-        <legend><b>当前位置：>>课程项目列表>>项目列表>>新增项目</b></legend>
         <div class="md-card">
             <div class="md-card-content large-padding">
+                <div><b>当前位置：>>课程项目管理>>项目列表>>新增项目</b></div>
                 <div class="uk-width-1-1">
                     <div class="parsley-row">
                         <label for="uk-form-row">项目名称<span class="req">*</span></label>
@@ -24,7 +23,7 @@
                 <br/>
                 <div class="uk-width-1-1">
                     <div class="parsley-row">
-                        <label for="uk-form-row">说明<span class="req">*</span></label>
+                        <label for="uk-form-row">说明</label>
 			          <textarea class="md-input" name="remark" id="uk-form-row" cols="35" rows="4" required="">
                           ${project.remark}
                       </textarea>
@@ -45,18 +44,18 @@
 
 
 <script>
-    $(document).ready(function(){
-        var i = $("#inputForm");
-        i.parsley().on("form:validated",
-                function() {
-                    altair_md.update_input(i.find(".md-input-danger"));
+  //  $(document).ready(function(){
+  //      var i = $("#inputForm");
+  //      i.parsley().on("form:validated",
+  //              function() {
+  //                  altair_md.update_input(i.find(".md-input-danger"));
+//
+  //              }).on("field:validated",
+   //             function(i) {
+   //                 $(i.$element).hasClass("md-input") && altair_md.update_input($(i.$element))
+   //             })
 
-                }).on("field:validated",
-                function(i) {
-                    $(i.$element).hasClass("md-input") && altair_md.update_input($(i.$element))
-                })
-
-    });
+   // });
 </script>
 </body>
 </html>

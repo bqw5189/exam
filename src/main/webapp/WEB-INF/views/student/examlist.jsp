@@ -12,7 +12,7 @@
 
 <style>
     .nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus{
-        background-color: #fbc02d;
+        background-color: #f88825;
     }
 </style>
 </head>
@@ -60,17 +60,16 @@
                                     <tr><td><hr/></td></tr>
                                     <tr>
                                     <td>
-
                                     <c:forEach items="${que.selectItems}" var="item">
 
-                                        <ol  style="list-style-type:upper-roman">
+                                        <ol  type="A">
 
                                             <c:if test="${que.type==1 }">
 
                                                 <div class="radio">
                                                     <label>
-                                                        <input type='radio' name='${que.id }' id='${item.id}' value='${item.id}'/>
-                                                        <li>${item.selectCont }</li>
+                                                        <input type='radio' name='${que.id }' id='${item.id}' value='${item.id}' style="margin-left: -35px"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                        <li  style="list-style:inherit; margin-left: 20px">${item.selectCont }</li>
                                                     </label>
                                                 </div>
 
@@ -78,8 +77,8 @@
                                             <c:if test="${que.type==2 }">
                                                 <div class="checkbox">
                                                     <label>
-                                                        <input type='checkbox' name='${que.id }' id='${item.id}' value='${item.id}'/>
-                                                        <li>${item.selectCont }</li>
+                                                        <input type='checkbox' name='${que.id }' id='${item.id}' value='${item.id}' style="margin-left: -35px"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                        <li  style="list-style:inherit; margin-left: 20px">${item.selectCont }</li>
                                                     </label>
                                                 </div>
                                             </c:if>

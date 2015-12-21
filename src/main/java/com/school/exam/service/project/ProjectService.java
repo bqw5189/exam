@@ -20,6 +20,11 @@ public class ProjectService {
     private ProjectDao projectDao;
     private ExamQuestionDao questionDao;
     @Autowired
+    public void setQuestionDao(ExamQuestionDao questionDao) {
+        this.questionDao = questionDao;
+    }
+
+    @Autowired
     public void setProjectDao(ProjectDao projectDao) {
         this.projectDao = projectDao;
     }
@@ -32,13 +37,16 @@ public class ProjectService {
      * @return
      */
     public boolean deleteProject(Long id){
-    	Integer count = questionDao.findByProjectId(id);
-    	if(count>0){
-    		return false;
-    	}else{
-    		projectDao.delete(id);
-    		return true;
-    	}
+        if(null!=id) {
+            Integer count = questionDao.findByCountProjectId(id);
+            if (null != count && count > 0) {
+                return false;
+            } else {
+                projectDao.delete(id);
+                return true;
+            }
+        }
+        return false;
     }
     /**
      * 获得所有课程及项目信息

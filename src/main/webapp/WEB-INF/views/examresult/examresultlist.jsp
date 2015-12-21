@@ -45,7 +45,7 @@
 	</div>
    <div class="md-card uk-margin-medium-bottom">
     <div class="md-card-content">
-        <div><b>当前位置：>>查看考试结果</b></div>
+        <div><b>当前位置：>>学生答题情况>>查看考试结果</b></div>
         <table id="dt_default" class="uk-table" cellspacing="0" width="100%">
             <thead>
             <tr>
