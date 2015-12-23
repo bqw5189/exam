@@ -58,6 +58,8 @@
 
     $(function(){
 
+        $($("a",$($("h1.onhere").parent())).get(0)).addClass("onhere");
+
         init("北校区大气PM2.5中多环芳烃分析",$("h1.onhere").text(),$($("a",$($("h1.onhere").parent())).get(0)).text());
 
         $("#btng").hide();
@@ -66,6 +68,10 @@
         var index = 0;
 
         $(".substep").click(function(){
+            $(".substep").removeClass("onhere");
+
+            $(this).addClass("onhere");
+
             $("#btng").hide();
             index = 0;
             rdata=[]
@@ -127,10 +133,10 @@
         function showData(data){
             if ("IMG" === data.type){
                 $("#showData").html("<img src='${ctx}/static/${resourcePath}/" + data.file + "'/>" );
-            }else if("TEXT" === data.type || "IMG-TEXT" === data.type){
+            }else if("TEXT" === data.type || "IMG-TEXT" === data.type|| "IMG-TABLE" === data.type){
                 var html = '<div><span id="title">' + data.content + '</span></div>';
 
-                if ("IMG-TEXT" === data.type) {
+                if ("IMG-TEXT" === data.type|| "IMG-TABLE" === data.type) {
                     html += "<img src='${ctx}/static/${resourcePath}/" + data.file + "'/>";
                 }
 
@@ -152,6 +158,22 @@
                 });
             }else if("SELECT" === data.type ||"FLASH" === data.type){
                 $("#showData").html('<embed src="${ctx}/static/${resourcePath}/' + data.file + '" width="700" height="500"></embed>');
+            }else if("MOVE" === data.type){
+                var so = new SWFObject("${ctx}/static/js/CuPlayerMiniV4.swf","CuPlayerV4","700","490","9","#000000");
+                so.addParam("allowfullscreen","true");
+                so.addParam("allowscriptaccess","always");
+                so.addParam("wmode","opaque");
+                so.addParam("quality","high");
+                so.addParam("salign","lt");
+                so.addVariable("CuPlayerSetFile","${ctx}/static/js/CuPlayerSetFile.xml");
+                so.addVariable("CuPlayerFile",'${ctx}/static/${resourcePath}/' + 'ypcjqcl.flv');
+                so.addVariable("CuPlayerImage","${ctx}/static/images/start.jpg");
+                so.addVariable("CuPlayerWidth","1024");
+                so.addVariable("CuPlayerHeight","768");
+                so.addVariable("CuPlayerAutoPlay","yes");
+                so.addVariable("CuPlayerPosition","bottom-right");
+
+                so.write("showData");
             }
 
 
@@ -176,6 +198,12 @@
             }
         }
 
+    });
+</script>
+<!--底部end-->
+<script>
+    $(function(){
+        $(".text02").attr("src", "${ctx}/static/student/img/text02.png");
     });
 </script>
 </body>

@@ -45,8 +45,8 @@
 				<td>
 					<fmt:formatDate value="${user.registerDate}" pattern="yyyy年MM月dd日  HH时mm分ss秒" />
 				</td>
-				<td><a href="${ctx}/admin/user/delete/${user.id}" class="md-btn md-btn-flat md-btn-flat-primary"><i class="md-icon material-icons"></i></a></td>
-                <td><a href="${ctx}/admin/user/update/${user.id}" class="md-btn md-btn-flat md-btn-flat-primary"><i class="md-icon material-icons"></i></a></td>
+				<td><a href="${ctx}/admin/user/delete/${user.id}" class="md-btn md-btn-flat md-btn-flat-primary"><i class="md-icon material-icons"></i></a>
+                    <a href="${ctx}/admin/user/update/${user.id}" class="md-btn md-btn-flat md-btn-flat-primary"><i class="md-icon material-icons"></i></a></td>
 			</tr>
 		</c:forEach>
 		</tbody>
@@ -60,7 +60,7 @@
                 <div class="uk-grid">
                     <div class="uk-width-1-1">
                         <div class="uk-form-file uk-text-primary">
-                            <a href="javascript:void(0)" class="md-fab md-fab-accent"> <i class="uk-icon-archive"></i> </a>
+                            <a href="javascript:void(0)" class="md-fab md-fab-accent"> <i class="uk-icon-folder-open"></i> </a>
                             <input type="file"  name="file" id="file" onchange="uploadFile()">
                         </div>
                     </div>

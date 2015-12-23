@@ -29,7 +29,7 @@
 	                     	<c:forEach items="${cour.project }" var="pro">
 	                         <li>
 	                         <span class="icon-leaf" ></span>
-	                          <a href="${ctx }/questionsee/${pro.id}" 
+	                          <a href="${ctx }/questionsee/${pro.id}"
 	                         <c:if test="${ projectId==pro.id}">
 	                         		class="text-success"
 	                         </c:if>

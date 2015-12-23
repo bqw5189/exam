@@ -24,6 +24,8 @@
     <script src="${ctx}/static/student/js/all.js" type="text/javascript"></script>
     <script src="${ctx}/static/bootstrap/2.3.2/js/bootstrap.min.js" type="text/javascript"></script>
 
+    <script src="${ctx}/static/js/swfobject.js" type="text/javascript"></script>
+
     <script src="${ctx}/static/angular/angular.js" type="text/javascript"></script>
     <script src="${ctx}/static/angular/angular-animate.js" type="text/javascript"></script>
 
@@ -46,8 +48,23 @@
         student.config(['$sceProvider', function($sceProvider) {
             $sceProvider.enabled(false);
         }]);
+
+    </script>
+    <!--底部end-->
+    <script>
+        $(function(){
+            $(".text02").attr("src", "${ctx}/static/student/img/text01.png");
+        });
     </script>
     <style>
+
+        .onhere{
+            font-size: 20px;font-weight: bold;
+        }
+        ul, ol {
+            margin: 0 0 0px 0px;
+            padding: 0;
+        }
     </style>
 </head>
 
@@ -71,6 +88,7 @@
     </div>
     <!--导航end-->
 <sitemesh:body/>
+
 
 </body>
 </html>

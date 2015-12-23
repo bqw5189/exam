@@ -35,7 +35,7 @@
                 <div data-uk-dropdown="" class="uk-button-dropdown" aria-haspopup="true" aria-expanded="false">
                     <button class="md-btn"> ${cour.courseName } <c:if test="${fn:length(cour.project)>0}"><i class="material-icons"></i></c:if></button>
                     <c:if test="${fn:length(cour.project)>0}">
-                        <div class="uk-dropdown uk-dropdown-small" style="min-width: 160px;">
+                        <div class="uk-dropdown uk-dropdown-small" style="min-width: 280px;">
                             <ul class="uk-nav uk-nav-dropdown uk-panel">
                                 <c:forEach items="${cour.project }" var="pro">
                                     <li>
@@ -119,7 +119,7 @@
             <div class="uk-grid">
                 <div class="uk-width-1-1">
                     <div class="uk-form-file uk-text-primary">
-                        <a href="javascript:void(0)" class="md-fab md-fab-accent"> <i class="uk-icon-archive"></i> </a>
+                        <a href="javascript:void(0)" class="md-fab md-fab-accent" data-uk-tooltip="导入题库" title="导入题库"><i class="uk-icon-folder-open"></i></a>
                         <input type="file"  name="file" id="file" onchange="uploadFile()">
                     </div>
                 </div>

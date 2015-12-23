@@ -34,6 +34,9 @@
 				</tr>
 				<c:forEach items="${resultlist}" var="result">
 					<c:if test="${result.examQuestionId==que.id}">
+                        <c:set var="answers" value=""/>
+                        <c:set var="replys" value=""/>
+                        <c:set var="score" value="0" />
 						<c:forEach items="${que.selectItems}" var="item">
 							<c:if test="${que.type==1 }">
 								<tr>
@@ -41,15 +44,14 @@
 										<input type='radio' name='${que.id }' id='${item.id}' value='${item.id}'
 										<c:if test="${result.chooseQuestionId==item.id}">
 										
-										<c:set var="reply" value="学生答案：${item.selectCont}" />
+										<c:set var="reply" value="${item.selectCont}" />
 										 checked=true
 										 </c:if>
 										 >
-										 <c:if test="${que.questionAnswerId==item.id}"><c:set var="answer" value="正确答案：${item.selectCont}" /> </c:if>
+										 <c:if test="${que.questionAnswerId==item.id}"><c:set var="answer" value="${item.selectCont}" /> </c:if>
 										 ${item.selectCont }
-										 <c:if test="${que.questionAnswerId==item.id}"></font></c:if>
 										 <c:if test="${que.questionAnswerId==item.id&&result.chooseQuestionId==item.id }">
-										 <c:set var="score" value="得分：${que.questionScore}" /></c:if>
+										 <c:set var="score" value="${que.questionScore}" /></c:if>
 										 </input>
 									</td>
 								</tr>
@@ -59,23 +61,39 @@
 									<td>
 										<input type='checkbox' name='${que.id }' id='${item.id}' value='${item.id}'
 										<c:if test="${fn:contains(result.chooseQuestionId,item.id)}">
+                                            <c:set var="replys" value="${replys}   ${item.selectCont}" />
 										 checked=true
 										 </c:if>
 										 >
-										 <c:if test="${fn:contains(que.questionAnswerId,item.id)}"><font color="red"></c:if>
+										 <c:if test="${fn:contains(que.questionAnswerId,item.id)}">
+                                         <c:set var="answers" value="${answers}   ${item.selectCont}" /> </c:if>
 										 ${item.selectCont }
-										 <c:if test="${fn:contains(que.questionAnswerId,item.id)}"></font></c:if>
+
 										 </input>
 									</td>
 								</tr>
 							</c:if>
 						</c:forEach>
 					</c:if>
-				</c:forEach>
+
+            </c:forEach>
 				<c:set var="indexno" value="${indexno+1 }"></c:set>
 				<tr>
 					<td>
-						<font color="red"><c:out value="${answer }"></c:out>   <c:out value="${ reply}"></c:out>    <c:out value="${score }"></c:out></font>
+                        <c:if test="${que.type==1 }">
+						<font color="red">正确答案：</font>${answer }  <font color="red">学生答案：</font>${ reply}    <font color="red">得分：</font>${score }
+                            </c:if>
+                        <c:if test="${que.type==2 }">
+                            <font color="red">正确答案：</font>${answers } <font color="red">学生答案：</font>${ replys}
+
+                            <c:if test="${fn:contains(replys,answers) }">
+                                <font color="red">得分：</font>${que.questionScore}"
+                            </c:if>
+                            <c:if test="${not fn:contains(replys,answers) }">
+                                <font color="red">得分：</font>0
+                            </c:if>
+                        </c:if>
+
 					</td>
 				</tr>
 			</c:forEach>

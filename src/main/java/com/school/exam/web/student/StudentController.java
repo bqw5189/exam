@@ -53,6 +53,7 @@ public class StudentController {
         NAV_MAP.put("课程学习", "student/classes/study");
         NAV_MAP.put("模拟实验室", "student/testroom");
         NAV_MAP.put("习题库", "student/examlist");
+//        NAV_MAP.put("习题库", "examlist");
         NAV_MAP.put("参考资料", "student/classes/books");
         NAV_MAP.put("名词索引", "student/words");
         NAV_MAP.put("视频索引", "student/classes/moves");

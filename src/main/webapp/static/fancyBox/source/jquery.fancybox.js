@@ -300,7 +300,10 @@
 						} else if (F.isSWF(href)) {
 							type = 'swf';
 
-						} else if (href.charAt(0) === '#') {
+						}else if (F.isFLV(href)) {
+                            type = 'swf';
+
+                        } else if (href.charAt(0) === '#') {
 							type = 'inline';
 
 						} else if (isString(element)) {
@@ -773,9 +776,13 @@
 			return isString(str) && str.match(/(^data:image\/.*,)|(\.(jp(e|g|eg)|gif|png|bmp|webp|svg)((\?|#).*)?$)/i);
 		},
 
-		isSWF: function (str) {
-			return isString(str) && str.match(/\.(swf)((\?|#).*)?$/i);
-		},
+        isSWF: function (str) {
+            return isString(str) && str.match(/\.(swf)((\?|#).*)?$/i);
+        },
+
+        isFLV: function (str) {
+            return isString(str) && str.match(/\.(flv)((\?|#).*)?$/i);
+        },
 
 		_start: function (index) {
 			var coming = {},

@@ -51,11 +51,6 @@
     
      <!--底部-->
     
-     <!--底部end-->
-       <script>
-           $(function(){
-               $(".text02").hide();
-           });
-       </script>
+
 </body>
 </html>

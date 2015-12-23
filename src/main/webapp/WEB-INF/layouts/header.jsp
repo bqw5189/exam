@@ -14,6 +14,7 @@
                     <li data-uk-dropdown="{mode:'click'}"> <a href="#" class="user_action_image"><img class="md-user-image" src="${ctx}/static/altair/assets/img/avatars/user@2x.png" alt="" /></a>
                         <div class="uk-dropdown uk-dropdown-small uk-dropdown-flip">
                             <ul class="uk-nav js-uk-prevent">
+                                <li><a href="${ctx}/student">首页</a></li>
                                 <li><a href="${ctx}/profile">修改密码</a></li>
                                 <li><a href="${ctx}/logout">退出</a></li>
                             </ul>
