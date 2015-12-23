@@ -141,16 +141,20 @@
                 }
 
                 html += '<div> 答案:<textarea name="answer" id="answer" style="min-height: 300px;width: 100%"></textarea></div>';
-                html += '<div> <input type="button" class="btn" name="submit" id="submit" value="提交"/></div>';
+                html += '<div> <button id="submit" class="btn" data-loading-text="提交中..." type="button" >提交</button></div>';
 
                 $("#showData").html(html);
 
                 $("#submit").click(function(){
-                    var email = $("#email").val();
                     var answer = $("#answer").val();
                     var title = $("#title").text();
 
-                    $.get("${ctx}/api/v1/student/answer",{title:'北校区大气PM2.5中多环芳烃分析' + title, email:'<shiro:principal property="name"></shiro:principal>',answer:answer}, function(data){
+                    $(this).text("提交中...");
+                    $(this).attr("disabled", "true");
+
+                    $.get("${ctx}/api/v1/student/answer?title=" + '北校区大气PM2.5中多环芳烃分析' + title + "&email=" + '<shiro:principal property="name"></shiro:principal>' + "&answer=" + answer, function(data){
+                        $("#submit").text("提交");
+                        $("#submit").removeAttr("disabled");
                         alert("提交成功");
                     });
 
@@ -203,7 +207,7 @@
 <!--底部end-->
 <script>
     $(function(){
-        $(".text02").attr("src", "${ctx}/static/student/img/text02.png");
+        $(".text02").attr("src", "${ctx}/static/student/img/text03.png");
     });
 </script>
 </body>

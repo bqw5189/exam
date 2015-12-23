@@ -43,7 +43,7 @@
                     </tr>
                 <tr>
                     <td>
-                        <ol type="A">
+                        <ol type="A" style="padding-left: 30px">
                     <c:forEach items="${resultlist}" var="result">
                         <c:if test="${result.examQuestionId==que.id}">
                             <c:set var="answers" value=""/>

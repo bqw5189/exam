@@ -53,7 +53,7 @@
     <!--底部end-->
     <script>
         $(function(){
-            $(".text02").attr("src", "${ctx}/static/student/img/text01.png");
+            $(".text02").attr("src", "${ctx}/static/student/img/text02.png");
         });
     </script>
     <style>

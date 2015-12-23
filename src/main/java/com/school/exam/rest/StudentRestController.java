@@ -53,7 +53,7 @@ public class StudentRestController {
 
         answerService.save(answerObj);
 
-        return "";
+        return "true";
     }
 
 	@RequestMapping(method = RequestMethod.GET, produces = MediaTypes.JSON_UTF_8)

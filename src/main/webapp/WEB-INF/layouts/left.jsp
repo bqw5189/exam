@@ -14,6 +14,7 @@
 <c:set var="question" value="${ctx}/question"/>
 <c:set var="course" value="${ctx}/course"/>
 <c:set var="ssclass" value="${ctx}/ssclass"/>
+<c:set var="answer" value="${ctx}/answer"/>
 
 <!-- main sidebar -->
 <aside id="sidebar_main">
@@ -31,6 +32,7 @@
                 <li class="<c:if test="${fn:contains(uri,makexam)}">current_section</c:if>"> <a href="${makexam}"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">制定试卷</span> </a></li>
                 <li class="<c:if test="${fn:contains(uri,examresult)}">current_section</c:if>"> <a href="${examresult}"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">学生答题情况</span> </a></li>
                 <li class="<c:if test="${fn:contains(uri,statanaly)}">current_section</c:if>"> <a href="${statanaly}"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">统计分析</span> </a></li>
+                <li class="<c:if test="${fn:contains(uri,answer)}">current_section</c:if>"> <a href="${answer}"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">练习答案</span> </a></li>
             </shiro:hasRole>
             <shiro:hasRole name="admin">
                 <li class="<c:if test="${fn:contains(uri,ssclass)}">current_section</c:if>"> <a href="${ssclass}"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">班级管理</span> </a></li>
