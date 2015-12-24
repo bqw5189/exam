@@ -60,31 +60,16 @@
                                     <tr><td><hr/></td></tr>
                                     <tr>
                                     <td>
+                                        <ol type="A" style="padding-left: 30px">
                                     <c:forEach items="${que.selectItems}" var="item">
-
-                                        <ol  type="A">
-
                                             <c:if test="${que.type==1 }">
-
-                                                <div class="radio">
-                                                    <label>
-                                                        <input type='radio' name='${que.id }' id='${item.id}' value='${item.id}' style="margin-left: -35px"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                        <li  style="list-style:inherit; margin-left: 20px">${item.selectCont }</li>
-                                                    </label>
-                                                </div>
-
+                                                <li  style="list-style:inherit; margin-left: 20px"><input type='radio' name='${que.id }' id='${item.id}' value='${item.id}' style="margin-left: -50px;margin-bottom: 8px"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${item.selectCont }</li>
                                             </c:if>
                                             <c:if test="${que.type==2 }">
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type='checkbox' name='${que.id }' id='${item.id}' value='${item.id}' style="margin-left: -35px"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                        <li  style="list-style:inherit; margin-left: 20px">${item.selectCont }</li>
-                                                    </label>
-                                                </div>
+                                                <li  style="list-style:inherit; margin-left: 20px"><input type='checkbox' name='${que.id }' id='${item.id}' value='${item.id}' style="margin-left: -35px"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${item.selectCont }</li>
                                             </c:if>
-                                        </ol>
-
                                     </c:forEach>
+                                        </ol>
                                     </td>
                                     </tr>
 

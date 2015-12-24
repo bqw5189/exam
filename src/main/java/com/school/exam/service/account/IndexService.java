@@ -10,6 +10,8 @@ import java.util.Map;
 
 import javax.transaction.Transactional;
 
+import com.school.exam.entity.User;
+import com.school.exam.repository.UserDao;
 import org.hibernate.internal.util.collections.CollectionHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,6 +27,7 @@ import com.school.exam.repository.MakeExamsDao;
 public class IndexService {
 	private IndexShowDao indexdao;
 	private MakeExamsDao examdao;
+    private UserDao userdao;
     private static Logger logger = LoggerFactory.getLogger(IndexService.class);
 
     public IndexShowVO getIndexShowVo(Long id){
@@ -78,7 +81,19 @@ public class IndexService {
 	public IndexShowDao getIndexdao() {
 		return indexdao;
 	}
-	@Autowired
+
+    public User getUserById(long id){
+        return userdao.findById(id);
+    }
+    public UserDao getUserdao() {
+        return userdao;
+    }
+    @Autowired
+    public void setUserdao(UserDao userdao) {
+        this.userdao = userdao;
+    }
+
+    @Autowired
 	public void setIndexdao(IndexShowDao indexdao) {
 		this.indexdao = indexdao;
 	}

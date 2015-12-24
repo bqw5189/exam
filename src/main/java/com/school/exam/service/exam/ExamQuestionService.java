@@ -319,6 +319,6 @@ public class ExamQuestionService {
 
 
     public List<TeMakeExamVO> findByExamName(String examName) {
-        return examDao.findByExamName(examName);
+        return examDao.findTop1ByProjectProjectNameOrderByIdDesc(examName);
     }
 }

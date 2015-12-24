@@ -23,5 +23,5 @@ public interface MakeExamsDao extends PagingAndSortingRepository<TeMakeExamVO, L
 	@Query("select new com.school.exam.entity.TeMakeExamVO(t.id,t.examName,t.examTime,t.examRemark) from TeMakeExamVO t where t.state=?1 ORDER BY t.id desc")
 	public List<TeMakeExamVO> queryBeforeFiveExam(Integer state);
 
-    List<TeMakeExamVO> findByExamName(String examName);
+    List<TeMakeExamVO> findTop1ByProjectProjectNameOrderByIdDesc(String examName);
 }

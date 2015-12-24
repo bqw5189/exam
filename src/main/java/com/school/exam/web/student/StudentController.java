@@ -193,32 +193,37 @@ public class StudentController {
     public String examlist(@RequestParam(defaultValue = "北校区大气PM2.5中多环芳烃分析") String examName, Model model) {
         model.addAttribute("nav", NAV_MAP);
         model.addAttribute("curent", "习题库");
-        model.addAttribute("course",COURSE_MAP);
+        model.addAttribute("course", COURSE_MAP);
 
 
         ShiroDbRealm.ShiroUser user = getCurrentUser();
         List<TeMakeExamVO> examlist = questionService.findByExamName(examName);
-        if(null==examlist&&examlist.size()==0){
+        TeMakeExamVO teMakeExamVO = null;
+        if (null == examlist || examlist.size() == 0) {
             model.addAttribute("message", "当前没有考试卷!");
-        }
-
-        if(!resultService.isHasExamByCurrentUserId(user.id, examlist.get(0).getId())){
-            TeMakeExamVO examvo = questionService.findExamQuestions(examlist.get(0).getId());
-            examvo = addRemark(examvo,examlist.get(0).getId());
-            model.addAttribute("examvo", examvo);
-            model.addAttribute("examName", examName);
-
-            return NAV_MAP.get("习题库");
+            return NAV_MAP.get("首页");
         }else{
-            TeMakeExamVO examvo = questionService.findExamQuestions(examlist.get(0).getId());
-            List<TeExamQuestionVO> list = examvo.getQuestionList();
+            teMakeExamVO = examlist.get(0);
 
-            List<TeExamPaperResultVO> eprlist = resultService.getExamPaperByPersonId(user.id, examlist.get(0).getId());
-            model.addAttribute("sumScore", null==eprlist?0:eprlist.get(0).getSumScore());
-            model.addAttribute("examvo", examvo);
-            model.addAttribute("resultlist", questionService.findByDepdIdAndPersonId(examlist.get(0).getId(), user.id));
+            if (!resultService.isHasExamByCurrentUserId(user.id, teMakeExamVO.getId())) {
+                TeMakeExamVO examvo = questionService.findExamQuestions(teMakeExamVO.getId());
+                examvo = addRemark(examvo, teMakeExamVO.getId());
+                model.addAttribute("examvo", examvo);
+                model.addAttribute("examName", examName);
 
-            return "student/resultlist";
+                return NAV_MAP.get("习题库");
+            }else{
+                TeMakeExamVO examvo = questionService.findExamQuestions(teMakeExamVO.getId());
+                List<TeExamQuestionVO> list = examvo.getQuestionList();
+
+                List<TeExamPaperResultVO> eprlist = resultService.getExamPaperByPersonId(user.id, teMakeExamVO.getId());
+                model.addAttribute("sumScore", null == eprlist ? 0 : eprlist.get(0).getSumScore());
+                model.addAttribute("examvo", examvo);
+                model.addAttribute("resultlist", questionService.findByDepdIdAndPersonId(teMakeExamVO.getId(), user.id));
+
+                return "student/resultlist";
+            }
+
         }
 
 

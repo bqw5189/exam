@@ -31,9 +31,6 @@
 <div class="md-card">
     <div class="md-card-content">
         <div><b>当前位置:>>用户管理</b></div>
-        <div class="row-fluid" align="right">
-            <a href="${ctx }/register" class="md-btn md-btn-flat md-btn-flat-primary" id="add_btn">新增用户</a>
-        </div>
 	<table id="dt_default" class="uk-table" >
 		<thead><tr><th>所属班级</th><th>登录名</th><th>用户名</th><th>注册时间<th>管理</th></tr></thead>
 		<tbody>
@@ -68,7 +65,7 @@
             </form>
         </div>
 
-
+        <a class="md-fab md-fab-accent" href="${ctx }/register"> <i class="material-icons"></i> </a>
     </div>
 </body>
 </html>

@@ -22,7 +22,7 @@
                 <div class="uk-width-1-1">
                     <div class="parsley-row">
                         <label for="uk-form-row">说明<span class="req"></span></label>
-			          <textarea class="md-input" name="classRemark" id="user_edit_personal_info_control" cols="35" rows="4" required="">${ssclass.classRemark}</textarea>
+			          <textarea class="md-input" name="classRemark" id="user_edit_personal_info_control" cols="35" rows="4" >${ssclass.classRemark}</textarea>
                     </div>
                 </div>
                 <div align="center">

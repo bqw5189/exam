@@ -48,7 +48,7 @@ public class StatanalyController {
 			Model model,
 			ServletRequest request) {
 		Map<String, Object> searchParams = Servlets.getParametersStartingWith(request, "search_");
-		List<TeMakeExamVO> makexam = null;//questionService.findAllMakeExamByProjectId(null,new SearchFilter("state", Operator.GTE, 2),searchParams, pageNumber, pageSize, sortType);
+		List<TeMakeExamVO> makexam = questionService.findAllMakeExamByProjectId(null,new SearchFilter("state", Operator.GTE, 2),searchParams, pageNumber, pageSize, sortType);
 		//获取课程信息
 		model.addAttribute("course",courseService.findAllCourse());
 		model.addAttribute("makexam", makexam);

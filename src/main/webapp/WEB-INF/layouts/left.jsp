@@ -37,8 +37,8 @@
             <shiro:hasRole name="admin">
                 <li class="<c:if test="${fn:contains(uri,ssclass)}">current_section</c:if>"> <a href="${ssclass}"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">班级管理</span> </a></li>
                 <li class="<c:if test="${fn:contains(uri,user)}">current_section</c:if>"> <a href="${user}"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">用户管理</span> </a></li>
-                <li class="<c:if test="${fn:contains(uri,question)}">current_section</c:if>"> <a href="${question}"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">试题管理</span> </a></li>
                 <li class="<c:if test="${fn:contains(uri,course)}">current_section</c:if>"> <a href="${course}"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">课程项目管理</span> </a></li>
+                <li class="<c:if test="${fn:contains(uri,question)}">current_section</c:if>"> <a href="${question}"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">试题管理</span> </a></li>
                 <li class="divider"></li>
             </shiro:hasRole>
             <shiro:hasRole name="student">

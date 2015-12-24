@@ -18,7 +18,7 @@
 <div class="md-card">
     <div class="md-card-content">
 
-        <form class="form-search " action="#">
+        <form class="form-search " action="#" >
             <div data-uk-grid-margin="" class="uk-grid">
                 <div class="uk-width-medium-3-10">
                     <div class="md-input-wrapper"><label for="product_search_name"></label><input type="text" id="product_search_name" name="search_LIKE_courseName" class="md-input" value="${param.search_LIKE_courseName}"><span class="md-input-bar"></span></div>
@@ -33,13 +33,6 @@
 <div class="md-card uk-margin-medium-bottom">
     <div class="md-card-content">
         <div><b>当前位置：>>课程项目管理</b></div>
-            <div class="row-fluid" align="right">
-                    <div class="uk-grid">
-                        <div class="uk-width-1-1">
-                            <a href="${ctx }/course/create" class="md-btn md-btn-flat md-btn-flat-primary" id="add_btn" >新增课程</a>
-                        </div>
-                    </div>
-            </div>
 
         <div class="uk-accordion" data-uk-accordion="" style="width:100%">
             <c:set var="no" value="1"></c:set>
@@ -76,6 +69,8 @@
         </div>
     </div>
 </div>
-
+<div class="md-fab-wrapper">
+<a class="md-fab md-fab-accent" href="${ctx }/register"> <i class="material-icons"></i> </a>
+</div>
 </body>
 </html>

@@ -220,17 +220,19 @@ public class CourseController {
 //			}
             boolean flag = true;
 			item.setQuestion(question);
-            if(question.getType().equals(1)&&question.getQuestionAnswerId().length()>0){
-                if(item.getIsAnswer().equals(1)){
+        if(null!=question.getQuestionAnswerId()) {
+            if (question.getType().equals(1) && question.getQuestionAnswerId().length() > 0) {
+                if (item.getIsAnswer().equals(1)) {
                     redirectAttributes.addFlashAttribute("message", "单选题不可以有多个答案，请正确填写选项信息！");
                     item.setIsAnswer(0);
                     flag = false;
-                }else{
-                    if(null!=item.getId()&&question.getQuestionAnswerId().equals(item.getId())) {
+                } else {
+                    if (null != item.getId() && question.getQuestionAnswerId().equals(item.getId())) {
                         question.setQuestionAnswerId("");
                     }
                 }
             }
+        }
         courseService.saveItem(item);
         if(flag){
             redirectAttributes.addFlashAttribute("message", "操作成功");

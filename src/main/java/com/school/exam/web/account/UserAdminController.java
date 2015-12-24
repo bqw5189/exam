@@ -68,8 +68,6 @@ public class UserAdminController {
 	@RequestMapping(value = "update", method = RequestMethod.POST)
 	public String update(@Valid @ModelAttribute("user") User user, RedirectAttributes redirectAttributes) {
         SSClassVO classVO = new SSClassVO();
-        logger.warn("===id==={}", classVO.getId());
-        logger.warn("====name=={}", classVO.getClassName());
         classVO = classService.getClass(user.getSsClass().getId());
         user.setSsClass(classVO);
 		accountService.updateUser(user);

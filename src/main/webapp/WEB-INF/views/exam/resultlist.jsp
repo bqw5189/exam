@@ -81,6 +81,7 @@
 				<tr>
 					<td>
                         <c:if test="${que.type==1 }">
+
 						<font color="red">正确答案：</font>${answer }  <font color="red">学生答案：</font>${ reply}    <font color="red">得分：</font>${score }
                             </c:if>
                         <c:if test="${que.type==2 }">
