@@ -17,7 +17,7 @@
         <div><b>当前位置:>>考试得分</b></div>
 		<tbody>	
 			<tr>
-				<td align="center"><center><strong>${examvo.examName }</strong></center>本次答卷得分：<font color="red" size="6">${sumScore }</font></td>
+				<td align="center"><center><strong>${examvo.examName }</strong></center>${userName} 本次答卷得分：<font color="red" size="6">${sumScore }</font></td>
 			</tr>
 			<tr>
 				<td align="center">${examvo.examRemark }</td>
@@ -81,14 +81,18 @@
 				<tr>
 					<td>
                         <c:if test="${que.type==1 }">
-
-						<font color="red">正确答案：</font>${answer }  <font color="red">学生答案：</font>${ reply}    <font color="red">得分：</font>${score }
-                            </c:if>
+                        <c:if test="${score==0}">
+                            <font color="red">
+                        </c:if>
+                            <c:if test="${score>0}"><font color="green">
+                        </c:if>
+                            正确答案：${answer }  学生答案：${ reply}    得分：${score }</font>
+                        </c:if>
                         <c:if test="${que.type==2 }">
                             <font color="red">正确答案：</font>${answers } <font color="red">学生答案：</font>${ replys}
 
                             <c:if test="${fn:contains(replys,answers) }">
-                                <font color="red">得分：</font>${que.questionScore}"
+                                <font color="green">得分：</font>${que.questionScore}"
                             </c:if>
                             <c:if test="${not fn:contains(replys,answers) }">
                                 <font color="red">得分：</font>0

@@ -55,13 +55,6 @@
 
 
 
-<div id="page_content">
-    <div id="page_content_inner">
-        <sitemesh:body/>
-    </div>
-
-</div>
-
 <!-- common functions -->
 <script src="${ctx}/static/altair/assets/js/common.min.js"></script>
 <!-- uikit functions -->
@@ -116,14 +109,21 @@
 <script>
     // load parsley config (altair_admin_common.js)
     altair_forms.parsley_validation_config();
-    </script> 
-    
-  <script src="${ctx}/static/altair/bower_components/parsleyjs/dist/parsley.min.js"></script> 
-  <!-- inputmask--> 
-  <script src="${ctx}/static/altair/bower_components/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
+</script>
+
+<script src="${ctx}/static/altair/bower_components/parsleyjs/dist/parsley.min.js"></script>
+<!-- inputmask-->
+<script src="${ctx}/static/altair/bower_components/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
 
 <script src="${ctx}/static/bootstrap/2.3.2/js/bootstrap.min.js" type="text/javascript"></script>
 <%--<script src="${ctx}/static/jquery-validation/1.11.1/messages_bs_zh.js" type="text/javascript"></script>--%>
 <script src="${ctx}/static/js/template.js" type="text/javascript"></script>
+<div id="page_content">
+    <div id="page_content_inner">
+        <sitemesh:body/>
+    </div>
+
+</div>
+
 </body>
 </html>

@@ -37,7 +37,7 @@
 						<c:if test="${item.isAnswer==0 }">否</c:if>
 					</td>
 					<td>
-					<a href="${ctx }/question/deleteitem/${item.id}?questionId=${questionId}"><i class="md-icon material-icons"></i></a> 
+					<a href="#" class="deleteItem" data-id="${item.id}" data-questionid="${quesionId}"><i class="md-icon material-icons"></i></a>
 					<a href="${ctx }/question/updateitem/${item.id}"><i class="md-icon material-icons"></i></a>
 					</td>
 				</tr>
@@ -53,5 +53,19 @@
 				</div>
 	</div>
 </div>
+<script>
+    $(function(){
+        $(".deleteItem").click(function(){
+            var id = $(this).attr("data-id");
+            var questionid = $(this).attr("data-questionid");
+            if(confirm("确定要删除选项吗？")){
+                window.location.href="${ctx }/question/deleteitem/"+id+"questionId="+questionid;
+            }
+        });
+
+
+    })
+</script>
 </body>
+
 </html>

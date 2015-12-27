@@ -58,7 +58,7 @@
                 </div>
                 <c:set var="no" value="${no+1 }"></c:set>
                 <div align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="${ctx }/course/delete/${cou.id}?projectId=${projectId}"><i class="md-icon material-icons"></i></a>
+                    <a href="#" class="delete_question" data-project-id="${projectId}" data-id="${cou.id}"><i class="md-icon material-icons"></i></a>
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <a href="${ctx }/course/update/${cou.id}"><i class="md-icon material-icons"></i></a>
                     &nbsp;&nbsp;&nbsp;&nbsp;
@@ -70,7 +70,25 @@
     </div>
 </div>
 <div class="md-fab-wrapper">
-<a class="md-fab md-fab-accent" href="${ctx }/register"> <i class="material-icons"></i> </a>
+    <a href="${ctx }/course/create" class="md-fab md-fab-accent" style="font-size: 12px;color:#fff;padding-top: 16px">添加<br/>课程</a>
 </div>
+<style>
+    #page_content_inner {
+        padding: 24px 24px 0px;
+    }
+</style>
+<script>
+
+    $(function(){
+        $(".delete_question").click(function(){
+            var id = $(this).attr("data-id");
+            var projectId = $(this).attr("data-project-id");
+
+            if(confirm("确认删除此课程吗？")){
+                window.location.href="${ctx }/course/delete/"+id+"?projectId=" + projectId;
+            }
+        });
+    });
+</script>
 </body>
 </html>

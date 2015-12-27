@@ -8,25 +8,33 @@
 </head>
 
 <body>
-<div id="mainPage">
 
-	<form id="inputForm" onsubmit="return check()"  action="${ctx}/makexam/create" method="post" class="form-horizontal">
+<fieldset id="mainPage">
+    <legend><b>当前位置:>>制定试卷>>编辑试卷</b></legend>
+
+    <div class="md-card" id="login_card">
+        <div class="md-card-content large-padding" id="login_form">
+            <div class="login_heading">
+                <div class="user_avatar"></div>
+            </div>
+
+	<form id="inputForm" onsubmit="return check()"  action="${ctx}/makexam/create" method="post" class="uk-form-stacked">
  		<input type="hidden" name="id" value="${makexam.id}"/>
  		<input type="hidden" name="questionIds" id="questionIds" value="${questionIds }"/>
 		<input type="hidden" name="state" value="${makexam.state}"/>
 		<input type="hidden" name="projectId" value="${makexam.project.id}"/>
-			<div class="md-card">
-		     <div class="md-card-content">
-                 <div><b>当前位置:>>制定试卷>>编辑试卷</b></div>
-				<div class="uk-width-medium-1-2">
+
+        <div class="uk-grid" data-uk-grid-margin="">
+
+				<div class="uk-width-medium-1-1">
 					<label>试卷名称</label>
 					  <input type="text" id="user_edit_uname_control" name="examName"  value="${makexam.examName}" class="md-input required" minlength="3"/>
 				</div>
-				<div class="uk-width-medium-1-2">
+				<div class="uk-width-medium-1-1">
 					<label>说明</label>
 						<textarea class="md-input required" name="examRemark" id="user_edit_personal_info_control" cols="35" rows="4">${makexam.examRemark}</textarea>
 				</div>
-				<div class="uk-width-medium-1-2">
+				<div class="uk-width-medium-1-1">
 					<label>考试时间(分钟)</label>
 					<input type="text"  value="${makexam.examTime}" data-inputmask-showmaskonhover="false" data-inputmask="'alias': 'numeric', 'groupSeparator': ',', 'autoGroup': true, 'digits': 0, 'digitsOptional': false, 'prefix': '', 'placeholder': '100'" id="examTime" name="examTime" class="md-input masked_input" style="text-align: right;" required max="100"><span class="md-input-bar"></span>
 				</div>
@@ -48,11 +56,12 @@
 		</div>
       </div>
 	</form>
+            </div>
 </div>
+    </fieldset>
 <div id="subPage" hidden="true" class="md-card">
 </div>
-<script src="${ctx}/static/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
-<script src="${ctx}/static/jquery-validation/1.11.1/jquery.validate.min.js" type="text/javascript"></script>
+
 	<script>
 		$(document).ready(function(){
 			$maskedInput = $(".masked_input"),

@@ -80,7 +80,7 @@
                     </td>
                     <td>
                         <c:if test="${exam.state==0 }">
-                            <a href="${ctx }/makexam/delete/${exam.id}?projectId=${projectId}" ><i class="md-icon material-icons"></i></a> 
+                            <a href="#" class="delete-exam" data-id="${exam.id}" data-project-id="${projectId}"><i class="md-icon material-icons"></i></a>
                             <a href="${ctx }/makexam/update/${exam.id}?projectId=${projectId}" ><i class="md-icon material-icons"></i>修改</a>
                         </c:if>
                         <c:if test="${exam.state==0 }">
@@ -105,27 +105,34 @@
     </div>
 </div>
 
-<script src="${ctx}/static/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+<%--<script src="${ctx}/static/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>--%>
 
 <script type="text/javascript">
     $(function(){
         $("search_LIKE_questionCont").focus();
+        $(".delete-exam").click(function(){
+            var id = $(this).attr("data-id");
+            var project_id = $(this).attr("data-project-id");
+            window.location.href="${ctx }/makexam/delete/"+id+"?projectId="+project_id;
+        });
     });
 
 	function ordeResult(id){
-		$.ajax({
-			url:"${reqUrl}/api/v1/ajaxmakexam/order/"+id,
-			data:{},
-			dataType:"json",
-			success:function (data){
-				location.reload(true);				
-				},
-			error:function(data){
-				location.reload(true);
-			}
-		});
+		<%--$.ajax({--%>
+			<%--url:"${reqUrl}/api/v1/ajaxmakexam/order/"+id,--%>
+			<%--data:{},--%>
+			<%--dataType:"json",--%>
+			<%--success:function (data){--%>
+				<%--location.reload(true);				--%>
+				<%--},--%>
+			<%--error:function(data){--%>
+				<%--location.reload(true);--%>
+			<%--}--%>
+		<%--});--%>
 		
 	}
+
 	</script>
+
 </body>
 </html>

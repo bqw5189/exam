@@ -36,7 +36,7 @@
                         ${cla.classRemark}
                     </td>
                     <td>
-                        <a href="${ctx }/ssclass/delete/${cla.id}"><i class="md-icon material-icons"></i></a>
+                        <a href="#" class="class_delete" data-id="${cla.id}"><i class="md-icon material-icons"></i></a>
                         <a href="${ctx }/ssclass/update/${cla.id}"><i class="md-icon material-icons"></i></a>
                     </td>
                 </tr>
@@ -48,5 +48,16 @@
         </table>
     </div>
 </div>
+<script>
+
+    $(function(){
+        $(".class_delete").click(function(){
+            var id = $(this).attr("data-id");
+            if(confirm("确认删除此班级吗？")){
+                window.location.href="${ctx}/ssclass/delete/"+id;
+            }
+        });
+    });
+</script>
 </body>
 </html>

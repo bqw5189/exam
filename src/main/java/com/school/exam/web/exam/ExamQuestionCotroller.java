@@ -6,6 +6,8 @@ import java.util.Map;
 
 import javax.servlet.ServletRequest;
 
+import com.school.exam.entity.*;
+import com.school.exam.service.account.AccountService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,10 +16,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import com.school.exam.entity.TeExamPaperResultVO;
-import com.school.exam.entity.TeExamQuestionVO;
-import com.school.exam.entity.TeExamResultVO;
-import com.school.exam.entity.TeMakeExamVO;
 import com.school.exam.repository.Token;
 import com.school.exam.service.account.ShiroDbRealm.ShiroUser;
 import com.school.exam.service.exam.ExamPaperResultService;
@@ -31,6 +29,8 @@ public class ExamQuestionCotroller {
 	private ExamQuestionService questionService;
 	@Autowired
 	private ExamPaperResultService resultService;
+    @Autowired
+    private AccountService accountService;
 	@RequestMapping(method = RequestMethod.GET)
 	public String examlist(Model model) {
 		ShiroUser user = getCurrentUser();
@@ -108,8 +108,10 @@ public class ExamQuestionCotroller {
 		}else{
 			userId = Long.parseLong(personId);
 			model.addAttribute("role", "teacher");
-		}
-		List<TeExamPaperResultVO> eprlist = resultService.getExamPaperByPersonId(userId, id);
+        }
+        User u = accountService.getUser(Long.parseLong(personId));
+        model.addAttribute("userName",u.getName());
+        List<TeExamPaperResultVO> eprlist = resultService.getExamPaperByPersonId(userId, id);
 		model.addAttribute("sumScore", null==eprlist?0:eprlist.get(0).getSumScore());
 		model.addAttribute("examvo", examvo);
 		model.addAttribute("resultlist", questionService.findByDepdIdAndPersonId(id, userId));

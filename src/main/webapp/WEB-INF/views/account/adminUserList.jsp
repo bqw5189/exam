@@ -42,7 +42,7 @@
 				<td>
 					<fmt:formatDate value="${user.registerDate}" pattern="yyyy年MM月dd日  HH时mm分ss秒" />
 				</td>
-				<td><a href="${ctx}/admin/user/delete/${user.id}" class="md-btn md-btn-flat md-btn-flat-primary"><i class="md-icon material-icons"></i></a>
+				<td><a href="#" data-id="${user.id}" class="delete_user"><i class="md-icon material-icons"></i></a>
                     <a href="${ctx}/admin/user/update/${user.id}" class="md-btn md-btn-flat md-btn-flat-primary"><i class="md-icon material-icons"></i></a></td>
 			</tr>
 		</c:forEach>
@@ -57,7 +57,7 @@
                 <div class="uk-grid">
                     <div class="uk-width-1-1">
                         <div class="uk-form-file uk-text-primary">
-                            <a href="javascript:void(0)" class="md-fab md-fab-accent"> <i class="uk-icon-folder-open"></i> </a>
+                            <a href="javascript:void(0)" class="md-fab md-fab-accent" style="font-size: 12px;color:#fff;padding-top: 16px">批量<br/>导入</a>
                             <input type="file"  name="file" id="file" onchange="uploadFile()">
                         </div>
                     </div>
@@ -65,7 +65,17 @@
             </form>
         </div>
 
-        <a class="md-fab md-fab-accent" href="${ctx }/register"> <i class="material-icons"></i> </a>
+        <a href="${ctx }/register" class="md-fab md-fab-accent" style="font-size: 12px;color:#fff;padding-top: 16px">添加<br/>用户</a>
     </div>
+<script>
+    $(function(){
+        $(".delete_user").click(function(){
+            var id = $(this).attr("data-id");
+            if(confirm("确认删除此用户吗？")){
+                window.location.href="${ctx}/admin/user/delete/"+id;
+            }
+        });
+    });
+</script>
 </body>
 </html>

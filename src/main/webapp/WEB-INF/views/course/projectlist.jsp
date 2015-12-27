@@ -36,7 +36,7 @@
                            ${pro.remark}
                     </td>
                     <td>
-                        <a href="${ctx }/project/delete/${pro.id}?courseId=${courseId}"><i class="md-icon material-icons"></i></a>
+                        <a href="#" class="delete_question" data-id="${pro.id}" data-course-id="${courseId}"><i class="md-icon material-icons"></i></a>
                         <a href="${ctx }/project/update/${pro.id}?courseId=${courseId}"><i class="md-icon material-icons"></i></a>
                     </td>
                 </tr>
@@ -52,5 +52,18 @@
         </div>
     </div>
 </div>
+<script>
+
+    $(function(){
+        $(".delete_question").click(function(){
+            var id = $(this).attr("data-id");
+            var courseId = $(this).attr("data-course-id");
+
+            if(confirm("确认删除此试题吗？")){
+                window.location.href="${ctx }/project/delete/"+id+"?courseId=" + courseId;
+            }
+        });
+    });
+</script>
 </body>
 </html>

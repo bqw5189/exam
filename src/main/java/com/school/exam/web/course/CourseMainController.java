@@ -66,7 +66,7 @@ public class CourseMainController {
             redirectAttributes.addFlashAttribute("message", "课程下包含项目不可进行删除");
         }else{
             courseService.deleteCourse(id);
-            redirectAttributes.addFlashAttribute("message", "删除问题成功");
+            redirectAttributes.addFlashAttribute("message", "删除课程成功");
         }
 
         return "redirect:/course";

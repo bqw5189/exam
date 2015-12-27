@@ -11,15 +11,7 @@
     <link rel="stylesheet" href="${ctx}/static/altair/bower_components/kendo-ui/styles/kendo.common-material.min.css" />
     <link rel="stylesheet" href="${ctx}/static/altair/bower_components/kendo-ui/styles/kendo.material.min.css" />
 
-    <script>
-        function uploadFile(){
-            var uploadForm = document.getElementById("uploadForm");
-            if(undefined != uploadForm){
-                modal = UIkit.modal.blockUI('<div class=\'uk-text-center\'><div class="md-preloader"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="16" width="16" viewbox="0 0 75 75"><circle cx="37.5" cy="37.5" r="33.5" stroke-width="8" /></svg></div> 导入题库...</div>');
-                uploadForm.submit();
-            }
-        }
-    </script>
+
     <style>
         #page_content_inner {
             padding: 24px 24px 0px;
@@ -78,7 +70,7 @@
                             <ul class="uk-nav">
                                 <li><a href="${ctx }/question/update/${que.id}"><i class="md-icon material-icons"></i>修改试题</a></li>
                                 <li><a href="${ctx }/question/itemlist/${que.id}"><i class="material-icons"></i></span> 选项管理</a></li>
-                                <li><a href="${ctx }/question/delete/${que.id}?projectId=${projectId}"><i class="material-icons"></i> 删除试题</a></li>
+                                <li><a href="#"  class="delete_question" data-id="${que.id}" data-project-id="${projectId}"><i class="material-icons"></i> 删除试题</a></li>
                             </ul>
                         </div>
                     </div> <span class="md-card-list-item-date">${ que.questionScore}</span>
@@ -119,7 +111,7 @@
             <div class="uk-grid">
                 <div class="uk-width-1-1">
                     <div class="uk-form-file uk-text-primary">
-                        <a href="javascript:void(0)" class="md-fab md-fab-accent" data-uk-tooltip="导入题库" title="导入题库"><i class="uk-icon-folder-open"></i></a>
+                        <a href="javascript:void(0)" class="md-fab md-fab-accent" style="font-size: 12px;color:#fff;padding-top: 16px">批量<br/>导入</a>
                         <input type="file"  name="file" id="file" onchange="uploadFile()">
                     </div>
                 </div>
@@ -127,7 +119,7 @@
         </form>
     </div>
 
-    <a href="${ctx }/question/create/${projectId}" class="md-fab md-fab-accent"> <i class="material-icons"></i> </a>
+    <a href="${ctx }/question/create/${projectId}" class="md-fab md-fab-accent" style="font-size: 12px;color:#fff;padding-top: 16px">添加<br/>试题</a>
 </div>
 
 </c:if>
@@ -147,6 +139,25 @@
        <%--</form>--%>
      <%--</div>--%>
  <%--</div>--%>
+<script>
+    function uploadFile(){
+        var uploadForm = document.getElementById("uploadForm");
+        if(undefined != uploadForm){
+            modal = UIkit.modal.blockUI('<div class=\'uk-text-center\'><div class="md-preloader"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="16" width="16" viewbox="0 0 75 75"><circle cx="37.5" cy="37.5" r="33.5" stroke-width="8" /></svg></div> 导入题库...</div>');
+            uploadForm.submit();
+        }
+    }
+    $(function(){
+        $(".delete_question").click(function(){
+            var id = $(this).attr("data-id");
+            var projectId = $(this).attr("data-project-id");
 
+            if(confirm("确认删除此试题吗？")){
+                window.location.href="${ctx }/question/delete/"+id+"?projectId=" + projectId;
+            }
+        });
+    });
+
+</script>
 </body>
 </html>

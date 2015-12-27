@@ -19,9 +19,9 @@
 <!-- main sidebar -->
 <aside id="sidebar_main">
     <div class="sidebar_main_header">
-        <div class="sidebar_logo">
-            <a href="index.html" class="sSidebar_hide"><img src="${ctx}/static/altair/assets/img/logo_main.png" alt="" height="15" width="71" /></a>
-            <a href="index.html" class="sSidebar_show"><img src="${ctx}/static/altair/assets/img/logo_main_small.png" alt="" height="32" width="32" /></a>
+        <div class="sidebar_logo" style="height: 148px">
+            <a href="index.html" class="sSidebar_hide"><img src="${ctx}/static/altair/assets/img/logo_.png" alt="" height="100%" width="100%" /></a>
+            <a href="index.html" class="sSidebar_show"><img src="${ctx}/static/altair/assets/img/logo_main_small_bak.png" alt="" height="32" width="32" /></a>
         </div>
 
     </div>
@@ -35,7 +35,7 @@
                 <li class="<c:if test="${fn:contains(uri,answer)}">current_section</c:if>"> <a href="${answer}"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">练习答案</span> </a></li>
             </shiro:hasRole>
             <shiro:hasRole name="admin">
-                <li class="<c:if test="${fn:contains(uri,ssclass)}">current_section</c:if>"> <a href="${ssclass}"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">班级管理</span> </a></li>
+                <li class="<c:if test="${fn:contains(uri,ssclass)}">current_section</c:if>"> <a href="${ssclass}"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">班级管理</span> </a></li>
                 <li class="<c:if test="${fn:contains(uri,user)}">current_section</c:if>"> <a href="${user}"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">用户管理</span> </a></li>
                 <li class="<c:if test="${fn:contains(uri,course)}">current_section</c:if>"> <a href="${course}"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">课程项目管理</span> </a></li>
                 <li class="<c:if test="${fn:contains(uri,question)}">current_section</c:if>"> <a href="${question}"> <span class="menu_icon"><i class="material-icons"></i></span> <span class="menu_title">试题管理</span> </a></li>

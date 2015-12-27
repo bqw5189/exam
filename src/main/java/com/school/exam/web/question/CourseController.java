@@ -244,21 +244,26 @@ public class CourseController {
 		String questionId = request.getParameter("questionId");
         TeExamQuestionVO questionVO = questionService.getQuestionById(Long.parseLong(questionId));
         String answer = questionVO.getQuestionAnswerId();
-        StringBuffer sb = new StringBuffer();
-        if(answer.contains(id.toString())){
-            String[] s = answer.split(",");
-            for(String sigleId:s){
-                if(!sigleId.equals(id.toString())){
-                    sb.append(sigleId + ",");
+        boolean flag = courseService.isNotDeleteQuestion(questionVO.getId());
+        if(flag) {
+            StringBuffer sb = new StringBuffer();
+            if (answer.contains(id.toString())) {
+                String[] s = answer.split(",");
+                for (String sigleId : s) {
+                    if (!sigleId.equals(id.toString())) {
+                        sb.append(sigleId + ",");
+                    }
                 }
+                String qai = sb.toString();
+
+                questionVO.setQuestionAnswerId(qai.substring(0, qai.length() - 1));
+                questionService.saveQuestion(questionVO);
             }
-            String qai = sb.toString();
-            questionVO.setQuestionAnswerId(qai.substring(0,qai.length()-1));
-            questionService.saveQuestion(questionVO);
+            courseService.getSelectItemDao().delete(id);
+            redirectAttributes.addFlashAttribute("message", "删除成功");
+        }else{
+            redirectAttributes.addFlashAttribute("message", "试题已经被使用不可以进行删除操作");
         }
-		courseService.getSelectItemDao().delete(id);
-		
-		redirectAttributes.addFlashAttribute("message", "删除成功");
 		return "redirect:/question/itemlist/"+questionId;
 	}
 	

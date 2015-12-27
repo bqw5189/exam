@@ -37,14 +37,21 @@
 </head>
 
 <body>
-	<form id="inputForm" action="${ctx}/register" method="post" class="form-horizontal">
-		<fieldset>
-			<legend><b>当前位置:>>用户管理>>用户注册</b></legend>
-			<div class="md-card">
-		     <div class="md-card-content">
-                 <div class="uk-width-medium-1-2">
-                     <label for="ssClass.id" class="control-label">所属班级:</label>
-                     <select name="ssClass.id" class="md-input">
+<fieldset>
+    <legend><b>当前位置:>>用户管理>>用户注册</b></legend>
+
+    <div class="md-card" id="login_card">
+        <div class="md-card-content large-padding" id="login_form">
+            <div class="login_heading">
+                <div class="user_avatar"></div>
+            </div>
+
+	<form id="inputForm" action="${ctx}/register" method="post" class="uk-form-stacked">
+
+        <div class="uk-grid" data-uk-grid-margin="">
+                 <div class="uk-width-medium-1-1">
+                     <label for="ss_class_id" class="control-label">所属班级:</label>
+                     <select name="ssClass.id" class="md-input" id="ss_class_id">
                          <c:forEach var="s" items="${classLists }">
                              <option value="${s.id }"
                                      <c:if test="${ssClass.id==s.id }">selected="selected" </c:if>
@@ -52,19 +59,19 @@
                          </c:forEach>
                      </select>
                  </div>
-                 <div class="uk-width-medium-1-2">
-                <label for="loginName" class="control-label">登录名:</label>
+                 <div class="uk-width-medium-1-1">
+                <label for="user_edit_uname_control" class="control-label">登录名:</label>
                 <input type="text" id="user_edit_uname_control" name="loginName" class="md-input" required/>
             </div>
-                 <div class="uk-width-medium-1-2">
-                <label for="name" class="control-label">用户名:</label>
+                 <div class="uk-width-medium-1-1">
+                <label for="user_edit_uname_control" class="control-label">用户名:</label>
                 <input type="text" id="user_edit_uname_control" name="name" class="md-input" required/>
             </div>
-			<div class="uk-width-medium-1-2">
+			<div class="uk-width-medium-1-1">
 				<label for="plainPassword" class="control-label">密码:</label>
 					<input type="password" id="plainPassword" name="plainPassword" class="md-input" required/>
 			</div>
-			<div class="uk-width-medium-1-2">
+			<div class="uk-width-medium-1-1">
 				<label for="confirmPassword" class="control-label">确认密码:</label>
 					<input type="password" id="confirmPassword" name="confirmPassword" class="md-input" equalTo="#plainPassword" required/>
 			</div>
@@ -72,9 +79,14 @@
 				<input id="submit_btn" class="md-btn md-btn-primary" type="submit" value="提交"/>&nbsp;
 				<input id="cancel_btn" class="md-btn md-btn-primary" type="button" value="返回" onclick="history.back()"/>
 			</div>
-			</div>
-			</div>
-		</fieldset>
+
+            </div>
+
 	</form>
+
+            </div>
+        </div>
+
+</fieldset>
 </body>
 </html>
