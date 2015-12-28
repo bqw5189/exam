@@ -68,7 +68,7 @@
                         <a href="#" class="md-icon material-icons"></a>
                         <div class="uk-dropdown uk-dropdown-flip uk-dropdown-small">
                             <ul class="uk-nav">
-                                <li><a href="${ctx }/question/update/${que.id}"><i class="md-icon material-icons"></i>修改试题</a></li>
+                                <li><a href="${ctx }/question/update/${que.id}"><i class="material-icons"></i>修改试题</a></li>
                                 <li><a href="${ctx }/question/itemlist/${que.id}"><i class="material-icons"></i></span> 选项管理</a></li>
                                 <li><a href="#"  class="delete_question" data-id="${que.id}" data-project-id="${projectId}"><i class="material-icons"></i> 删除试题</a></li>
                             </ul>
@@ -139,7 +139,11 @@
        <%--</form>--%>
      <%--</div>--%>
  <%--</div>--%>
+
+<!--  mailbox functions -->
+<script src="${ctx}/static/altair/assets/js/pages/page_mailbox.min.js"></script>
 <script>
+
     function uploadFile(){
         var uploadForm = document.getElementById("uploadForm");
         if(undefined != uploadForm){

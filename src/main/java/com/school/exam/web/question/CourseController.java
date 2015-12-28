@@ -91,7 +91,7 @@ public class CourseController {
 		String projectId = request.getParameter("projectId");
 		if(flag){
 			courseService.deleteQuestionById(id);
-			redirectAttributes.addFlashAttribute("message", "删除问题成功");
+			redirectAttributes.addFlashAttribute("message", "删除试题成功");
 		}else{
 			redirectAttributes.addFlashAttribute("message", "试题已经使用不可进行删除");
 		}

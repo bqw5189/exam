@@ -45,6 +45,7 @@ public class StudentController {
     public static Map<String, String> NAV_MAP = new LinkedHashMap<String, String>();
     public static Map<String, Course> COURSE_MAP = new LinkedHashMap<String, Course>();
     public static List<List<String>> RESOURCES = new ArrayList<List<String>>();
+    public static List<List<String>> IMAGES = new ArrayList<List<String>>();
     public static final String COURSE_NAME = "复杂基体有机物指标分析";
 
     static{
@@ -61,7 +62,9 @@ public class StudentController {
         NAV_MAP.put("图片索引", "student/classes/images");
 
         InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("classes.xls");
+        InputStream inputStreamImages = Thread.currentThread().getContextClassLoader().getResourceAsStream("images.xls");
 
+        IMAGES.addAll(ExcelUtils.toList(inputStreamImages));
         RESOURCES.addAll(ExcelUtils.toList(inputStream));
         COURSE_MAP.putAll(ExcelUtils.toCourse(RESOURCES));
 
@@ -83,10 +86,10 @@ public class StudentController {
 		return "student/index";
 	}
 
-    public List<List<String>> getResourceByTaskName(String taskName){
+    public List<List<String>> getResourceByTaskName(String taskName, List<List<String>> res){
         List<List<String>> resource = new ArrayList<List<String>>();
 
-        for (List<String> r: RESOURCES){
+        for (List<String> r: res){
             if (taskName.equals(r.get(1))){
                 resource.add(r);
             }
@@ -102,7 +105,10 @@ public class StudentController {
 
         model.addAttribute("nav", NAV_MAP);
         model.addAttribute("curent", "图片索引");
-        model.addAttribute("resources",getResourceByTaskName(taskName));
+
+
+
+        model.addAttribute("resources",getResourceByTaskName(taskName, IMAGES));
 
         return NAV_MAP.get("图片索引");
     }
@@ -112,7 +118,7 @@ public class StudentController {
 
         model.addAttribute("nav", NAV_MAP);
         model.addAttribute("curent", "动画索引");
-        model.addAttribute("resources",getResourceByTaskName(taskName));
+        model.addAttribute("resources",getResourceByTaskName(taskName, RESOURCES));
 
         return NAV_MAP.get("动画索引");
     }
@@ -122,7 +128,7 @@ public class StudentController {
 
         model.addAttribute("nav", NAV_MAP);
         model.addAttribute("curent", "视频索引");
-        model.addAttribute("resources",getResourceByTaskName(taskName));
+        model.addAttribute("resources",getResourceByTaskName(taskName, RESOURCES));
 
         return NAV_MAP.get("视频索引");
     }

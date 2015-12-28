@@ -102,7 +102,7 @@
                                 <font color="red">正确答案：</font>${answers } <font color="red">学生答案：</font>${ replys}
 
                                 <c:if test="${fn:contains(replys,answers) }">
-                                    <font color="red">得分：</font>${que.questionScore}"
+                                    <font color="red">得分：</font>${que.questionScore}
                                 </c:if>
                                 <c:if test="${not fn:contains(replys,answers) }">
                                     <font color="red">得分：</font>0

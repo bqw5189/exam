@@ -103,8 +103,6 @@
 <!--  datatables functions -->
 <script src="${ctx}/static/altair/assets/js/pages/plugins_datatables.min.js"></script>
 
-<!--  mailbox functions -->
-<script src="${ctx}/static/altair/assets/js/pages/page_mailbox.min.js"></script>
 
 <script>
     // load parsley config (altair_admin_common.js)
