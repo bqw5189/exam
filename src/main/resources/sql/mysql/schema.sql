@@ -110,9 +110,11 @@ create table T_TE_EXAM_PAPER_RESULT (
 
 create table t_te_answer(
   id bigint auto_increment,
+  user_id bigint,
   title VARCHAR(512),
-  email VARCHAR(128),
-  answer VARCHAR(512),
+  course VARCHAR(256),
+  answer TEXT,
+	answer_date timestamp not null default 0,
   primary key (id)
 )
 

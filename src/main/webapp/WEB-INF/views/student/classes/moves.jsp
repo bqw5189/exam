@@ -1,6 +1,7 @@
 ﻿<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions"  prefix="fn" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
 
 
@@ -29,8 +30,13 @@
         <input type="search" ng-model="q" />
 
     </ul>
-    <div class="rightData" style="width: 1000px" ng-init="words = [ <c:forEach items="${resources}" var="r">{type:'${r[5]}', file:'${r[6]}'},</c:forEach> ]">
-        <a title="" data-fancybox-group="gallery" href="#" file="${ctx}/static/pmfj/{{word.file}}" class="fancybox" ng-repeat="word in words |filter:{type : 'MOVE'}| filter:q as results"><img style="width:120px;height:120px;margin: 5px" src="${ctx}/static/images/start.jpg" ></a>
+    <div class="rightData" style="width: 1000px" ng-init="words = [ <c:forEach items="${resources}" var="r">{title:'${r[4]}',type:'${r[5]}', file:'${r[6]}', pic:'${fn:replace(r[6], "flv", "jpg")}'},</c:forEach> ]">
+        <a title="" data-fancybox-group="gallery" href="#" file="${ctx}/static/pmfj/{{word.file}}" pic="${ctx}/static/pmfj/move/{{word.pic}}"  class="fancybox" ng-repeat="word in words |filter:{type : 'MOVE'}| filter:q as results">
+            <div style="float: left;width:150px;height:120px;margin: 5px" >
+                <img style="width:150px;height:120px;margin: 5px" src="${ctx}/static/pmfj/move/{{word.pic}}" >
+                <span style="position: relative;left: 5px">{{word.title}}</span>
+            </div>
+        </a>
         <%--<ol>--%>
 
         <%--<li style="line-height:30px" ng-repeat="word in words |filter:'IMG'| filter:q as results"><b>{{word.type}}</b>{{word.file}} </li>--%>
@@ -46,10 +52,10 @@
             so.addParam("quality","high");
             so.addParam("salign","lt");
             so.addVariable("CuPlayerSetFile","${ctx}/static/js/CuPlayerSetFile.xml");
-            so.addVariable("CuPlayerFile",'${ctx}/static/pmfj/' + 'ypcjqcl.flv');
-            so.addVariable("CuPlayerImage","${ctx}/static/images/start.jpg");
-            so.addVariable("CuPlayerWidth","1024");
-            so.addVariable("CuPlayerHeight","768");
+            so.addVariable("CuPlayerFile", $(this).attr("file"));
+            so.addVariable("CuPlayerImage",$(this).attr("pic"));
+            so.addVariable("CuPlayerWidth","800");
+            so.addVariable("CuPlayerHeight","580");
             so.addVariable("CuPlayerAutoPlay","yes");
             so.addVariable("CuPlayerPosition","bottom-right");
 

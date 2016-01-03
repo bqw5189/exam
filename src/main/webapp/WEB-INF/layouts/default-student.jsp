@@ -24,7 +24,7 @@
     <script src="${ctx}/static/student/js/all.js" type="text/javascript"></script>
     <script src="${ctx}/static/bootstrap/2.3.2/js/bootstrap.min.js" type="text/javascript"></script>
 
-    <script src="${ctx}/static/js/swfobject.js" type="text/javascript"></script>
+
 
     <script src="${ctx}/static/angular/angular.js" type="text/javascript"></script>
     <script src="${ctx}/static/angular/angular-animate.js" type="text/javascript"></script>
@@ -35,7 +35,7 @@
 
     <!-- Add fancyBox main JS and CSS files -->
     <script type="text/javascript" src="${ctx}/static/fancyBox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
+    <script src="${ctx}/static/CuPlayer/images/swfobject.js" type="text/javascript"></script>
 
     <script>
         var student = angular.module("student",[],function($compileProvider) {});
@@ -87,7 +87,9 @@
         </ul>
     </div>
     <!--导航end-->
-<sitemesh:body/>
+    <%--<div style="margin: auto; padding-left:20px;width: 1000px; border-top: 1px solid #ddd;border-left: 1px solid #ddd;border-bottom: 1px solid #ddd;border-right: 1px solid #ddd;">--%>
+        <sitemesh:body/>
+    <%--</div>--%>
 
 
 </body>

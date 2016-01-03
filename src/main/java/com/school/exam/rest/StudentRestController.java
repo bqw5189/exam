@@ -5,10 +5,7 @@
  *******************************************************************************/
 package com.school.exam.rest;
 
-import com.school.exam.entity.Answer;
-import com.school.exam.entity.Course;
-import com.school.exam.entity.CourseResource;
-import com.school.exam.entity.Task;
+import com.school.exam.entity.*;
 import com.school.exam.service.question.AnswerService;
 import com.school.exam.service.task.TaskService;
 import com.school.exam.web.student.StudentController;
@@ -45,11 +42,18 @@ public class StudentRestController {
 
 
     @RequestMapping(value = "answer", method = RequestMethod.GET, produces = MediaTypes.JSON_UTF_8)
-    public String answer(@RequestParam String title, @RequestParam String email, @RequestParam(required = false) String answer){
+    public String answer(@RequestParam(defaultValue = "北校区大气PM2.5中多环芳烃分析") String course,@RequestParam String title, @RequestParam long userId, @RequestParam(required = false) String answer){
+
        Answer answerObj = new Answer();
+
         answerObj.setTitle(title);
-        answerObj.setEmail(email);
+        answerObj.setCourse(course);
         answerObj.setAnswer(answer);
+
+        User user = new User();
+        user.setId(userId);
+
+        answerObj.setUser(user);
 
         answerService.save(answerObj);
 

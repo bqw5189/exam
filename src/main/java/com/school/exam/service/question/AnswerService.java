@@ -17,7 +17,9 @@ import org.springside.modules.persistence.DynamicSpecifications;
 import org.springside.modules.persistence.SearchFilter;
 
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 // Spring Bean的标识.
 @Component
@@ -40,5 +42,16 @@ public class AnswerService {
 
     public List<Answer> findAll() {
         return Lists.newArrayList(answerDao.findAll(new Sort(Sort.Direction.DESC, "id")));
+    }
+
+    public List<Answer> findByCourse(String course) {
+        return answerDao.findByCourse(course);
+    }
+    public LinkedHashSet<Answer> findDinstinctUserIdByCourse(String course) {
+        return answerDao.findDistinctUserByCourse(course);
+    }
+
+    public List<Answer> findByUserIdAndCourse(Long userId, String course) {
+        return answerDao.findByUserIdAndCourse(userId,course);
     }
 }

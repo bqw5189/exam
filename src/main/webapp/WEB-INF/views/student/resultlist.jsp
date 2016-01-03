@@ -95,17 +95,23 @@
                     <c:set var="indexno" value="${indexno+1 }"></c:set>
                     <tr>
                         <td>
+
                             <c:if test="${que.type==1 }">
-                                <font color="red">正确答案：</font>${answer }  <font color="red">学生答案：</font>${ reply}    <font color="red">得分：</font>${score }
+                                <c:set var="color" value="red"/>
+                                <c:if test="${score>0}"><c:set var="color" value="green"/> </c:if>
+                                <span style="color:${color}">正确答案：${answer } 学生答案： ${ reply}  得分：${score }</span>
                             </c:if>
                             <c:if test="${que.type==2 }">
-                                <font color="red">正确答案：</font>${answers } <font color="red">学生答案：</font>${ replys}
+                                <c:set var="color" value="red"/>
+                                <c:if test="${que.questionScore>0}"><c:set var="color" value="green"/> </c:if>
+
+                                <span style="color:${color}">正确答案：${answers } 学生答案：${ replys} </span>
 
                                 <c:if test="${fn:contains(replys,answers) }">
-                                    <font color="red">得分：</font>${que.questionScore}
+                                    <span style="color:${color}">${que.questionScore}</span>
                                 </c:if>
                                 <c:if test="${not fn:contains(replys,answers) }">
-                                    <font color="red">得分：</font>0
+                                    <span style="color:${color}">0</span>
                                 </c:if>
                             </c:if>
 

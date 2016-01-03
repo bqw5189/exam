@@ -62,7 +62,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <a href="${ctx }/course/update/${cou.id}"><i class="md-icon material-icons"></i></a>
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="${ctx }/project/add/${cou.id}"><img alt="" src="${ctx }/static/images/edit_add.png"></a>
+                    <a href="${ctx }/project/add/${cou.id}"><i class="md-icon uk-icon-plus"></i></a>
                     &nbsp;&nbsp;&nbsp;&nbsp;</div>
             </c:forEach>
             <tags:pagination paginationSize="10" page="${course }"></tags:pagination>

@@ -78,6 +78,7 @@
 
             $("#showData").empty();
 
+
             $.get("${ctx}/api/v1/student",{project:$(this).attr("p"),step:$(this).attr("s"),substep:$(this).attr("ss")}, function(data){
                 rdata = data;
 
@@ -152,34 +153,45 @@
                     $(this).text("提交中...");
                     $(this).attr("disabled", "true");
 
-                    $.get("${ctx}/api/v1/student/answer?title=" + '北校区大气PM2.5中多环芳烃分析' + title + "&email=" + '<shiro:principal property="name"></shiro:principal>' + "&answer=" + answer, function(data){
-                        $("#submit").text("提交");
-                        $("#submit").removeAttr("disabled");
-                        alert("提交成功");
-                    });
+
+
+
+                    $.ajax({
+                        url : "${ctx}/api/v1/student/answer?userId=<shiro:principal property="id"></shiro:principal>&course=北校区大气PM2.5中多环芳烃分析&title="  + title  + "&answer=" + answer,
+                        dataType : 'json',
+                        contentType : "application/x-www-form-urlencoded; charset=UTF-8",
+                        method:"GET",
+                        timeout : 300000,
+                        data : {},
+                        success : function(data) {
+                            $("#submit").text("提交");
+                            $("#submit").removeAttr("disabled");
+                            alert("提交成功");
+                        },
+                        error : function(request, status, error) {
+                            alert('提交失败');
+                        }
+                    })
 
 
                 });
             }else if("SELECT" === data.type ||"FLASH" === data.type){
                 $("#showData").html('<embed src="${ctx}/static/${resourcePath}/' + data.file + '" width="700" height="500"></embed>');
             }else if("MOVE" === data.type){
-                var so = new SWFObject("${ctx}/static/js/CuPlayerMiniV4.swf","CuPlayerV4","700","490","9","#000000");
-                so.addParam("allowfullscreen","true");
-                so.addParam("allowscriptaccess","always");
-                so.addParam("wmode","opaque");
+                $("#showData").empty();
+
+                var so = new SWFObject("${ctx}/static/CuPlayer/CuPlayerMiniV4.swf","CuPlayerV4","700","490","9","#000000");
                 so.addParam("quality","high");
                 so.addParam("salign","lt");
-                so.addVariable("CuPlayerSetFile","${ctx}/static/js/CuPlayerSetFile.xml");
                 so.addVariable("CuPlayerFile",'${ctx}/static/${resourcePath}/' + 'ypcjqcl.flv');
                 so.addVariable("CuPlayerImage","${ctx}/static/images/start.jpg");
-                so.addVariable("CuPlayerWidth","1024");
-                so.addVariable("CuPlayerHeight","768");
+                so.addVariable("CuPlayerWidth","700");
+                so.addVariable("CuPlayerHeight","490");
                 so.addVariable("CuPlayerAutoPlay","yes");
                 so.addVariable("CuPlayerPosition","bottom-right");
 
                 so.write("showData");
             }
-
 
 
         }

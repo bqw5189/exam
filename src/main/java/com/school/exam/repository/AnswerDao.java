@@ -7,8 +7,18 @@ package com.school.exam.repository;
 
 import com.school.exam.entity.Answer;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
+
+import java.util.LinkedHashSet;
+import java.util.List;
 
 public interface AnswerDao extends PagingAndSortingRepository<Answer, Long>, JpaSpecificationExecutor<Answer> {
 
+    List<Answer> findByCourse(String course);
+    //@Query("select distinct a.user, a.course from Answer a where a.course=?1 ")
+//    @Dist
+    LinkedHashSet<Answer> findDistinctUserByCourse(String course);
+
+    List<Answer> findByUserIdAndCourse(Long userId, String course);
 }

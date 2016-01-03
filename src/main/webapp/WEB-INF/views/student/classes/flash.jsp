@@ -29,8 +29,14 @@
         <input type="search" ng-model="q" />
 
     </ul>
-    <div class="rightData" style="width: 1000px" ng-init="words = [ <c:forEach items="${resources}" var="r">{type:'${r[5]}', file:'${r[6]}'},</c:forEach> ]">
-        <a title="" data-fancybox-group="gallery" href="${ctx}/static/pmfj/{{word.file}}" class="fancybox" ng-repeat="word in words |filter:{type : 'FLASH'}| filter:q as results"><img style="width:120px;height:120px;margin: 5px" src="${ctx}/static/pmfj/{{word.file}}" ></a>
+    <div class="rightData" style="width: 1000px" ng-init="words = [ <c:forEach items="${resources}" var="r">{title:'${r[4]}',type:'${r[5]}', file:'${r[6]}'},</c:forEach> ]">
+
+        <ol style="padding-left: 20px">
+            <li ng-repeat="word in words |filter:{type : 'FLASH'}| filter:q as results"  style="list-style-type: decimal">
+                <a title="" data-fancybox-group="gallery" href="${ctx}/static/pmfj/{{word.file}}" class="fancybox"  style="color: #000">{{word.title}}</a>
+            </li>
+        </ol>
+
         <%--<ol>--%>
 
         <%--<li style="line-height:30px" ng-repeat="word in words |filter:'IMG'| filter:q as results"><b>{{word.type}}</b>{{word.file}} </li>--%>
