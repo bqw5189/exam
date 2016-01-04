@@ -11,11 +11,11 @@
     <meta charset="utf-8">
     <title><sitemesh:title/></title>
 
-    <link href="${ctx}/static/student/css/main.css" rel="stylesheet"  />
     <link href="${ctx}/static/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet"  />
     <link href="${ctx}/static/bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet"  />
     <link href="${ctx}/static/fancyBox/source/jquery.fancybox.css?v=2.1.5" media="screen" rel="stylesheet"  />
 
+    <link href="${ctx}/static/student/css/main.css" rel="stylesheet"  />
     <script type="text/javascript">
         var ctx="${ctx}/static/student/";
     </script>

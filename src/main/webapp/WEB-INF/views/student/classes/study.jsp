@@ -17,7 +17,7 @@
 
      
     <!--主题部分-->
-    <div class="listbox">
+    <div class="listbox" style="width: 1000px;border: 0px">
     	<h1></h1>
         <c:forEach items="${course}" var="c">
             <c:forEach items="${c.value.subEntitys}" var="p">

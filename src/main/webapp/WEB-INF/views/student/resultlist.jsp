@@ -24,7 +24,7 @@
     </div>
     <!--左边菜单 end-->
 
-    <div class="rightData">
+    <div class="rightData" style="width: 770px">
         <div id="showData" style="min-height: 500px;">
 
 

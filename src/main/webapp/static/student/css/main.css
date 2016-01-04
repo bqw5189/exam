@@ -202,8 +202,14 @@ html,body{width:100%;height:100%;}
 	}
 
 .listbox{
-	width:1003px;
 	margin:auto;
+
+    width:979px;
+    border-left: 2px solid #217313;border-right: 2px solid #217313;
+    padding-left: 10px;
+    padding-right: 10px;
+    min-height: 600px;
+
 	}
 .listbox h1{
 	width:1003px;
@@ -356,15 +362,33 @@ html,body{width:100%;height:100%;}
 	*top:8px;
 	}
 .rightData{
-	width:700px;
+	float:left;
+	width:980px;
 	margin-bottom:100px;
+    border-left: 2px solid #217313;border-right: 2px solid #217313;
+    padding-left: 10px;
+    padding-right: 10px;
+    min-height: 600px;
+
 	}
+
+/*.rightData:first-child{*/
+
+    /*padding-left: 10px;*/
+/*}*/
+
 .rightData .img01{
 	width:700px;
 	height:450px;
 	border:none;
-	margin-top:32px;
+	margin-top:12px;
 	}
+
+.nav {
+    list-style: outside none none;
+    margin-bottom: 0px;
+    margin-left: 0;
+}
 
 /*page02 css end*/
 
