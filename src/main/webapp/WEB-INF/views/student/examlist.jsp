@@ -34,7 +34,7 @@
     </div>
     <!--左边菜单 end-->
 
-    <div class="rightData" style="width: 770px">
+    <div class="rightData" style="width: 770px;border: 0px">
         <div id="showData" style="min-height: 500px;">
 
             <form id="submitForm" name="myForm" action="${ctx}/student/submitpaper" method="post" class="form-horizontal">

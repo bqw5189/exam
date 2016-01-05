@@ -41,7 +41,7 @@
     <!--左边菜单 end-->
 
 
-    <div class="rightData">
+    <div class="rightData" style="width: 700px;border-width: 0px">
         <div id="showData" style="min-height: 500px">
 
         </div>
@@ -153,16 +153,11 @@
                     $(this).text("提交中...");
                     $(this).attr("disabled", "true");
 
-
-
-
                     $.ajax({
-                        url : "${ctx}/api/v1/student/answer?userId=<shiro:principal property="id"></shiro:principal>&course=北校区大气PM2.5中多环芳烃分析&title="  + title  + "&answer=" + answer,
-                        dataType : 'json',
-                        contentType : "application/x-www-form-urlencoded; charset=UTF-8",
-                        method:"GET",
-                        timeout : 300000,
-                        data : {},
+                        type: 'GET',
+                        url : "${ctx}/api/v1/student/answer",
+                        contentType : "application/x-www-form-urlencoded;charset=UTF-8",
+                        data : {userId:'<shiro:principal property="id"></shiro:principal>', course:'北校区大气PM2.5中多环芳烃分析', answer:answer,title:title},
                         success : function(data) {
                             $("#submit").text("提交");
                             $("#submit").removeAttr("disabled");
