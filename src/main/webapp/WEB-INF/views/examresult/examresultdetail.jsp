@@ -17,13 +17,13 @@
     	<div class="md-card-content">
             <div><b>当前位置:>>考试结果>>考试成绩单</b></div>
 				     <table id="dt_default" class="uk-table">
-						<thead><tr><th style="width:40%">试卷名称</th><th style="width:20%">姓名</th><th style="width:20%">得分</th><th style="width:20%">排名</th></tr></thead>
+						<thead><tr><th style="width:20%">姓名</th><th style="width:40%">试卷名称</th><th style="width:20%">得分</th><th style="width:20%">排名</th></tr></thead>
 					<tbody>
 					<c:set value="1" var="no"></c:set>
 						<c:forEach items="${examresult }" var="er">
 							<tr>
-								<td><a href="${ctx}/examlist/showexam/${er.examId}?personId=${er.personId}"/>${ er.examName}</td>
-								<td>${er.personName }</td>
+                                <td><a href="${ctx}/examlist/showexam/${er.examId}?personId=${er.personId}">${er.personName }</a></td>
+								<td>${ er.examName}</td>
 								<td>${ er.sumScore}</td>
 								<td>${ er.examOrder}</td>
 							</tr>

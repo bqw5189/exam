@@ -26,13 +26,13 @@
         <li class="active"><a href="${ctx}/student/classes/flash?taskName=北校区大气PM2.5中多环芳烃分析">北校区大气PM2.5中多环芳烃分析</a></li>
         <li class=""><a href="${ctx}/student/classes/flash?taskName=汽修喷漆车间废水中苯系物分析">汽修喷漆车间废水中苯系物分析</a></li>
         <li class=""><a  href="${ctx}/student/classes/flash?taskName=南三区土壤中塑化剂分析">南三区土壤中塑化剂分析</a></li>
-        <input type="search" ng-model="q" />
+        <input type="text" ng-model="q"  placeholder="请输入搜索关键字"/>
 
     </ul>
     <div class="rightData" style="width: 1000px" ng-init="words = [ <c:forEach items="${resources}" var="r">{title:'${r[4]}',type:'${r[5]}', file:'${r[6]}'},</c:forEach> ]">
 
         <ol style="padding-left: 20px">
-            <li ng-repeat="word in words |filter:{type : 'FLASH'}| filter:q as results"  style="list-style-type: decimal">
+            <li ng-repeat="word in words |filter:{type : 'FLASH'}| filter:q as results"  style="list-style-type: decimal;padding-top: 10px;color: #f97112">
                 <a title="" data-fancybox-group="gallery" href="${ctx}/static/pmfj/{{word.file}}" class="fancybox"  style="color: #000">{{word.title}}</a>
             </li>
         </ol>

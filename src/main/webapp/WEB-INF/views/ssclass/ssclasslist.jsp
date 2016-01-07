@@ -19,7 +19,7 @@
     <div class="md-card-content">
             <div><b>当前位置：>>班级管理</b></div>
         <div align="right">
-            <a href="${ctx }/ssclass/create" class="md-btn md-btn-flat md-btn-flat-primary" id="add_btn" >新增班级</a>
+
         </div>
         <table id="dt_default" class="uk-table" >
             <thead><tr><th style="width:8%">序号</th><th style="width:62%">班级名称</th><th style="width:12%">说明</th><th style="width:8%">操作</th>
@@ -47,6 +47,9 @@
             </tfoot>
         </table>
     </div>
+</div>
+<div class="md-fab-wrapper">
+    <a href="${ctx }/ssclass/create" class="md-fab md-fab-accent" style="font-size: 12px;color:#fff;padding-top: 16px">新增<br/>班级</a>
 </div>
 <script>
 

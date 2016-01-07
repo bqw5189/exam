@@ -26,15 +26,16 @@
         <li class="active"><a href="${ctx}/student/classes/images?taskName=北校区大气PM2.5中多环芳烃分析">北校区大气PM2.5中多环芳烃分析</a></li>
         <li class=""><a href="${ctx}/student/classes/images?taskName=汽修喷漆车间废水中苯系物分析">汽修喷漆车间废水中苯系物分析</a></li>
         <li class=""><a  href="${ctx}/student/classes/images?taskName=南三区土壤中塑化剂分析">南三区土壤中塑化剂分析</a></li>
-        <input type="search" ng-model="q" />
 
     </ul>
-    <div class="rightData" style="width: 1000px" ng-init="words = [ <c:forEach items="${resources}" var="r">{type:'${r[5]}', file:'${r[6]}'},</c:forEach> ]">
-        <a title="" data-fancybox-group="gallery" href="${ctx}/static/pmfj/pic/{{word.file}}" class="fancybox" ng-repeat="word in words |filter:{type : 'IMG'}| filter:q as results"><img style="width:120px;height:120px;margin: 5px" src="${ctx}/static/pmfj/pic/{{word.file}}" ></a>
+    <div class="rightData" style="width: 980px" ng-init="words = [ <c:forEach items="${resources}" var="r">{type:'${r[5]}', file:'${r[6]}'},</c:forEach> ]">
+        <a title="" data-fancybox-group="gallery" href="${ctx}/static/pmfj/pic/{{word.file}}" class="fancybox" ng-repeat="word in words |filter:{type : 'IMG'}| filter:q as results"><img style="width:120px;height:120px;margin: 10px" src="${ctx}/static/pmfj/pic/{{word.file}}" ></a>
         <%--<ol>--%>
 
             <%--<li style="line-height:30px" ng-repeat="word in words |filter:'IMG'| filter:q as results"><b>{{word.type}}</b>{{word.file}} </li>--%>
         <%--</ol>--%>
+        <br/><br/>
+        <div>&nbsp;&nbsp;共{{words.length}}张图片</div>
     </div>
 
     <script type="text/javascript">

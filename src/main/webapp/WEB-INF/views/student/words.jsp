@@ -25,8 +25,7 @@
         <li class="active"><a href="${ctx}/student/words?type=北校区大气PM2.5中多环芳烃分析">北校区大气PM2.5中多环芳烃分析</a></li>
         <li class=""><a href="${ctx}/student/words?type=汽修喷漆车间废水中苯系物分析">汽修喷漆车间废水中苯系物分析</a></li>
         <li class=""><a  href="${ctx}/student/words?type=南三区土壤中塑化剂分析">南三区土壤中塑化剂分析</a></li>
-        <input type="search" ng-model="q" />
-
+        <input type="text" ng-model="q"  placeholder="请输入搜索关键字"/>
     </ul>
 
     <div class="rightData"  ng-init="words = [ <c:forEach items="${words}" var="word">{word:'${word.word}', remark:'${word.remark}'},</c:forEach> ]">

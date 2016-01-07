@@ -27,14 +27,14 @@
         <li class="active"><a href="${ctx}/student/classes/flash?taskName=北校区大气PM2.5中多环芳烃分析">北校区大气PM2.5中多环芳烃分析</a></li>
         <li class=""><a href="${ctx}/student/classes/flash?taskName=汽修喷漆车间废水中苯系物分析">汽修喷漆车间废水中苯系物分析</a></li>
         <li class=""><a  href="${ctx}/student/classes/flash?taskName=南三区土壤中塑化剂分析">南三区土壤中塑化剂分析</a></li>
-        <input type="search" ng-model="q" />
+        <input type="text" ng-model="q"  placeholder="请输入搜索关键字"/>
 
     </ul>
     <div class="rightData" style="width: 1000px" ng-init="words = [ <c:forEach items="${resources}" var="r">{title:'${r[4]}',type:'${r[5]}', file:'${r[6]}', pic:'${fn:replace(r[6], "flv", "jpg")}'},</c:forEach> ]">
         <a title="" data-fancybox-group="gallery" href="#" file="${ctx}/static/pmfj/{{word.file}}" pic="${ctx}/static/pmfj/move/{{word.pic}}"  class="fancybox" ng-repeat="word in words |filter:{type : 'MOVE'}| filter:q as results">
-            <div style="float: left;width:150px;height:120px;margin: 5px" >
-                <img style="width:150px;height:120px;margin: 5px" src="${ctx}/static/pmfj/move/{{word.pic}}" >
-                <span style="position: relative;left: 5px">{{word.title}}</span>
+            <div style="float: left;width:150px;height:120px;margin: 5px;color:#000;" >
+                <img style="width:150px;height:120px;margin: 5px" src="${ctx}/static/pmfj/move/{{word.pic}}" />
+                <div style="position: relative;text-align: center">{{word.title}}</div>
             </div>
         </a>
         <%--<ol>--%>
