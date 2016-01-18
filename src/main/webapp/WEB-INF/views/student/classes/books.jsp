@@ -29,7 +29,7 @@
 
     </ul>
 
-    <div class="rightData" style="width: 1000px" ng-init="words = [ <c:forEach items="${words}" var="word">{word:'${word.word}', remark:'${word.remark}'},</c:forEach> ]">
+    <div class="rightData" style="width: 980px" ng-init="words = [ <c:forEach items="${words}" var="word">{word:'${word.word}', remark:'${word.remark}'},</c:forEach> ]">
         <ol>
 
             <li style="line-height:30px" ng-repeat="word in words | filter:q as results"><b>{{word.word}}</b>{{word.remark|trustHtml}} </li>

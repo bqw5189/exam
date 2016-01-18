@@ -18,6 +18,7 @@
         <li class=""><a href="${ctx}/student/examlist?project=汽修喷漆车间废水中苯系物分析">汽修喷漆车间废水中苯系物分析</a></li>
         <li class=""><a  href="${ctx}/student/examlist?project=南三区土壤中塑化剂分析">南三区土壤中塑化剂分析</a></li>
     </ul>
+    <br/>
     <div class="leftMenubox" style="min-height: 150px;padding-left: 20px;width: 150px">
         <p>本次答卷得分：<font color="red" size="6">${sumScore }</font></p>
         <div>考试时间：${examvo.examTime}</div>

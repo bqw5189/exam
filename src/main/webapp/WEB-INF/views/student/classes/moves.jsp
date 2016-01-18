@@ -30,7 +30,7 @@
         <input type="text" ng-model="q"  placeholder="请输入搜索关键字"/>
 
     </ul>
-    <div class="rightData" style="width: 1000px" ng-init="words = [ <c:forEach items="${resources}" var="r">{title:'${r[4]}',type:'${r[5]}', file:'${r[6]}', pic:'${fn:replace(r[6], "flv", "jpg")}'},</c:forEach> ]">
+    <div class="rightData" style="width: 980px" ng-init="words = [ <c:forEach items="${resources}" var="r">{title:'${r[4]}',type:'${r[5]}', file:'${r[6]}', pic:'${fn:replace(r[6], "flv", "jpg")}'},</c:forEach> ]">
         <a title="" data-fancybox-group="gallery" href="#" file="${ctx}/static/pmfj/{{word.file}}" pic="${ctx}/static/pmfj/move/{{word.pic}}"  class="fancybox" ng-repeat="word in words |filter:{type : 'MOVE'}| filter:q as results">
             <div style="float: left;width:150px;height:120px;margin: 5px;color:#000;" >
                 <img style="width:150px;height:120px;margin: 5px" src="${ctx}/static/pmfj/move/{{word.pic}}" />

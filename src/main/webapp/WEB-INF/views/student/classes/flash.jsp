@@ -29,7 +29,7 @@
         <input type="text" ng-model="q"  placeholder="请输入搜索关键字"/>
 
     </ul>
-    <div class="rightData" style="width: 1000px" ng-init="words = [ <c:forEach items="${resources}" var="r">{title:'${r[4]}',type:'${r[5]}', file:'${r[6]}'},</c:forEach> ]">
+    <div class="rightData" style="width: 980px" ng-init="words = [ <c:forEach items="${resources}" var="r">{title:'${r[4]}',type:'${r[5]}', file:'${r[6]}'},</c:forEach> ]">
 
         <ol style="padding-left: 20px">
             <li ng-repeat="word in words |filter:{type : 'FLASH'}| filter:q as results"  style="list-style-type: decimal;padding-top: 10px;color: #f97112">
