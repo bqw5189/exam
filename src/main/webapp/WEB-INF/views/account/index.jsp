@@ -87,8 +87,8 @@
 		          <tr> 
 		            <td> 
 		             <div data-uk-grid-margin="" class="uk-grid"> 
-		              <div class="uk-width-2-5 uk-width-small-1-5 uk-text-center"> 
-		               <img alt="" src="assets/img/avatars/avatar_01.png" class="md-user-image-large"> 
+		              <div class="uk-width-2-5 uk-width-small-1-5 uk-text-center">
+                          <img alt="" src="/exam/static/altair/assets/img/avatars/user@2x.png" class="md-user-image">
 		              </div> 
 		              <div class="uk-width-3-5 uk-width-small-4-5"> 
 		               <h4 class="heading_a uk-margin-small-bottom">第${per.examOrder }名</h4> 

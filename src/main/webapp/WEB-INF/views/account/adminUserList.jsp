@@ -32,18 +32,19 @@
     <div class="md-card-content">
         <div><b>当前位置:>>用户管理</b></div>
 	<table id="dt_default" class="uk-table" >
-		<thead><tr><th>所属班级</th><th>登录名</th><th>用户名</th><th>注册时间<th>管理</th></tr></thead>
+		<thead><tr><th>序号</th><th>所属班级</th><th>登录名</th><th>用户名</th><th>注册时间<th>管理</th></tr></thead>
 		<tbody>
-		<c:forEach items="${users}" var="user">
+		<c:forEach items="${users}" var="user" varStatus="status">
 			<tr>
-				<td>${user.ssClass.className}</a></td>
+				<td>${status.index + 1}</td>
+				<td>${user.ssClass.className}</td>
 				<td><a href="${ctx}/admin/user/update/${user.id}">${user.loginName}</a></td>
 				<td>${user.name}</td>
 				<td>
 					<fmt:formatDate value="${user.registerDate}" pattern="yyyy年MM月dd日  HH时mm分ss秒" />
 				</td>
 				<td><a href="#" data-id="${user.id}" class="delete_user"><i class="md-icon material-icons"></i></a>
-                    <a href="${ctx}/admin/user/update/${user.id}" class="md-btn md-btn-flat md-btn-flat-primary"><i class="md-icon material-icons"></i></a></td>
+                    <a href="${ctx}/admin/user/update/${user.id}"><i class="md-icon material-icons"></i></a></td>
 			</tr>
 		</c:forEach>
 		</tbody>

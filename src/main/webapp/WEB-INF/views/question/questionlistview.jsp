@@ -16,8 +16,7 @@
 	});
 </script>
 <body>
-<div><b>当前位置：>>试题查看</b></div>
-<br/>
+
 <div class="md-card">
     <div class="md-card-content">
         <div class="uk-grid" data-uk-grid-margin="">
@@ -48,10 +47,15 @@
 <div class="md-card">
 <div class="md-card-content">
 
+
 		<form class="form-search " action="#">
 			<input type="hidden" name="projectId" id="projectId" value="${projectId}"> 
-			<div data-uk-grid-margin="" class="uk-grid"> 
-	       <div class="uk-width-medium-3-10"> 
+			<div data-uk-grid-margin="" class="uk-grid">
+                <div class="uk-width-medium-3-10">
+                    <div><b>当前位置：>>试题查看</b></div>
+
+                </div>
+                <div class="uk-width-medium-3-10">
 	        <div class="md-input-wrapper"><label for="product_search_name"></label><input type="text" id="product_search_name" name="search_LIKE_questionCont" class="md-input" value="${param.search_LIKE_questionCont}"><span class="md-input-bar"></span></div> 
 	         
 	       </div> 

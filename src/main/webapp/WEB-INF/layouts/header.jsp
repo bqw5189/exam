@@ -9,9 +9,9 @@
             <!-- main sidebar switch -->
             <a href="#" id="sidebar_main_toggle" class="sSwitch sSwitch_left"> <span class="sSwitchIcon"></span> </a>
             <div class="uk-navbar-flip">
-                <div style="position: absolute;right: 120px;top:20px">欢迎您,<shiro:principal property="name"></shiro:principal> </div>
-                <ul class="uk-navbar-nav user_actions">
 
+                <ul class="uk-navbar-nav user_actions">
+                    <li style="padding-top: 20px;">欢迎您,<shiro:principal property="name"></shiro:principal></li>
                     <li data-uk-dropdown="{mode:'click'}"> <a href="#" class="user_action_image"><img class="md-user-image" src="${ctx}/static/altair/assets/img/avatars/user@2x.png" alt="" /></a>
                         <div class="uk-dropdown uk-dropdown-small uk-dropdown-flip">
                             <ul class="uk-nav js-uk-prevent">

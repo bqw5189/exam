@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <c:set var="reqUrl" value="http://${pageContext.request.serverName}:${pageContext.request.serverPort}${pageContext.request.contextPath}" />
 <html>
@@ -9,6 +10,33 @@
 
 <body>
 
+<div class="md-card">
+    <div class="md-card-content">
+        <div class="uk-grid" data-uk-grid-margin="">
+            <div class="uk-width-large-1-1">
+                <ul id="kUI_menu">
+                    <c:forEach items="${course }" var="cour">
+                        <li> ${cour.courseName }
+                            <c:if test="${fn:length(cour.project)>0}">
+                                <ul>
+                                    <c:forEach items="${cour.project }" var="pro">
+                                        <li>
+                                            <a href="${ctx }/makexam/${pro.id}"
+                                                    <c:if test="${ projectId==pro.id}">
+                                                        class="text-success"
+                                                    </c:if>
+                                                    >${pro.projectName }</a>
+                                        </li>
+                                    </c:forEach>
+                                </ul>
+                            </c:if>
+                        </li>
+                    </c:forEach>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 <fieldset id="mainPage">
     <legend><b>当前位置:>>制定试卷>>编辑试卷</b></legend>
 
@@ -122,7 +150,9 @@
 				}
 			});
 		}
-		
+
+        var checkAll = false;
+
 		$("#add_btn").click(function(){
 			var ids = document.getElementById("questionIds").value;
 			$.ajax({
@@ -133,6 +163,14 @@
 					
 					var html = template.render("quest_list_temp", {data:data});
                     $("#subPage").html(html);
+
+
+                    $("#checkAll").click(function(){
+
+                        $.each($("tbody tr td input[type='checkbox']"), function(i,o){
+                            o.click();
+                        });
+                    });
 					//alert(data.questionCont);
 					/* $(data).each(function(idx,item){
 						var _len = 1;
@@ -147,6 +185,7 @@
 					$("#mainPage").hide();
 					
 					$("#dt_default").DataTable({
+                        ordering:false,
 		                "language": {
 		                    "lengthMenu": "每页 _MENU_ 条记录",
 		                    "zeroRecords": "没有找到记录",
@@ -169,14 +208,18 @@
 			});
 		});
 		function checkbox_click(obj){
-			
+
+            var ids = document.getElementById("questionIds").value;
+
 			if(obj.checked){
-				var ids = document.getElementById("questionIds").value;
 				if(null==ids||ids.indexOf(obj)==-1){
 					ids=ids+obj.value+","; 	
-					document.getElementById("questionIds").value=ids;
 				}
-			}
+			}else{
+                ids = ids.replace(obj.value+",", "");
+            }
+
+            document.getElementById("questionIds").value=ids;
 		}
 		function back_btn(){
 			$("#subPage").hide();
@@ -226,7 +269,7 @@
             <div><b>当前位置：>>制定试卷>>编辑试卷>>试题选择</b></div>
 			<table id="dt_default" class="uk-table" cellspacing="0" width="100%">
             	<thead>
-            		<tr><th style="width:8%">序号</th><th style="width:54%">试题名称</th><th style="width:12%">试题类型</th><th style="width:8%">分数</th></tr>
+            		<tr><th style="width:8%"><input type="checkbox" id="checkAll"/></th><th style="width:54%">试题名称</th><th style="width:12%">试题类型</th><th style="width:8%">分数</th></tr>
             	</thead>
             	<tbody>
 				<#for (var i = 0; i < data.length; i++){#>

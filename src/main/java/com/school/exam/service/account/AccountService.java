@@ -5,9 +5,11 @@
  *******************************************************************************/
 package com.school.exam.service.account;
 
-import java.io.InputStream;
-import java.util.List;
-
+import com.school.exam.entity.SSClassVO;
+import com.school.exam.entity.User;
+import com.school.exam.repository.UserDao;
+import com.school.exam.service.ServiceException;
+import com.school.exam.service.account.ShiroDbRealm.ShiroUser;
 import com.school.exam.service.ssclass.SSClassService;
 import com.school.exam.utils.ExcelUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -17,16 +19,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-
-import com.school.exam.entity.SSClassVO;
-import com.school.exam.entity.User;
-import com.school.exam.repository.TaskDao;
-import com.school.exam.repository.UserDao;
-import com.school.exam.service.ServiceException;
-import com.school.exam.service.account.ShiroDbRealm.ShiroUser;
 import org.springside.modules.security.utils.Digests;
 import org.springside.modules.utils.Clock;
 import org.springside.modules.utils.Encodes;
+
+import java.io.InputStream;
+import java.util.List;
 
 /**
  * 用户管理类.
@@ -150,7 +148,7 @@ public class AccountService {
                 user = new User();
                 user.setLoginName(row.get(2));
                 user.setRoles("student");
-                user.setPlainPassword(row.get(3));
+                user.setPlainPassword(StringUtils.trim(row.get(3)));
                 user.setName(row.get(1));
                 user.setSsClass(ssClassVO);
 

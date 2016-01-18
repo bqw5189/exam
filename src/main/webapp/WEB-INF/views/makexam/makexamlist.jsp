@@ -60,8 +60,9 @@
                 <th width="30%">试卷名称</th>
                 <th width="30%">试卷说明</th>
                 <th width="5%">答题时间(分钟)</th>
-                <th width="10%">状态</th>
-                <th width="20%">操作</th>
+                <th width="10%">创建时间</th>
+                <th width="5%">状态</th>
+                <th width="15%">操作</th>
             </tr>
             </thead>
             <tbody>
@@ -72,6 +73,7 @@
                     <td>${ exam.examName }</td>
                     <td>${ exam.examRemark}</td>
                     <td>${ exam.examTime}</td>
+                    <td>${ exam.examBeginDate}</td>
                     <td>
                         <c:if test="${exam.state==1 }">开始考试</c:if>
                         <c:if test="${exam.state==0 }">未考试</c:if>

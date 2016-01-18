@@ -57,7 +57,7 @@
 <div class="md-card">
     <div class="md-card-content">
         <div><b>当前位置:>>答案管理</b></div>
-
+        <h2 align="center">${user.name} <small>课程学习中问答题汇总</small></h2>
         <div class="uk-accordion" data-uk-accordion="" style="width:100%">
             <c:set var="no" value="1"></c:set>
             <c:forEach items="${list }" var="l">
