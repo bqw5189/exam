@@ -144,6 +144,7 @@
 						$("#selectQuestion").html(html);
 						$("#subPage").hide();
 						$("#mainPage").show();
+                        $("#page_content_inner").show();
 				},
 				error:function(data){
 					alert("error:"+data);
@@ -183,6 +184,7 @@
 					$("#subPage").show();
 			            
 					$("#mainPage").hide();
+                    $("#page_content_inner").hide();
 					
 					$("#dt_default").DataTable({
                         ordering:false,
@@ -223,6 +225,7 @@
 		}
 		function back_btn(){
 			$("#subPage").hide();
+            $("#page_content_inner").show();
 			$("#mainPage").show();
 		}
 		function delquestion(obj){

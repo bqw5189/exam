@@ -19,7 +19,7 @@
 
 <body>
 <!--主题部分-->
-<div class="tearchpagebox">
+<div class="tearchpagebox" style="">
     <!--左边菜单-->
     <ul class="nav nav-tabs">
         <li class="active"><a href="${ctx}/student/words?type=北校区大气PM2.5中多环芳烃分析">北校区大气PM2.5中多环芳烃分析</a></li>
@@ -29,9 +29,8 @@
 
     </ul>
 
-    <div class="rightData" style="width: 980px" ng-init="words = [ <c:forEach items="${words}" var="word">{word:'${word.word}', remark:'${word.remark}'},</c:forEach> ]">
+    <div  ng-init="words = [ <c:forEach items="${words}" var="word">{word:'${word.word}', remark:'${word.remark}'},</c:forEach> ]">
         <ol>
-
             <li style="line-height:30px" ng-repeat="word in words | filter:q as results"><b>{{word.word}}</b>{{word.remark|trustHtml}} </li>
         </ol>
     </div>
