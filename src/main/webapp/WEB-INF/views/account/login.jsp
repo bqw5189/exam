@@ -20,17 +20,9 @@
     <link rel="icon" type="image/png" href="${ctx}/static/altair/assets/img/favicon-16x16.png" sizes="16x16" />
     <link rel="icon" type="image/png" href="${ctx}/static/altair/assets/img/favicon-32x32.png" sizes="32x32" />
     <title>在线考试 - 登录</title>
-    <link href="${ctx}/static/altair/fonts.googleapis.com/fonts.css" rel="stylesheet" type="text/css" />
-    <!-- uikit -->
-    <link rel="stylesheet" href="${ctx}/static/altair/bower_components/uikit/css/uikit.almost-flat.min.css" />
-    
-  <!-- flag icons --> 
-  <link rel="stylesheet" href="${ctx}/static/altair/assets/icons/flags/flags.min.css" media="all" /> 
-  <!-- altair admin --> 
-  <link rel="stylesheet" href="${ctx}/static/altair/assets/css/main.min.css" media="all" /> 
-  
+
     <!-- altair admin login page -->
-    <link rel="stylesheet" href="${ctx}/static/altair/assets/css/login_page.min.css" />
+    <link rel="stylesheet" href="${ctx}/static/login/css/login.css" />
 
 </head>
 <body class="login_page">
@@ -39,133 +31,60 @@
     if(error != null){
 %>
 
-<div data-uk-alert="" class="uk-alert uk-alert-danger">
-    <a class="uk-alert-close uk-close" href="#"></a> 登录失败，重新录入
-</div>
+<script>
+    alert("登录失败，重新录入");
+</script>
 <%
     }
 %>
 
-<div class="login_page_wrapper">
-    <div class="md-card" id="login_card">
-        <div class="md-card-content large-padding" id="login_form">
-            <div class="login_heading">
-                <div class="user_avatar"></div>
-            </div>
-            
-            <form id="loginForm" action="${ctx}/login" method="post" class="uk-form-stacked">
-                <div class="uk-grid" data-uk-grid-margin="">
-                <div class="uk-width-medium-1-1">
-                    <div class="parsley-row">
-                        <label for="username">登录名</label>
-                        <input class="md-input" type="text" id="username" name="username" required=""/>
-                    </div>
-                </div>
-                <div class="uk-width-medium-1-1">
-                    <div class="parsley-row">
-                        <label for="password">密码</label>
-                        <input class="md-input" type="password" id="password" name="password" required/>
-                    </div>
-                </div>
-                    </div>
-                <div class="uk-margin-medium-top" align="center">
-                    <button type="submit" class="md-btn md-btn-primary">登陆</button>
-                </div>
+<!--中间-->
+<div class="midbox">
+    <div class="logo"></div>
+    <div class="mid">
+        <div class="loginbox">
+            <form id="loginForm" action="${ctx}/login" method="post">
+                <div class="yhm"> <b class="people"></b>
+                    <label>用户名:</label><br/>
+                    <input  type="text" id="username" name="username" required=""/>
+                    <i></i> </div>
+                <div class="mm"> <b class="key"></b>
+                    <label>密码<span>码</span>:</label><br/>
+                    <input  type="password" id="password" name="password" required value=""/>
+                    <i></i> </div>
+
+                <div class="login_buttom"> <a  class="on" href="javascript:void(0);" id="submitSignin" style="margin-right:8px;">登&nbsp;录</a> </div>
             </form>
         </div>
+        <!--loginbox end-->
 
-        <div class="md-card-content large-padding" id="register_form" style="display: none">
-	     <button type="button" class="uk-position-top-right uk-close uk-margin-right uk-margin-top back_to_login"></button> 
-	     <h2 class="heading_a uk-margin-medium-bottom">注册一个账号</h2>
-	     <form id="inputForm" action="${ctx}/register" method="post"  class="uk-form-stacked">
-             <div class="uk-grid" data-uk-grid-margin="">
-                 <div class="uk-width-medium-1-1">
-                  <div class="parsley-row">
-                   <label for="loginName">登录名</label>
-                   <input class="md-input" type="text" id="loginName" name="loginName" required=""/>
-                  </div>
-                 </div>
-                 <div class="uk-width-medium-1-1">
-                  <div class="parsley-row">
-                   <label for="name">用户名</label>
-                   <input class="md-input" type="text" id="name" name="name" required=""/>
-                  </div>
-                 </div>
-                 <div class="uk-width-medium-1-1">
-                  <div class="parsley-row">
-                  		<label for="register_username">所属班级:</label>
-								<select name="ssClass.id">
-									<c:forEach var="s" items="${classLists }">
-										<option value="${s.id }" 
-										<c:if test="${ssClass.id==s.id }">selected="selected" </c:if>
-										>${s.className }</option>
-									</c:forEach>
-								</select>
-                  </div>
-                 </div>
-                 <div class="uk-width-medium-1-1">
-                  <div class="parsley-row">
-                   <label for="plainPassword">密码</label>
-                   <input class="md-input" type="password" id="plainPassword" name="plainPassword" required=""/>
-                  </div>
-                 </div>
-                 <div class="uk-width-medium-1-1">
-                  <div class="parsley-row">
-                   <label for="confirmPassword">确认密码</label>
-                   <input class="md-input" type="password" id="confirmPassword" name="confirmPassword" required=""/>
-                  </div>
-                 </div>
-              <!-- div class="uk-form-row">
-               <label for="register_email">E-mail</label>
-               <input class="md-input" type="text" id="register_email" name="register_email" />
-              </div -->
-              <div class="uk-margin-medium-top" align="center">
-               <input id="submit_btn" class="md-btn md-btn-primary md-btn-block md-btn-large" type="submit" value="确认注册"/>&nbsp;
-              </div>
-             </div>
-	     </form> 
-	    </div> 
     </div>
-    
+    <div class="bottom">技术支持：北京东方仿真软件技术有限公司<br/>地址：北京朝阳区小关东里10号院润宇大厦707&nbsp;&nbsp;&nbsp;邮编：100027&nbsp;&nbsp;&nbsp;电话：010-64971654/6492</div>
 </div>
+<!--中间 end-->
 
 
 
-<!-- common functions -->
-<script src="${ctx}/static/altair/assets/js/common.min.js"></script>
-<!-- uikit functions -->
-<script src="${ctx}/static/altair/assets/js/uikit_custom.min.js"></script>
-<!-- altair core functions -->
-<script src="${ctx}/static/altair/assets/js/altair_admin_common.min.js"></script>
-<script>
-    // load parsley config (altair_admin_common.js)
-    altair_forms.parsley_validation_config();
-    </script>
-    
-  <script src="${ctx}/static/altair/bower_components/parsleyjs/dist/parsley.min.js"></script> 
-<!-- altair login page functions -->
-<script src="${ctx}/static/altair/assets/js/pages/login.min.js"></script>
 
-<%-- <script src="${ctx}/static/jquery/jquery-1.9.1.min.js" type="text/javascript"></script> --%>
+
+
+ <script src="${ctx}/static/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
 	<script src="${ctx}/static/jquery-validation/1.11.1/jquery.validate.min.js" type="text/javascript"></script>
 	<script>
-		/* $(document).ready(function() {
-			//聚焦第一个输入框
-			$("#loginName").focus();
-			//为inputForm注册validate函数
-			$("#inputForm").validate({
-				rules: {
-					loginName: {
-						remote: "${ctx}/register/checkLoginName"
-					}
-				},
-				messages: {
-					loginName: {
-						remote: "用户登录名已存在"
-					}
-				}
-			});
-		}); */
+        $(function(){
+            $("#submitSignin").click(function(){
+                if ("" === $("#username").val()){
+                    alert("请输入用户名！");
+                    return;
+                }
+
+                if ("" === $("#password").val()){
+                    alert("请输入密码！");
+                    return;
+                }
+                $("#loginForm").submit();
+            });
+        });
 	</script>
 </body>
 </html>

@@ -1,0 +1,168 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-size: 12px;
+    color: #333;
+    font-family: "微软雅黑";
+}
+html, body {
+    width: 100%;
+    background: #f5f9fa;
+    min-width: 1000px;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+a:hover {
+}
+.logo {
+    width: 646px;
+    height:70px;
+    background-image: url(../images/logo.png);
+    background-repeat: no-repeat;
+    margin-left:120px;
+    margin-top:70px;
+}
+.midbox {
+    width: 1028px;
+    height: 626px;
+    position: absolute;
+    background-image: url(../images/centerpic.png);
+    background-repeat: no-repeat;
+    left: 50%;
+    margin-left: -514px;
+    top: 50%;
+    margin-top: -313px;
+}
+.mid {
+}
+.loginbox {
+    width: 320px;
+    height: 380px;
+    position: absolute;
+    background-image: url(../images/loginbox.png);
+    background-repeat: no-repeat;
+    left: 60%;
+    top: 100px;
+}
+.bottom {
+    width:1028px;
+    height:80px;
+    margin-top:500px;
+    color:#333333;
+    text-align:center;
+    font-size:12px;
+    line-height:20px;
+}
+
+.yhm {
+    position: absolute;
+    left: 32px;
+    top: 110px;
+}
+.mm {
+    position: absolute;
+    left: 32px;
+    top: 180px;
+}
+.yzm {
+    position: absolute;
+    left: 32px;
+    top: 207px;
+}
+.yzmpic {
+    position: absolute;
+    left: 33px;
+    top: 275px
+}
+.login_buttom {
+    position: absolute;
+    left: 100px;
+    top: 308px
+}
+.yhm label, .mm label{
+    font-size: 14px;
+    font-family: "微软雅黑";
+    color: #333;
+    line-height: 30px;
+    margin-right: 3px;
+}
+.yhm span, .mm span, .yzm span {
+    font-size: 14px;
+    font-family: "微软雅黑";
+    color: #333;
+    visibility: hidden;
+}
+.yhm input, .mm input {
+    border: 1px solid #d5d5d5;
+    height: 28px;
+    width: 220px;
+    line-height: 28px;
+    font-size: 12px;
+    font-family: "微软雅黑";
+    color: #333;
+    border-radius: 2px;
+    padding-left: 26px;
+}
+.yhm i, .mm i, {
+    display: inline-block;
+    width: 14px;
+    height: 10px;
+    background: url(../images/yes.png);
+    margin-left: 3px;
++position:relative;
++top:-12px;
++left:3px;
+    background-repeat: no-repeat;
+}
+.yhm input:hover {
+    border: 1px solid #4599e4;
+    box-shadow: 0px 0px 2px rgba(69,153,228,0.5);
+}
+.mm input:hover {
+    border: 1px solid #4599e4;
+    box-shadow: 0px 0px 2px rgba(69,153,228,0.5);
+}
+
+
+.login_buttom a.on {
+    display: inline-block;
+    color: #fff;
+    width: 120px;
+    height: 41px;
+    line-height: 41px;
+    font-size: 16px;
+    font-family: "微软雅黑";
+    text-decoration: none;
+    text-align:center;
+    background-image: url(../images/btn.png);
+    background-repeat: no-repeat;
+}
+.login_buttom a.re:hover {
+    background:url(../images/btn.png) no-repeat;
+    color:#ffffff;
+}
+.yhm b.people {
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url(../images/people.png);
+    background-repeat: no-repeat;
+    left: 5px;
+    top: 35px;
+}
+.mm b.key {
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url(../images/key.png);
+    background-repeat: no-repeat;
+    left: 5px;
+    top: 35px;
+}

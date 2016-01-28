@@ -4,7 +4,7 @@
 <!-- namespace必须指向Dao接口 -->
 <mapper namespace="com.school.exam.repository.IndexShowDao">
 	<select id="findMaxId"  resultType="IndexShowVO">
-	      select MAX(id) as id,exam_name as examName from  t_te_make_exam where state=3
+	      select id,exam_name as examName from  t_te_make_exam where  id = (select MAX(id) as id from t_te_make_exam where state=3)
 	</select>
 	<select id="findSumScore"  resultType="Double" parameterType="long">
 		select SUM(a.question_score) as questionScore  from  t_te_exam_question a,t_te_question_exampaper b where  b.question_id=a.id and b.exampaper_id = #{id}

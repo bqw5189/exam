@@ -30,11 +30,19 @@
 
     </ul>
 
-    <div class="rightData" style="width: 980px" ng-init="words = [ <c:forEach items="${words}" var="word">{word:'${word.word}', remark:'${word.remark}'},</c:forEach> ]">
-        <ol>
 
-            <li style="line-height:30px" ng-repeat="word in words | filter:q as results"><b>{{word.word}}</b>{{word.remark|trustHtml}} </li>
+    <div class="rightData" style="width: 980px" ng-init="words = [{title:'GPC-GCMS使用说明书', file:'GPC-GCMS使用说明书.pdf'}]">
+
+        <ol style="padding-left: 20px">
+            <li ng-repeat="word in words| filter:q as results"  style="list-style-type: decimal;padding-top: 10px;color: #f97112">
+                <a title="" data-fancybox-group="gallery" href="${ctx}/static/pmfj/ckzl/{{word.file}}" class="fancybox"  style="color: #000">{{word.title}}</a>
+            </li>
         </ol>
+
+        <%--<ol>--%>
+
+        <%--<li style="line-height:30px" ng-repeat="word in words |filter:'IMG'| filter:q as results"><b>{{word.type}}</b>{{word.file}} </li>--%>
+        <%--</ol>--%>
     </div>
 </div>
         
