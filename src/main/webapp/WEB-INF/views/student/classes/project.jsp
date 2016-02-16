@@ -42,7 +42,7 @@
 
 
     <div class="rightData" style="width: 700px;border-width: 0px">
-        <div id="showData" style="min-height: 500px">
+        <div id="showData" style="min-height: 500px;max-height: 500px;">
 
         </div>
         <br/>
@@ -141,7 +141,7 @@
                     html += "<img src='${ctx}/static/${resourcePath}/" + data.file + "'/>";
                 }
 
-                html += '<div> 答案:<textarea name="answer" id="answer" style="min-height: 300px;width: 100%"></textarea></div>';
+                html += '<div> 答案:<textarea name="answer" id="answer" style="min-height: 300px;width: 90%"></textarea></div>';
                 html += '<div> <button id="submit" class="btn" data-loading-text="提交中..." type="button" >提交</button></div>';
 
                 $("#showData").html(html);
