@@ -6,7 +6,7 @@
 
 <html>
 <head>
-	<title>考试得分</title>
+    <title>考试得分</title>
 </head>
 
 <body>
@@ -42,56 +42,56 @@
                     <tr>
                         <td>${indexno} 、${que.questionCont }</td>
                     </tr>
-                <tr>
-                    <td>
-                        <ol type="A" style="padding-left: 30px">
-                    <c:forEach items="${resultlist}" var="result">
-                        <c:if test="${result.examQuestionId==que.id}">
-                            <c:set var="answers" value=""/>
-                            <c:set var="replys" value=""/>
-                            <c:set var="score" value="0" />
-                            <c:forEach items="${que.selectItems}" var="item">
-                                <c:if test="${que.type==1 }">
-                                    <li style="list-style:inherit; margin-left: 30px">
-                                            <input type='radio' name='${que.id }' id='${item.id}' value='${item.id}'
-                                            <c:if test="${result.chooseQuestionId==item.id}">
+                    <tr>
+                        <td>
+                            <ol type="A" style="padding-left: 30px">
+                                <c:forEach items="${resultlist}" var="result">
+                                    <c:if test="${result.examQuestionId==que.id}">
+                                        <c:set var="answers" value=""/>
+                                        <c:set var="replys" value=""/>
+                                        <c:set var="score" value="0" />
+                                        <c:forEach items="${que.selectItems}" var="item">
+                                            <c:if test="${que.type==1 }">
+                                                <li style="list-style:inherit; margin-left: 30px">
+                                                    <input type='radio' name='${que.id }' id='${item.id}' value='${item.id}'
+                                                            <c:if test="${result.chooseQuestionId==fn:trim(item.id)}">
 
-                                                <c:set var="reply" value="${item.selectCont}" />
-                                                   checked=true
+                                                                <c:set var="reply" value="${item.selectCont}" />
+                                                                checked=true
+                                                            </c:if>
+                                                           style="margin-left: -50px;margin-bottom: 8px"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <c:if test="${que.questionAnswerId==fn:trim(item.id)}"><c:set var="answer" value="${item.selectCont}" /> </c:if>
+                                                        ${item.selectCont }
+                                                    <c:if test="${que.questionAnswerId==fn:trim(item.id)&&result.chooseQuestionId==fn:trim(item.id) }">
+                                                        <c:set var="score" value="${que.questionScore}" /></c:if>
+
+                                                </li>
+
                                             </c:if>
-                                                   style="margin-left: -50px;margin-bottom: 8px"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <c:if test="${que.questionAnswerId==item.id}"><c:set var="answer" value="${item.selectCont}" /> </c:if>
-                                                ${item.selectCont }
-                                            <c:if test="${que.questionAnswerId==item.id&&result.chooseQuestionId==item.id }">
-                                                <c:set var="score" value="${que.questionScore}" /></c:if>
+                                            <c:if test="${que.type==2 }">
 
-                                    </li>
+                                                <li style="list-style:inherit; margin-left: 30px">
+                                                    <input type='checkbox' name='${que.id }' id='${item.id}' value='${item.id}'
+                                                            <c:if test="${fn:contains(result.chooseQuestionId,item.id)}">
+                                                                <c:set var="replys" value="${replys}   ${item.selectCont}" />
+                                                                checked=true
+                                                            </c:if>
+                                                           style="margin-left: -50px;margin-bottom: 8px"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <c:if test="${fn:contains(que.questionAnswerId,item.id)}">
+                                                        <c:set var="answers" value="${answers}   ${item.selectCont}" /> </c:if>
+                                                        ${item.selectCont }
 
-                                </c:if>
-                                <c:if test="${que.type==2 }">
 
-                        <li style="list-style:inherit; margin-left: 30px">
-                                            <input type='checkbox' name='${que.id }' id='${item.id}' value='${item.id}'
-                                            <c:if test="${fn:contains(result.chooseQuestionId,item.id)}">
-                                                <c:set var="replys" value="${replys}   ${item.selectCont}" />
-                                                   checked=true
+                                                </li>
                                             </c:if>
-                                                   style="margin-left: -50px;margin-bottom: 8px"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <c:if test="${fn:contains(que.questionAnswerId,item.id)}">
-                                                <c:set var="answers" value="${answers}   ${item.selectCont}" /> </c:if>
-                                                ${item.selectCont }
+                                        </c:forEach>
+                                    </c:if>
 
+                                </c:forEach>
 
-                        </li>
-                                </c:if>
-                            </c:forEach>
-                        </c:if>
-
-                    </c:forEach>
-
-                        </ol>
-                    </td>
-                </tr>
+                            </ol>
+                        </td>
+                    </tr>
 
                     <c:set var="indexno" value="${indexno+1 }"></c:set>
                     <tr>
