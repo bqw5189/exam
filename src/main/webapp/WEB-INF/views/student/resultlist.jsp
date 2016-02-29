@@ -104,7 +104,7 @@
                             </c:if>
                             <c:if test="${que.type==2 }">
                                 <c:set var="color" value="red"/>
-                                <c:if test="${que.questionScore>0}"><c:set var="color" value="green"/> </c:if>
+                                <c:if test="${fn:contains(replys,answers) }"><c:set var="color" value="green"/> </c:if>
 
                                 <span style="color:${color}">正确答案：${answers } 学生答案：${ replys} </span>
 

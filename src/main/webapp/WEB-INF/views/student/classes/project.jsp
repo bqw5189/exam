@@ -141,7 +141,7 @@
                     html += "<img src='${ctx}/static/${resourcePath}/" + data.file + "'/>";
                 }
 
-                html += '<div> 答案:<textarea name="answer" id="answer" style="min-height: 300px;width: 90%"></textarea></div>';
+                html += '<div> 答案:</br><textarea name="answer" id="answer" style="min-height: 300px;width: 90%"></textarea></div>';
                 html += '<div> <button id="submit" class="btn" data-loading-text="提交中..." type="button" >提交</button></div>';
 
                 $("#showData").html(html);

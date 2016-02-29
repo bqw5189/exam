@@ -33,7 +33,7 @@
 
         <ol style="padding-left: 20px">
             <li ng-repeat="word in words |filter:{type : 'FLASH'}| filter:q as results"  style="list-style-type: decimal;padding-top: 10px;color: #f97112">
-                <a title="" data-fancybox-group="gallery" href="${ctx}/static/pmfj/{{word.file}}" class="fancybox"  style="color: #000">{{word.title}}</a>
+                <a title="" data-fancybox-group="gallery" href="#" file="${ctx}/static/pmfj/{{word.file}}" class="fancybox"  style="color: #000">{{word.title}}</a>
             </li>
         </ol>
 
@@ -44,8 +44,52 @@
     </div>
 
     <script type="text/javascript">
-        $(function(){$('.fancybox').fancybox();});
+//        $(function(){$('.fancybox').fancybox();});
+            $(function(){$('.fancybox').click(function(){
+                var so = new SWFObject($(this).attr("file"),"file","800","580","9","#000000");
+                so.addParam("allowfullscreen","true");
+                so.addParam("allowscriptaccess","always");
+                so.addParam("wmode","opaque");
+                so.addParam("quality","high");
+                so.addParam("salign","lt");
+
+                so.write("myModalBody");
+
+                $("#myModal").modal();
+            });});
     </script>
+</div>
+
+
+<style>
+    #myModal {
+        background-color:#000;
+        border: 0px solid rgba(0, 0, 0, 0);
+        border-radius: 0px;
+        padding: 0px;
+        box-shadow: 0 0px 0px rgba(0, 0, 0, 0.3);
+        left: 40%;
+        margin-left: -280px;
+        outline: 0 none;
+        position: fixed;
+        top: 0px;
+        width: 820px;
+        height: 620px;
+        z-index: 1050;
+    }
+    #myModalBody{
+        max-height: 600px;
+    }
+</style>
+<!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="top:1%">
+
+    <div class="modal-body" id="myModalBody">
+        <p>One fine body…</p>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+    </div>
 </div>
 
 </body>
