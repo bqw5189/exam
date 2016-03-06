@@ -5,35 +5,7 @@
 <html>
 <head>
 	<title>在线考试 - 注册</title>
-	<link href="${ctx}/static/jquery-validation/1.11.1/validate.css" type="text/css" rel="stylesheet" />
 
-    <link href="${ctx}/static/altair/fonts.googleapis.com/fonts.css" rel="stylesheet" type="text/css" />
-    <!-- uikit -->
-    <link rel="stylesheet" href="${ctx}/static/altair/bower_components/uikit/css/uikit.almost-flat.min.css" />
-    <!-- altair admin login page -->
-    <link rel="stylesheet" href="${ctx}/static/altair/assets/css/login_page.min.css" />
-
-	<script src="${ctx}/static/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
-	<script src="${ctx}/static/jquery-validation/1.11.1/jquery.validate.min.js" type="text/javascript"></script>
-	<script>
-		$(document).ready(function() {
-			//聚焦第一个输入框
-			$("#loginName").focus();
-			//为inputForm注册validate函数
-			$("#inputForm").validate({
-				rules: {
-					loginName: {
-						remote: "${ctx}/register/checkLoginName"
-					}
-				},
-				messages: {
-					loginName: {
-						remote: "用户登录名已存在"
-					}
-				}
-			});
-		});
-	</script>
 </head>
 
 <body>
@@ -88,5 +60,24 @@
         </div>
 
 </fieldset>
+<script>
+    $(document).ready(function() {
+        //聚焦第一个输入框
+        $("#loginName").focus();
+        //为inputForm注册validate函数
+        $("#inputForm").validate({
+            rules: {
+                loginName: {
+                    remote: "${ctx}/register/checkLoginName"
+                }
+            },
+            messages: {
+                loginName: {
+                    remote: "用户登录名已存在"
+                }
+            }
+        });
+    });
+</script>
 </body>
 </html>

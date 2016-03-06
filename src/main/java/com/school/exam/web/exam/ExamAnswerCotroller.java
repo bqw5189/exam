@@ -52,6 +52,7 @@ public class ExamAnswerCotroller {
         }else{
             model.addAttribute("list", list);
             model.addAttribute("user", user);
+            model.addAttribute("courseName", course);
         }
         return "student/useranswer";
     }

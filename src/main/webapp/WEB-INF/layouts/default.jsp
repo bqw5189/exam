@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="${ctx}/static/altair/bower_components/chartist/dist/chartist.min.css" />
     <!-- uikit -->
     <link rel="stylesheet" href="${ctx}/static/altair/bower_components/uikit/css/uikit.almost-flat.min.css" media="all" />
+
     <!-- flag icons -->
     <link rel="stylesheet" href="${ctx}/static/altair/assets/icons/flags/flags.min.css" media="all" />
     <!-- altair admin -->
@@ -42,6 +43,7 @@
     <script type="text/javascript" src="${ctx}/static/altair/bower_components/matchMedia/matchMedia.js"></script>
     <script type="text/javascript" src="${ctx}/static/altair/bower_components/matchMedia/matchMedia.addListener.js"></script>
     <![endif]-->
+    <%--<link href="${ctx}/static/jquery-validation/1.11.1/validate.css" type="text/css" rel="stylesheet" />--%>
 
 
 
@@ -54,7 +56,7 @@
 <%@ include file="/WEB-INF/layouts/left.jsp"%>
 
 
-
+<script src="${ctx}/static/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
 <!-- common functions -->
 <script src="${ctx}/static/altair/assets/js/common.min.js"></script>
 <!-- uikit functions -->
@@ -114,7 +116,8 @@
 <script src="${ctx}/static/altair/bower_components/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
 
 <script src="${ctx}/static/bootstrap/2.3.2/js/bootstrap.min.js" type="text/javascript"></script>
-<%--<script src="${ctx}/static/jquery-validation/1.11.1/messages_bs_zh.js" type="text/javascript"></script>--%>
+<script src="${ctx}/static/jquery-validation/1.11.1/jquery.validate.min.js" type="text/javascript"></script>
+<script src="${ctx}/static/jquery-validation/1.11.1/messages_bs_zh.js" type="text/javascript"></script>
 <script src="${ctx}/static/js/template.js" type="text/javascript"></script>
 <div id="page_content">
     <div id="page_content_inner">

@@ -18,13 +18,17 @@ import org.apache.shiro.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.CollectionUtils;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.ServletRequest;
 import java.io.InputStream;
 import java.math.BigDecimal;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Student管理的Controller, 使用Restful风格的Urls:
@@ -324,6 +328,8 @@ public class StudentController {
             model.addAttribute("sumScore", sumScore);
             model.addAttribute("examvo", examvo);
             model.addAttribute("resultlist", resultList);
+            model.addAttribute("nav", NAV_MAP);
+
             return "student/resultlist";
         }
     }

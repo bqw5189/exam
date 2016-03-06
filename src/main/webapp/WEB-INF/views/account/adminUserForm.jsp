@@ -23,7 +23,6 @@
             <input type="hidden" name="id" value="${user.id}"/>
 
 
-
             <div class="uk-grid" data-uk-grid-margin="">
                 <div class="uk-width-medium-1-1">
                     <div class="parsley-row">
@@ -71,6 +70,8 @@
 </div>
 </fieldset>
 
+
+<script src="${ctx}/static/jquery-validation/1.11.1/jquery.validate.min.js" type="text/javascript"></script>
 	<script>
 		$(document).ready(function() {
 //			//聚焦第一个输入框

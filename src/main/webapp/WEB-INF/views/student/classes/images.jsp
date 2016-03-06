@@ -35,9 +35,9 @@
             <%--<li style="line-height:30px" ng-repeat="word in words |filter:'IMG'| filter:q as results"><b>{{word.type}}</b>{{word.file}} </li>--%>
         <%--</ol>--%>
         <br/><br/>
-        <div>&nbsp;&nbsp;共{{words.length}}张图片</div>
-    </div>
 
+    </div>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;共{{words.length}}张图片</span>
     <script type="text/javascript">
         $(function(){$('.fancybox').fancybox();});
     </script>

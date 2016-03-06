@@ -12,7 +12,7 @@
 			depd_id=#{examId}  
 		</where>
 		group by exam_question_id) a
-		left join t_te_exam_question e on a. exam_question_id=e.id 
+		join t_te_exam_question e on a. exam_question_id=e.id
 	</select>
 	<select id="statanalyDetailById" parameterType="long" resultType="com.school.exam.entity.StatanalyViewVO">
 		select person_name as personName,(question_score>1) as isOk 
