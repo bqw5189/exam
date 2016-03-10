@@ -398,7 +398,7 @@ overflow-x: hidden;
 	margin-top:12px;
 	}
 #showData{
-    overflow:hidden;
+    overflow-x:auto;
 }
 .nav {
     list-style: outside none none;
