@@ -1,21 +1,14 @@
 package com.school.exam.entity;
 
-import java.sql.Timestamp;
-import java.util.List;
-
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OrderBy;
-import javax.persistence.Table;
-import javax.persistence.Transient;
-
+import com.google.common.collect.Lists;
+import org.apache.commons.lang3.RandomUtils;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
-import com.google.common.collect.Lists;
+import javax.persistence.*;
+import java.sql.Timestamp;
+import java.util.Collections;
+import java.util.List;
 
 @Entity
 @Table(name = "t_te_make_exam")
@@ -57,6 +50,12 @@ public class TeMakeExamVO extends IdEntity{
 		public void setQuestionList(List<TeExamQuestionVO> questionList) {
 			this.questionList = questionList;
 		}
+
+        @Transient
+        public List<TeExamQuestionVO> getQuestion() {
+            Collections.rotate(questionList, RandomUtils.nextInt(0, questionList.size()));
+            return questionList;
+        }
 
 		public TeMakeExamVO() {
 			// TODO Auto-generated constructor stub

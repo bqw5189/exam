@@ -46,12 +46,14 @@
                                 <tbody>
 
                                 <c:set var="indexno" value="1" />
-                                <c:forEach items="${examvo.questionList}" var="que">
+                                <c:forEach items="${examvo.question}" var="que">
                                     <c:if test="${null!=que.typeRemark&&''!=que.typeRemark }">
                                         <tr>
                                             <td><font color="red">${que.typeRemark }</font></td>
                                         </tr>
                                     </c:if>
+                                </c:forEach>
+                                <c:forEach items="${examvo.question}" var="que">
                                     <tr><td><hr style="height:3px;border:none;border-top:3px double #006400;"/></td></tr>
 
                                     <tr>
