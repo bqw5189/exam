@@ -1,14 +1,14 @@
 package com.school.exam.entity;
 
 import com.google.common.collect.Lists;
-import org.apache.commons.lang3.RandomUtils;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 @Entity
 @Table(name = "t_te_make_exam")
@@ -53,11 +53,27 @@ public class TeMakeExamVO extends IdEntity{
 
         @Transient
         public List<TeExamQuestionVO> getQuestion() {
-            Collections.rotate(questionList, RandomUtils.nextInt(0, questionList.size()));
+            List<TeExamQuestionVO> newList = randomList(questionList);
+            questionList.addAll(newList);
             return questionList;
         }
 
-		public TeMakeExamVO() {
+        public static <V> List<V> randomList(List<V> sourceList) {
+            if (sourceList == null || sourceList.size() == 0) {
+                return sourceList;
+            }
+            List<V> random = new ArrayList<V>(sourceList.size());
+            do {
+                int index = Math.abs(new Random().nextInt(sourceList.size()));
+                random.add(sourceList.remove(index));
+
+            } while (sourceList.size() > 0);
+
+            return random;
+
+        }
+
+    public TeMakeExamVO() {
 			// TODO Auto-generated constructor stub
 		}
 		@Transient
