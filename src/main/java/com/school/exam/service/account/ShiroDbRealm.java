@@ -5,25 +5,19 @@
  *******************************************************************************/
 package com.school.exam.service.account;
 
-import java.io.Serializable;
-
-import javax.annotation.PostConstruct;
-
-import org.apache.shiro.authc.AuthenticationException;
-import org.apache.shiro.authc.AuthenticationInfo;
-import org.apache.shiro.authc.AuthenticationToken;
-import org.apache.shiro.authc.SimpleAuthenticationInfo;
-import org.apache.shiro.authc.UsernamePasswordToken;
+import com.google.common.base.Objects;
+import com.school.exam.entity.User;
+import org.apache.shiro.authc.*;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
-import com.school.exam.entity.User;
 import org.springside.modules.utils.Encodes;
 
-import com.google.common.base.Objects;
+import javax.annotation.PostConstruct;
+import java.io.Serializable;
 
 public class ShiroDbRealm extends AuthorizingRealm {
 
@@ -34,11 +28,11 @@ public class ShiroDbRealm extends AuthorizingRealm {
 	 */
 	@Override
 	protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authcToken) throws AuthenticationException {
-		UsernamePasswordToken token = (UsernamePasswordToken) authcToken;
+        UsernamePasswordClassNameToken token = (UsernamePasswordClassNameToken) authcToken;
 		User user = accountService.findUserByLoginName(token.getUsername());
 		if (user != null) {
 			byte[] salt = Encodes.decodeHex(user.getSalt());
-			return new SimpleAuthenticationInfo(new ShiroUser(user.getId(), user.getLoginName(), user.getName()),
+			return new SimpleAuthenticationInfo(new ShiroUser(user.getId(), user.getLoginName(), user.getName(),token.getClassName()),
 					user.getPassword(), ByteSource.Util.bytes(salt), getName());
 		} else {
 			return null;
@@ -80,12 +74,15 @@ public class ShiroDbRealm extends AuthorizingRealm {
 		public Long id;
 		public String loginName;
 		public String name;
+        public String className;
 
-		public ShiroUser(Long id, String loginName, String name) {
-			this.id = id;
-			this.loginName = loginName;
-			this.name = name;
-		}
+		public ShiroUser(Long id, String loginName, String name, String className) {
+            this.id = id;
+            this.loginName = loginName;
+            this.name = name;
+            this.className = className;
+
+        }
 
         public Long getId(){return id;}
 
@@ -93,7 +90,19 @@ public class ShiroDbRealm extends AuthorizingRealm {
 			return name;
 		}
 
-		/**
+        public String getLoginName() {
+            return loginName;
+        }
+
+        public String getClassName() {
+            return className;
+        }
+
+        public void setLoginName(String loginName) {
+            this.loginName = loginName;
+        }
+
+        /**
 		 * 本函数输出将作为默认的<shiro:principal/>输出.
 		 */
 		@Override

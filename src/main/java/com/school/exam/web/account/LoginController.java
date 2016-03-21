@@ -5,31 +5,28 @@
  *******************************************************************************/
 package com.school.exam.web.account;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
-import javax.servlet.ServletRequest;
-
 import com.google.common.collect.Maps;
 import com.school.exam.entity.Answer;
+import com.school.exam.entity.IndexShowVO;
+import com.school.exam.entity.TeMakeExamVO;
 import com.school.exam.entity.User;
+import com.school.exam.service.account.IndexService;
 import com.school.exam.service.account.ShiroDbRealm;
 import com.school.exam.service.question.AnswerService;
+import com.school.exam.service.ssclass.SSClassService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.web.filter.authc.FormAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import com.school.exam.entity.IndexShowVO;
-import com.school.exam.entity.TeMakeExamVO;
-import com.school.exam.service.account.IndexService;
-import com.school.exam.service.exam.ExamQuestionService;
-import com.school.exam.service.ssclass.SSClassService;
+
+import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpSession;
+import java.util.List;
+import java.util.Map;
 
 /**
  * LoginController负责打开登录页面(GET请求)和登录出错页面(POST请求)，
@@ -54,8 +51,8 @@ public class LoginController {
     }
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public String login() {
-		return "account/login";
+	public String login(HttpSession session) {
+        return "account/login";
 	}
 
 	@RequestMapping(method = RequestMethod.POST)

@@ -28,6 +28,8 @@
 	<bean id="shiroDbRealm" class="com.school.exam.service.account.ShiroDbRealm">
 		<property name="accountService" ref="accountService"/>
 	</bean>
+
+    <bean id="shiroClassNameFilter" class="com.school.exam.service.account.ShiroClassNameFilter"/>
 	
 	<!-- Shiro Filter -->
 	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
@@ -36,7 +38,7 @@
 		<property name="successUrl" value="/" />
 		<property name="filterChainDefinitions">
 			<value>
-				/login = authc
+				/login = sperm
 				/logout = logout
 				/static/** = anon
 				/api/** = anon
@@ -46,7 +48,12 @@
 				/** = user
 			</value>
 		</property>
-	</bean>
+        <property name="filters">
+            <map>
+                <entry key="sperm" value-ref="shiroClassNameFilter"/>
+            </map>
+        </property>
+    </bean>
 	
 	<!-- 用户授权信息Cache, 采用EhCache -->
 	<bean id="shiroEhcacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">

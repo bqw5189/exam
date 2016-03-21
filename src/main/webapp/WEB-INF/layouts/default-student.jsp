@@ -73,7 +73,7 @@
     <div class="topbox">
         <img src="${ctx}/static/student/img/logo.png" class="logo" />
         <img src="${ctx}/static/student/img/text02.png" class="text02" />
-        <span style="position: absolute;right: 0px">欢迎,<shiro:principal property="name"></shiro:principal> <a href="${ctx}/logout">退出</a></span>
+        <span style="position: absolute;right: 0px">欢迎,<shiro:principal property="className"></shiro:principal> <a href="${ctx}/logout">退出</a></span>
     </div>
 
     <!--头部 end-->

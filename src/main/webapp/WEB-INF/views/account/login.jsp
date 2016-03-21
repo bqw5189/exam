@@ -48,6 +48,12 @@
                     <label>用户名:</label><br/>
                     <input  type="text" id="username" name="username" required=""/>
                     <i></i> </div>
+                <div class="yhm">
+                    <select name="className">
+                        <option value="student">北校区大气PM2.5中多环芳烃分析</option>
+                        <option value="jtys">复杂基体元素指标分析</option>
+                    </select>
+                     </div>
                 <div class="mm"> <b class="key"></b>
                     <label>密码<span>码</span>:</label><br/>
                     <input  type="password" id="password" name="password" required value=""/>

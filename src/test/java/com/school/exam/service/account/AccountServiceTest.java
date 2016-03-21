@@ -5,24 +5,25 @@
  *******************************************************************************/
 package com.school.exam.service.account;
 
-import static org.assertj.core.api.Assertions.*;
-
-import java.util.Date;
-
-import org.junit.Before;
-import org.junit.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
 import com.school.exam.data.UserData;
 import com.school.exam.entity.User;
 import com.school.exam.repository.TaskDao;
 import com.school.exam.repository.UserDao;
 import com.school.exam.service.ServiceException;
 import com.school.exam.service.account.ShiroDbRealm.ShiroUser;
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
 import org.springside.modules.test.security.shiro.ShiroTestUtils;
 import org.springside.modules.utils.Clock.MockClock;
+
+import java.util.Date;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.failBecauseExceptionWasNotThrown;
 
 /**
  * AccountService的测试用例, 测试Service层的业务逻辑.
@@ -43,7 +44,7 @@ public class AccountServiceTest {
 	@Before
 	public void setUp() {
 		MockitoAnnotations.initMocks(this);
-		ShiroTestUtils.mockSubject(new ShiroUser(3L, "foo", "Foo"));
+		ShiroTestUtils.mockSubject(new ShiroUser(3L, "foo", "Foo", "123"));
 	}
 
 	@Test
