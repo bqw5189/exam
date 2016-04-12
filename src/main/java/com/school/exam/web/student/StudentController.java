@@ -15,6 +15,8 @@ import com.school.exam.service.question.WordsService;
 import com.school.exam.utils.ExcelUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.util.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -82,12 +84,15 @@ public class StudentController {
     private ExamPaperResultService resultService;
     @Autowired
     private WordsService wordsService;
+    private Logger logger = LoggerFactory.getLogger(StudentController.class);
 
-	@RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
 	public String index(Model model) {
         model.addAttribute("nav", NAV_MAP);
         model.addAttribute("curent", "首页");
-		return "student/index";
+        ShiroDbRealm.ShiroUser user = (ShiroDbRealm.ShiroUser) SecurityUtils.getSubject().getPrincipal();
+        logger.debug("className:{}", user.getClassName());
+		return user.getClassName() + "/index";
 	}
 
     public List<List<String>> getResourceByTaskName(String taskName, List<List<String>> res){

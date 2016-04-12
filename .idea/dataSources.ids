@@ -22009,4 +22009,7 @@
       </prototype>
     </procedure>
   </data-source>
+  <data-source name="MySQL - exam@127.0.0.1" uuid="1efe08c2-fecd-47c9-bc2a-d404ef31501f">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
 </component>

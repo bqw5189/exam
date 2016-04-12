@@ -51,7 +51,7 @@
                 <div class="yhm">
                     <select name="className">
                         <option value="student">北校区大气PM2.5中多环芳烃分析</option>
-                        <option value="jtys">复杂基体元素指标分析</option>
+                        <option value="ysfx">南校区大气PM2.5中元素分析</option>
                     </select>
                      </div>
                 <div class="mm"> <b class="key"></b>

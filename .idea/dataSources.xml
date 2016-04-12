@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="744119049">
+  <component name="DataSourceManagerImpl" format="xml" hash="253726337">
     <data-source source="LOCAL" name="MySQL - exam@120.24.58.244" uuid="778f2b24-c386-4c9d-b2f8-7253127f83ec">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
@@ -19,6 +19,20 @@
       <driver-ref>sqlserver.ms</driver-ref>
       <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
       <jdbc-url>jdbc:sqlserver://101.200.197.74:1433;databaseName=servicedesk</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="MySQL - exam@127.0.0.1" uuid="1efe08c2-fecd-47c9-bc2a-d404ef31501f">
+      <driver-ref>mysql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1:3306/exam</jdbc-url>
+      <driver-properties>
+        <property name="zeroDateTimeBehavior" value="convertToNull" />
+        <property name="tinyInt1isBit" value="false" />
+        <property name="characterEncoding" value="utf8" />
+        <property name="characterSetResults" value="utf8" />
+        <property name="yearIsDateType" value="false" />
+      </driver-properties>
       <libraries />
     </data-source>
   </component>

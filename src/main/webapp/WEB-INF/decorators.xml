@@ -15,6 +15,13 @@
         <pattern>/student/examlist/*</pattern>
     </decorator>
 
+    <decorator name="ysfx" page="default-ysfx.jsp">
+        <pattern>/ysfx/classes/*</pattern>
+        <pattern>/ysfx/project/*</pattern>
+        <pattern>/ysfx/*</pattern>
+        <pattern>/ysfx/examlist/*</pattern>
+    </decorator>
+
 	<decorator name="default" page="default.jsp">
 		<pattern>/*</pattern>
 	</decorator>

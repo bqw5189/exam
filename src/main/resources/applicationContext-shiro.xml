@@ -45,6 +45,7 @@
 				/register/** = anon
 				/admin/** = roles[admin]
                 /student/** = user
+                /ysfx/** = user
 				/** = user
 			</value>
 		</property>
