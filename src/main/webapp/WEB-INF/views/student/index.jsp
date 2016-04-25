@@ -20,12 +20,26 @@
 <meta charset="utf-8">
 <title>《北校区大气PM2.5中多环芳烃分析》</title>
 
-<link href="${ctx}/static/student/css/main.css" rel="stylesheet"  />
     <script type="text/javascript">
-        var ctx="${ctx}/static/student/";
+        var ctx="${ctx}/static/ysfx/";
     </script>
-<script src="${ctx}/static/student/js/jquery.js" type="text/javascript"></script>
-<script src="${ctx}/static/student/js/all.js" type="text/javascript"></script>
+
+    <link href="${ctx}/static/ysfx/css/blue.css" rel="stylesheet"  id="linkdom"/>
+    <script src="${ctx}/static/ysfx/js/jquery.js" type="text/javascript"></script>
+    <script src="${ctx}/static/ysfx/js/all.js" type="text/javascript"></script>
+    <script src="${ctx}/static/bootstrap/2.3.2/js/bootstrap.min.js" type="text/javascript"></script>
+
+    <script>
+        $(function(){
+            if ("ysfx" == "<shiro:principal property="className"></shiro:principal>"){
+                $('.hfbox').css('background','#137c94')
+                $('#linkdom').attr('href','${ctx}/static/ysfx/css/blue.css')
+            }else{
+                $('.hfbox').css('background','#1ba627')
+                $('#linkdom').attr('href','${ctx}/static/ysfx/css/green.css')
+            }
+        });
+    </script>
 <style>
 </style>
 </head>

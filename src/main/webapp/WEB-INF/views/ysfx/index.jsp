@@ -22,10 +22,12 @@
 
 <link href="${ctx}/static/student/css/main.css" rel="stylesheet"  />
     <script type="text/javascript">
-        var ctx="${ctx}/static/student/";
+        var ctx="${ctx}/static/ysfx/";
     </script>
-<script src="${ctx}/static/student/js/jquery.js" type="text/javascript"></script>
-<script src="${ctx}/static/student/js/all.js" type="text/javascript"></script>
+
+    <link href="${ctx}/static/ysfx/css/blue.css" rel="stylesheet"  id="linkdom"/>
+    <script src="${ctx}/static/ysfx/js/jquery.js" type="text/javascript"></script>
+    <script src="${ctx}/static/ysfx/js/all.js" type="text/javascript"></script>
 <style>
 </style>
 </head>
@@ -34,20 +36,34 @@
     
     <!--主题部分-->
     <div class="contentbox">
-    	<img src="${ctx}/static/student/img/logo.png" class="logo" />
-        <img src="${ctx}/static/student/img/text01.png" class="text01" />
+        <!--换护-->
+        <div class="hfbox">
+            <div class="hfcolor">
+                <span class="green"> </span>
+                <span class="blue"> </span>
+            </div>
+        </div>
+        <!--换护-->
+        <img src="${ctx}/static/ysfx/img/logo.png" class="logo" />
+        <img src="${ctx}/static/ysfx/img/text01.png" class="text01" />
         <div class="indexNavbox">
-
-        	<ul>
+            <ul>
                 <c:forEach items="${nav}" var="nav">
-                    <li><a href="${ctx}/${nav.value}" class="<c:if test="${nav.key==curent}"> onhere</c:if>">${nav.key}</a><i></i></li>
+                <li><a href="${ctx}/${nav.value}" class="<c:if test="${nav.key==curent}"> onhere</c:if>">${nav.key}</a><i></i></li>
                 </c:forEach>
             </ul>
-
         </div>
-        
+
         <div class="rollBox">
-        	<span class="img01" dex="1"></span>
+            <span class="img01" dex="1"></span>
+            <span class="img02" dex="2"></span>
+            <span class="img03" dex="3"></span>
+            <span class="img04" dex="4"></span>
+            <span class="img05" dex="5"></span>
+        </div>
+
+        <div class="rollBoxblue">
+            <span class="img01" dex="1"></span>
             <span class="img02" dex="2"></span>
             <span class="img03" dex="3"></span>
             <span class="img04" dex="4"></span>

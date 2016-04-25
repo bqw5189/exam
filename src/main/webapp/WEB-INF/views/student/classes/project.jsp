@@ -186,6 +186,36 @@
                 so.addVariable("CuPlayerPosition","bottom-right");
 
                 so.write("showData");
+            }else if("DOC" === data.type){
+                var html = '';
+
+                html += "<div>下载报告:<a href='${ctx}/static/${resourcePath}/doc/" + data.file + "'>" +data.content+ "</a></div>";
+
+                html += '<form id="template" method="post" enctype="multipart/form-data" action="${ctx}/student/answer">上传报告:<input type="file" id="file" name="file"/>';
+                html += '<input type="hidden" name="title"  value="1">';
+                html += '<input type="hidden" name="course"  value="1">';
+                html += '<div> <button id="submitFile" class="btn" data-loading-text="提交中..." type="button" >提交</button></div></form>';
+
+                $("#showData").html(html);
+
+                $("#submitFile").click(function(){
+                    if ($("#file").val() == ""){
+                        alert("请选择文件!");
+                        return;
+                    }
+
+                    $(this).text("提交中...");
+                    $(this).attr("disabled", "true");
+
+                    $("#template").ajaxSubmit({
+                        success:function(data) {
+                            $("#submitFile").text("提交");
+                            $("#submitFile").removeAttr("disabled");
+                            $("#template").resetForm();
+                            alert("提交成功");
+                        }
+                    })
+                });
             }
 
 

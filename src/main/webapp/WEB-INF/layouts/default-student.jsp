@@ -17,14 +17,26 @@
 
     <link href="${ctx}/static/student/css/main.css" rel="stylesheet"  />
     <script type="text/javascript">
-        var ctx="${ctx}/static/student/";
+        var ctx="${ctx}/static/ysfx/";
     </script>
 
-    <script src="${ctx}/static/student/js/jquery.js" type="text/javascript"></script>
-    <script src="${ctx}/static/student/js/all.js" type="text/javascript"></script>
+    <link href="${ctx}/static/ysfx/css/blue.css" rel="stylesheet"  id="linkdom"/>
+    <script src="${ctx}/static/ysfx/js/jquery.js" type="text/javascript"></script>
+    <script src="${ctx}/static/ysfx/js/jquery.form.js" type="text/javascript"></script>
+    <script src="${ctx}/static/ysfx/js/all.js" type="text/javascript"></script>
     <script src="${ctx}/static/bootstrap/2.3.2/js/bootstrap.min.js" type="text/javascript"></script>
 
-
+    <script>
+        $(function(){
+            if ("ysfx" == "<shiro:principal property="className"></shiro:principal>"){
+                $('.hfbox').css('background','#137c94')
+                $('#linkdom').attr('href','${ctx}/static/ysfx/css/blue.css')
+            }else{
+                $('.hfbox').css('background','#1ba627')
+                $('#linkdom').attr('href','${ctx}/static/ysfx/css/green.css')
+            }
+        });
+    </script>
 
     <script src="${ctx}/static/angular/angular.js" type="text/javascript"></script>
     <script src="${ctx}/static/angular/angular-animate.js" type="text/javascript"></script>
@@ -73,7 +85,7 @@
     <div class="topbox">
         <img src="${ctx}/static/student/img/logo.png" class="logo" />
         <img src="${ctx}/static/student/img/text02.png" class="text02" />
-        <span style="position: absolute;right: 0px">欢迎,<shiro:principal property="className"></shiro:principal> <a href="${ctx}/logout">退出</a></span>
+        <span style="position: absolute;right: 0px">欢迎,<shiro:principal property="name"></shiro:principal> <a href="${ctx}/logout">退出</a></span>
     </div>
 
     <!--头部 end-->

@@ -27,12 +27,12 @@ $(function(){
 		//换f功能
 		$('span.green' ,$('.hfcolor')).click(function(){
 				$('.hfbox').css('background','#1ba627')
-				$('#linkdom').attr('href','css/green.css')
+				$('#linkdom').attr('href',''+ctx+'css/green.css')
 				
 			})
 		$('span.blue' ,$('.hfcolor')).click(function(){
 				$('.hfbox').css('background','#137c94')
-				$('#linkdom').attr('href','css/blue.css')
+				$('#linkdom').attr('href',''+ctx+'css/blue.css')
 				
 			})
 						
@@ -40,7 +40,7 @@ $(function(){
 	function changeimg(){
 		for(var j=0;j< 6;j++){
 		var i01 =$('.rollBox .img0'+j).attr('dex');
-		var url01 ='url(img/pic0'+i01+'.png)'
+		var url01 ='url('+ctx+'img/pic0'+i01+'.png)'
 		$('.rollBox .img0'+j).css('background',url01)
 		i01++
 		$('.rollBox .img0'+j).attr('dex',i01);
@@ -53,7 +53,7 @@ $(function(){
 	function changeimgblue(){
 		for(var j=0;j< 6;j++){
 		var i01 =$('.rollBoxblue .img0'+j).attr('dex');
-		var url01 ='url(img/blue/pic0'+i01+'.jpg)'
+		var url01 ='url('+ctx+'img/blue/pic0'+i01+'.jpg)'
 		$('.rollBoxblue .img0'+j).css('background',url01)
 		i01++
 		$('.rollBoxblue .img0'+j).attr('dex',i01);

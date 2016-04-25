@@ -13,10 +13,9 @@
       <schema-pattern>ServiceDesk.*</schema-pattern>
       <default-schemas>ServiceDesk.*</default-schemas>
     </data-source>
-    <data-source name="MySQL - exam@127.0.0.1" uuid="1efe08c2-fecd-47c9-bc2a-d404ef31501f">
+    <data-source name="MySQL - field_secco@127.0.0.1" uuid="1efe08c2-fecd-47c9-bc2a-d404ef31501f">
       <secret-storage>master_key</secret-storage>
-      <first-sync>true</first-sync>
-      <user-name>root</user-name>
+      <user-name>secco</user-name>
     </data-source>
   </component>
 </project>

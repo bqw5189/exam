@@ -18,11 +18,11 @@ import org.apache.shiro.util.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+import org.springside.modules.web.MediaTypes;
 
 import javax.servlet.ServletRequest;
 import java.io.InputStream;
@@ -92,7 +92,7 @@ public class StudentController {
         model.addAttribute("curent", "首页");
         ShiroDbRealm.ShiroUser user = (ShiroDbRealm.ShiroUser) SecurityUtils.getSubject().getPrincipal();
         logger.debug("className:{}", user.getClassName());
-		return user.getClassName() + "/index";
+		return "student" + "/index";
 	}
 
     public List<List<String>> getResourceByTaskName(String taskName, List<List<String>> res){
@@ -345,6 +345,28 @@ public class StudentController {
     private ShiroDbRealm.ShiroUser getCurrentUser() {
         ShiroDbRealm.ShiroUser user = (ShiroDbRealm.ShiroUser) SecurityUtils.getSubject().getPrincipal();
         return user;
+    }
+
+
+    @RequestMapping(value = "answer", method = RequestMethod.POST,produces = MediaTypes.JSON_UTF_8)
+    @ResponseBody
+    public String answerFile(AnswerVO answerVO){
+
+        logger.debug("upload file:{}", answerVO.getFile().getName());
+//        Answer answerObj = new Answer();
+//
+//        answerObj.setTitle(title);
+//        answerObj.setCourse(course);
+//        answerObj.setAnswer(answer);
+//
+//        User user = new User();
+//        user.setId(userId);
+//
+//        answerObj.setUser(user);
+//
+//        answerService.save(answerObj);
+
+        return "true";
     }
 
 }
