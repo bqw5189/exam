@@ -15,7 +15,7 @@
     <link href="${ctx}/static/bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet"  />
     <link href="${ctx}/static/fancyBox/source/jquery.fancybox.css?v=2.1.5" media="screen" rel="stylesheet"  />
 
-    <link href="${ctx}/static/student/css/main.css" rel="stylesheet"  />
+    <%--<link href="${ctx}/static/student/css/main.css" rel="stylesheet"  />--%>
     <script type="text/javascript">
         var ctx="${ctx}/static/ysfx/";
     </script>
@@ -65,7 +65,11 @@
     <!--底部end-->
     <script>
         $(function(){
-            $(".text02").attr("src", "${ctx}/static/student/img/text02.png");
+            <%--if ("ysfx" == "<shiro:principal property="className"></shiro:principal>"){--%>
+                <%--$(".text02").attr("src", "${ctx}/static/ysfx/blue/img/text02.png");--%>
+            <%--}else{--%>
+                <%--$(".text02").attr("src", "${ctx}/static/ysfx/img/text02.png");--%>
+            <%--}--%>
         });
     </script>
     <style>
@@ -84,7 +88,7 @@
     <!--头部-->
     <div class="topbox">
         <img src="${ctx}/static/student/img/logo.png" class="logo" />
-        <img src="${ctx}/static/student/img/text02.png" class="text02" />
+        <img class="text02" />
         <span style="position: absolute;right: 0px">欢迎,<shiro:principal property="name"></shiro:principal> <a href="${ctx}/logout">退出</a></span>
     </div>
 

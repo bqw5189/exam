@@ -212,11 +212,16 @@ html,body{width:100%;height:100%;}
 	}
 
 .listbox{
-	width:979px;
-	background:url(../img/blue/contentbg.jpg);
-	background-repeat:no-repeat;
-	height:537px;
 	margin:auto;
+
+	width:979px;
+	border-left: 2px solid #0b5a6c;
+	border-right: 2px solid #0b5a6c;
+	border-bottom: 2px solid #0b5a6c;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 10px;
+	min-height: 600px;
 	}
 .listbox h1{
 	width:1003px;
@@ -247,19 +252,17 @@ html,body{width:100%;height:100%;}
 	}
 .list h2{
 	font-size:15px;
-	color:#0b5a6c;
-	width:247px;
+	color:#333;
+	width:225px;
 	margin:auto;
-	white-space:nowrap;/* 不换行 */
-	overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+	white-space:nowrap;/* 不换行 */  /*overflow:hidden; 内容超出宽度时隐藏超出部分的内容 */
 	text-overflow:ellipsis;
-	padding-bottom:16px;
+	padding-bottom:0px;
 	padding-top:25px;
-	*padding-top:8px;
-	text-indent:0px;
-	text-align:center;
+	*padding-top:14px;
+	text-indent:5px;
 	margin-bottom:10px;
-	*margin-bottom:8px;
+	text-align: center;
 	}
 .list a{
 	display:block;
@@ -283,25 +286,30 @@ html,body{width:100%;height:100%;}
 
 /*page02 css*/
 .tearchpagebox{
-	width:1003px;
 	margin:auto;
-	margin-top:20px;
-	}
+	border-left: 2px solid #0b5a6c;
+	border-right: 2px solid #0b5a6c;
+	border-bottom: 2px solid #0b5a6c;
+	margin-top: 0px;
+	width: 999px;
+	min-height: 600px;
+	padding-top: 10px;
+
+}
+
 .leftMenubox{
 	float:left;
-	width:245px;
-	border:0px solid #5ea700;
-	background:url(../img/blue/menumid.jpg);
-
+	width:237px;
+	border:1px solid #5ea700;
 	margin-left:11px;
 	margin-right:26px;
-	border-radius:0px;
+	border-radius:6px;
+	background:#fbfbfb;
 	position:relative;
 	margin-bottom:100px;
 	min-height:550px;
 	padding-top:40px;
-	top:44px
-	}
+}
 .leftMenubox i{
 	
 	background:url(../img/look.png);
@@ -403,17 +411,17 @@ html,body{width:100%;height:100%;}
 .leftMenulist a.onhere i{
 	background:#f88825;
 	}
-.rightData{
-	float:left;
-	width:680px;
-	min-height:670px;
-	margin-bottom:100px;
-	padding:20px;
-	box-shadow:-3px -3px 6px rgba(0,0,0,0.1);
-	border-radius:5px 0px 0px 0px;
-	border-left:1px solid #dfdfdf;
-	border-top:1px solid #dfdfdf;
-	}
+.rightData{float:left;
+	width:980px;
+	margin-bottom:5px;
+
+	padding-left: 10px;
+	padding-right: 10px;
+	min-height: 520px;
+	height: 520px;
+	overflow-y:auto;
+	overflow-x: hidden;
+}
 .rightData .img01{
 	width:700px;
 	height:450px;
