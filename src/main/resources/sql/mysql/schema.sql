@@ -113,6 +113,7 @@ create table t_te_answer(
   user_id bigint,
   title VARCHAR(512),
   course VARCHAR(256),
+  c_type VARCHAR(32),
   answer TEXT,
 	answer_date timestamp not null default 0,
   primary key (id)

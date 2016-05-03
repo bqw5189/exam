@@ -54,4 +54,8 @@ public class AnswerService {
     public List<Answer> findByUserIdAndCourse(Long userId, String course) {
         return answerDao.findByUserIdAndCourse(userId,course);
     }
+
+    public Answer findByUserIdAndAnswer(Long id, String answer) {
+        return answerDao.findByUserIdAndAnswer(id, answer);
+    }
 }

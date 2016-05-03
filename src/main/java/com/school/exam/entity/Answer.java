@@ -20,6 +20,8 @@ public class Answer extends IdEntity {
     private String course;
 	private String title;
     private String answer;
+    private String type;
+    private String fileName;
     private User user;
 
     private Date answerDate = new Date(System.currentTimeMillis());
@@ -66,8 +68,26 @@ public class Answer extends IdEntity {
         return answer;
     }
 
+    @Column(name="c_type")
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public void setAnswer(String answer) {
         this.answer = answer;
+    }
+
+    @Transient
+    public String getFileName() {
+        return this.getUser().getId() + "-" + this.getAnswer();
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
     }
 
     @Override

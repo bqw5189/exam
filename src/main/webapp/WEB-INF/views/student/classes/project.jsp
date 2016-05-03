@@ -192,8 +192,8 @@
                 html += "<div>下载报告:<a href='${ctx}/static/${resourcePath}/doc/" + data.file + "'>" +data.content+ "</a></div>";
 
                 html += '<form id="template" method="post" enctype="multipart/form-data" action="${ctx}/student/answer">上传报告:<input type="file" id="file" name="file"/>';
-                html += '<input type="hidden" name="title"  value="1">';
-                html += '<input type="hidden" name="course"  value="1">';
+                html += '<input type="hidden" name="title"  value="'+data.content+'">';
+                html += '<input type="hidden" name="course"  value="北校区大气PM2.5中多环芳烃分析">';
                 html += '<div> <button id="submitFile" class="btn" data-loading-text="提交中..." type="button" >提交</button></div></form>';
 
                 $("#showData").html(html);

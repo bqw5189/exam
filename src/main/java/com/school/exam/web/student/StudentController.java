@@ -11,6 +11,7 @@ import com.school.exam.repository.Token;
 import com.school.exam.service.account.ShiroDbRealm;
 import com.school.exam.service.exam.ExamPaperResultService;
 import com.school.exam.service.exam.ExamQuestionService;
+import com.school.exam.service.question.AnswerService;
 import com.school.exam.service.question.WordsService;
 import com.school.exam.utils.ExcelUtils;
 import org.apache.shiro.SecurityUtils;
@@ -18,6 +19,7 @@ import org.apache.shiro.util.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,8 +27,12 @@ import org.springframework.web.bind.annotation.*;
 import org.springside.modules.web.MediaTypes;
 
 import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigDecimal;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -47,6 +53,7 @@ import java.util.Map;
 @Controller
 @RequestMapping(value = "/student")
 public class StudentController {
+    private Logger logger = LoggerFactory.getLogger(StudentController.class);
 
     public static Map<String, String> NAV_MAP = new LinkedHashMap<String, String>();
     public static Map<String, Course> COURSE_MAP = new LinkedHashMap<String, Course>();
@@ -84,7 +91,9 @@ public class StudentController {
     private ExamPaperResultService resultService;
     @Autowired
     private WordsService wordsService;
-    private Logger logger = LoggerFactory.getLogger(StudentController.class);
+
+    @Autowired
+    private AnswerService answerService;
 
     @RequestMapping(method = RequestMethod.GET)
 	public String index(Model model) {
@@ -350,23 +359,56 @@ public class StudentController {
 
     @RequestMapping(value = "answer", method = RequestMethod.POST,produces = MediaTypes.JSON_UTF_8)
     @ResponseBody
-    public String answerFile(AnswerVO answerVO){
+    public String answerFile(AnswerVO answerVO, HttpServletRequest request){
 
-        logger.debug("upload file:{}", answerVO.getFile().getName());
-//        Answer answerObj = new Answer();
-//
-//        answerObj.setTitle(title);
-//        answerObj.setCourse(course);
-//        answerObj.setAnswer(answer);
-//
-//        User user = new User();
-//        user.setId(userId);
-//
-//        answerObj.setUser(user);
-//
-//        answerService.save(answerObj);
+        logger.debug("upload path:{}->file:{}", request.getRealPath("/"), answerVO.getFile().getName());
 
+        String logoRealPathDir = request.getSession().getServletContext().getRealPath("/static/temp");
+
+        /**根据真实路径创建目录**/
+        File logoSaveFile = new File(logoRealPathDir);
+        if(!logoSaveFile.exists())
+            logoSaveFile.mkdirs();
+
+        Long currentMillis = System.currentTimeMillis();
+
+        String suffix = answerVO.getFile().getOriginalFilename().substring(answerVO.getFile().getOriginalFilename().lastIndexOf("."));
+
+        Answer answerObj = new Answer();
+
+        answerObj.setTitle(answerVO.getTitle());
+        answerObj.setCourse(answerVO.getCourse());
+        answerObj.setAnswer(answerVO.getFile().getOriginalFilename());
+        answerObj.setType(suffix);
+        answerObj.setAnswerDate(new Date(currentMillis));
+
+        User user = new User();
+        user.setId(getCurrentUserId());
+
+        answerObj.setUser(user);
+
+        if (null == answerService.findByUserIdAndAnswer(user.getId(), answerObj.getAnswer())){
+            answerService.save(answerObj);
+        }
+
+
+        String fileName = logoRealPathDir + File.separator   + answerObj.getUser().getId() + "-" + answerObj.getAnswer();
+        File file = new File(fileName);
+
+        try {
+            answerVO.getFile().transferTo(file);
+        } catch (IOException e) {
+            logger.warn("save file error!", e);
+        }
         return "true";
+    }
+
+    /**
+     * 取出Shiro中的当前用户Id.
+     */
+    private Long getCurrentUserId() {
+        ShiroDbRealm.ShiroUser user = (ShiroDbRealm.ShiroUser) SecurityUtils.getSubject().getPrincipal();
+        return user.id;
     }
 
 }

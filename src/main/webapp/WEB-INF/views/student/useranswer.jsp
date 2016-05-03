@@ -65,7 +65,12 @@
                         ${ no}、${l.title}&nbsp;&nbsp;${l.answerDate}
                 </h3>
                 <div class="uk-accordion-content">
+                    <c:if test="${l.type == 'text'}">
                         ${l.answer}
+                    </c:if>
+                    <c:if test="${l.type != 'text'}">
+                        <a href="${ctx}/static/temp/${l.fileName}">${l.answer}</a>
+                    </c:if>
                 </div>
                 <c:set var="no" value="${no+1 }"></c:set>
             </c:forEach>
