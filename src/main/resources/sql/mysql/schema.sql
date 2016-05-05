@@ -61,7 +61,7 @@ create table T_TE_EXAM_QUESTION (
    QUESTION_SCORE       Double not null, --分数
    PROJECT_ID     bigint not null,
   primary key (id)
-)
+);
 
 --试题子表
 create table T_TE_SELECT_ITEMS (
@@ -70,14 +70,14 @@ create table T_TE_SELECT_ITEMS (
    SELECT_CONT          VARCHAR(500)                   null,--选项内容
    IS_ANSWER            INTEGER                        null,--是否为答案   
    primary key (id)
-)
+);
 --试卷与试题关联表
 create table T_TE_QUESTION_EXAMPAPER (
    ID                   bigint            auto_increment,
    EXAMPAPER_ID         bigint                not   null,--试卷ID
    QUESTION_ID          bigint                not null,--试题ID
    primary key (id)
- )
+ );
  --考试结果表
  create table T_TE_EXAM_RESULT (
    ID                   bigint            auto_increment,
@@ -90,7 +90,7 @@ create table T_TE_QUESTION_EXAMPAPER (
    QUESTION_SCORE       DOUBLE                         null,  --得分
    STATE                integer                null,  
    primary key (id)
-)
+);
 --考试结果表
 create table T_TE_EXAM_PAPER_RESULT (
    ID                   bigint                    auto_increment,
@@ -104,7 +104,7 @@ create table T_TE_EXAM_PAPER_RESULT (
    STATE                INTEGER                        null,--状态
    EXAM_CODE            bigint                    null,   --试卷编号
    primary key (id)
-)
+);
 
 
 

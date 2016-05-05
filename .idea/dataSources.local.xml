@@ -7,5 +7,11 @@
       <schema-pattern>exam.*</schema-pattern>
       <default-schemas>exam.*</default-schemas>
     </data-source>
+    <data-source name="MySQL - exam@localhost" uuid="c692d5e4-b917-43d9-bcaf-b16b50a94e67">
+      <secret-storage>master_key</secret-storage>
+      <user-name>test</user-name>
+      <schema-pattern>exam.*</schema-pattern>
+      <default-schemas>exam.*</default-schemas>
+    </data-source>
   </component>
 </project>

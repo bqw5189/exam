@@ -1,13 +1,4 @@
-drop table if exists ss_task;
-drop table if exists ss_user;
-drop table if exists t_te_course;
-drop table if exists t_te_project;
-drop table if exists t_te_make_exam;
-drop table if exists t_te_exam_question;
-drop table if exists t_te_select_items;
-drop table if exists t_te_question_exampaper;
-drop table if exists t_te_exam_result;
-drop table if exists t_te_exam_paper_result;
+t_te_make_exam
 --create user 'exam'@'127.0.0.1' identified by 'exam';
 --create database if not exists exam default character set utf8 collate utf8_unicode_ci;
 
@@ -27,7 +18,7 @@ create table ss_user (
 	password varchar(255) not null,
 	salt varchar(64) not null,
 	roles varchar(255) not null,
-	register_date timestamp not null default 0,
+	register_date timestamp not null DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	primary key (id)
 ) engine=innodb default charset utf8;
 
