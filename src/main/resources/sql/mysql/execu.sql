@@ -1,6 +1,6 @@
 t_te_make_exam
 --create user 'exam'@'127.0.0.1' identified by 'exam';
---create database if not exists exam default character set utf8 collate utf8_unicode_ci;
+--create database if not exists exam_demo default character set utf8 collate utf8_unicode_ci;
 
 
 create table ss_task (

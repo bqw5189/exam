@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--mvn package -Pstandalone-tomcat -Dmaven.test.skip=true-->
-<!--scp target/exam.war root@120.24.58.244:/etc/apache/apache-tomcat-7.0.62/webapps-->
+<!--scp target/exam-demo.war root@120.24.58.244:/data/tomcat/apache-tomcat-7.0.62/webapps-->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
