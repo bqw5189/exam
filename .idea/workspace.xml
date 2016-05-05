@@ -2,28 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f90a0bed-6075-4286-86dc-b8246f67a9ca" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_2_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_1_9.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_ne_springside_springside_core_tests_4_3_0_SNAPSHOT.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sourceforge_jexcelapi_jxl_3_2_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_collections_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springside_springside_core_4_2_3_GA.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springside_springside_core_4_3_0_GA.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springside_springside_core_4_3_0_SNAPSHOT.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springside_springside_core_tests_4_2_3_GA.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springside_springside_core_tests_4_3_0_GA.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springside_springside_core_tests_4_3_0_SNAPSHOT.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/exam_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/exam_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mybatis/IndexMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/IndexMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/sql/mysql/execu.sql" afterPath="$PROJECT_DIR$/src/main/resources/sql/mysql/execu.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/sql/mysql/initCreatTable.sql" afterPath="$PROJECT_DIR$/src/main/resources/sql/mysql/initCreatTable.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/sql/mysql/schema.sql" afterPath="$PROJECT_DIR$/src/main/resources/sql/mysql/schema.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="exam.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -109,11 +88,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="execu.sql" pinned="false" current-in-tab="true">
+      <file leaf-file-name="execu.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/sql/mysql/execu.sql">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="256">
               <caret line="50" column="36" selection-start-line="40" selection-start-column="0" selection-end-line="50" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -169,19 +158,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StatanalyMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/StatanalyMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-57">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1462430471000" expanded="true" signature="351:687" placeholder="select a.sca... sum" />
-                <marker date="1462430471000" expanded="true" signature="453:623" placeholder="select sum(q... t_te_exam_result" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -202,7 +178,6 @@
         <option value="$PROJECT_DIR$/src/test/resources/application.functional.properties" />
         <option value="$PROJECT_DIR$/src/test/java/com/school/exam/excel/ParseExcelTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/school/exam/repository/TeExamQuestionDaoTest.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-mvc.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/logback.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/school/exam/entity/FileUploadForm.java" />
@@ -244,6 +219,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/sql/mysql/initCreatTable.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/c692d5e4-b917-43d9-bcaf-b16b50a94e67/console.sql" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis/IndexMapper.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -1256,12 +1232,12 @@
       <updated>1447979335959</updated>
       <workItem from="1447979339557" duration="16455000" />
       <workItem from="1448071312572" duration="39048000" />
-      <workItem from="1462430530545" duration="5520000" />
+      <workItem from="1462430530545" duration="6134000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61023000" />
+    <option name="totallyTimeSpent" value="61637000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1498,14 +1474,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="226" column="40" selection-start-line="226" selection-start-column="40" selection-end-line="226" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="3" column="83" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="83" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1767,6 +1735,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
           <caret line="50" column="36" selection-start-line="40" selection-start-column="0" selection-end-line="50" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
           <folding />
         </state>
       </provider>
