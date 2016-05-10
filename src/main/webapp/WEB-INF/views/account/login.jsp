@@ -48,16 +48,21 @@
                     <label>用户名:</label><br/>
                     <input  type="text" id="username" name="username" required=""/>
                     <i></i> </div>
-                <div class="yhm">
-                    <select name="className">
-                        <option value="student">北校区大气PM2.5中多环芳烃分析</option>
-                        <option value="ysfx">南校区大气PM2.5中元素分析</option>
-                    </select>
-                     </div>
                 <div class="mm"> <b class="key"></b>
                     <label>密码<span>码</span>:</label><br/>
                     <input  type="password" id="password" name="password" required value=""/>
                     <i></i> </div>
+
+                <!--下拉模块-->
+                <div class="selectbox_L">
+                    <div class="selectInput_L">
+                        <select name="className">
+                            <option value="student">北校区大气PM2.5中多环芳烃分析</option>
+                            <option value="ysfx">南校区大气PM2.5中元素分析</option>
+                        </select>
+                    </div>
+                </div>
+                <!--下拉模块 end-->
 
                 <div class="login_buttom"> <a  class="on" href="javascript:void(0);" id="submitSignin" style="margin-right:8px;">登&nbsp;录</a> </div>
             </form>
@@ -75,6 +80,7 @@
 
 
  <script src="${ctx}/static/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="${ctx}/static/login/js/login.js" type="text/javascript"></script>
 	<script src="${ctx}/static/jquery-validation/1.11.1/jquery.validate.min.js" type="text/javascript"></script>
 	<script>
         $(function(){

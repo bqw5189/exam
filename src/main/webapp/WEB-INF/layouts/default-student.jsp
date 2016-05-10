@@ -3,7 +3,8 @@
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <%@ taglib prefix="sitemesh" uri="http://www.opensymphony.com/sitemesh/decorator" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
-
+<c:set var="principal" value="<%=org.apache.shiro.SecurityUtils.getSubject().getPrincipal()%>"/>
+<c:set var="className" value="${principal.className}" scope="page"/>
 
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml">

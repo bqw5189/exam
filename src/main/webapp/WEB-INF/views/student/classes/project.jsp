@@ -187,14 +187,15 @@
 
                 so.write("showData");
             }else if("DOC" === data.type){
-                var html = '';
+                var html = '<br/><div>'+data.content+'</div><br/>';
 
-                html += "<div>下载报告:<a href='${ctx}/static/${resourcePath}/doc/" + data.file + "'>" +data.content+ "</a></div>";
+                html += "<div>请下载报告模版&nbsp;:&nbsp;<a href='${ctx}/static/${resourcePath}/doc/" + data.file + "'>" +"模版下载"+ "</a></div><br/>";
 
-                html += '<form id="template" method="post" enctype="multipart/form-data" action="${ctx}/student/answer">上传报告:<input type="file" id="file" name="file"/>';
+                html += '<form id="template" method="post" enctype="multipart/form-data" action="${ctx}/student/answer">上传报告&nbsp;&nbsp;:&nbsp;&nbsp;<input type="file" id="file" name="file"/>';
                 html += '<input type="hidden" name="title"  value="'+data.content+'">';
                 html += '<input type="hidden" name="course"  value="北校区大气PM2.5中多环芳烃分析">';
-                html += '<div> <button id="submitFile" class="btn" data-loading-text="提交中..." type="button" >提交</button></div></form>';
+                html += '<br/><br/><div style="text-align: center"> <button id="submitFile" class="btn" data-loading-text="提交中..." type="button" >提交</button></div></form>';
+                html += '<br/><br/><br/><div> 注：完成此次答题需要四个步骤：1.下载报告模板，2.填写报告内容，3.点击“浏览”按钮上传报告，4.点击“提交”操作完成。</div></form>';
 
                 $("#showData").html(html);
 

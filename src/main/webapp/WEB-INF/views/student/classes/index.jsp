@@ -17,6 +17,8 @@
     .modal-body p{text-indent:2em}
 </style>
 
+${className}
+
 <div class="listbox">
     <div  class="row">
         <div class="span11" style="width: 1000px">
