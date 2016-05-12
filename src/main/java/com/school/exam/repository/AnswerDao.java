@@ -20,7 +20,7 @@ public interface AnswerDao extends PagingAndSortingRepository<Answer, Long>, Jpa
 //    @Dist
     LinkedHashSet<Answer> findDistinctUserByCourse(String course);
 
-    List<Answer> findByUserIdAndCourse(Long userId, String course);
+    List<Answer> findByUserIdAndCourseOrderByAnswerDateAsc(Long userId, String course);
 
     Answer findByUserIdAndCourseAndTitle(Long id,String course, String title);
 }

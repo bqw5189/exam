@@ -61,6 +61,7 @@
         <div class="uk-accordion" data-uk-accordion="" style="width:100%">
             <c:set var="no" value="1"></c:set>
             <c:forEach items="${list }" var="l">
+                <c:if test="${l.type == 'text'}">
                 <h3 class="uk-accordion-title">
                         ${ no}、${l.title}&nbsp;&nbsp;${l.answerDate}
                 </h3>
@@ -73,6 +74,7 @@
                     </c:if>
                 </div>
                 <c:set var="no" value="${no+1 }"></c:set>
+                </c:if>
             </c:forEach>
         </div>
     </div>

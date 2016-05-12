@@ -46,7 +46,7 @@ public class ExamAnswerCotroller {
         //获取课程信息
         model.addAttribute("course",courseService.findAllCourse());
         User user = accountService.getUser(userId);
-        List<Answer> list = answerService.findByUserIdAndCourse(userId,course);
+        List<Answer> list = answerService.findByUserIdAndCourseOrderByAnswerDateAsc(userId,course);
         if(null==list&&list.size()==0){
             model.addAttribute("message", "当前没有考试卷!");
         }else{

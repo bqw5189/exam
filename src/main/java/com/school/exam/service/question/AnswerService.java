@@ -38,7 +38,7 @@ public class AnswerService {
 
     public void save(Answer answer) {
         Answer oldAnswer = answerDao.findByUserIdAndCourseAndTitle(answer.getUser().getId(),answer.getCourse(), answer.getTitle());
-        if(null!=answer){
+        if(null!=oldAnswer){
             answer.setId(oldAnswer.getId());
         }
         answerDao.save(answer);
@@ -55,8 +55,8 @@ public class AnswerService {
         return answerDao.findDistinctUserByCourse(course);
     }
 
-    public List<Answer> findByUserIdAndCourse(Long userId, String course) {
-        return answerDao.findByUserIdAndCourse(userId,course);
+    public List<Answer> findByUserIdAndCourseOrderByAnswerDateAsc(Long userId, String course) {
+        return answerDao.findByUserIdAndCourseOrderByAnswerDateAsc(userId,course);
     }
 
 }
