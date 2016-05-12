@@ -22,5 +22,5 @@ public interface AnswerDao extends PagingAndSortingRepository<Answer, Long>, Jpa
 
     List<Answer> findByUserIdAndCourse(Long userId, String course);
 
-    Answer findByUserIdAndAnswer(Long id, String answer);
+    Answer findByUserIdAndCourseAndTitle(Long id,String course, String title);
 }

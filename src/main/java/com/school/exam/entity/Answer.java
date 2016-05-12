@@ -20,7 +20,7 @@ public class Answer extends IdEntity {
     private String course;
 	private String title;
     private String answer;
-    private String type;
+    private String type = "text";
     private String fileName;
     private User user;
 

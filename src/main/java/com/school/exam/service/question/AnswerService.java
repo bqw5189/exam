@@ -37,6 +37,10 @@ public class AnswerService {
 
 
     public void save(Answer answer) {
+        Answer oldAnswer = answerDao.findByUserIdAndCourseAndTitle(answer.getUser().getId(),answer.getCourse(), answer.getTitle());
+        if(null!=answer){
+            answer.setId(oldAnswer.getId());
+        }
         answerDao.save(answer);
     }
 
@@ -55,7 +59,4 @@ public class AnswerService {
         return answerDao.findByUserIdAndCourse(userId,course);
     }
 
-    public Answer findByUserIdAndAnswer(Long id, String answer) {
-        return answerDao.findByUserIdAndAnswer(id, answer);
-    }
 }

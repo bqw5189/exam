@@ -387,10 +387,7 @@ public class StudentController {
 
         answerObj.setUser(user);
 
-        if (null == answerService.findByUserIdAndAnswer(user.getId(), answerObj.getAnswer())){
-            answerService.save(answerObj);
-        }
-
+        answerService.save(answerObj);
 
         String fileName = logoRealPathDir + File.separator   + answerObj.getUser().getId() + "-" + answerObj.getAnswer();
         File file = new File(fileName);
