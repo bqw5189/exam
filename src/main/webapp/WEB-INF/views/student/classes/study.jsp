@@ -34,8 +34,16 @@
             </c:forEach>
             </c:if>
         </c:forEach>
-        <%--<div class="list">--%>
-        	<%--<h2>汽修喷漆车间废水中苯系物分析</h2>--%>
+        <%--<div class="list first">--%>
+            <%--<h2>高碑店污水处理厂活性污泥中铬元素分析</h2>--%>
+            <%--<a href="#" target="_blank">环节一   接受任务</a>--%>
+            <%--<a href="#" target="_blank">环节二   制定方案</a>--%>
+            <%--<a href="#" target="_blank">环节三   实施分析</a>--%>
+            <%--<a href="#" target="_blank">环节四   交付验收</a>--%>
+            <%--<a href="#" target="_blank">环节五   总结与拓展</a>--%>
+        <%--</div>--%>
+        <%--<div class="list a">--%>
+        	<%--<h2>高碑店污水处理厂活性污泥中铬元素分析</h2>--%>
             <%--<a href="#" target="_blank">环节一   接受任务</a>--%>
             <%--<a href="#" target="_blank">环节二   制定方案</a>--%>
             <%--<a href="#" target="_blank">环节三   实施分析</a>--%>
