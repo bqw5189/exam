@@ -198,7 +198,7 @@
                 so.addVariable("CuPlayerPosition","bottom-right");
 
                 so.write("showData");
-            }else if("DOC" === data.type){
+            }else if("DOC" === data.type||"doc" === data.type){
                 var html = '<br/><div>'+data.content+'</div><br/>';
 
                 html += "<div>请下载报告模版&nbsp;:&nbsp;<a href='${ctx}/static/${resourcePath}/doc/" + data.file + "'>" +"模版下载"+ "</a></div><br/>";
