@@ -64,10 +64,10 @@ public class StudentRestController {
 
 
 	@RequestMapping(method = RequestMethod.GET, produces = MediaTypes.JSON_UTF_8)
-	public List<CourseResource> list(@RequestParam String project, @RequestParam String step, @RequestParam(required = false) String substep){
+	public List<CourseResource> list(@RequestParam(defaultValue = StudentController.COURSE_NAME) String courseName,@RequestParam String project, @RequestParam String step, @RequestParam(required = false) String substep){
         List<CourseResource> resources = new ArrayList<CourseResource>();
 
-        resources.addAll(StudentController.COURSE_MAP.get(com.school.exam.web.student.StudentController.COURSE_NAME).getSubEntitys().get(project).getSubEntitys().get(step).getSubEntitys().get(substep).getResources());
+        resources.addAll(StudentController.COURSE_MAP.get(courseName).getSubEntitys().get(project).getSubEntitys().get(step).getSubEntitys().get(substep).getResources());
 
 		return resources;
 	}

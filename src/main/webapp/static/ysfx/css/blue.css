@@ -300,10 +300,11 @@ html,body{width:100%;height:100%;}
 
 }
 
+
 .leftMenubox{
 	float:left;
 	width:237px;
-	border:1px solid #5ea700;
+	border:1px solid #0b5a6c;
 	margin-left:11px;
 	margin-right:26px;
 	border-radius:6px;
@@ -314,7 +315,7 @@ html,body{width:100%;height:100%;}
 	padding-top:40px;
 }
 .leftMenubox i{
-	
+
 	background:url(../img/look.png);
 	background-repeat:no-repeat;
 	width:30px;
@@ -323,23 +324,15 @@ html,body{width:100%;height:100%;}
 	position:absolute;
 	pointer-events:none;
 
-	}
+}
 .leftMenubox .L{
-	background:url(../img/blue/menutop.jpg);
-	background-repeat:no-repeat;
-	width:245px;
-	height:47px;
-	top:-47px;
-	left:0px;
-	}
+	top:-18px;
+	left:14px;
+}
 .leftMenubox .R{
-	background:url(../img/blue/menubottom.jpg);
-	background-repeat:no-repeat;
-	width:245px;
-	height:74px;
-	top:100%;
-	right:0px;
-	}
+	top:-18px;
+	right:14px;
+}
 
 .leftMenulist{
 	margin-bottom:10px;

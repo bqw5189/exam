@@ -2,6 +2,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
+<c:set var="principal" value="<%=org.apache.shiro.SecurityUtils.getSubject().getPrincipal()%>"/>
+<c:set var="className" value="${principal.className}"/>
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -55,12 +57,22 @@
 
 </div>
 <script type="text/javascript">
+    //获取url中的参数
+//    function getUrlParam(name) {
+//        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+//        var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+//        if (r != null) return undecunescape(r[2]); return null; //返回参数值
+//    }
 
     $(function(){
 
         $($("a",$($("h1.onhere").parent())).get(0)).addClass("onhere");
+        var projectName = "${param.project_title}";//getUrlParam("project_title");
+        if (undefined == projectName || "" == projectName){
+            projectName = "北校区大气PM2.5中多环芳烃分析";
+        }
 
-        init("北校区大气PM2.5中多环芳烃分析",$("h1.onhere").text(),$($("a",$($("h1.onhere").parent())).get(0)).text());
+        init(projectName,$("h1.onhere").text(),$($("a",$($("h1.onhere").parent())).get(0)).text());
 
         $("#btng").hide();
 
@@ -79,7 +91,7 @@
             $("#showData").empty();
 
 
-            $.get("${ctx}/api/v1/student",{project:$(this).attr("p"),step:$(this).attr("s"),substep:$(this).attr("ss")}, function(data){
+            $.get("${ctx}/api/v1/student",{courseName:"${courseName}",project:$(this).attr("p"),step:$(this).attr("s"),substep:$(this).attr("ss")}, function(data){
                 rdata = data;
 
                 isShowBotton(index);
@@ -97,7 +109,7 @@
 
             $("#showData").empty();
 
-            $.get("${ctx}/api/v1/student",{project:p,step:s,substep:ss}, function(data){
+            $.get("${ctx}/api/v1/student",{courseName:"${courseName}",project:p,step:s,substep:ss}, function(data){
                 rdata = data;
 
                 isShowBotton(index);
@@ -157,7 +169,7 @@
                         type: 'GET',
                         url : "${ctx}/api/v1/student/answer",
                         contentType : "application/x-www-form-urlencoded;charset=UTF-8",
-                        data : {userId:'<shiro:principal property="id"></shiro:principal>', course:'北校区大气PM2.5中多环芳烃分析', answer:answer,title:title},
+                        data : {userId:'<shiro:principal property="id"></shiro:principal>', course:projectName, answer:answer,title:title},
                         success : function(data) {
                             $("#submit").text("提交");
                             $("#submit").removeAttr("disabled");
@@ -193,7 +205,7 @@
 
                 html += '<form id="template" method="post" enctype="multipart/form-data" action="${ctx}/student/answer">上传报告&nbsp;&nbsp;:&nbsp;&nbsp;<input type="file" id="file" name="file"/>';
                 html += '<input type="hidden" name="title"  value="'+data.content+'">';
-                html += '<input type="hidden" name="course"  value="北校区大气PM2.5中多环芳烃分析">';
+                html += '<input type="hidden" name="course"  value="'+projectName+'">';
                 html += '<br/><br/><div style="text-align: center"> <button id="submitFile" class="btn" data-loading-text="提交中..." type="button" >提交</button></div></form>';
                 html += '<br/><br/><br/><div> 注：完成此次答题需要四个步骤：1.下载报告模板，2.填写报告内容，3.点击“浏览”按钮上传报告，4.点击“提交”操作完成。</div></form>';
 
@@ -245,7 +257,9 @@
 <!--底部end-->
 <script>
     $(function(){
+        <c:if test="${className != 'ysfx'}">
         $(".text02").attr("src", "${ctx}/static/student/img/text03.png");
+        </c:if>
     });
 </script>
 </body>
