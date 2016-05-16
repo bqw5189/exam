@@ -112,7 +112,7 @@
         <data-type>bigint(20)</data-type>
       </column>
       <column id="37" parent="5" name="title">
-        <data-type>varchar(512)</data-type>
+        <data-type>text</data-type>
       </column>
       <column id="38" parent="5" name="course">
         <data-type>varchar(256)</data-type>

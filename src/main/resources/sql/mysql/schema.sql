@@ -6,7 +6,121 @@
 
 CREATE DATABASE IF NOT EXISTS es DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
-
+CREATE TABLE ss_class
+(
+    ID BIGINT(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    class_name VARCHAR(50),
+    class_remark VARCHAR(80)
+);
+CREATE TABLE ss_task
+(
+    id BIGINT(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    title VARCHAR(128) NOT NULL,
+    description VARCHAR(255),
+    user_id BIGINT(20) NOT NULL
+);
+CREATE TABLE ss_user
+(
+    id BIGINT(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    login_name VARCHAR(64) NOT NULL,
+    name VARCHAR(64) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    salt VARCHAR(64) NOT NULL,
+    roles VARCHAR(255) NOT NULL,
+    register_date TIMESTAMP DEFAULT 'CURRENT_TIMESTAMP' NOT NULL,
+    class_id BIGINT(20) NOT NULL
+);
+CREATE UNIQUE INDEX login_name ON ss_user (login_name);
+CREATE TABLE t_te_answer
+(
+    id BIGINT(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    user_id BIGINT(20),
+    title TEXT,
+    course VARCHAR(256),
+    answer TEXT,
+    answer_date TIMESTAMP DEFAULT '0000-00-00 00:00:00' NOT NULL,
+    c_type VARCHAR(32) DEFAULT 'text'
+);
+CREATE TABLE t_te_course
+(
+    id BIGINT(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    course_name VARCHAR(200) NOT NULL,
+    remark VARCHAR(500)
+);
+CREATE TABLE t_te_exam_paper_result
+(
+    id BIGINT(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    exam_name VARCHAR(200),
+    exam_id BIGINT(20),
+    exam_remark VARCHAR(500),
+    person_name VARCHAR(50),
+    person_id BIGINT(20),
+    sum_score DOUBLE,
+    exam_order INT(11),
+    state INT(11),
+    exam_code BIGINT(20)
+);
+CREATE TABLE t_te_exam_question
+(
+    id BIGINT(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    type INT(11),
+    question_cont VARCHAR(200),
+    question_answer_id VARCHAR(3000),
+    question_score DOUBLE NOT NULL,
+    project_id BIGINT(20) NOT NULL,
+    state INT(11) DEFAULT '0'
+);
+CREATE TABLE t_te_exam_result
+(
+    id BIGINT(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    person_id BIGINT(20),
+    depd_id BIGINT(20),
+    exam_question_id BIGINT(20),
+    choose_question_id VARCHAR(2000),
+    question_answer VARCHAR(2000),
+    person_name VARCHAR(50),
+    question_score DOUBLE,
+    state INT(11)
+);
+CREATE TABLE t_te_make_exam
+(
+    id BIGINT(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    exam_name VARCHAR(200) NOT NULL,
+    exam_remark VARCHAR(500),
+    exam_time INT(11) NOT NULL,
+    project_id BIGINT(20) NOT NULL,
+    state INT(11),
+    exam_begin_date TIMESTAMP DEFAULT 'CURRENT_TIMESTAMP' NOT NULL,
+    exam_end_date TIMESTAMP DEFAULT '0000-00-00 00:00:00' NOT NULL
+);
+CREATE TABLE t_te_project
+(
+    id BIGINT(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    depd_id BIGINT(20) NOT NULL,
+    project_name VARCHAR(200) NOT NULL,
+    remark VARCHAR(500)
+);
+CREATE TABLE t_te_question_exampaper
+(
+    id BIGINT(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    exampaper_id BIGINT(20) NOT NULL,
+    question_id BIGINT(20) NOT NULL
+);
+CREATE TABLE t_te_select_items
+(
+    id BIGINT(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    depd_id BIGINT(20),
+    select_cont VARCHAR(500),
+    is_answer INT(11)
+);
+CREATE TABLE t_te_words
+(
+    id BIGINT(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    type VARCHAR(128),
+    word VARCHAR(128),
+    remark VARCHAR(1024)
+);
+ ----------------bak
 create table ss_task (
 	id bigint auto_increment,
 	title varchar(128) not null,
