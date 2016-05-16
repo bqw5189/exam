@@ -176,10 +176,19 @@ public class StudentController {
 
         model.addAttribute("nav", NAV_MAP);
         model.addAttribute("curent", "课程学习");
+        model.addAttribute("courseName", getCurrentCourseName());
         model.addAttribute("course",COURSE_MAP);
 
         return NAV_MAP.get("课程学习");
     }
+
+    private String getCurrentCourseName() {
+        if ("ysfx".equals(getCurrentClassName())){
+            return "复杂基体元素指标分析";
+        }
+        return COURSE_NAME;
+    }
+
     @RequestMapping(value = "classes/index", method = RequestMethod.GET)
     public String classIndex(Model model) {
         model.addAttribute("nav", NAV_MAP);
@@ -188,16 +197,21 @@ public class StudentController {
     }
 
     @RequestMapping(value = "project", method = RequestMethod.GET)
-    public String project(Model model, @RequestParam("project_title") String projectTitle, @RequestParam("task_title") String taskTitle) {
+    public String project(Model model, @RequestParam("course_name") String courseName,@RequestParam("project_title") String projectTitle, @RequestParam("task_title") String taskTitle) {
 
         model.addAttribute("nav", NAV_MAP);
         model.addAttribute("curent", "课程学习");
-        model.addAttribute("course", COURSE_MAP.get(COURSE_NAME).getSubEntitys()
+        model.addAttribute("course", COURSE_MAP.get(courseName).getSubEntitys()
                 .get(projectTitle));
         model.addAttribute("currentProject", projectTitle);
+        model.addAttribute("courseName", courseName);
         model.addAttribute("currentTask", taskTitle);
 
-        model.addAttribute("resourcePath", "pmfj");
+        if (COURSE_NAME.equals(courseName)) {
+            model.addAttribute("resourcePath", "pmfj");
+        }else{
+            model.addAttribute("resourcePath", "ysfx");
+        }
 
         return "student/classes/project";
     }
@@ -407,5 +421,14 @@ public class StudentController {
         ShiroDbRealm.ShiroUser user = (ShiroDbRealm.ShiroUser) SecurityUtils.getSubject().getPrincipal();
         return user.id;
     }
+
+    /**
+     * 取出Shiro中的当前用户Id.
+     */
+    private String getCurrentClassName() {
+        ShiroDbRealm.ShiroUser user = (ShiroDbRealm.ShiroUser) SecurityUtils.getSubject().getPrincipal();
+        return user.className;
+    }
+
 
 }
