@@ -63,7 +63,7 @@
 		<c:forEach items="${list}" var="l"  varStatus="status">
 			<tr>
                 <td>${status.index+1}</td>
-                <td><a href="${ctx}/answer/${l.user.id}">${l.user.name}</a></td>
+                <td><a href="${ctx}/answer/${l.user.id}?course=${l.course}">${l.user.name}</a></td>
 				<td>${l.user.ssClass.className}</td>
                 <td>${l.course}</td>
                 </td>
