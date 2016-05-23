@@ -2,76 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f90a0bed-6075-4286-86dc-b8246f67a9ca" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/doc/gysfx_blyq.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/doc/gysfx_bzcbypz.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/doc/gysfx_bzgzynd.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/doc/gysfx_cbgs.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/doc/gysfx_gcbbzry.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/doc/gysfx_ghlgd.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/doc/gysfx_gjczbz.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/doc/gysfx_gjczjxx.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/doc/gysfx_gzfan.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/doc/gysfx_jcbg.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/doc/gysfx_jclcb.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/doc/gysfx_jjfan.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/doc/gysfx_jlkjxx.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/doc/gysfx_jsyszb.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/doc/gysfx_pdyqzt.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/doc/gysfx_smlyzhq.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/doc/gysfx_syfan.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/doc/gysfx_tzsbzy.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/doc/gysfx_xzczjl.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/doc/gysfx_ylfwbj.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/doc/gysfx_yqdbj.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/doc/gysfx_yqzbqrd.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/doc/gysfx_zyzds.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/gysfx1_1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/gysfx1_2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/gysfx2_1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/gysfx3_1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/gysfx3_2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/gysfx3_3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/gysfx4_1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/gysfx5_1.jpg" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/static/pmfj/shjfx_bxgzfan.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/static/pmfj/shjfx_czjf.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/static/pmfj/shjfx_jcbg.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/static/pmfj/shjfx_jcyyqqd.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/static/pmfj/shjfx_yssj.docx" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/static/pmfj/bxwfx_bjaqscb.docx" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/doc/bxwfx_bjaqscb.docx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/static/pmfj/bxwfx_blyqqd.docx" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/doc/bxwfx_blyqqd.docx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/static/pmfj/bxwfx_bxgzfan.docx" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/doc/bxwfx_bxgzfan.docx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/static/pmfj/bxwfx_bzwzqd.docx" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/doc/bxwfx_bzwzqd.docx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/static/pmfj/bxwfx_dbbg.docx" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/doc/bxwfx_dbbg.docx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/static/pmfj/bxwfx_dwjxzh.docx" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/doc/bxwfx_dwjxzh.docx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/static/pmfj/bxwfx_hslsy.docx" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/doc/bxwfx_hslsy.docx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/static/pmfj/bxwfx_hxsjqd.docx" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/doc/bxwfx_hxsjqd.docx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/static/pmfj/bxwfx_jcbg.docx" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/doc/bxwfx_jcbg.docx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/static/pmfj/bxwfx_jcyfzyqqd.docx" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/doc/bxwfx_jcyfzyqqd.docx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/static/pmfj/bxwfx_jcyyqqd.docx" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/doc/bxwfx_jcyyqqd.docx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/static/pmfj/bxwfx_lxfs.docx" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/doc/bxwfx_lxfs.docx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/static/pmfj/bxwfx_wcbcd.docx" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/doc/bxwfx_wcbcd.docx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/static/pmfj/bxwfx_xlz.docx" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/doc/bxwfx_xlz.docx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/static/pmfj/bxwfx_xtsyxsy.docx" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/doc/bxwfx_xtsyxsy.docx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/static/pmfj/bxwfx_xxfwsy.docx" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/doc/bxwfx_xxfwsy.docx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/static/pmfj/bxwfx_xzsyjcq.docx" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/doc/bxwfx_xzsyjcq.docx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/static/pmfj/bxwfx_zjph.docx" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/doc/bxwfx_zjph.docx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/static/pmfj/bxwfx_zjwd.docx" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/doc/bxwfx_zjwd.docx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/static/pmfj/bxwfx_zjyd.docx" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/doc/bxwfx_zjyd.docx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/static/pmfj/shjfx_bjaqscb.docx" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/doc/gysfx_fzsbqd.docx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/static/pmfj/shjfx_blyqqd.docx" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/doc/gysfx_jcwtjff.docx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/static/pmfj/shjfx_bzwzqd.docx" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/doc/gysfx_qdxmbz.docx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/static/pmfj/shjfx_dzrnl.docx" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/doc/gysfx_anqscb.docx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/static/pmfj/shjfx_hxsjqd.docx" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/doc/gysfx_jcfftz.docx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/static/pmfj/shjfx_jcyfzyqqd.docx" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/doc/gysfx_lsj.docx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/static/pmfj/shjfx_lxfs.docx" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/doc/gysfx_yyqd.docx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/static/pmfj/shjfx_shj.docx" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/doc/gysfx_gjcff.docx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/static/pmfj/shjfx_wjhxzs.docx" afterPath="$PROJECT_DIR$/src/main/webapp/static/ysfx/doc/gysfx_kzcb.docx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/classes.xls" afterPath="$PROJECT_DIR$/src/main/resources/classes.xls" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/resources/classes.xls" afterPath="$PROJECT_DIR$/src/test/resources/classes.xls" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/exam_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/exam_war_exploded.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/ckzl/Assessment of acid media effects on the determination of tin by.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/ckzl/Axially and radially viewed inductively coupled plasmas-1.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/ckzl/Effect of nitric and hydrochloric acids on rare earth element (REE).pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/ckzl/Evaluation of inductively coupled plasma optical emission.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/ckzl/File_50750.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/ckzl/Fundamental studies on pneumatic generation and aerosol transport in.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/ckzl/GB 3095 环境空气质量标准.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/ckzl/GBT 18883-2002 室内空气质量标准.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/ckzl/HJ 633-2012 环境空气质量指数（AQI）技术规定.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/ckzl/ICP-Book-2.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/ckzl/ICP-IES book-3.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/ckzl/ICP-OES Book-1.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/ckzl/ICP-OES Book-4.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/ckzl/ICP-OES Book-45.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/ckzl/ICP-OES Book-6.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/ckzl/ICP-OES Book-7.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/ckzl/ICP-OES与元素周期表.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/ckzl/Influence of the sample introduction system on acid effects in.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/ckzl/Microwave desolvation for acid sample introduction in.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/ckzl/On the use of line intensity ratios and power adjustments to control.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/ckzl/Studies about the origin of the non-spectroscopic interferences.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/ckzl/Study of the depressive effects of nitric acid on the line intensities of.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/pmfj/ckzl/concepts, instrumentation, and techniques in inductively coupled plasms optical emission spectrometry.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/images.xls" afterPath="$PROJECT_DIR$/src/main/resources/images.xls" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/exam.iml" afterPath="$PROJECT_DIR$/exam.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/school/exam/web/student/StudentController.java" afterPath="$PROJECT_DIR$/src/main/java/com/school/exam/web/student/StudentController.java" />
     </list>
     <ignored path="exam.iws" />
@@ -113,10 +69,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
+            <state relative-caret-position="-15">
               <caret line="3" column="85" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="85" />
               <folding />
             </state>
@@ -126,18 +82,18 @@
       <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/school/exam/web/account/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-626">
+            <state relative-caret-position="64">
               <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StudentController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="StudentController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/school/exam/web/student/StudentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="68" column="47" selection-start-line="68" selection-start-column="47" selection-end-line="68" selection-end-column="47" />
+            <state relative-caret-position="49">
+              <caret line="151" column="104" selection-start-line="151" selection-start-column="104" selection-end-line="151" selection-end-column="104" />
               <folding />
             </state>
           </provider>
@@ -298,6 +254,60 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -333,7 +343,7 @@
     <property name="options.lastSelected" value="configurable.group.appearance" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="true" />
@@ -345,11 +355,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/static/pmfj/ckzl" />
       <recent name="$PROJECT_DIR$/src/main/webapp/static/pmfj/doc" />
       <recent name="$PROJECT_DIR$/src/main/webapp/static/pmfj" />
       <recent name="$PROJECT_DIR$/src/test/resources" />
-      <recent name="$PROJECT_DIR$/src/main/resources" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/static/student/img" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.school.exam.web.exam" />
@@ -1082,12 +1092,12 @@
       <workItem from="1462262177845" duration="5710000" />
       <workItem from="1462504326693" duration="1599000" />
       <workItem from="1462844286400" duration="15715000" />
-      <workItem from="1463967689316" duration="1923000" />
+      <workItem from="1463967689316" duration="6088000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="414409000" />
+    <option name="totallyTimeSpent" value="418574000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1111,7 +1121,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="709" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
@@ -1123,7 +1133,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32907802" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3273906" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31604537" sideWeight="0.80042917" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31604537" sideWeight="0.80042917" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32771084" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1656,9 +1666,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15">
+          <caret line="3" column="85" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/school/exam/web/account/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-626">
+        <state relative-caret-position="64">
           <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
           <folding />
         </state>
@@ -1666,16 +1684,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/school/exam/web/student/StudentController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="68" column="47" selection-start-line="68" selection-start-column="47" selection-end-line="68" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="85" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="85" />
+        <state relative-caret-position="49">
+          <caret line="151" column="104" selection-start-line="151" selection-start-column="104" selection-end-line="151" selection-end-column="104" />
           <folding />
         </state>
       </provider>
@@ -1739,6 +1749,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

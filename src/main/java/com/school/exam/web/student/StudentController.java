@@ -19,8 +19,6 @@ import org.apache.shiro.util.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -76,6 +74,7 @@ public class StudentController {
 
         InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("classes.xls");
         InputStream inputStreamImages = Thread.currentThread().getContextClassLoader().getResourceAsStream("images.xls");
+        InputStream inputStreamCkzl = Thread.currentThread().getContextClassLoader().getResourceAsStream("ckzl.xls");
 
         IMAGES.addAll(ExcelUtils.toList(inputStreamImages));
         RESOURCES.addAll(ExcelUtils.toList(inputStream));
@@ -104,11 +103,11 @@ public class StudentController {
 		return "student" + "/index";
 	}
 
-    public List<List<String>> getResourceByTaskName(String taskName, List<List<String>> res){
+    public List<List<String>> getResourceByTaskName(String taskName, String type, List<List<String>> res){
         List<List<String>> resource = new ArrayList<List<String>>();
 
         for (List<String> r: res){
-            if (taskName.equals(r.get(1))){
+            if (taskName.equals(r.get(1)) && type.equals(r.get(5))){
                 resource.add(r);
             }
         }
@@ -124,9 +123,7 @@ public class StudentController {
         model.addAttribute("nav", NAV_MAP);
         model.addAttribute("curent", "图片索引");
 
-
-
-        model.addAttribute("resources",getResourceByTaskName(taskName, IMAGES));
+        model.addAttribute("resources",getResourceByTaskName(taskName,"IMG", IMAGES));
 
         return NAV_MAP.get("图片索引");
     }
@@ -136,7 +133,7 @@ public class StudentController {
 
         model.addAttribute("nav", NAV_MAP);
         model.addAttribute("curent", "动画索引");
-        model.addAttribute("resources",getResourceByTaskName(taskName, RESOURCES));
+        model.addAttribute("resources",getResourceByTaskName(taskName, "CKZL", RESOURCES));
 
         return NAV_MAP.get("动画索引");
     }
@@ -146,18 +143,18 @@ public class StudentController {
 
         model.addAttribute("nav", NAV_MAP);
         model.addAttribute("curent", "视频索引");
-        model.addAttribute("resources",getResourceByTaskName(taskName, RESOURCES));
+        model.addAttribute("resources",getResourceByTaskName(taskName, "IMG", RESOURCES));
 
         return NAV_MAP.get("视频索引");
     }
 
     @RequestMapping(value = "classes/books", method = RequestMethod.GET)
-    public String books(Model model) {
+    public String books(Model model, @RequestParam(value = "taskName", defaultValue = "北校区大气PM2.5中多环芳烃分析") String taskName) {
 
         model.addAttribute("nav", NAV_MAP);
         model.addAttribute("curent", "参考资料");
         model.addAttribute("course",COURSE_MAP);
-
+        model.addAttribute("resources",getResourceByTaskName(taskName, "CKZL", IMAGES));
         return NAV_MAP.get("参考资料");
     }
 
