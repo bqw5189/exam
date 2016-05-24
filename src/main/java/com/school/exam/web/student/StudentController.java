@@ -74,7 +74,6 @@ public class StudentController {
 
         InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("classes.xls");
         InputStream inputStreamImages = Thread.currentThread().getContextClassLoader().getResourceAsStream("images.xls");
-        InputStream inputStreamCkzl = Thread.currentThread().getContextClassLoader().getResourceAsStream("ckzl.xls");
 
         IMAGES.addAll(ExcelUtils.toList(inputStreamImages));
         RESOURCES.addAll(ExcelUtils.toList(inputStream));
@@ -107,18 +106,27 @@ public class StudentController {
         List<List<String>> resource = new ArrayList<List<String>>();
 
         for (List<String> r: res){
+//            logger.debug("resource:{}", r);
             if (taskName.equals(r.get(1)) && type.equals(r.get(5))){
                 resource.add(r);
             }
         }
 
-//        System.out.println("resource = " + resource.size());
+        logger.debug("taskName:{}, type:{}, resource :{} " ,taskName,type,resource);
 
         return resource;
     }
 
     @RequestMapping(value = "classes/images", method = RequestMethod.GET)
-    public String images(Model model, @RequestParam(value = "taskName", defaultValue = "北校区大气PM2.5中多环芳烃分析") String taskName) {
+    public String images(Model model, @RequestParam(value = "type", defaultValue = "北校区大气PM2.5中多环芳烃分析") String taskName) {
+        String className = getCurrentClassName();
+        if (!"ysfx".equals(className)) {
+            model.addAttribute("resourcePath", "pmfj");
+            taskName = "北校区大气PM2.5中多环芳烃分析";
+        }else{
+            model.addAttribute("resourcePath", "ysfx");
+            taskName = "南校区大气PM2.5中元素分析";
+        }
 
         model.addAttribute("nav", NAV_MAP);
         model.addAttribute("curent", "图片索引");
@@ -129,27 +137,49 @@ public class StudentController {
     }
 
     @RequestMapping(value = "classes/flash", method = RequestMethod.GET)
-    public String flash(Model model, @RequestParam(value = "taskName", defaultValue = "北校区大气PM2.5中多环芳烃分析") String taskName) {
-
+    public String flash(Model model, @RequestParam(value = "type", defaultValue = "北校区大气PM2.5中多环芳烃分析") String taskName) {
+        String className = getCurrentClassName();
+        if (!"ysfx".equals(className)) {
+            model.addAttribute("resourcePath", "pmfj");
+            taskName = "北校区大气PM2.5中多环芳烃分析";
+        }else{
+            model.addAttribute("resourcePath", "ysfx");
+            taskName = "南校区大气PM2.5中元素分析";
+        }
         model.addAttribute("nav", NAV_MAP);
         model.addAttribute("curent", "动画索引");
-        model.addAttribute("resources",getResourceByTaskName(taskName, "CKZL", RESOURCES));
+        model.addAttribute("resources",getResourceByTaskName(taskName, "FLASH", IMAGES));
 
         return NAV_MAP.get("动画索引");
     }
 
     @RequestMapping(value = "classes/moves", method = RequestMethod.GET)
-    public String moves(Model model, @RequestParam(value = "taskName", defaultValue = "北校区大气PM2.5中多环芳烃分析") String taskName) {
-
+    public String moves(Model model, @RequestParam(value = "type", defaultValue = "北校区大气PM2.5中多环芳烃分析") String taskName) {
+        String className = getCurrentClassName();
+        if (!"ysfx".equals(className)) {
+            model.addAttribute("resourcePath", "pmfj");
+            taskName = "北校区大气PM2.5中多环芳烃分析";
+        }else{
+            model.addAttribute("resourcePath", "ysfx");
+            taskName = "南校区大气PM2.5中元素分析";
+        }
         model.addAttribute("nav", NAV_MAP);
         model.addAttribute("curent", "视频索引");
-        model.addAttribute("resources",getResourceByTaskName(taskName, "IMG", RESOURCES));
+        model.addAttribute("resources",getResourceByTaskName(taskName, "MOVIE", IMAGES));
 
         return NAV_MAP.get("视频索引");
     }
 
     @RequestMapping(value = "classes/books", method = RequestMethod.GET)
-    public String books(Model model, @RequestParam(value = "taskName", defaultValue = "北校区大气PM2.5中多环芳烃分析") String taskName) {
+    public String books(Model model, @RequestParam(value = "type", defaultValue = "北校区大气PM2.5中多环芳烃分析") String taskName) {
+        String className = getCurrentClassName();
+        if (!"ysfx".equals(className)) {
+            model.addAttribute("resourcePath", "pmfj");
+            taskName = "北校区大气PM2.5中多环芳烃分析";
+        }else{
+            model.addAttribute("resourcePath", "ysfx");
+            taskName = "南校区大气PM2.5中元素分析";
+        }
 
         model.addAttribute("nav", NAV_MAP);
         model.addAttribute("curent", "参考资料");

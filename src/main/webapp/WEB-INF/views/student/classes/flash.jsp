@@ -48,7 +48,7 @@
 
         <ol style="padding-left: 20px">
             <li ng-repeat="word in words |filter:{type : 'FLASH'}| filter:q as results"  style="list-style-type: decimal;padding-top: 10px;color: #f97112">
-                <a title="" data-fancybox-group="gallery" href="#" file="${ctx}/static/pmfj/{{word.file}}" class="fancybox"  style="color: #000">{{word.title}}</a>
+                <a title="" data-fancybox-group="gallery" href="#" file="${ctx}/static/${resourcePath}/{{word.file}}" class="fancybox"  style="color: #000">{{word.title}}</a>
             </li>
         </ol>
 
