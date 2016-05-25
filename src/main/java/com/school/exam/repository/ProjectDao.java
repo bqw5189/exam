@@ -13,4 +13,6 @@ import java.util.List;
  */
 public interface ProjectDao extends PagingAndSortingRepository<TeProjectVO, Long>, JpaSpecificationExecutor<TeProjectVO> {
     public List<TeProjectVO> findByCourseId(Long courseId);
+
+    TeProjectVO findByProjectName(String projectName);
 }

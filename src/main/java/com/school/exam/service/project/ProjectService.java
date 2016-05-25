@@ -66,4 +66,9 @@ public class ProjectService {
     public List<TeProjectVO> getProjectBycoureId(Long id){
         return projectDao.findByCourseId(id);
     }
+
+    public TeProjectVO findByProjectName(String projectName) {
+
+        return projectDao.findByProjectName(projectName);
+    }
 }

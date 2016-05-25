@@ -47,7 +47,7 @@
     <div class="rightData" style="width: 980px" ng-init="words = [<c:forEach items="${resources}" var="r">{title:'${r[6]}', file:'${r[6]}'},</c:forEach>]">
         <ol style="padding-left: 20px">
             <li ng-repeat="word in words| filter:q as results"  style="list-style-type: decimal;padding-top: 10px;color: #f97112">
-                <a title="" data-fancybox-group="gallery" href="${ctx}/static/pmfj/ckzl/{{word.file}}" class="fancybox"  style="color: #000">{{word.title}}</a>
+                <a title="" data-fancybox-group="gallery" href="${ctx}/static/${resourcePath}/ckzl/{{word.file}}" class="fancybox"  style="color: #000">{{word.title}}</a>
             </li>
         </ol>
 

@@ -2,6 +2,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
+<c:set var="principal" value="<%=org.apache.shiro.SecurityUtils.getSubject().getPrincipal()%>"/>
+<c:set var="className" value="${principal.className}"/>
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -22,12 +24,32 @@
 <!--主题部分-->
 <div class="tearchpagebox">
     <!--左边菜单-->
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="${ctx}/student/examlist?project=北校区大气PM2.5中多环芳烃分析">北校区大气PM2.5中多环芳烃分析</a></li>
-        <li class=""><a href="${ctx}/student/examlist?project=汽修喷漆车间废水中苯系物分析">汽修喷漆车间废水中苯系物分析</a></li>
-        <li class=""><a  href="${ctx}/student/examlist?project=南三区土壤中塑化剂分析">南三区土壤中塑化剂分析</a></li>
-    </ul>
+    <%--<ul class="nav nav-tabs">--%>
+        <%--<li class="active"><a href="${ctx}/student/examlist?project=北校区大气PM2.5中多环芳烃分析">北校区大气PM2.5中多环芳烃分析</a></li>--%>
+        <%--<li class=""><a href="${ctx}/student/examlist?project=汽修喷漆车间废水中苯系物分析">汽修喷漆车间废水中苯系物分析</a></li>--%>
+        <%--<li class=""><a  href="${ctx}/student/examlist?project=南三区土壤中塑化剂分析">南三区土壤中塑化剂分析</a></li>--%>
+    <%--</ul>--%>
+    <c:if test="${param['project'] == null}">
+        <c:set var="defaultActive" value="active"></c:set>
+    </c:if>
+    <!--左边菜单-->
+    <c:if test="${className != 'ysfx'}">
+        <ul class="nav nav-tabs">
+            <li class="${defaultActive}<c:if test="${param['project'] == '北校区大气PM2.5中多环芳烃分析'}"> active </c:if>"><a href="${ctx}/student/examlist?project=北校区大气PM2.5中多环芳烃分析">北校区大气PM2.5中多环芳烃分析</a></li>
+            <li class="<c:if test="${param['project'] == '汽修喷漆车间废水中苯系物分析'}"> active </c:if>"><a href="${ctx}/student/examlist?project=汽修喷漆车间废水中苯系物分析">汽修喷漆车间废水中苯系物分析</a></li>
+            <li class="<c:if test="${param['project'] == '南三区土壤中塑化剂分析'}"> active </c:if>"><a  href="${ctx}/student/examlist?project=南三区土壤中塑化剂分析">南三区土壤中塑化剂分析</a></li>
+        </ul>
+    </c:if>
+    <c:if test="${className == 'ysfx'}">
+        <ul class="nav nav-tabs">
+            <li class="${defaultActive}<c:if test="${param['project'] == '南校区大气PM2.5中元素分析'}"> active </c:if>"><a href="${ctx}/student/examlist?project=南校区大气PM2.5中元素分析">南校区大气PM2.5中元素分析</a></li>
+            <li class="<c:if test="${param['project'] == '高碑店污水处理厂活性污泥中铬元素分析'}"> active </c:if>"><a href="${ctx}/student/examlist?project=高碑店污水处理厂活性污泥中铬元素分析">高碑店污水处理厂活性污泥中铬元素分析</a></li>
+            <li class="<c:if test="${param['project'] == '南校区自备井水质异味排查'}"> active </c:if>"><a  href="${ctx}/student/examlist?project=南校区自备井水质异味排查">南校区自备井水质异味排查</a></li>
+        </ul>
+    </c:if>
     <br/>
+    <c:if test="${examvo == null}">无试卷</c:if>
+    <c:if test="${examvo != null}">
     <div class="leftMenubox" style="min-height: 150px;padding-left: 20px;width: 150px">
         <p>注意：</p>
         <div>考试时间：${examvo.examTime}</div>
@@ -172,7 +194,7 @@
 
 
     </div>
-
+    </c:if>
 
 </div>
         

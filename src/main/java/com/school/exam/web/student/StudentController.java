@@ -11,6 +11,7 @@ import com.school.exam.repository.Token;
 import com.school.exam.service.account.ShiroDbRealm;
 import com.school.exam.service.exam.ExamPaperResultService;
 import com.school.exam.service.exam.ExamQuestionService;
+import com.school.exam.service.project.ProjectService;
 import com.school.exam.service.question.AnswerService;
 import com.school.exam.service.question.WordsService;
 import com.school.exam.utils.ExcelUtils;
@@ -87,6 +88,8 @@ public class StudentController {
     private ExamQuestionService questionService;
     @Autowired
     private ExamPaperResultService resultService;
+    @Autowired
+    private ProjectService projectService;
     @Autowired
     private WordsService wordsService;
 
@@ -255,18 +258,34 @@ public class StudentController {
 
     @RequestMapping(value = "examlist", method = RequestMethod.GET)
     @Token(save=true)
-    public String examlist(@RequestParam(defaultValue = "北校区大气PM2.5中多环芳烃分析") String examName, Model model) {
+    public String examlist(@RequestParam(defaultValue = "") String project, Model model) {
+        String className = getCurrentClassName();
+        if (!"ysfx".equals(className)) {
+            model.addAttribute("resourcePath", "pmfj");
+            if (org.apache.commons.lang3.StringUtils.isEmpty(project)) {
+                project = "北校区大气PM2.5中多环芳烃分析";
+            }
+        }else{
+            model.addAttribute("resourcePath", "ysfx");
+            if (org.apache.commons.lang3.StringUtils.isEmpty(project)) {
+                project = "南校区大气PM2.5中元素分析";
+            }
+
+        }
+
+//        TeProjectVO projectVO =projectService.findByProjectName(project);
+
         model.addAttribute("nav", NAV_MAP);
         model.addAttribute("curent", "习题库");
         model.addAttribute("course", COURSE_MAP);
 
 
         ShiroDbRealm.ShiroUser user = getCurrentUser();
-        List<TeMakeExamVO> examlist = questionService.findByExamName(examName);
+        List<TeMakeExamVO> examlist = questionService.findByExamName(project);
         TeMakeExamVO teMakeExamVO = null;
         if (null == examlist || examlist.size() == 0) {
             model.addAttribute("message", "当前没有考试卷!");
-            return NAV_MAP.get("首页");
+            return NAV_MAP.get("习题库");
         }else{
             teMakeExamVO = examlist.get(0);
 
@@ -274,7 +293,7 @@ public class StudentController {
                 TeMakeExamVO examvo = questionService.findExamQuestions(teMakeExamVO.getId());
                 examvo = addRemark(examvo, teMakeExamVO.getId());
                 model.addAttribute("examvo", examvo);
-                model.addAttribute("examName", examName);
+                model.addAttribute("examName", project);
 
                 return NAV_MAP.get("习题库");
             }else{
