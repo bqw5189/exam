@@ -10,8 +10,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta charset="utf-8">
-<style>
-</style>
 
 </head>
 
@@ -255,10 +253,30 @@
     });
 </script>
 <!--底部end-->
+
 <script>
     $(function(){
-        <c:if test="${className != 'ysfx'}">
         $(".text02").attr("src", "${ctx}/static/student/img/text03.png");
+        <c:if test="${param.project_title == '北校区大气PM2.5中多环芳烃分析'}">
+        $(".text02").attr("src", "${ctx}/static/student/img/text03.png");
+        </c:if>
+        <c:if test="${param.project_title == '汽修喷漆车间废水中苯系物分析'}">
+        $(".text02").attr("src", "${ctx}/static/student/img/text04.png");
+        </c:if>
+        <c:if test="${param.project_title == '南三区土壤中塑化剂分析'}">
+        $(".text02").attr("src", "${ctx}/static/student/img/text05.png");
+        </c:if>
+
+        $(".text02").attr("style","background:url('')");
+
+        <c:if test="${param.project_title == '南校区大气PM2.5中元素分析'}">
+        $(".text02").attr("src", "${ctx}/static/ysfx/img/blue/toptext.png");
+        </c:if>
+        <c:if test="${param.project_title == '高碑店污水处理厂活性污泥中铬元素分析'}">
+        $(".text02").attr("src", "${ctx}/static/ysfx/img/toptext2.png");
+        </c:if>
+        <c:if test="${param.project_title == '南校区自备井水质异味排查'}">
+        $(".text02").attr("src", "${ctx}/static/ysfx/img/toptext3.png");
         </c:if>
     });
 </script>

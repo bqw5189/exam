@@ -3,6 +3,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
+<c:set var="principal" value="<%=org.apache.shiro.SecurityUtils.getSubject().getPrincipal()%>"/>
+<c:set var="className" value="${principal.className}"/>
 
 <html>
 <head>
@@ -13,11 +15,20 @@
 <!--主题部分-->
 <div class="tearchpagebox">
     <!--左边菜单-->
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="${ctx}/student/examlist?project=北校区大气PM2.5中多环芳烃分析">北校区大气PM2.5中多环芳烃分析</a></li>
-        <li class=""><a href="${ctx}/student/examlist?project=汽修喷漆车间废水中苯系物分析">汽修喷漆车间废水中苯系物分析</a></li>
-        <li class=""><a  href="${ctx}/student/examlist?project=南三区土壤中塑化剂分析">南三区土壤中塑化剂分析</a></li>
-    </ul>
+    <c:if test="${className != 'ysfx'}">
+        <ul class="nav nav-tabs">
+            <li class="${defaultActive}<c:if test="${project == '北校区大气PM2.5中多环芳烃分析'}"> active </c:if>"><a href="${ctx}/student/examlist?project=北校区大气PM2.5中多环芳烃分析">北校区大气PM2.5中多环芳烃分析</a></li>
+            <li class="<c:if test="${project == '汽修喷漆车间废水中苯系物分析'}"> active </c:if>"><a href="${ctx}/student/examlist?project=汽修喷漆车间废水中苯系物分析">汽修喷漆车间废水中苯系物分析</a></li>
+            <li class="<c:if test="${project == '南三区土壤中塑化剂分析'}"> active </c:if>"><a  href="${ctx}/student/examlist?project=南三区土壤中塑化剂分析">南三区土壤中塑化剂分析</a></li>
+        </ul>
+    </c:if>
+    <c:if test="${className == 'ysfx'}">
+        <ul class="nav nav-tabs">
+            <li class="${defaultActive}<c:if test="${project == '南校区大气PM2.5中元素分析'}"> active </c:if>"><a href="${ctx}/student/examlist?project=南校区大气PM2.5中元素分析">南校区大气PM2.5中元素分析</a></li>
+            <li class="<c:if test="${project == '高碑店污水处理厂活性污泥中铬元素分析'}"> active </c:if>"><a href="${ctx}/student/examlist?project=高碑店污水处理厂活性污泥中铬元素分析">高碑店污水处理厂活性污泥中铬元素分析</a></li>
+            <li class="<c:if test="${project == '南校区自备井水质异味排查'}"> active </c:if>"><a  href="${ctx}/student/examlist?project=南校区自备井水质异味排查">南校区自备井水质异味排查</a></li>
+        </ul>
+    </c:if>
     <br/>
     <div class="leftMenubox" style="min-height: 150px;padding-left: 20px;width: 150px">
         <p>本次答卷得分：<font color="red" size="6">${sumScore }</font></p>

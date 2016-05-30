@@ -278,6 +278,7 @@ public class StudentController {
         model.addAttribute("nav", NAV_MAP);
         model.addAttribute("curent", "习题库");
         model.addAttribute("course", COURSE_MAP);
+        model.addAttribute("project", project);
 
 
         ShiroDbRealm.ShiroUser user = getCurrentUser();
@@ -287,7 +288,9 @@ public class StudentController {
             model.addAttribute("message", "当前没有考试卷!");
             return NAV_MAP.get("习题库");
         }else{
+
             teMakeExamVO = examlist.get(0);
+            logger.debug("teMakeExamVO:{}", teMakeExamVO.getExamName());
 
             if (!resultService.isHasExamByCurrentUserId(user.id, teMakeExamVO.getId())) {
                 TeMakeExamVO examvo = questionService.findExamQuestions(teMakeExamVO.getId());
