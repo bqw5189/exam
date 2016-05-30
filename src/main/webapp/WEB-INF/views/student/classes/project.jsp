@@ -145,7 +145,7 @@
             if ("IMG" === data.type){
                 $("#showData").html("<img src='${ctx}/static/${resourcePath}/" + data.file + "'/>" );
             }else if("TEXT" === data.type || "IMG-TEXT" === data.type|| "IMG-TABLE" === data.type){
-                var html = '<div><span id="title">' + data.content + '</span></div>';
+                var html = '<div id="remark"><span id="title">' + data.content + '</span></div>';
 
                 if ("IMG-TEXT" === data.type|| "IMG-TABLE" === data.type) {
                     html += "<img src='${ctx}/static/${resourcePath}/" + data.file + "'/>";
@@ -153,6 +153,11 @@
 
                 html += '<div> 答案:</br><textarea name="answer" id="answer" style="min-height: 300px;width: 90%"></textarea></div>';
                 html += '<div> <button id="submit" class="btn" data-loading-text="提交中..." type="button" >提交</button></div>';
+
+                var regex = /\[img\](.*?)\[\/img\]/g;
+                if (regex.exec(html)){
+                    html = html.replace(regex, "<img src='"+"${ctx}/static/${resourcePath}/"+RegExp.$1+"'/>");
+                }
 
                 $("#showData").html(html);
 
@@ -197,9 +202,9 @@
 
                 so.write("showData");
             }else if("DOC" === data.type||"doc" === data.type){
-                var html = '<br/><div>'+data.content+'</div><br/>';
+                var html = '<br/><div id="remark">'+data.content+'</div><br/>';
 
-                html += "<div>请下载报告模版&nbsp;:&nbsp;<a href='${ctx}/static/${resourcePath}/doc/" + data.file + "'>" +"模版下载"+ "</a></div><br/>";
+                html += "<div >请下载报告模版&nbsp;:&nbsp;<a href='${ctx}/static/${resourcePath}/doc/" + data.file + "'>" +"模版下载"+ "</a></div><br/>";
 
                 html += '<form id="template" method="post" enctype="multipart/form-data" action="${ctx}/student/answer">上传报告&nbsp;&nbsp;:&nbsp;&nbsp;<input type="file" id="file" name="file"/>';
                 html += '<input type="hidden" name="title"  value="'+data.content+'">';
@@ -207,7 +212,15 @@
                 html += '<br/><br/><div style="text-align: center"> <button id="submitFile" class="btn" data-loading-text="提交中..." type="button" >提交</button></div></form>';
                 html += '<br/><br/><br/><div> 注：完成此次答题需要四个步骤：1.下载报告模板，2.填写报告内容，3.点击“浏览”按钮上传报告，4.点击“提交”操作完成。</div></form>';
 
+
+                var regex = /\[img\](.*?)\[\/img\]/g;
+                if (regex.exec(html)){
+                    html = html.replace(regex, "<img src='"+"${ctx}/static/${resourcePath}/"+RegExp.$1+"'/>");
+                }
+
+
                 $("#showData").html(html);
+
 
                 $("#submitFile").click(function(){
                     if ($("#file").val() == ""){
@@ -278,6 +291,8 @@
         <c:if test="${param.project_title == '南校区自备井水质异味排查'}">
         $(".text02").attr("src", "${ctx}/static/ysfx/img/toptext3.png");
         </c:if>
+
+
     });
 </script>
 </body>
