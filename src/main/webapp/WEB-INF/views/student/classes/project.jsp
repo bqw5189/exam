@@ -11,6 +11,11 @@
 <head>
 <meta charset="utf-8">
 
+    <style type="text/css">
+       p{
+            text-indent:20em;
+        }
+    </style>
 </head>
 
 <body>
@@ -145,7 +150,7 @@
             if ("IMG" === data.type){
                 $("#showData").html("<img src='${ctx}/static/${resourcePath}/" + data.file + "'/>" );
             }else if("TEXT" === data.type || "IMG-TEXT" === data.type|| "IMG-TABLE" === data.type){
-                var html = '<div id="remark"><span id="title">' + data.content + '</span></div>';
+                var html = '<div id="remark"><span id="title" >' + data.content + '</span></div>';
 
                 if ("IMG-TEXT" === data.type|| "IMG-TABLE" === data.type) {
                     html += "<img src='${ctx}/static/${resourcePath}/" + data.file + "'/>";
@@ -160,6 +165,8 @@
                 }
 
                 $("#showData").html(html);
+                $("#title p").css("text-indent","2em")
+                $("#title p").css("font-size","18px")
 
                 $("#submit").click(function(){
                     var answer = $("#answer").val();
@@ -285,7 +292,7 @@
         <c:if test="${param.project_title == '南校区大气PM2.5中元素分析'}">
         $(".text02").attr("src", "${ctx}/static/ysfx/img/blue/toptext.png");
         </c:if>
-        <c:if test="${param.project_title == '高碑店污水处理厂活性污泥中铬元素分析'}">
+        <c:if test="${param.project_title == '高碑店污水处理厂<br/>活性 污泥中铬元素分析'}">
         $(".text02").attr("src", "${ctx}/static/ysfx/img/toptext2.png");
         </c:if>
         <c:if test="${param.project_title == '南校区自备井水质异味排查'}">

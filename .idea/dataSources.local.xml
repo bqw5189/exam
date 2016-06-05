@@ -17,5 +17,11 @@
       <secret-storage>master_key</secret-storage>
       <user-name>secco</user-name>
     </data-source>
+    <data-source name="MySQL - person_hour@120.24.58.244" uuid="439c4fbf-1dc1-4a93-83af-cba4212ea3a6">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>person_hour.*</schema-pattern>
+      <default-schemas>person_hour.*</default-schemas>
+    </data-source>
   </component>
 </project>
