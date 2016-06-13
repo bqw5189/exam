@@ -227,7 +227,8 @@
 
 
                 $("#showData").html(html);
-
+                $("#title p").css("text-indent","2em")
+                $("#title p").css("font-size","14px")
 
                 $("#submitFile").click(function(){
                     if ($("#file").val() == ""){
@@ -247,6 +248,17 @@
                         }
                     })
                 });
+            }else{
+                var html = '<div id="remark"><span id="title" >' + data.content + '</span></div>';
+
+                var regex = /\[img\](.*?)\[\/img\]/g;
+                if (regex.exec(html)){
+                    html = html.replace(regex, "<img src='"+"${ctx}/static/${resourcePath}/"+RegExp.$1+"'/>");
+                }
+
+                $("#showData").html(html);
+                $("#title p").css("text-indent","2em")
+                $("#title p").css("font-size","14px")
             }
 
 
