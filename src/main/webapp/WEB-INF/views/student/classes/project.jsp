@@ -166,7 +166,7 @@
 
                 $("#showData").html(html);
                 $("#title p").css("text-indent","2em")
-                $("#title p").css("font-size","18px")
+                $("#title p").css("font-size","14px")
 
                 $("#submit").click(function(){
                     var answer = $("#answer").val();

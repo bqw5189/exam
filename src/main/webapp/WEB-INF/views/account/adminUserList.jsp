@@ -70,7 +70,7 @@
     </div>
 <script>
     $(function(){
-        $(".delete_user").click(function(){
+        $("#dt_default").delegate('.delete_user','click', function(){
             var id = $(this).attr("data-id");
             if(confirm("确认删除此用户吗？")){
                 window.location.href="${ctx}/admin/user/delete/"+id;

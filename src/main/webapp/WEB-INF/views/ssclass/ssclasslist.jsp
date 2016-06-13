@@ -54,11 +54,13 @@
 <script>
 
     $(function(){
-        $(".class_delete").click(function(){
-            var id = $(this).attr("data-id");
-            if(confirm("确认删除此班级吗？")){
-                window.location.href="${ctx}/ssclass/delete/"+id;
-            }
+        $(function(){
+            $("#dt_default").delegate('.class_delete','click', function(){
+                var id = $(this).attr("data-id");
+                if(confirm("确认删除此班级吗？")){
+                    window.location.href="${ctx}/ssclass/delete/"+id;
+                }
+            });
         });
     });
 </script>
