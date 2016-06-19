@@ -2,9 +2,9 @@
 --drop table if exists ss_user;
 --drop table if exists t_te_make_exam;
 --CREATE USER 'exam'@'127.0.0.1' IDENTIFIED BY 'exam';
---CREATE DATABASE IF NOT EXISTS exam_old DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+--CREATE DATABASE IF NOT EXISTS test DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
-CREATE DATABASE IF NOT EXISTS es DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+CREATE DATABASE IF NOT EXISTS exam DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 CREATE TABLE ss_class
 (

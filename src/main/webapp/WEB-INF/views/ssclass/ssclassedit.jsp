@@ -22,9 +22,10 @@
                 <div class="uk-width-1-1">
                     <div class="parsley-row">
                         <label for="uk-form-row">说明<span class="req"></span></label>
-			          <textarea class="md-input" name="classRemark" id="user_edit_personal_info_control" cols="35" rows="4" >${ssclass.classRemark}</textarea>
+			          <input class="md-input" name="classRemark" id="user_edit_personal_info_control" maxlength="40" type="text" value="${ssclass.classRemark}"/>
                     </div>
                 </div>
+                <br/>
                 <div align="center">
                     <input id="submit_btn" class="md-btn md-btn-primary" type="submit" value="提交"/>&nbsp;
                     <input id="cancel_btn" class="md-btn md-btn-primary" type="button" value="返回" onclick="history.back()"/>
@@ -35,8 +36,8 @@
 </form>
 
 
-<script src="${ctx}/static/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
-<script src="${ctx}/static/jquery-validation/1.11.1/jquery.validate.min.js" type="text/javascript"></script>
+<%--<script src="${ctx}/static/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>--%>
+<%--<script src="${ctx}/static/jquery-validation/1.11.1/jquery.validate.min.js" type="text/javascript"></script>--%>
 
 
 <script>

@@ -57,7 +57,10 @@ public class AccountService {
 	}
 
 	public User findUserByLoginName(String loginName) {
-		return userDao.findByLoginName(loginName);
+		logger.debug("findUserByLoginName:{}", loginName);
+		User user = userDao.findByLoginName(loginName);
+		logger.debug("user login:{}", user.getName());
+		return user;
 	}
 
 	public void registerUser(User user) {

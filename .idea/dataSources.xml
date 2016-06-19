@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="2668213085">
-    <data-source source="LOCAL" name="MySQL - exam@120.24.58.244" uuid="778f2b24-c386-4c9d-b2f8-7253127f83ec">
+  <component name="DataSourceManagerImpl" format="xml" hash="3946094114">
+    <data-source source="LOCAL" name="MySQL - exam@127.0.0.1" uuid="778f2b24-c386-4c9d-b2f8-7253127f83ec">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://120.24.58.244:3306/exam</jdbc-url>
+      <jdbc-url>jdbc:mysql://127.0.0.1:3306/exam</jdbc-url>
       <driver-properties>
         <property name="zeroDateTimeBehavior" value="convertToNull" />
         <property name="tinyInt1isBit" value="false" />
@@ -32,11 +32,11 @@
         <property name="yearIsDateType" value="false" />
       </driver-properties>
     </data-source>
-    <data-source source="LOCAL" name="MySQL - person_hour@120.24.58.244" uuid="439c4fbf-1dc1-4a93-83af-cba4212ea3a6">
+    <data-source source="LOCAL" name="MySQL - test@101.200.149.58" uuid="439c4fbf-1dc1-4a93-83af-cba4212ea3a6">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://120.24.58.244:3306/person_hour</jdbc-url>
+      <jdbc-url>jdbc:mysql://101.200.149.58:3306/test</jdbc-url>
       <driver-properties>
         <property name="zeroDateTimeBehavior" value="convertToNull" />
         <property name="tinyInt1isBit" value="false" />
