@@ -20,306 +20,336 @@
       <table id="11" parent="1" name="t_te_select_items"/>
       <table id="12" parent="1" name="ss_class"/>
       <table id="13" parent="1" name="t_te_words"/>
-      <column id="14" parent="2" name="id">
+      <table id="14" parent="1" name="t_te_answer"/>
+      <column id="15" parent="2" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="15" parent="2" name="title">
+      <column id="16" parent="2" name="title">
         <mandatory>1</mandatory>
         <data-type>varchar(128)</data-type>
       </column>
-      <column id="16" parent="2" name="description">
+      <column id="17" parent="2" name="description">
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="17" parent="2" name="user_id">
+      <column id="18" parent="2" name="user_id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
       </column>
-      <key id="18" parent="2" name="PRIMARY">
+      <key id="19" parent="2" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="19" parent="3" name="id">
+      <column id="20" parent="3" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="20" parent="3" name="login_name">
+      <column id="21" parent="3" name="login_name">
         <mandatory>1</mandatory>
         <data-type>varchar(64)</data-type>
       </column>
-      <column id="21" parent="3" name="name">
+      <column id="22" parent="3" name="name">
         <mandatory>1</mandatory>
         <data-type>varchar(64)</data-type>
       </column>
-      <column id="22" parent="3" name="password">
+      <column id="23" parent="3" name="password">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="23" parent="3" name="salt">
+      <column id="24" parent="3" name="salt">
         <mandatory>1</mandatory>
         <data-type>varchar(64)</data-type>
       </column>
-      <column id="24" parent="3" name="roles">
+      <column id="25" parent="3" name="roles">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="25" parent="3" name="register_date">
+      <column id="26" parent="3" name="register_date">
         <mandatory>1</mandatory>
         <data-type>timestamp</data-type>
         <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
       </column>
-      <column id="26" parent="3" name="class_id">
+      <column id="27" parent="3" name="class_id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
       </column>
-      <index id="27" parent="3" name="login_name">
+      <index id="28" parent="3" name="login_name">
         <columns>login_name</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="28" parent="3" name="login_name">
+      <key id="29" parent="3" name="login_name">
         <columns>login_name</columns>
         <underlying-index>login_name</underlying-index>
       </key>
-      <key id="29" parent="3" name="PRIMARY">
+      <key id="30" parent="3" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="30" parent="4" name="id">
+      <column id="31" parent="4" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="31" parent="4" name="course_name">
+      <column id="32" parent="4" name="course_name">
         <mandatory>1</mandatory>
         <data-type>varchar(200)</data-type>
       </column>
-      <column id="32" parent="4" name="remark">
+      <column id="33" parent="4" name="remark">
         <data-type>varchar(500)</data-type>
       </column>
-      <key id="33" parent="4" name="PRIMARY">
+      <key id="34" parent="4" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="34" parent="5" name="id">
+      <column id="35" parent="5" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="35" parent="5" name="exam_name">
+      <column id="36" parent="5" name="exam_name">
         <data-type>varchar(200)</data-type>
       </column>
-      <column id="36" parent="5" name="exam_id">
+      <column id="37" parent="5" name="exam_id">
         <data-type>bigint(20)</data-type>
       </column>
-      <column id="37" parent="5" name="exam_remark">
+      <column id="38" parent="5" name="exam_remark">
         <data-type>varchar(500)</data-type>
       </column>
-      <column id="38" parent="5" name="person_name">
+      <column id="39" parent="5" name="person_name">
         <data-type>varchar(50)</data-type>
       </column>
-      <column id="39" parent="5" name="person_id">
+      <column id="40" parent="5" name="person_id">
         <data-type>bigint(20)</data-type>
       </column>
-      <column id="40" parent="5" name="sum_score">
+      <column id="41" parent="5" name="sum_score">
         <data-type>double</data-type>
       </column>
-      <column id="41" parent="5" name="exam_order">
+      <column id="42" parent="5" name="exam_order">
         <data-type>int(11)</data-type>
       </column>
-      <column id="42" parent="5" name="state">
+      <column id="43" parent="5" name="state">
         <data-type>int(11)</data-type>
       </column>
-      <column id="43" parent="5" name="exam_code">
+      <column id="44" parent="5" name="exam_code">
         <data-type>bigint(20)</data-type>
       </column>
-      <key id="44" parent="5" name="PRIMARY">
+      <key id="45" parent="5" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="45" parent="6" name="id">
+      <column id="46" parent="6" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="46" parent="6" name="type">
+      <column id="47" parent="6" name="type">
         <data-type>int(11)</data-type>
       </column>
-      <column id="47" parent="6" name="question_cont">
+      <column id="48" parent="6" name="question_cont">
         <data-type>varchar(200)</data-type>
       </column>
-      <column id="48" parent="6" name="question_answer_id">
+      <column id="49" parent="6" name="question_answer_id">
         <data-type>varchar(3000)</data-type>
       </column>
-      <column id="49" parent="6" name="question_score">
+      <column id="50" parent="6" name="question_score">
         <mandatory>1</mandatory>
         <data-type>double</data-type>
       </column>
-      <column id="50" parent="6" name="project_id">
+      <column id="51" parent="6" name="project_id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
       </column>
-      <column id="51" parent="6" name="state">
+      <column id="52" parent="6" name="state">
         <data-type>int(11)</data-type>
         <default-expression>&apos;0&apos;</default-expression>
       </column>
-      <key id="52" parent="6" name="PRIMARY">
+      <key id="53" parent="6" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="53" parent="7" name="id">
+      <column id="54" parent="7" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="54" parent="7" name="person_id">
+      <column id="55" parent="7" name="person_id">
         <data-type>bigint(20)</data-type>
       </column>
-      <column id="55" parent="7" name="depd_id">
+      <column id="56" parent="7" name="depd_id">
         <data-type>bigint(20)</data-type>
       </column>
-      <column id="56" parent="7" name="exam_question_id">
+      <column id="57" parent="7" name="exam_question_id">
         <data-type>bigint(20)</data-type>
       </column>
-      <column id="57" parent="7" name="choose_question_id">
+      <column id="58" parent="7" name="choose_question_id">
         <data-type>varchar(2000)</data-type>
       </column>
-      <column id="58" parent="7" name="question_answer">
+      <column id="59" parent="7" name="question_answer">
         <data-type>varchar(2000)</data-type>
       </column>
-      <column id="59" parent="7" name="person_name">
+      <column id="60" parent="7" name="person_name">
         <data-type>varchar(50)</data-type>
       </column>
-      <column id="60" parent="7" name="question_score">
+      <column id="61" parent="7" name="question_score">
         <data-type>double</data-type>
       </column>
-      <column id="61" parent="7" name="state">
+      <column id="62" parent="7" name="state">
         <data-type>int(11)</data-type>
       </column>
-      <key id="62" parent="7" name="PRIMARY">
+      <key id="63" parent="7" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="63" parent="8" name="id">
+      <column id="64" parent="8" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="64" parent="8" name="exam_name">
+      <column id="65" parent="8" name="exam_name">
         <mandatory>1</mandatory>
         <data-type>varchar(200)</data-type>
       </column>
-      <column id="65" parent="8" name="exam_remark">
+      <column id="66" parent="8" name="exam_remark">
         <data-type>varchar(500)</data-type>
       </column>
-      <column id="66" parent="8" name="exam_time">
+      <column id="67" parent="8" name="exam_time">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="67" parent="8" name="project_id">
+      <column id="68" parent="8" name="project_id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
       </column>
-      <column id="68" parent="8" name="state">
+      <column id="69" parent="8" name="state">
         <data-type>int(11)</data-type>
       </column>
-      <column id="69" parent="8" name="exam_begin_date">
+      <column id="70" parent="8" name="exam_begin_date">
         <data-type>timestamp</data-type>
       </column>
-      <column id="70" parent="8" name="exam_end_date">
+      <column id="71" parent="8" name="exam_end_date">
         <data-type>timestamp</data-type>
       </column>
-      <key id="71" parent="8" name="PRIMARY">
+      <key id="72" parent="8" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="72" parent="9" name="id">
+      <column id="73" parent="9" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="73" parent="9" name="depd_id">
+      <column id="74" parent="9" name="depd_id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
       </column>
-      <column id="74" parent="9" name="project_name">
+      <column id="75" parent="9" name="project_name">
         <mandatory>1</mandatory>
         <data-type>varchar(200)</data-type>
       </column>
-      <column id="75" parent="9" name="remark">
+      <column id="76" parent="9" name="remark">
         <data-type>varchar(500)</data-type>
       </column>
-      <key id="76" parent="9" name="PRIMARY">
+      <key id="77" parent="9" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="77" parent="10" name="id">
+      <column id="78" parent="10" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="78" parent="10" name="exampaper_id">
+      <column id="79" parent="10" name="exampaper_id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
       </column>
-      <column id="79" parent="10" name="question_id">
+      <column id="80" parent="10" name="question_id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
       </column>
-      <key id="80" parent="10" name="PRIMARY">
+      <key id="81" parent="10" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="81" parent="11" name="id">
+      <column id="82" parent="11" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="82" parent="11" name="depd_id">
+      <column id="83" parent="11" name="depd_id">
         <data-type>bigint(20)</data-type>
       </column>
-      <column id="83" parent="11" name="select_cont">
+      <column id="84" parent="11" name="select_cont">
         <data-type>varchar(500)</data-type>
       </column>
-      <column id="84" parent="11" name="is_answer">
+      <column id="85" parent="11" name="is_answer">
         <data-type>int(11)</data-type>
       </column>
-      <key id="85" parent="11" name="PRIMARY">
+      <key id="86" parent="11" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="86" parent="12" name="id">
+      <column id="87" parent="12" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="87" parent="12" name="class_name">
+      <column id="88" parent="12" name="class_name">
         <data-type>varchar(50)</data-type>
       </column>
-      <column id="88" parent="12" name="class_remark">
+      <column id="89" parent="12" name="class_remark">
         <data-type>varchar(80)</data-type>
       </column>
-      <key id="89" parent="12" name="PRIMARY">
+      <key id="90" parent="12" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="90" parent="13" name="id">
+      <column id="91" parent="13" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="91" parent="13" name="type">
+      <column id="92" parent="13" name="type">
         <data-type>varchar(128)</data-type>
       </column>
-      <column id="92" parent="13" name="word">
+      <column id="93" parent="13" name="word">
         <data-type>varchar(128)</data-type>
       </column>
-      <column id="93" parent="13" name="remark">
+      <column id="94" parent="13" name="remark">
         <data-type>varchar(1024)</data-type>
       </column>
-      <key id="94" parent="13" name="PRIMARY">
+      <key id="95" parent="13" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="96" parent="14" name="id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="97" parent="14" name="user_id">
+        <data-type>bigint(20)</data-type>
+      </column>
+      <column id="98" parent="14" name="title">
+        <data-type>varchar(512)</data-type>
+      </column>
+      <column id="99" parent="14" name="course">
+        <data-type>varchar(256)</data-type>
+      </column>
+      <column id="100" parent="14" name="c_type">
+        <data-type>varchar(32)</data-type>
+      </column>
+      <column id="101" parent="14" name="answer">
+        <data-type>text</data-type>
+      </column>
+      <column id="102" parent="14" name="answer_date">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+      </column>
+      <key id="103" parent="14" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
