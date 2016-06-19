@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f90a0bed-6075-4286-86dc-b8246f67a9ca" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/exam-2016-06-18.sql" afterPath="$PROJECT_DIR$/exam-2016-06-18.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/makexam/makexamlist.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/makexam/makexamlist.jsp" />
-    </list>
+    <list default="true" id="f90a0bed-6075-4286-86dc-b8246f67a9ca" name="Default" comment="" />
     <ignored path="exam.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -144,8 +139,8 @@
       <file leaf-file-name="exam-2016-06-18.sql" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/exam-2016-06-18.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1">
-              <caret line="100" column="41" selection-start-line="100" selection-start-column="30" selection-end-line="100" selection-end-column="41" />
+            <state relative-caret-position="46">
+              <caret line="103" column="33" selection-start-line="103" selection-start-column="22" selection-end-line="103" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -1227,7 +1222,7 @@
       <workItem from="1465785175564" duration="7032000" />
       <workItem from="1466143756119" duration="1799000" />
       <workItem from="1466254573618" duration="5990000" />
-      <workItem from="1466336942611" duration="9700000" />
+      <workItem from="1466336942611" duration="9731000" />
     </task>
     <servers />
   </component>
@@ -1264,7 +1259,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="478730000" />
+    <option name="totallyTimeSpent" value="478761000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1797,8 +1792,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/exam-2016-06-18.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1">
-          <caret line="100" column="41" selection-start-line="100" selection-start-column="30" selection-end-line="100" selection-end-column="41" />
+        <state relative-caret-position="46">
+          <caret line="103" column="33" selection-start-line="103" selection-start-column="22" selection-end-line="103" selection-end-column="33" />
           <folding />
         </state>
       </provider>
