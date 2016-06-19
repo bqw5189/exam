@@ -220,29 +220,32 @@ public class CourseController {
 //			}
             boolean flag = true;
 			item.setQuestion(question);
-        if(null!=question.getQuestionAnswerId()) {
-            if (question.getType().equals(1) && question.getQuestionAnswerId().length() > 0) {
-                if (item.getIsAnswer().equals(1)) {
-                    redirectAttributes.addFlashAttribute("message", "单选题不可以有多个答案，请正确填写选项信息！");
-                    item.setIsAnswer(0);
-                    flag = false;
-                } else {
-                    if (null != item.getId() && question.getQuestionAnswerId().equals(item.getId())) {
-                        question.setQuestionAnswerId("");
-                    }
-                }
-            }
-        }
-        courseService.saveItem(item);
+		courseService.saveItem(item);
+//        if(null!=question.getQuestionAnswerId()) {
+//            if (question.getType().equals(1) && question.getQuestionAnswerId().length() > 0) {
+//                if (item.getIsAnswer().equals(1)) {
+//                    redirectAttributes.addFlashAttribute("message", "单选题不可以有多个答案，请正确填写选项信息！");
+//                    item.setIsAnswer(0);
+//                    flag = false;
+//                } else {
+//                    if (null != item.getId() && question.getQuestionAnswerId().equals(item.getId())) {
+//                        question.setQuestionAnswerId("");
+//                    }
+//                }
+//            }
+//        }
+//        courseService.saveItem(item);
         if(flag){
             redirectAttributes.addFlashAttribute("message", "操作成功");
         }
 		return "redirect:/question/itemlist/"+questionId;
 	}
-	@RequestMapping(value="deleteitem/{id}")
-	public String deleteItems(@PathVariable("id") Long id, RedirectAttributes redirectAttributes,ServletRequest request) {
-		String questionId = request.getParameter("questionId");
-        TeExamQuestionVO questionVO = questionService.getQuestionById(Long.parseLong(questionId));
+	@RequestMapping(value="deleteitem/{id}", method = RequestMethod.GET)
+	public String deleteItems(@PathVariable("id") Long id, RedirectAttributes redirectAttributes) {
+		TeSelectItemsVO itemsVO = questionService.findItemById(id);
+//		String questionId = request.getParameter("questionId");
+		logger.debug("deleteItems:{}, {}", id, itemsVO.getQuestion());
+        TeExamQuestionVO questionVO = itemsVO.getQuestion();
         String answer = questionVO.getQuestionAnswerId();
         boolean flag = courseService.isNotDeleteQuestion(questionVO.getId());
         if(flag) {
@@ -264,7 +267,7 @@ public class CourseController {
         }else{
             redirectAttributes.addFlashAttribute("message", "试题已经被使用不可以进行删除操作");
         }
-		return "redirect:/question/itemlist/"+questionId;
+		return "redirect:/question/itemlist/"+questionVO.getId();
 	}
 	
 }

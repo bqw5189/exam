@@ -3,7 +3,7 @@
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
-	<script src="${ctx}/static/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+	<%--<script src="${ctx}/static/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>--%>
 	<title>修改试题</title>
 </head>
 	<body>
@@ -57,8 +57,8 @@
     </div>
 
 
-    <script src="${ctx}/static/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
-    <script src="${ctx}/static/jquery-validation/1.11.1/jquery.validate.min.js" type="text/javascript"></script>
+    <%--<script src="${ctx}/static/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>--%>
+    <%--<script src="${ctx}/static/jquery-validation/1.11.1/jquery.validate.min.js" type="text/javascript"></script>--%>
 
 
     <script>

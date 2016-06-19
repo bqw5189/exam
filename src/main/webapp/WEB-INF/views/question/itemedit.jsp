@@ -12,6 +12,7 @@
         <form id="inputForm" action="${ctx}/question/createitem?questionId=${item.question.id}" method="post" class="uk-form-stacked">
             <input type="hidden" name="id" value="${item.id}"/>
             <input type="hidden" name="item.question.id" value="${item.question.id}"/>
+            <br/>
 
             <div class="uk-grid">
                 <div class="uk-width-1-1">
@@ -41,8 +42,8 @@
 </div>
 
 
-<script src="${ctx}/static/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
-<script src="${ctx}/static/jquery-validation/1.11.1/jquery.validate.min.js" type="text/javascript"></script>
+<%--<script src="${ctx}/static/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>--%>
+<%--<script src="${ctx}/static/jquery-validation/1.11.1/jquery.validate.min.js" type="text/javascript"></script>--%>
 
 
 <script>

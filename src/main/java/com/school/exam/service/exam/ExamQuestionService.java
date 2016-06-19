@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.school.exam.entity.*;
+import com.school.exam.repository.*;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,15 +17,6 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import com.school.exam.entity.TeExamQuestionVO;
-import com.school.exam.entity.TeExamResultVO;
-import com.school.exam.entity.TeMakeExamVO;
-import com.school.exam.entity.TeQuestionExamVO;
-import com.school.exam.repository.CountQuestionDao;
-import com.school.exam.repository.ExamQuestionDao;
-import com.school.exam.repository.ExamResultDao;
-import com.school.exam.repository.MakeExamsDao;
-import com.school.exam.repository.QuestionExamDao;
 import org.springside.modules.persistence.DynamicSpecifications;
 import org.springside.modules.persistence.Hibernates;
 import org.springside.modules.persistence.SearchFilter;
@@ -38,6 +31,8 @@ public class ExamQuestionService {
 	private ExamResultDao resultDao;
 	private QuestionExamDao questionExamDao;
 	private CountQuestionDao countDao;
+	@Autowired
+	private SelectItemsDao selectItemsDao;
 	/**
 	 * 查询所有试卷
 	 * @return
@@ -89,7 +84,7 @@ public class ExamQuestionService {
 	}
 	/**
 	 * 删除试卷信息
-	 * @param vo
+	 * @param examId
 	 */
 	public void deleteQuestionExam(Long examId){
 		if(null!=examId){
@@ -233,7 +228,7 @@ public class ExamQuestionService {
 	/**
 	 * 统计试卷各题型个数
 	 * @param type 1:单选2：多选
-	 * @param questionID 试卷ID
+	 * @param exampaperId 试卷ID
 	 * @return
 	 */
 	public Long getTypeNumber(Integer type,Long exampaperId){
@@ -321,4 +316,8 @@ public class ExamQuestionService {
     public List<TeMakeExamVO> findByExamName(String examName) {
         return examDao.findTop1ByProjectProjectNameOrderByIdDesc(examName);
     }
+
+	public TeSelectItemsVO findItemById(long id){
+		return selectItemsDao.findOne(id);
+	}
 }
