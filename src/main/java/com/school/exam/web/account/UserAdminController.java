@@ -66,9 +66,10 @@ public class UserAdminController {
 	}
 
 	@RequestMapping(value = "update", method = RequestMethod.POST)
-	public String update(@Valid @ModelAttribute("user") User user, RedirectAttributes redirectAttributes) {
+	public String update(@Valid @ModelAttribute("user") User user,@RequestParam("user.ssClass.id") long classId,RedirectAttributes redirectAttributes) {
         SSClassVO classVO = new SSClassVO();
-        classVO = classService.getClass(user.getSsClass().getId());
+        classVO = classService.getClass(classId);
+		logger.debug("update class id:{}" , classVO);
         user.setSsClass(classVO);
 		accountService.updateUser(user);
 		redirectAttributes.addFlashAttribute("message", "更新用户" + user.getLoginName() + "成功");

@@ -59,7 +59,7 @@ public class AccountService {
 	public User findUserByLoginName(String loginName) {
 		logger.debug("findUserByLoginName:{}", loginName);
 		User user = userDao.findByLoginName(loginName);
-		logger.debug("user login:{}", user.getName());
+//		logger.debug("user login:{}", user.getName());
 		return user;
 	}
 
