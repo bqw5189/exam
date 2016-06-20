@@ -119,17 +119,17 @@
     });
 
 	function ordeResult(id){
-		<%--$.ajax({--%>
-			<%--url:"${reqUrl}/api/v1/ajaxmakexam/order/"+id,--%>
-			<%--data:{},--%>
-			<%--dataType:"json",--%>
-			<%--success:function (data){--%>
-				<%--location.reload(true);				--%>
-				<%--},--%>
-			<%--error:function(data){--%>
-				<%--location.reload(true);--%>
-			<%--}--%>
-		<%--});--%>
+		$.ajax({
+			url:"${reqUrl}/api/v1/ajaxmakexam/order/"+id,
+			data:{},
+			dataType:"json",
+			success:function (data){
+				location.reload(true);
+				},
+			error:function(data){
+				location.reload(true);
+			}
+		});
 		
 	}
 
