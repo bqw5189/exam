@@ -1,8 +1,8 @@
 -- MySQL dump 10.13  Distrib 5.7.11, for osx10.11 (x86_64)
 --
--- Host: localhost    Database: exam
+-- Host: 101.200.149.58    Database: test
 -- ------------------------------------------------------
--- Server version	5.7.11
+-- Server version	5.6.17
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -113,7 +113,7 @@ CREATE TABLE `t_te_answer` (
   `answer` text COLLATE utf8_unicode_ci,
   `answer_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -122,6 +122,7 @@ CREATE TABLE `t_te_answer` (
 
 LOCK TABLES `t_te_answer` WRITE;
 /*!40000 ALTER TABLE `t_te_answer` DISABLE KEYS */;
+INSERT INTO `t_te_answer` VALUES (1,2,'常用的食品标准搜索引擎有哪些？请用搜索引擎搜索完成本次检测任务的标准，请写出你搜索的关键词及搜索的网址，并用这一国标文献名保存至个人文件夹。（注：以下问题如有需要，均可使用这些搜索工具寻找答案）','高碑店污水处理厂<br/>活性 污泥中铬元素分析','text','阿斯顿发生的','2016-06-19 16:00:00'),(2,2,'请阅读任务书，并摘录关键词。','高碑店污水处理厂活性污泥中铬元素分析','text','sdfasdf务书，并摘录关键词。','2016-06-19 16:00:00');
 /*!40000 ALTER TABLE `t_te_answer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -259,7 +260,7 @@ CREATE TABLE `t_te_make_exam` (
   `exam_begin_date` timestamp NULL DEFAULT NULL,
   `exam_end_date` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=102 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -268,7 +269,7 @@ CREATE TABLE `t_te_make_exam` (
 
 LOCK TABLES `t_te_make_exam` WRITE;
 /*!40000 ALTER TABLE `t_te_make_exam` DISABLE KEYS */;
-INSERT INTO `t_te_make_exam` VALUES (1,'test','	              	\r\n	              stesete',11,201,3,'2016-05-04 19:46:01','2016-05-04 19:46:45'),(100,'2015年期中考试','考试时间为30分钟，考试期间请不要大声喧哗，共3道单选，2道多选题，共50分',30,200,1,NULL,NULL);
+INSERT INTO `t_te_make_exam` VALUES (1,'test','	              	\r\n	              stesete',11,201,3,'2016-05-04 19:46:01','2016-05-04 19:46:45'),(100,'2015年期中考试','考试时间为30分钟，考试期间请不要大声喧哗，共3道单选，2道多选题，共50分',30,200,1,NULL,NULL),(101,'test01','test01',10,201,3,'2016-06-20 02:59:02','2016-06-20 02:59:26');
 /*!40000 ALTER TABLE `t_te_make_exam` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -310,7 +311,7 @@ CREATE TABLE `t_te_question_exampaper` (
   `exampaper_id` bigint(20) NOT NULL,
   `question_id` bigint(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -319,7 +320,7 @@ CREATE TABLE `t_te_question_exampaper` (
 
 LOCK TABLES `t_te_question_exampaper` WRITE;
 /*!40000 ALTER TABLE `t_te_question_exampaper` DISABLE KEYS */;
-INSERT INTO `t_te_question_exampaper` VALUES (1,1,1),(2,1,2),(3,1,3);
+INSERT INTO `t_te_question_exampaper` VALUES (1,1,1),(2,1,2),(3,1,3),(4,101,1),(5,101,2),(6,101,3);
 /*!40000 ALTER TABLE `t_te_question_exampaper` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -384,4 +385,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-06-20 10:51:00
+-- Dump completed on 2016-06-20 14:25:50
