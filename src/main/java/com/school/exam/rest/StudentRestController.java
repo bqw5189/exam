@@ -9,6 +9,7 @@ import com.school.exam.entity.*;
 import com.school.exam.service.question.AnswerService;
 import com.school.exam.service.task.TaskService;
 import com.school.exam.web.student.StudentController;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,6 +48,10 @@ public class StudentRestController {
 
        Answer answerObj = new Answer();
 
+        if(null !=course){
+            course = StringUtils.replace(course, "<br/>", "");
+            course = StringUtils.replace(course, " ", "");
+        }
         answerObj.setTitle(title);
         answerObj.setCourse(course);
         answerObj.setAnswer(answer);
