@@ -48,7 +48,11 @@
         </ul>
     </c:if>
     <br/>
-    <c:if test="${examvo == null}">无试卷</c:if>
+    <c:if test="${examvo == null}">
+        <div align="center">
+            <span style="color: red;">无试卷!</span>
+        </div>
+    </c:if>
     <c:if test="${examvo != null}">
     <div class="leftMenubox" style="min-height: 150px;padding-left: 20px;width: 150px">
         <p>注意：</p>
@@ -103,8 +107,13 @@
                                 </tbody>
                             </table>
                             <div align="center">
+                                <c:if test="${examvo.state == 1}">
                                 <input id="submit_btn" class="md-btn md-btn-primary" type="submit" value="提交"/>&nbsp;
                                 <input id="cancel_btn" class="md-btn md-btn-primary" type="button" value="返回" onclick="history.back()"/>
+                                </c:if>
+                                <c:if test="${examvo.state != 1}">
+                                    <span style="color: red;">考试结束!</span>
+                                </c:if>
                             </div>
 
             </form>
