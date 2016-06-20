@@ -355,12 +355,6 @@
       </key>
     </database-model>
   </data-source>
-  <data-source name="SQL Server - servicedesk@101.200.197.74" uuid="e654ce9d-b383-4c9c-a3f9-9bc85cc4c052">
-    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
-  </data-source>
-  <data-source name="MySQL - field_secco@127.0.0.1" uuid="1efe08c2-fecd-47c9-bc2a-d404ef31501f">
-    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
-  </data-source>
   <data-source name="MySQL - test@101.200.149.58" uuid="439c4fbf-1dc1-4a93-83af-cba4212ea3a6">
     <database-info product="MySQL" version="5.6.17" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
       <extra-name-characters>#@</extra-name-characters>

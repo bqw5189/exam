@@ -146,7 +146,7 @@ CREATE TABLE `t_te_course` (
 
 LOCK TABLES `t_te_course` WRITE;
 /*!40000 ALTER TABLE `t_te_course` DISABLE KEYS */;
-INSERT INTO `t_te_course` VALUES (100,'化学课',''),(101,'生物课',''),(102,'历史课',''),(103,'语文课',''),(104,'驾驶课','');
+INSERT INTO `t_te_course` VALUES (100,'复杂基体有机物指标分析',''),(101,'复杂基体元素指标分析','');
 /*!40000 ALTER TABLE `t_te_course` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -294,7 +294,7 @@ CREATE TABLE `t_te_project` (
 
 LOCK TABLES `t_te_project` WRITE;
 /*!40000 ALTER TABLE `t_te_project` DISABLE KEYS */;
-INSERT INTO `t_te_project` VALUES (200,100,'第二单元',''),(201,100,'第三单元',''),(202,101,'第一单元',''),(203,102,'第一单元',''),(204,102,'第一单元',''),(205,104,'第一单元',''),(206,104,'第二单元','');
+INSERT INTO `t_te_project` VALUES (200,100,'北校区大气PM2.5中多环芳烃分析',''),(201,100,'汽修喷漆车间废水中苯系物分析',''),(202,100,'南三区土壤中塑化剂分析',''),(203,101,'南校区大气PM2.5中元素分析',''),(204,101,'高碑店污水处理厂活性污泥中铬元素分析',''),(205,101,'南校区自备井水质异味排查','');
 /*!40000 ALTER TABLE `t_te_project` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -384,4 +384,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-06-19 22:45:51
+-- Dump completed on 2016-06-20 10:51:00
