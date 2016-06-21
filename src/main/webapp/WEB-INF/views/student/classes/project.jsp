@@ -217,7 +217,7 @@
                 html += '<input type="hidden" name="title"  value="'+data.content+'">';
                 html += '<input type="hidden" name="course"  value="'+projectName+'">';
                 html += '<br/><br/><div style="text-align: center"> <button id="submitFile" class="btn" data-loading-text="提交中..." type="button" >提交</button></div></form>';
-                html += '<br/><br/><br/><div> 注：完成此次答题需要四个步骤：1.下载报告模板，2.填写报告内容，3.点击“浏览”按钮上传报告，4.点击“提交”操作完成。</div></form>';
+                html += '<br/><br/><br/><div> <p>注：完成此次答题需要四个步骤：</p><p>1.下载报告模板;</p><p>2.填写报告内容;</p><p>3.点击“浏览”按钮上传报告;</p><p>4.点击“提交”操作完成。</p></div></form>';
 
 
                 var regex = /\[img\](.*?)\[\/img\]/g;

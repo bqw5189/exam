@@ -22,7 +22,7 @@
 
 <div class="listbox" style="background:#fff">
     <div  class="row">
-        <div class="span11" style="width: 1000px">
+        <div class="span10" style="width: 990px">
             <div class="widget-well">
                 <div class="widget-head">
                     <h4>课程内容</h4>
@@ -35,7 +35,7 @@
                 </div>
             </div>
         </div>
-        <div class="span11" style="width: 1000px">
+        <div class="span11" style="width: 990px">
             <div class="widget-well">
                 <div class="widget-head">
                     <h4>学习方法</h4>
@@ -48,7 +48,7 @@
                 </div>
             </div>
         </div>
-        <div class="span11" style="width: 1000px">
+        <div class="span11" style="width: 990px">
             <div class="widget-well">
                 <div class="widget-head">
                     <h4>学习目标</h4>
@@ -124,7 +124,7 @@
 
     <div class="listbox">
         <div  class="row">
-            <div class="span11" style="width: 1000px">
+            <div class="span11" style="width: 990px">
                 <div class="widget-well">
                     <div class="widget-head">
                         <h4>课程内容</h4>
@@ -137,7 +137,7 @@
                     </div>
                 </div>
             </div>
-            <div class="span11" style="width: 1000px">
+            <div class="span11" style="width: 990px">
                 <div class="widget-well">
                     <div class="widget-head">
                         <h4>学习方法</h4>
@@ -150,7 +150,7 @@
                     </div>
                 </div>
             </div>
-            <div class="span11" style="width: 1000px">
+            <div class="span11" style="width: 990px">
                 <div class="widget-well">
                     <div class="widget-head">
                         <h4>学习目标</h4>
