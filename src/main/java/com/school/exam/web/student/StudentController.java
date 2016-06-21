@@ -402,10 +402,12 @@ public class StudentController {
             resultvo.setPersonName(user.getName());
             //保存最终结果
             resultService.saveExamPaperResult(resultvo);
+
             model.addAttribute("sumScore", sumScore);
             model.addAttribute("examvo", examvo);
             model.addAttribute("resultlist", resultList);
             model.addAttribute("nav", NAV_MAP);
+            model.addAttribute("project", examvo.getProject().getProjectName());
 
             return "student/resultlist";
         }

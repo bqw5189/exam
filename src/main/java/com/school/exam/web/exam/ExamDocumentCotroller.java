@@ -5,6 +5,7 @@ import com.school.exam.entity.User;
 import com.school.exam.service.account.AccountService;
 import com.school.exam.service.question.AnswerService;
 import com.school.exam.service.question.CourseService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -29,10 +31,13 @@ public class ExamDocumentCotroller {
     private AccountService accountService;
 
 	@RequestMapping(method = RequestMethod.GET)
-	public String document(Model model, @RequestParam(value = "course", defaultValue = "北校区大气PM2.5中多环芳烃分析") String course) {
-        //获取课程信息
-        model.addAttribute("course",courseService.findAllCourse());
-		Set<Answer> list = answerService.findDinstinctUserIdByCourse(course);
+    public String answer(Model model, @RequestParam(value = "course",required = false) String course) {
+        Set<Answer> list;
+        if (!StringUtils.isEmpty(course)){
+            list = answerService.findDinstinctUserIdByCourse(course);
+        }else{
+            list = answerService.findDinstinctUserIdByType(".docx");
+        }
 		if(null==list&&list.size()==0){
 			model.addAttribute("message", "当前没有考试卷!");
 		}else{

@@ -55,8 +55,13 @@ public class AnswerService {
         return answerDao.findDistinctUserByCourse(course);
     }
 
+    public LinkedHashSet<Answer> findDinstinctUserIdByType(String type) {
+        return answerDao.findDinstinctUserIdByType(type);
+    }
+
     public List<Answer> findByUserIdAndCourseOrderByAnswerDateAsc(Long userId, String course) {
         return answerDao.findByUserIdAndCourseOrderByAnswerDateAsc(userId,course);
     }
+
 
 }
