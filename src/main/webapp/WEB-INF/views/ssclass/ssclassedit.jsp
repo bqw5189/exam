@@ -15,7 +15,7 @@
                 <div class="uk-width-1-1">
                     <div class="parsley-row">
                         <label for="uk-form-row">班级名称<span class="req">*</span></label>
-                        <input class="md-input" type="text" id="uk-form-row" name="className" required="true" value="${ssclass.className}"/>
+                        <input class="md-input" type="text" id="uk-form-row" name="className" required="true" value="${ssclass.className}" maxlength="25"/>
                     </div>
                 </div>
                 <br/>

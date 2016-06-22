@@ -49,7 +49,7 @@ public class AccountService {
     private SSClassService ssClassService;
 
 	public List<User> getAllUser() {
-		return (List<User>) userDao.findAll();
+		return (List<User>) userDao.findByRoles("student");
 	}
 
 	public User getUser(Long id) {

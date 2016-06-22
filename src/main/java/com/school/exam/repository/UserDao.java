@@ -17,4 +17,6 @@ public interface UserDao extends PagingAndSortingRepository<User, Long> {
 	@Query("select count(u.id) from User u where u.ssClass.id=?1")
 	Integer querySsclassByid(Long id);
     User findById(long user);
+
+	List<User> findByRoles(String student);
 }

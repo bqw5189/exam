@@ -69,8 +69,13 @@ public class ClassController {
 
 	    @RequestMapping(value = "create/save", method = RequestMethod.POST)
 	    public String create(@Valid SSClassVO vo, RedirectAttributes redirectAttributes,ServletRequest request) {
-	        ssclassService.registerClass(vo);
-	        redirectAttributes.addFlashAttribute("message", "创建班级成功");
+			if (ssclassService.findClassByClassName(vo.getClassName())==null){
+				ssclassService.registerClass(vo);
+				redirectAttributes.addFlashAttribute("message", "创建班级成功");
+			}else{
+				redirectAttributes.addFlashAttribute("message", "创建班级失败,"+vo.getClassName()+"班级名称已存在!");
+			}
+
 	        return "redirect:/ssclass";
 	    }
 
