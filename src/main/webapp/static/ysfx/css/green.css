@@ -427,6 +427,9 @@ html,body{width:100%;height:100%;}
 	display:block;
 	}
 
+#showData{
+	line-height:2em;
+}
 /*page02 css end*/
 
 

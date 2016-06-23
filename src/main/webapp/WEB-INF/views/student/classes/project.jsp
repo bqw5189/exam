@@ -227,8 +227,8 @@
 
 
                 $("#showData").html(html);
-                $("#title p").css("text-indent","2em")
-                $("#title p").css("font-size","14px")
+                $("div p").css("text-indent","2em")
+                $("remark p").css("font-size","14px")
 
                 $("#submitFile").click(function(){
                     if ($("#file").val() == ""){
