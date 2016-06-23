@@ -56,7 +56,7 @@
 </div>
 <div class="md-card">
     <div class="md-card-content">
-        <div><b>当前位置:>>答案管理</b></div>
+        <div><b>当前位置:>>答案管理>>${courseName}</b></div>
 	<table id="dt_default" class="uk-table" >
 		<thead><tr><th>序号</th><th>学生</th><th>班级</th><th>课程</th></thead>
 		<tbody>

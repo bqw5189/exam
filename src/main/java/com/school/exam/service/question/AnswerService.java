@@ -51,8 +51,8 @@ public class AnswerService {
     public List<Answer> findByCourse(String course) {
         return answerDao.findByCourse(course);
     }
-    public LinkedHashSet<Answer> findDinstinctUserIdByCourse(String course) {
-        return answerDao.findDistinctUserByCourse(course);
+    public LinkedHashSet<Answer> findDinstinctUserIdByCourseAndType(String course, String type) {
+        return answerDao.findDistinctUserByCourseAndType(course, type);
     }
 
     public LinkedHashSet<Answer> findDinstinctUserIdByType(String type) {

@@ -34,10 +34,13 @@ public class ExamDocumentCotroller {
     public String answer(Model model, @RequestParam(value = "course",required = false) String course) {
         Set<Answer> list;
         if (!StringUtils.isEmpty(course)){
-            list = answerService.findDinstinctUserIdByCourse(course);
+            list = answerService.findDinstinctUserIdByCourseAndType(course, ".docx");
         }else{
             list = answerService.findDinstinctUserIdByType(".docx");
         }
+        //获取课程信息
+        model.addAttribute("course",courseService.findAllCourse());
+        model.addAttribute("courseName", course);
 		if(null==list&&list.size()==0){
 			model.addAttribute("message", "当前没有考试卷!");
 		}else{

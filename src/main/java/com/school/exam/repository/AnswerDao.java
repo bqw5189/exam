@@ -18,7 +18,7 @@ public interface AnswerDao extends PagingAndSortingRepository<Answer, Long>, Jpa
     List<Answer> findByCourse(String course);
     //@Query("select distinct a.user, a.course from Answer a where a.course=?1 ")
 //    @Dist
-    LinkedHashSet<Answer> findDistinctUserByCourse(String course);
+    LinkedHashSet<Answer> findDistinctUserByCourseAndType(String course, String type);
 //    @Query("select distinct a.user, a.course from Answer a")
 //    LinkedHashSet<Answer> findAllDistinctUser();
 

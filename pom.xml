@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--mvn package -Pstandalone-tomcat -Dmaven.test.skip=true-->
+<!--mvn clean package -Pstandalone-tomcat -Dmaven.test.skip=true-->
 <!--scp target/exam.war root@120.24.58.244:/data/tomcat/apache-tomcat-7.0.62/webapps/-->
 <!--scp target/exam.war riil@123.57.239.39:/home/riil/software/apache-tomcat-8.0.36/webapps-->
 <!--scp ~/Desktop/contentbg.jpg riil@123.57.239.39:/home/riil/software/apache-tomcat-8.0.36/webapps/exam/static/ysfx/img/blue-->
