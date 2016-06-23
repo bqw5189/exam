@@ -302,7 +302,7 @@
         $(".text02").attr("style","background:url('')");
 
         <c:if test="${param.project_title == '南校区大气PM2.5中元素分析'}">
-        $(".text02").attr("src", "${ctx}/static/ysfx/img/blue/toptext.png");
+        $(".text02").attr("src", "${ctx}/static/ysfx/img/toptext1.png");
         </c:if>
         <c:if test="${param.project_title == '高碑店污水处理厂<br/>活性 污泥中铬元素分析'}">
         $(".text02").attr("src", "${ctx}/static/ysfx/img/toptext2.png");
