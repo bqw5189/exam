@@ -96,17 +96,21 @@
 		$("search_LIKE_questionCont").focus();
 	});
 	function ordeResult(id){
-		$.ajax({
-			url:"${reqUrl}/api/v1/ajaxmakexam/order/"+id,
-			data:{},
-			dataType:"json",
-			success:function (data){
-					location.reload(true);
-				},
-			error:function(data){
-				//location.reload(true);
-			}
+		$.get("${reqUrl}/api/v1/ajaxmakexam/order/"+id,function(data){
+			location.reload();
 		});
+		<%--$.ajax({--%>
+			<%--url:"${reqUrl}/api/v1/ajaxmakexam/order/"+id,--%>
+			<%--data:{},--%>
+			<%--dataType:"json",--%>
+			<%--success:function (data){--%>
+				<%--alert(1);--%>
+				<%--location.reload();--%>
+				<%--},--%>
+			<%--error:function(data){--%>
+				<%--//location.reload(true);--%>
+			<%--}--%>
+		<%--});--%>
 		
 	}
 	</script>
