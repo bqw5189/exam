@@ -4,9 +4,6 @@
     <list default="true" id="f90a0bed-6075-4286-86dc-b8246f67a9ca" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/classes.xls" afterPath="$PROJECT_DIR$/src/main/resources/classes.xls" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/resources/classes.xls" afterPath="$PROJECT_DIR$/src/test/resources/classes.xls" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/examresult/examresultlist.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/examresult/examresultlist.jsp" />
     </list>
     <ignored path="exam.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -84,8 +81,8 @@
       <file leaf-file-name="examresultlist.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/examresult/examresultlist.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="77" column="31" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
+            <state relative-caret-position="247">
+              <caret line="79" column="31" selection-start-line="79" selection-start-column="31" selection-end-line="79" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -769,8 +766,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/test/resources" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/test/resources" />
       <recent name="$PROJECT_DIR$/src/main/webapp/static/ysfx/img" />
       <recent name="$PROJECT_DIR$/src/main/webapp/static/ysfx/img/blue" />
       <recent name="$PROJECT_DIR$/src/main/webapp/static/ysfx" />
@@ -1528,7 +1525,7 @@
       <workItem from="1467013083001" duration="1110000" />
       <workItem from="1467594156263" duration="4884000" />
       <workItem from="1467599797470" duration="1821000" />
-      <workItem from="1467615973842" duration="2679000" />
+      <workItem from="1467615973842" duration="4130000" />
     </task>
     <servers />
   </component>
@@ -1565,7 +1562,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="525639000" />
+    <option name="totallyTimeSpent" value="527090000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -2026,8 +2023,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/examresult/examresultlist.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="77" column="31" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
+        <state relative-caret-position="247">
+          <caret line="79" column="31" selection-start-line="79" selection-start-column="31" selection-end-line="79" selection-end-column="31" />
           <folding />
         </state>
       </provider>
