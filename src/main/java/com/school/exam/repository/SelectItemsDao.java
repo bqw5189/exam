@@ -9,4 +9,8 @@ public interface SelectItemsDao extends PagingAndSortingRepository<TeSelectItems
 	@Modifying
 	@Query("delete from TeSelectItemsVO item where item.question.id=?1")
 	public Integer deleteByDepdId(Long id);
+
+	@Modifying
+	@Query("update TeSelectItemsVO item set item.isAnswer=0 where item.question.id=?1")
+	void updateOtherItemNotAnswer(Long id);
 }

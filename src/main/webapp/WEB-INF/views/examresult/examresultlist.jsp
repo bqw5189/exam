@@ -101,7 +101,7 @@
 			data:{},
 			dataType:"json",
 			success:function (data){
-				//location.reload(true);				
+					location.reload(true);
 				},
 			error:function(data){
 				//location.reload(true);

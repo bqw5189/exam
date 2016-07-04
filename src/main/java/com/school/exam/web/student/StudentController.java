@@ -441,8 +441,14 @@ public class StudentController {
 
         Answer answerObj = new Answer();
 
+        String course = answerVO.getCourse();
+        if(null !=course){
+            course = org.apache.commons.lang3.StringUtils.replace(course, "<br/>", "");
+            course = org.apache.commons.lang3.StringUtils.replace(course, " ", "");
+        }
+
         answerObj.setTitle(answerVO.getTitle());
-        answerObj.setCourse(answerVO.getCourse());
+        answerObj.setCourse(course);
         answerObj.setAnswer(answerVO.getFile().getOriginalFilename());
         answerObj.setType(suffix);
         answerObj.setAnswerDate(new Date(currentMillis));

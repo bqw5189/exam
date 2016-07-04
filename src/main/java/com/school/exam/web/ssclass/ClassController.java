@@ -70,7 +70,7 @@ public class ClassController {
 	    @RequestMapping(value = "create/save", method = RequestMethod.POST)
 	    public String create(@Valid SSClassVO vo, RedirectAttributes redirectAttributes,ServletRequest request) {
 			SSClassVO ssClassVO = ssclassService.findClassByClassName(vo.getClassName());
-			if (ssClassVO.getId() == vo.getId()){
+			if (vo!=null && ssClassVO != null && ssClassVO.getId() == vo.getId()){
 				ssClassVO = null;
 			}
 

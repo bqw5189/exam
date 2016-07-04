@@ -38,7 +38,7 @@
                                 <ul>
                                     <c:forEach items="${cour.project }" var="pro">
                                         <li>
-                                            <a href="${ctx }/answer?course=${pro.projectName}"
+                                            <a href="${ctx }/document?course=${pro.projectName}"
                                                     <c:if test="${ projectId==pro.id}">
                                                         class="text-success"
                                                     </c:if>

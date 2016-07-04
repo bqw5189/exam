@@ -170,6 +170,9 @@ public class CourseService {
 	public void setQuestionDao(ExamQuestionDao questionDao) {
 		this.questionDao = questionDao;
 	}
-	
-	
+
+
+	public void updateOtherItemNotAnswer(Long id) {
+		selectItemDao.updateOtherItemNotAnswer(id);
+	}
 }
