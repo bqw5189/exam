@@ -64,7 +64,7 @@
 				</div>
 				<div class="uk-width-medium-1-1">
 					<label>考试时间(分钟)</label>
-					<input type="text"  value="${makexam.examTime}" data-inputmask-showmaskonhover="false" data-inputmask="'alias': 'numeric', 'groupSeparator': ',', 'autoGroup': true, 'digits': 0, 'digitsOptional': false, 'prefix': '', 'placeholder': '100'" id="examTime" name="examTime" class="md-input masked_input" style="text-align: right;" required max="100"><span class="md-input-bar"></span>
+					<input type="text"  value="${makexam.examTime}" data-inputmask-showmaskonhover="false" data-inputmask="'alias': 'numeric', 'groupSeparator': ',', 'autoGroup': true, 'digits': 0, 'digitsOptional': false, 'prefix': '', 'placeholder': '0'" id="examTime" name="examTime" class="md-input masked_input" style="text-align: right;" required max="100"><span class="md-input-bar"></span>
 				</div>
 
 		</div>
