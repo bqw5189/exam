@@ -68,7 +68,14 @@
  </div>
 <div class="md-card uk-margin-medium-bottom">
     <div class="md-card-content">
-	    <div class="uk-accordion" data-uk-accordion="" style="width:100%"> 
+		<c:if test="${question.totalElements == 0}">
+			没有找到记录
+		</c:if>
+		<c:if test="${question.totalElements > 0}">
+
+
+		<div class="uk-accordion" data-uk-accordion="" style="width:100%">
+
 				<c:set var="no" value="1"></c:set>
 				<c:forEach items="${question.content }" var="que">
 				<h3 class="uk-accordion-title">	
@@ -96,6 +103,8 @@
 			</c:forEach>
 			<tags:pagination paginationSize="10" page="${question }"></tags:pagination>
 		</div>
+
+		</c:if>
 	</div>
 </div>
 </body>

@@ -42,7 +42,7 @@
                     <div class="uk-width-medium-1-1">
                         <div class="parsley-row">
                             <label for="questionScore">分值</label>
-                            <input type="text"  value="${question.questionScore}" data-inputmask-showmaskonhover="false" data-inputmask="'alias': 'numeric', 'groupSeparator': ',', 'autoGroup': true, 'number': 1, 'digitsOptional': false, 'prefix': '', 'placeholder': '100'" id="questionScore" name="questionScore" class="md-input masked_input" style="text-align: right;" required max="100"><span class="md-input-bar"></span>
+                            <input type="text"  value="${question.questionScore}" data-inputmask-showmaskonhover="false" data-inputmask="'alias': 'numeric', 'groupSeparator': ',', 'autoGroup': true, 'number': 0, 'digitsOptional': false, 'prefix': '', 'placeholder': '100'" id="questionScore" name="questionScore" class="md-input masked_input" style="text-align: right;" required max="100"><span class="md-input-bar"></span>
                         </div>
                     </div>
                 </div>

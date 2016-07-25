@@ -176,7 +176,7 @@
                     $(this).attr("disabled", "true");
 
                     $.ajax({
-                        type: 'GET',
+                        type: 'POST',
                         url : "${ctx}/api/v1/student/answer",
                         contentType : "application/x-www-form-urlencoded;charset=UTF-8",
                         data : {userId:'<shiro:principal property="id"></shiro:principal>', course:projectName, answer:answer,title:title},

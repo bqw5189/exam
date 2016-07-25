@@ -9,4 +9,6 @@ import com.school.exam.entity.SSClassVO;
 
 public interface ClassDao extends PagingAndSortingRepository<SSClassVO, Long>, JpaSpecificationExecutor<SSClassVO>{
 	public SSClassVO findByClassName(String className);
+
+	public List<SSClassVO> findByOrderByIdDesc();
 }

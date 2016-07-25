@@ -31,7 +31,7 @@ public class SSClassService {
 	}
 
 	public List<SSClassVO> getAllSSClass() {
-		return (List<SSClassVO>) classDao.findAll();
+		return (List<SSClassVO>) classDao.findByOrderByIdDesc();
 	}
 
 	public SSClassVO getClass(Long id) {

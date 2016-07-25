@@ -43,7 +43,7 @@ public class StudentRestController {
 
 
 
-    @RequestMapping(value = "answer", method = RequestMethod.GET, produces = MediaTypes.JSON_UTF_8)
+    @RequestMapping(value = "answer", method = RequestMethod.POST, produces = MediaTypes.JSON_UTF_8)
     public String answer(@RequestParam(defaultValue = "北校区大气PM2.5中多环芳烃分析") String course,@RequestParam String title, @RequestParam long userId, @RequestParam(required = false) String answer){
 
        Answer answerObj = new Answer();

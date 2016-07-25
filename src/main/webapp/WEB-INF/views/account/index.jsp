@@ -50,7 +50,7 @@
                     <span class="peity_orders peity_data">64/100</span>
                 </div>
                 <span class="uk-text-muted uk-text-small">及格率</span>
-                <h2 class="uk-margin-remove"><span class="countUpMe">${indexvo.scale }
+                <h2 class="uk-margin-remove"><span class="countUpMe">${indexvo.scale*100 }
           <noscript>
               64
           </noscript></span>%</h2>

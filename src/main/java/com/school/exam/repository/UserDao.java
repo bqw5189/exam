@@ -19,4 +19,5 @@ public interface UserDao extends PagingAndSortingRepository<User, Long> {
     User findById(long user);
 
 	List<User> findByRoles(String student);
+	List<User> findByRolesOrderByIdDesc(String student);
 }
