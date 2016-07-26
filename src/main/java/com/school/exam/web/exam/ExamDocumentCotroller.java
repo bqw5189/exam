@@ -35,8 +35,10 @@ public class ExamDocumentCotroller {
         Set<Answer> list;
         if (!StringUtils.isEmpty(course)){
             list = answerService.findDinstinctUserIdByCourseAndType(course, ".docx");
+            list.addAll(answerService.findDinstinctUserIdByCourseAndType(course, ".doc"));
         }else{
             list = answerService.findDinstinctUserIdByType(".docx");
+            list.addAll(answerService.findDinstinctUserIdByType(".doc"));
         }
         //获取课程信息
         model.addAttribute("course",courseService.findAllCourse());
