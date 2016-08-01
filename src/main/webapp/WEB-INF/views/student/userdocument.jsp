@@ -38,11 +38,9 @@
                                 <ul>
                                     <c:forEach items="${cour.project }" var="pro">
                                         <li>
-                                            <a href="${ctx }/document?course=${pro.projectName}"
-                                                    <c:if test="${ projectId==pro.id}">
-                                                        class="text-success"
-                                                    </c:if>
-                                                    >${pro.projectName }</a>
+                                            <script type="text/javascript">
+                                                document.write('<a href="'+encodeURI("${ctx }/document?course=${pro.projectName}")+' <c:if test="${ projectId==pro.id}"> class="text-success" </c:if> ">${pro.projectName }</a>');
+                                            </script>
                                         </li>
                                     </c:forEach>
                                 </ul>

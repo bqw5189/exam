@@ -38,11 +38,9 @@
                                 <ul>
                                     <c:forEach items="${cour.project }" var="pro">
                                         <li>
-                                            <a href="${ctx }/document?course=${pro.projectName}"
-                                                    <c:if test="${ projectId==pro.id}">
-                                                        class="text-success"
-                                                    </c:if>
-                                                    >${pro.projectName }</a>
+                                            <script type="text/javascript">
+                                            document.write('<a href="'+encodeURI("${ctx }/document?course=${pro.projectName}")+' <c:if test="${ projectId==pro.id}"> class="text-success" </c:if> ">${pro.projectName }</a>');
+                                            </script>
                                         </li>
                                     </c:forEach>
                                 </ul>
@@ -63,7 +61,11 @@
 		<c:forEach items="${list}" var="l"  varStatus="status">
 			<tr>
                 <td>${status.index+1}</td>
-                <td><a href="${ctx}/document/${l.user.id}?course=${l.course}">${l.user.name}</a></td>
+                <td>
+                    <script type="text/javascript">
+                        document.write('<a href="'+encodeURI("${ctx}/document/${l.user.id}?course=${l.course}")+'">${l.user.name}</a>');
+                    </script>
+                </td>
 				<td>${l.user.ssClass.className}</td>
                 <td>${l.course}</td>
                 </td>
