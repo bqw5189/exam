@@ -121,14 +121,19 @@ public class StudentController {
     }
 
     @RequestMapping(value = "classes/images", method = RequestMethod.GET)
-    public String images(Model model, @RequestParam(value = "type", defaultValue = "北校区大气PM2.5中多环芳烃分析") String taskName) {
+    public String images(Model model, @RequestParam(value = "type", defaultValue = "") String taskName) {
         String className = getCurrentClassName();
         if (!"ysfx".equals(className)) {
             model.addAttribute("resourcePath", "pmfj");
-            taskName = "北校区大气PM2.5中多环芳烃分析";
+            if ("".equals(taskName)) {
+                taskName = "北校区大气PM2.5中多环芳烃分析";
+            }
         }else{
             model.addAttribute("resourcePath", "ysfx");
-            taskName = "南校区大气PM2.5中元素分析";
+            if ("".equals(taskName)) {
+                taskName = "南校区大气PM2.5中元素分析";
+            }
+
         }
 
         model.addAttribute("nav", NAV_MAP);

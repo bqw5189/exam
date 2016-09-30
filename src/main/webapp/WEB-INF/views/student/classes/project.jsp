@@ -200,7 +200,7 @@
                 var so = new SWFObject("${ctx}/static/CuPlayer/CuPlayerMiniV4.swf","CuPlayerV4","700","490","9","#000000");
                 so.addParam("quality","high");
                 so.addParam("salign","lt");
-                so.addVariable("CuPlayerFile",'${ctx}/static/${resourcePath}/' + 'ypcjqcl.flv');
+                so.addVariable("CuPlayerFile",'${ctx}/static/${resourcePath}/' + data.file);
                 so.addVariable("CuPlayerImage","${ctx}/static/images/start.jpg");
                 so.addVariable("CuPlayerWidth","700");
                 so.addVariable("CuPlayerHeight","490");

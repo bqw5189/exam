@@ -7,19 +7,27 @@ import com.school.exam.entity.TeQuestionExamVO;
 import com.school.exam.utils.ExcelUtils;
 
 import jxl.read.biff.BiffException;
+import org.eclipse.jetty.util.ajax.JSON;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by baiqw on 15/11/20.
  */
 public class ParseExcelTest {
+    public static List<List<String>> RESOURCES = new ArrayList<List<String>>();
 
     @Test
+    public void testClassProject(){
+        InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("classes.xls");
+        RESOURCES.addAll(ExcelUtils.toList(inputStream));
+        System.out.println(JSON.toString(ExcelUtils.toCourse(RESOURCES)));
+    }
     public void testToQuestion(){
         InputStream stream = ParseExcelTest.class.getClassLoader().getResourceAsStream("exam.xls");
         List<List<String>> list = ExcelUtils.toList(stream);
